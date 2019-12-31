@@ -1,13 +1,74 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>火把知识-后台</title>
+	<title>火把知识-后台-规范手册</title>
 	<link rel="stylesheet" type="text/css" href="layui/css/layui.css">
+	<!-- 按钮 -->
+	<link rel="stylesheet" type="text/css" href="layui/css/public.css">
+	<style type="text/css">
+		#menu {
+			position: fixed;
+			height: 100%;
+			width: 80px;
+			text-align: center;
+			left: 0;
+			top: 0;
+			overflow: auto;
+			background-color: #f0f0f0;
+			z-index: 1;
+			padding: 10px;
+			box-sizing: border-box;
+		}
+		#menu a {
+			display: block;
+			padding: 10px 0;
+		}
+		section {
+			margin-left: 100px;
+		}
+		article {
+			padding: 20px 0;
+		}
+		p {
+			padding: 10px 0;
+		}
+	</style>
 </head>
 <body>
-	<!-- 按钮 -->
-	<button type="button" class="layui-btn layui-btn-normal">默认按钮</button>
+
+	<div id="menu">
+		<a href="#button">按钮</a>
+		<a href="#search">搜索</a>
+		<a href="#color">颜色</a>
+	</div>
+
+	<section>
+		<article id="button">
+			<!-- 按钮1 -->
+			<p>----- 按钮 -----</p>
+			<button type="button" class="layui-btn layui-btn-normal">按钮1</button>
+			<button type="button" class="layui-btn layui-btn-disabled">按钮1</button>
+			<!-- 按钮2 -->
+			<button type="button" class="layui-btn layui-btn-primary">按钮2</button>
+		</article>
+
+		<article id="search">
+			<p>----- 搜索 -----</p>
+			<iframe src="iframe/search.html"></iframe>
+		</article>
+
+		<article id="color">
+			<p>----- 颜色 -----</p>
+			<div class="main-color">品牌色（主色调）</div>
+		</article>
+	</section>
 
 </body>
 </html>
 <script type="text/javascript" src="layui/layui.js"></script>
+<script type="text/javascript">
+	// 搜索
+	function searchAction(argument) {
+		alert(argument)
+	}
+</script>

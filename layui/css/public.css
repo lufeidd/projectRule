@@ -1,0 +1,29 @@
+/*
+ *	作者: zzy
+ *	创建时间：
+ *	描述：公共
+ */
+
+ @charset "utf-8";
+
+ @import url('component/button.css');
+
+/*
+ * 标签重定义
+ */
+
+ iframe {
+ 	border: none;
+ 	padding: 0;
+ 	margin: 0;
+ 	width: 100%;
+ }
+
+
+/*
+ * 颜色
+ */
+
+.main-color {
+	color: #f05654;
+}
