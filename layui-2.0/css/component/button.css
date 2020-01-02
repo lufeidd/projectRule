@@ -1,5 +1,5 @@
 /*
- *	作者: zzy
+ *	作者: zw
  *	创建时间：
  *	描述：按钮组件
  */
@@ -8,5 +8,117 @@
 
 button {
 	text-align: center;
-	letter-spacing: 4px;
+	/* letter-spacing: 4px; */
+}
+
+/* 按钮1 */
+.layui-btn{
+	border-radius: 4px;
+	background-color:#54ACF0;
+}
+.layui-btn:hover{
+	opacity: 1;
+	background-color: #6DBBF7;
+}
+.layui-btn:active{
+	background-color: #429CE2;
+}
+.layui-btn-disabled, .layui-btn-disabled:active, .layui-btn-disabled:hover{
+	background-color: #CCCCCC;
+	color:#FFF;
+}
+/* 按钮2 */
+.layui-btn-primary{
+	background-color: #EEF7FD;
+	border: none;
+	color:#54ACF0;
+}
+.layui-btn-primary:hover{
+	background-color: #E0F1FC;
+	color:#54ACF0;
+}
+.layui-btn-primary:active{
+	background-color: #E0F1FC;
+}
+.layui-btn-primary.layui-btn-disabled,.layui-btn-primary.layui-btn-disabled:hover,.layui-btn-primary.layui-btn-disabled:active{
+	background-color: #EEF7FD;
+	color:#54ACF0;
+	border:none;
+}
+/* 按钮3 */
+.layui-btn-normal{
+	background-color: #FFF;
+	border:1px solid #54ACF0;
+	color:#54ACF0;
+}
+.layui-btn-normal:hover{
+	background-color: #FFF;
+	border:1px solid #6DBBF7;
+	color:#6DBBF7;
+}
+.layui-btn-normal:active{
+	background-color: #FFF;
+	border:1px solid #429CE2;
+	color:#429CE2;
+}
+.layui-btn-normal.layui-btn-disabled,.layui-btn-normal.layui-btn-disabled:hover,.layui-btn-normal.layui-btn-disabled:active{
+	background-color: #FFF;
+	color:#cccccc;
+	border:1px solid #cccccc;
+}
+/* 按钮4 */
+.layui-btn-warm{
+	background-color: #FFF;
+	border:1px solid #999999;
+	color: #333333;;
+}
+.layui-btn-warm:hover{
+	background-color: #FFF;
+	border:1px solid #6DBBF7;
+	color: #333333;;
+}
+.layui-btn-warm:active{
+	background-color: #FFF;
+	border:1px solid #54ACF0;
+	color: #333333;;
+}
+.layui-btn-warm.layui-btn-disabled,.layui-btn-warm.layui-btn-disabled:hover,.layui-btn-warm.layui-btn-disabled:active{
+	background-color: #FFF;
+	color:#cccccc;
+	border:1px solid #cccccc;
+}
+/* 删除按钮 */
+.layui-btn-danger,.layui-btn-danger:hover,.layui-btn-danger:active{
+	background-color: #FFF;
+	border:1px solid #F05654;
+	color:#F05654;
+}
+/* 按钮5 */
+.layui-btn-five,.layui-btn-five:hover,.layui-btn-five:active{
+	background-color: #FFF;
+	color:#54ACF0;
+	position: relative;
+}
+/* 按钮6 */
+.layui-btn-six,.layui-btn-six:hover,.layui-btn-six:active{
+	background-color: #54ACF0;
+	color:#FFF;
+	position: relative;
+}
+.layui-btn-five .layui-icon,.layui-btn-six .layui-icon{
+	position: relative;
+	right: -8px;
+	font-size: 12px;
+}
+/* 固定底部按钮 */
+.bottom-layui-btn{
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	background-color: #FFF;
+	line-height: 60px;
+	border-top: 1px solid rgba(0,0,0,0.1);
+}
+.bottom-layui-btn .layui-btn{
+	margin-left:30px;
 }

@@ -10,9 +10,14 @@
  @import url('component/button.css');
  /* 选项卡 */
  @import url('component/tab.css');
+<<<<<<< HEAD
  /* 面包屑 */
  @import url('component/breadcrumb.css');
 
+=======
+ /* 文本域 */
+ @import url('component/input.css');
+>>>>>>> 9592e2502d33fbf4e5e0f10017d86c89f6aaf065
 /*
  * 标签重定义
  */

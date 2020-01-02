@@ -1,0 +1,26 @@
+/*
+ *	作者: zw
+ *	创建时间：
+ *	描述：按钮组件
+ */
+
+ @charset "utf-8";
+ .layui-input{
+     border-color:#C0C0C0;
+ }
+ .layui-input::placeholder{
+     color: #999999;
+ }
+ .layui-input:hover, .layui-textarea:hover{
+     border-color:#54ACF0 !important;
+ }
+ .input-first-container{
+     position: relative;
+ }
+ .input-first-container .input-number{
+     position: absolute;
+     right:10px;
+     top: 50%;
+     margin-top:-7px;
+     color:#999999;
+ }
