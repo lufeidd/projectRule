@@ -2,9 +2,9 @@
 <html>
 <head>
 	<title>火把知识-后台-规范手册</title>
-	<link rel="stylesheet" type="text/css" href="layui/css/layui.css">
-	<!-- 按钮 -->
-	<link rel="stylesheet" type="text/css" href="layui/css/public.css">
+	<link rel="stylesheet" type="text/css" href="layui-2.0/css/layui.css">
+	<!-- 样式重定义 -->
+	<link rel="stylesheet" type="text/css" href="layui-2.0/css/public.css">
 	<style type="text/css">
 		#menu {
 			position: fixed;
@@ -40,6 +40,7 @@
 		<a href="#button">按钮</a>
 		<a href="#search">搜索</a>
 		<a href="#color">颜色</a>
+		<a href="#tab">选项卡</a>
 	</div>
 
 	<section>
@@ -61,11 +62,22 @@
 			<p>----- 颜色 -----</p>
 			<div class="main-color">品牌色（主色调）</div>
 		</article>
+
+		<article id="tab">
+			<p>----- 选项卡 -----</p>
+			<div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
+				<ul class="layui-tab-title">
+				  <li class="layui-this">选项一</li>
+				  <li>选项二</li>
+				</ul>
+				<div class="layui-tab-content"></div>
+			  </div>    
+		</article>
 	</section>
 
 </body>
 </html>
-<script type="text/javascript" src="layui/layui.js"></script>
+<script type="text/javascript" src="layui-2.0/layui.js"></script>
 <script type="text/javascript">
 	// 搜索入参
 	let searchData = {
