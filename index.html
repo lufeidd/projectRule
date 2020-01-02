@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<title>火把知识-后台-规范手册</title>
 	<link rel="stylesheet" type="text/css" href="layui-2.0/css/layui.css">
@@ -19,21 +20,26 @@
 			padding: 10px;
 			box-sizing: border-box;
 		}
+
 		#menu a {
 			display: block;
 			padding: 10px 0;
 		}
+
 		section {
 			margin-left: 100px;
 		}
+
 		article {
 			padding: 20px 0;
 		}
+
 		p {
 			padding: 10px 0;
 		}
 	</style>
 </head>
+
 <body>
 
 	<div id="menu">
@@ -41,6 +47,7 @@
 		<a href="#search">搜索</a>
 		<a href="#color">颜色</a>
 		<a href="#tab">选项卡</a>
+		<a href="#breadcrumb">面包屑</a>
 	</div>
 
 	<section>
@@ -67,15 +74,27 @@
 			<p>----- 选项卡 -----</p>
 			<div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
 				<ul class="layui-tab-title">
-				  <li class="layui-this">选项一</li>
-				  <li>选项二</li>
+					<li class="layui-this">选项一</li>
+					<li>选项二</li>
 				</ul>
 				<div class="layui-tab-content"></div>
-			  </div>    
+			</div>
+		</article>
+
+		<article id="breadcrumb">
+			<p>----- 面包屑 -----</p>
+            <div class="breadcrumb-container">
+                <span class="layui-breadcrumb">
+                    <a href="/">首页</a>
+                    <a href="/demo/">演示</a>
+                    <a><cite>导航元素</cite></a>
+                </span>
+            </div>
 		</article>
 	</section>
 
 </body>
+
 </html>
 <script type="text/javascript" src="layui-2.0/layui.js"></script>
 <script type="text/javascript">
@@ -88,8 +107,9 @@
 		alert(argument)
 	}
 	// 父亲操作儿子-传入参
-	layui.use(['jquery'], function () {
-		var $ = layui.jquery;
+	layui.use(['element', 'jquery'], function () {
+		var $ = layui.jquery,
+			element = layui.element;
 		// $('iframe[name=search]')[0].contentWindow.initSearch(searchData);
 	});
 </script>

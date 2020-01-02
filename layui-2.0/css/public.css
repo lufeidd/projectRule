@@ -10,6 +10,8 @@
  @import url('component/button.css');
  /* 选项卡 */
  @import url('component/tab.css');
+ /* 面包屑 */
+ @import url('component/breadcrumb.css');
 
 /*
  * 标签重定义
