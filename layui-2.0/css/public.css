@@ -6,7 +6,10 @@
 
  @charset "utf-8";
 
+ /* 按钮 */
  @import url('component/button.css');
+ /* 选项卡 */
+ @import url('component/tab.css');
 
 /*
  * 标签重定义
