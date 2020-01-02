@@ -54,7 +54,7 @@
 
 		<article id="search">
 			<p>----- 搜索 -----</p>
-			<iframe src="iframe/search.html"></iframe>
+			<iframe src="iframe/search.html" name="search"></iframe>
 		</article>
 
 		<article id="color">
@@ -67,8 +67,17 @@
 </html>
 <script type="text/javascript" src="layui/layui.js"></script>
 <script type="text/javascript">
-	// 搜索
+	// 搜索入参
+	let searchData = {
+		msg: 'hello'
+	};
+	// 儿子操作父亲-搜索
 	function searchAction(argument) {
 		alert(argument)
 	}
+	// 父亲操作儿子-传入参
+	layui.use(['jquery'], function () {
+		var $ = layui.jquery;
+		// $('iframe[name=search]')[0].contentWindow.initSearch(searchData);
+	});
 </script>
