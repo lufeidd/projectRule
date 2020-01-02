@@ -10,7 +10,8 @@
  @import url('component/button.css');
  /* 选项卡 */
  @import url('component/tab.css');
-
+ /* 文本域 */
+ @import url('component/input.css');
 /*
  * 标签重定义
  */

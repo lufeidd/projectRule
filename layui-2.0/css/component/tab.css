@@ -1,8 +1,10 @@
 /*
- *	作者: zzy
+ *	作者: zw
  *	创建时间：
  *	描述：选项卡
  */
+ @charset "utf-8";
+ /* 选项卡1 */
  .layui-tab-title {
      height: 50px;
  }
@@ -25,4 +27,35 @@
 
 .layui-badge-rim, .layui-colla-content, .layui-colla-item, .layui-collapse, .layui-elem-field, .layui-form-pane .layui-form-item[pane], .layui-form-pane .layui-form-label, .layui-input, .layui-layedit, .layui-layedit-tool, .layui-quote-nm, .layui-select, .layui-tab-bar, .layui-tab-card, .layui-tab-title, .layui-tab-title .layui-this:after, .layui-textarea {
     border-color: #EFEFEF;
+}
+/* 选项卡2 */
+.tab-second-container::after{
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    clear: both;
+}
+.tab-second-container .tab-second-content{
+    float: left;
+    color: #666666;
+    box-sizing: border-box;
+    min-width: 88px;
+    text-align: center;
+    line-height: 38px;
+    border:1px solid #C0C0C0;
+    /* border-width: 1px 0 1px 0; */
+    cursor: pointer;
+}
+.tab-second-container .tab-second-content:first-child{
+    border-radius: 4px 0 0 4px;
+    /* border-width: 1px; */
+}
+.tab-second-container .tab-second-content:last-child{
+    border-radius: 0 4px 4px 0;
+    /* border-width: 1px; */
+}
+.tab-second-container .tab-second-content.active{
+    border-color:#54ACF0;
+    color:#54ACF0;
 }

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<title>火把知识-后台-规范手册</title>
 	<link rel="stylesheet" type="text/css" href="layui-2.0/css/layui.css">
@@ -19,21 +20,26 @@
 			padding: 10px;
 			box-sizing: border-box;
 		}
+
 		#menu a {
 			display: block;
 			padding: 10px 0;
 		}
+
 		section {
 			margin-left: 100px;
 		}
+
 		article {
 			padding: 20px 0;
 		}
+
 		p {
 			padding: 10px 0;
 		}
 	</style>
 </head>
+
 <body>
 
 	<div id="menu">
@@ -41,18 +47,48 @@
 		<a href="#search">搜索</a>
 		<a href="#color">颜色</a>
 		<a href="#tab">选项卡</a>
+		<a href="#input">文本域</a>
 	</div>
 
 	<section>
 		<article id="button">
 			<!-- 按钮1 -->
 			<p>----- 按钮 -----</p>
-			<button type="button" class="layui-btn layui-btn-normal">按钮1</button>
-			<button type="button" class="layui-btn layui-btn-disabled">按钮1</button>
+			<button type="button" class="layui-btn">按钮1</button>
+			<button type="button" class="layui-btn layui-btn-disabled">按钮1禁用</button>
 			<!-- 按钮2 -->
 			<button type="button" class="layui-btn layui-btn-primary">按钮2</button>
+			<button type="button" class="layui-btn layui-btn-primary layui-btn-disabled">按钮2禁用</button>
+			<!-- 按钮3 -->
+			<button type="button" class="layui-btn layui-btn-normal">按钮3</button>
+			<button type="button" class="layui-btn layui-btn-normal layui-btn-disabled">按钮3禁用</button>
+			<!-- 按钮4 -->
+			<button type="button" class="layui-btn layui-btn-warm">按钮4</button>
+			<button type="button" class="layui-btn layui-btn-warm layui-btn-disabled">按钮4禁用</button>
+			<!-- 按钮4 -->
+			<button type="button" class="layui-btn layui-btn-danger">删除</button>
+			<!-- 按钮5 -->
+			<button type="button" class="layui-btn layui-btn-five">按钮5<i
+					class="layui-icon layui-icon-down"></i></button>
+			<!-- 按钮6 -->
+			<button type="button" class="layui-btn layui-btn-six">按钮5<i class="layui-icon layui-icon-down"></i></button>
+			<!-- 固定底部按钮 -->
+			<div class="bottom-layui-btn">
+				<button type="button" class="layui-btn">保存并提交</button>
+			</div>
 		</article>
-
+		<article id="input">
+			<p>----- 文本域 -----</p>
+			<form class="layui-form">
+				<input type="text" name="title" required lay-verify="required" placeholder="输入搜索关键字" autocomplete="off"
+					class="layui-input">
+				<div class="input-first-container">
+					<input type="text" name="title" required lay-verify="required" placeholder="输入搜索关键字"
+						autocomplete="off" class="layui-input">
+					<div class="input-number"><span class="input-on-number">0</span>/<span class="input-max-number">100</span></div>
+				</div>
+			</form>
+		</article>
 		<article id="search">
 			<p>----- 搜索 -----</p>
 			<iframe src="iframe/search.html"></iframe>
@@ -64,20 +100,29 @@
 		</article>
 
 		<article id="tab">
-			<p>----- 选项卡 -----</p>
+			<p>----- 选项卡1 -----</p>
 			<div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
 				<ul class="layui-tab-title">
-				  <li class="layui-this">选项一</li>
-				  <li>选项二</li>
+					<li class="layui-this">选项一</li>
+					<li>选项二</li>
 				</ul>
 				<div class="layui-tab-content"></div>
-			  </div>    
+			</div>
+			<p>----- 选项卡2 -----</p>
+			<div class="tab-second-container">
+				<div class="tab-second-content active">选项1</div>
+				<div class="tab-second-content">选项二</div>
+				<div class="tab-second-content">选项三</div>
+			</div>
 		</article>
 	</section>
 
 </body>
+
 </html>
 <script type="text/javascript" src="layui-2.0/layui.js"></script>
+<script type="text/javascript" src="layui-2.0/jquery3.4.1.js"></script>
+<script type="text/javascript" src="layui-2.0/public.js"></script>
 <script type="text/javascript">
 	// 搜索
 	function searchAction(argument) {
