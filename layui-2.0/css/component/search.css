@@ -4,4 +4,25 @@
  *	描述：搜索组件
  */
  @charset "utf-8";
- 
+.high-search-container::after{
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    clear: both;
+}
+.high-search-container .high-search-left{
+    float: left;
+}
+.high-search-container .high-search-right{
+    float: right;
+}
+.high-search-container .high-search-open{
+    display:none;
+}
+.high-search-container .high-search-fold .high-search-result-btn{
+    margin-left: 10px;
+}
+.high-search-container .high-search-open .tab-second-container,.high-search-container .high-search-open .high-search-input,.high-search-container .high-search-open .high-search-catalog,.high-search-container .high-search-open .high-search-from,.high-search-container .high-search-open .high-search-bottom{
+    margin-top:15px;
+}

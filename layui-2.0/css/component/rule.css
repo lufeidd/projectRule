@@ -1,0 +1,16 @@
+/*
+ *	作者: zby
+ *	创建时间：
+ *	描述：法规提示组件
+ */
+
+@charset "utf-8";
+
+#rule div{
+    background-color:#fdf0c7;
+    padding:10px;
+    margin:10px;
+    font-size: 12px;
+    color: #666;
+    line-height: 18px;
+}
