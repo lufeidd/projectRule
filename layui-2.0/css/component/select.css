@@ -1,0 +1,20 @@
+/*
+ *	作者: zby
+ *	创建时间：
+ *	描述：下拉组件
+ */
+
+@charset "utf-8";
+
+#select .size{
+    width:471px;
+    height:38px;
+    border-radius:4px;
+    border:1px solid #C0C0C0;
+}
+#select .sizeMin{
+    width:260px;
+    height:38px;
+    border-radius:4px;
+    border:1px solid #C0C0C0;
+}

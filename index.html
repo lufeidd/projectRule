@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<meta charset="UTF-8">
 	<title>火把知识-后台-规范手册</title>
 	<link rel="stylesheet" type="text/css" href="layui-2.0/css/layui.css">
 	<!-- 样式重定义 -->
 	<link rel="stylesheet" type="text/css" href="layui-2.0/css/public.css">
+	<!--公共样式-->
+	<link rel="stylesheet" type="text/css" href="layui-2.0/css/component/select.css">
 	<style type="text/css">
 		#menu {
 			position: fixed;
@@ -71,7 +74,31 @@
 				  <li>选项二</li>
 				</ul>
 				<div class="layui-tab-content"></div>
-			  </div>    
+			  </div>
+		</article>
+		<article id="select">
+			<p>----- 下拉 -----</p>
+			<div class="layui-form-item layui-inline">
+				<select name="city" lay-verify="required" class="size">
+					<option value="">未选择</option>
+					<option value="0">1</option>
+					<option value="1">2</option>
+				</select>
+			</div>
+			<div class="layui-form-item layui-inline">
+				<select name="city" lay-verify="required" class="sizeMin">
+					<option value="">未选择</option>
+					<option value="0">1</option>
+					<option value="1">2</option>
+				</select>
+			</div>
+		</article>
+		<article id="checkbox">
+			<p>----- 复选框 -----</p>
+			<form class="layui-form" action="">
+				<input type="checkbox" name="item_id" value=""
+					   lay-skin="primary">
+			</form>
 		</article>
 	</section>
 
@@ -79,8 +106,10 @@
 </html>
 <script type="text/javascript" src="layui-2.0/layui.js"></script>
 <script type="text/javascript">
-	// 搜索
-	function searchAction(argument) {
-		alert(argument)
-	}
+	//初始化layui
+	layui.use(['element', 'form'], function () {
+		var element = layui.element,
+			form = layui.form,
+			$ = layui.$;
+	})
 </script>

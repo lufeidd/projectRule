@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>总览-火把知识</title>
+    <meta charset="utf-8">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <link rel="stylesheet" type="text/css" href="layui-2.0/css/layui.css">
+    <!-- 样式重定义 -->
+    <link rel="stylesheet" type="text/css" href="layui-2.0/css/public.css">
+    <script>
+        if (localStorage.getItem('state') == 'small') {
+            // document.write("<link rel='stylesheet' id='smallLink' href='https://shopadmin.mhuoba.com/style/css/small.css' />");
+        } else {
+            // document.write("<link rel='stylesheet' id='largeLink' href='https://shopadmin.mhuoba.com/style/css/large.css' />");
+        }
+    </script>
+</head>
+
+<body class="layui-layout-body">
+    <div class="layui-layout layui-layout-admin">
+        <!-- 供应商logo -->
+        <div class="layui-logo">
+            <a style="display:inline-block;width:35px;height:35px;vertical-align:middle;background:url('https://shopadmin.mhuoba.com/style/images/logo.png') no-repeat 50% 50%;background-size:contain;"
+                href="/">
+                <!-- <span style="display:inline-block;width:35px;height:35px;vertical-align:middle;background:url('https://shopadmin.mhuoba.com/style/images/logo.png') no-repeat 50% 50%;background-size:contain;"></span>  -->
+            </a>
+
+            <span class="textOverflow name logoTitle" style="width:130px;vertical-align:middle;">火把知识服务平台
+
+            </span>
+        </div>
+
+        <!-- 头部 栏目 -->
+        <div class="layui-header">
+            <!-- 菜单切换之后的 选项 -->
+            <span class="layui-breadcrumb">
+                <i class="layui-icon layui-icon-shrink-right shrink"></i>
+            </span>
+
+            <!-- 头部导航栏右边部分 -->
+            <ul class="layui-nav layui-layout-right">
+                <li class="layui-nav-item ">
+                    <a href="/letter/lists">
+                        <i class="layui-icon iconfont iconmessage-line"></i><span>私信</span><span
+                            class="layui-badge-dot"></span> </a>
+                </li>
+                <li class="layui-nav-item ">
+                    <a href="/letter/notify/lists">
+                        <i class="layui-icon iconfont iconnews-line"></i>通知中心<span class="layui-badge-dot"></span> </a>
+                </li>
+                <li class="layui-nav-item ">
+                    <a href="/helper/lists">
+                        <i class="layui-icon iconfont iconhelp-line"></i>帮助中心
+                    </a>
+                </li>
+                <li class="layui-nav-item">
+                    <a href="javascript:;">
+                        <!-- <img src="http://t.cn/RCzsdCq" class="layui-nav-img"> -->
+                        <span class="role_name pf-b">管理员</span>
+                        商务账号 </a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="/">账号主页</a></dd>
+                        <dd><a href="/set/editpwd">修改密码</a></dd>
+                        <dd><a class="logout" href="javascript:void(0)">退出登录</a></dd>
+                    </dl>
+                </li>
+            </ul>
+
+        </div>
+
+        <!-- 侧边栏部分 -->
+        <div class="layui-side layui-bg-black large">
+            <div class="layui-side-scroll">
+                <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
+
+                <ul class="layui-nav layui-nav-tree" lay-shrink="all" lay-filter="test">
+                    <li class="layui-nav-item  ">
+                        <a class="" href="/">
+                            <i class="clwhite fs-18 layui-icon iconfont iconoverview-block"></i>
+                            总览
+                        </a>
+                    </li>
+                    <li class="layui-nav-item layui-nav-itemed">
+
+                        <a class="" href="javascript:;">
+                            <i class="clwhite fs-18 layui-icon iconfont iconsource-block"></i>
+                            发布管理 </a>
+
+
+                        <dl class="layui-nav-child">
+                            <dd><a href="/resource/article/lists">文章列表</a></dd>
+                            <dd><a href="/resource/audio/lists">音频列表</a></dd>
+                            <dd><a href="/resource/vedio/lists">视频列表</a></dd>
+                            <dd class="layui-this"><a href="/resource/album/lists">专辑列表</a></dd>
+                            <dd><a href="/resource/ebook/lists">电子书列表</a></dd>
+                            <dd><a href="/resource/package/lists">文件包列表</a></dd>
+                            <dd><a href="/resource/book/lists">图书列表</a></dd>
+                            <dd><a href="/resource/content/lists">综合列表</a></dd>
+                        </dl>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="side small">
+            <ul class="nav nav-tree">
+                <li class="nav-item  ">
+                    <a class="" href="/">
+                        <i class="clwhite fs-18 layui-icon iconfont iconoverview-block"></i>
+                    </a>
+                </li>
+                <li class="nav-item nav-itemed">
+                    <a class="" href="javascript:;">
+                        <i class="clwhite fs-18 layui-icon iconfont iconsource-block"></i>
+                    </a>
+                    <span class="left"></span>
+                    <dl class="nav-child">
+                        <span class="left-triangle"></span>
+                        <dd><a href="/resource/article/lists">文章列表</a></dd>
+                        <span class="left-triangle"></span>
+                        <dd><a href="/resource/audio/lists">音频列表</a></dd>
+                        <span class="left-triangle"></span>
+                        <dd><a href="/resource/vedio/lists">视频列表</a></dd>
+                        <span class="left-triangle"></span>
+                        <dd class="check-this"><a href="/resource/album/lists">专辑列表</a></dd>
+                        <span class="left-triangle"></span>
+                        <dd><a href="/resource/ebook/lists">电子书列表</a></dd>
+                        <span class="left-triangle"></span>
+                        <dd><a href="/resource/package/lists">文件包列表</a></dd>
+                        <span class="left-triangle"></span>
+                        <dd><a href="/resource/book/lists">图书列表</a></dd>
+                        <span class="left-triangle"></span>
+                        <dd><a href="/resource/content/lists">综合列表</a></dd>
+                    </dl>
+                </li>
+            </ul>
+        </div>
+
+        <!-- 主体内容 -->
+        <div class="layui-body">
+            <!-- 面包屑 -->
+            <div class="breadcrumb-container">
+                <span class="layui-breadcrumb">
+                    <a href="/">首页</a>
+                    <a href="/demo/">演示</a>
+                    <a><cite>导航元素</cite></a>
+                </span>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+<script type="text/javascript" src="layui-2.0/layui.js"></script>
+<script type="text/javascript">
+    layui.use(['element', 'jquery'], function () {
+        var $ = layui.jquery,
+            element = layui.element;
+    });
+</script>
