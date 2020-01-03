@@ -14,15 +14,59 @@
  @import url('component/input.css');
  /* 搜索 */
  @import url('component/search.css');
+ /* 面包屑 */
+ @import url('component/breadcrumb.css');
+
 /*
  * 标签重定义
  */
+
+ html {
+	 background-color: rgb(237, 237, 237);
+ }
 
  iframe {
  	border: none;
  	padding: 0;
  	margin: 0;
  	width: 100%;
+ }
+
+ /* 主体内容 */
+ .layui-body {
+	 overflow: visible;
+ }
+ .layui-body, .layui-layout-admin .layui-footer {
+	 left: 210px;
+ }
+ .layui-layout-admin .layui-body {
+	 top: 100px;
+	 background-color: #fff;
+ }
+
+ /* 左侧导航 */
+ .layui-side-scroll {
+	 width: 200px;
+ }
+ .layui-bg-black {
+	 background-color: #262A35!important;
+ }
+ .layui-layout-admin .layui-side {
+	 top: 50px;
+ }
+
+ /* 头部导航 */
+ .layui-layout-admin .layui-header {
+	background-color: #262A35;
+ }
+ .layui-header {
+	 height: 50px;
+ }
+ .layui-nav .layui-nav-item {
+	 line-height: 50px;
+ }
+ .layui-nav-child {
+	 top: 55px;
  }
 
 

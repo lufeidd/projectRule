@@ -1,0 +1,28 @@
+/*
+ *	作者: zzy
+ *	创建时间：
+ *	描述：面包屑
+ */
+.breadcrumb-container {
+    padding: 20px 12px;
+    line-height: 0;
+    background-color: #fff;
+    position: relative;
+    top: -50px;
+}
+
+.layui-breadcrumb>* {
+    font-size: 12px;
+}
+
+.layui-breadcrumb a:hover {
+    color: #F05654 !important;
+}
+
+.layui-breadcrumb a {
+    color: #333 !important;
+}
+
+.layui-breadcrumb a cite {
+    color: #333;
+}
