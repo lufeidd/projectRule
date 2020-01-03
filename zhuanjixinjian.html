@@ -2,21 +2,141 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>专辑新建</title>
+    <title>音视频专辑新建</title>
     <link rel="stylesheet" type="text/css" href="layui-2.0/css/layui.css">
     <!-- 样式重定义 -->
     <link rel="stylesheet" type="text/css" href="layui-2.0/css/public.css">
+    <!--组件样式-->
+    <link rel="stylesheet" type="text/css" href="layui-2.0/css/component/tab.css">
+    <link rel="stylesheet" type="text/css" href="layui-2.0/css/component/rule.css">
+    <link rel="stylesheet" type="text/css" href="layui-2.0/css/component/input.css">
+    <link rel="stylesheet" type="text/css" href="layui-2.0/css/component/pic.css">
 </head>
+<style>
+    .layui-btn-primary {
+        border: 1px solid #999999;
+        background-color: #fff;
+        color: #555;
+    }
+    .layui-btn-primary:hover {
+        border-color:#54ACF0;
+        color:#333;
+        background-color: #fff;
+    }
+    /*上传图片图标内部文字*/
+    #pic .add{
+        position: absolute;
+        color: #999999;
+        top: 50%;
+        left: 50%;
+        margin-top: -10px;
+        margin-left: -24px;
+        font-size: 12px;
+    }
+</style>
 <body>
+    <div class="layui-body">
+        <div style="background: #fff;margin: 10px;">
+            <div id="tab">
+                <div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
+                    <ul class="layui-tab-title">
+                        <li class="layui-this">音视频专辑新建</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- 警告框 -->
+            <div id="rule">
+                <div>
+                    请您遵守国家相关规定，切勿上传低俗色情、暴力恐怖、谣言诈骗、侵权盗版等相关内容，火把保有依据国家规定及平台规则进行处理的权利。
+                </div>
+            </div>
+            <!-- 内容主体区域 -->
+            <form class="layui-form " action="javascript:void(0);">
+                <div style="padding: 15px; background-color: #fff;margin: 10px 15px 0 10px;">
+                    <div style="padding-bottom: 10px;">
+                        专辑基本信息
+                    </div>
+                    <!-- 基本信息部分 -->
+                    <div id="basic_info">
+                        <div id="input">
+                            <div class="input-first-container">
+                                <label class="layui-form-label" style="color: #333333;width: 90px;"><span style="color: #F05654;">*</span>专辑名称：</label>
+                                <div class="layui-inline" style="width: 850px;">
+                                    <input type="text" name="title" required lay-verify="required" placeholder="输入专辑名称"
+                                           autocomplete="off" class="layui-input">
+                                    <div class="input-number"><span class="input-on-number">0</span>/<span
+                                            class="input-max-number">100</span></div>
+                                </div>
+                            </div>
+                            <div style="color: #999999;font-size: 12px;padding-top: 8px;margin-left: 120px;">
+                                字数100字以内
+                            </div>
+                            <div style="color: #F05654;font-size: 12px;padding-top: 8px;margin-left: 120px;">
+                                专辑名称不可为空
+                            </div>
+                        </div>
+                        <div id="input" style="margin-top: 10px;">
+                            <div class="input-first-container">
+                                <label class="layui-form-label" style="color: #333333;width: 90px;"><span style="color: #F05654;">*</span>专辑副标题：</label>
+                                <div class="layui-inline" style="width: 850px;">
+                                    <input type="text" name="title" required lay-verify="required" placeholder="输入专辑副标题"
+                                           autocomplete="off" class="layui-input">
+                                    <div class="input-number"><span class="input-on-number">0</span>/<span
+                                            class="input-max-number">100</span></div>
+                                </div>
+                            </div>
+                            <div style="color: #999999;font-size: 12px;padding-top: 8px;margin-left: 120px;">
+                                字数100字以内
+                            </div>
+                            <div style="color: #F05654;font-size: 12px;padding-top: 8px;margin-left: 120px;">
+                                专辑副标题不可为空
+                            </div>
+                        </div>
+                        <div style="margin-top:10px;">
+                            <label class="layui-form-label" style="color: #333333;width: 90px;"><span style="color: #F05654;">*</span>图书封面：</label>
+                            <button type="button" class="layui-btn layui-btn-primary" id="uploadMainImg">+上传图片</button>
+                            <div id="pic" style="margin: 10px 0 0 120px;">
+                                <div style="width: 120px;">
+                                    <div class="pictureImg">
+                                        <div class="add">尚未上传</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="color: #999999;font-size: 12px;padding-top: 8px;margin-left: 120px;">
+                                请上传图片，要求尺寸800*800像素，文件大小5M以内，支持格式PNG、JPEG、JPG。
+                            </div>
+                            <div style="color: #F05654;font-size: 12px;padding-top: 8px;margin-left: 120px;">
+                                图书封面不可为空
+                            </div>
+                        </div>
+                        <div style="margin-top:30px;">
+                            <label class="layui-form-label" style="color: #333333;width: 90px;"><span style="color: #F05654;">*</span>专辑销售价：</label>
+                            <div class="layui-inline">
+                                <div class="layui-form">
+                                    <div class="layui-form-item" style="color: #999999;">
+                                        <input type="radio" name="album_sale" value="" title="免费">
+                                        <input type="radio" name="album_sale" value="" title="完成购买">
+                                        <input type="radio" name="album_sale" value="" title="单集购买">
+                                    </div>
+                                </div>
+                            </div>
 
-<div>
-
-</div>
-
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
 </body>
 </html>
 <script type="text/javascript" src="layui-2.0/layui.js"></script>
 <script type="text/javascript">
+    //初始化layui
+    layui.use(['element', 'form'], function () {
+        var element = layui.element,
+            form = layui.form,
+            $ = layui.$;
+    })
     // 搜索
     function searchAction(argument) {
         alert(argument)
