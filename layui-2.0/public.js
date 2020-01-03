@@ -1,6 +1,6 @@
 (function publicJsUse(){
     // 文本域第一种限制输入字数
-    $('.input-first-container .layui-input').on('input',function(){
+    $('.input-second-container .layui-input').on('input',function(){
         var input_first_val = $(this).val().trim();
         var _max_number = Number($(this).next().children('.input-max-number').text());
         if(input_first_val.length <= _max_number){

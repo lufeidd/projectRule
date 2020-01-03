@@ -4,25 +4,36 @@
  *	描述：文本域组件
  */
 
-@charset "utf-8";
-/* 文本域1 */
-.layui-input{
-    border-color:#C0C0C0;
+ @charset "utf-8";
+ /* 文本域1 */
+ .layui-input,.layui-textarea{
+     border-color:#C0C0C0;
+     border-radius: 4px;
+ }
+ .layui-input::placeholder{
+     color: #999999;
+ }
+ .layui-input:hover, .layui-textarea:hover{
+     border-color:#54ACF0 !important;
+ }
+ /* 文本域2 */
+ .input-second-container,.input-third-container{
+     position: relative;
+ }
+ .input-second-container .input-number{
+     position: absolute;
+     right:10px;
+     top: 50%;
+     margin-top:-7px;
+     color:#999999;
+ }
+/* 文本域3 */
+.input-third-container .layui-input{
+    padding-left: 20px;
 }
-.layui-input::placeholder{
-    color: #999999;
-}
-.layui-input:hover, .layui-textarea:hover{
-    border-color:#54ACF0 !important;
-}
-/* 文本域2 */
-.input-first-container{
-    position: relative;
-}
-.input-first-container .input-number{
+.input-third-container .input-before{
     position: absolute;
-    right:10px;
+    left:5px;
     top: 50%;
-    margin-top:-7px;
-    color:#999999;
+    margin-top: -9px;
 }
