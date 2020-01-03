@@ -32,7 +32,7 @@
 
  /* 主体内容 */
  .layui-body {
-	 overflow-y: visible;
+	 overflow: visible;
  }
  .layui-body, .layui-layout-admin .layui-footer {
 	 left: 210px;
