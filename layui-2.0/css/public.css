@@ -18,13 +18,18 @@
 @import url('component/search.css');
 /* 面包屑 */
 @import url('component/breadcrumb.css');
-/* 下拉 */
-@import url('component/select.css');
-/* 法规 */
-@import url('component/rule.css');
+/* 复选框 */
+@import url('component/checkbox.css');
+/* 标签 */
+@import url('component/lable.css');
 /* 图片比例 */
 @import url('component/pic.css');
-
+/* 法规提示 */
+@import url('component/rule.css');
+/* 数据表格 */
+@import url('component/table.css');
+/* 下拉 */
+@import url('component/select.css');
 /*
  * 标签重定义
  */

@@ -90,6 +90,7 @@
 <script type="text/javascript" src="../layui-2.0/layui.js"></script>
 <script type="text/javascript" src="../layui-2.0/jquery3.4.1.js"></script>
 <script type="text/javascript">
+	var data = {};
 	// 点击高级按钮
 	$('body').on('click', '.high-search-btn', function () {
 		var height = $('body').height();
@@ -121,8 +122,14 @@
 		$('.high-search-container').find('input').val('')
 	})
 	// 搜索
-	function searchAction(argument) {
-		parent.searchAction(argument)
+	$('body').on('click', '.high-search-result-btn', function () {
+		searchAction();
+	})
+	// 搜索
+	function searchAction() {
+		// 设置iframe当前标识
+		parent.setIframeDataId('table0');
+		parent.searchAction(data);
 	}
 	// searchAction(999)
 	// 父亲操作儿子-初始化

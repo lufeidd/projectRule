@@ -146,7 +146,7 @@
 				<svg class="icon" aria-hidden="true">
 					<use xlink:href="#iconguanlian"></use>
 				</svg>搜索</p>
-			<iframe src="iframe-2.0/search.html" name="high-search" class="high-search-iframe"></iframe>
+			<iframe src="iframe-2.0/search.html" name="high-search" class="high-search-iframe" data-id="search0"></iframe>
 		</article>
 		<article id="color">
 			<p class="title">
@@ -202,15 +202,17 @@
 						<option value="0">1</option>
 						<option value="1">2</option>
 					</select>
-				</div>
-				<div class="layui-form-item">
-					<select name="city" lay-verify="required" class="sizeMin">
+				</form>
+			</div>
+			<div class="selectTwo">
+				<form class="layui-form" action="">
+					<select name="city" lay-verify="required" class="select-sizeMin">
 						<option value="">未选择</option>
 						<option value="0">1</option>
 						<option value="1">2</option>
 					</select>
-				</div>
-			</form>
+				</form>
+			</div>
 		</article>
 		<article id="checkbox">
 			<p class="title">
@@ -227,7 +229,7 @@
 				<svg class="icon" aria-hidden="true">
 					<use xlink:href="#iconguanlian"></use>
 				</svg>法规提示</p>
-			<div>
+			<div class="rule">
 				请您遵守国家相关规定，切勿上传低俗色情、暴力恐怖、谣言诈骗、侵权盗版等相关内容，火把保有依据国家规定及平台规则进行处理的权利。
 			</div>
 		</article>
@@ -236,8 +238,8 @@
 				<svg class="icon" aria-hidden="true">
 					<use xlink:href="#iconguanlian"></use>
 				</svg>图片比例</p>
-			<div style="width: 120px;">
-				<div class="pictureImg"></div>
+			<div class="pic-two">
+				<img src="" alt="">
 			</div>
 		</article>
 		<article id="layout">
@@ -267,6 +269,20 @@
 					</div>
 				</div>
 			</form>
+		<article id="lable">
+			<p class="title">
+				<svg class="icon" aria-hidden="true">
+					<use xlink:href="#iconguanlian"></use>
+				</svg>标签</p>
+			<iframe src="iframe-2.0/lable.html" name="lableChoose" data-id="label0"></iframe>
+		</article>
+		<article id="table">
+			<p class="title">
+				<svg class="icon" aria-hidden="true">
+					<use xlink:href="#iconguanlian"></use>
+				</svg>数据表格</p>
+			<iframe src="iframe-2.0/tableOne.html" name="tableOne" data-id="table0"></iframe>
+			<iframe src="iframe-2.0/tableTwo.html" name="tableTwo" data-id="table1"></iframe>
 		</article>
 	</section>
 
@@ -277,14 +293,52 @@
 <script type="text/javascript" src="layui-2.0/jquery3.4.1.js"></script>
 <script type="text/javascript" src="layui-2.0/public.js"></script>
 <script type="text/javascript">
+	// iframe当前标识
+	var dataId = '';
+	var dataResult = {};
+
 	//初始化layui
 	layui.use(['element', 'form'], function () {
 		var element = layui.element,
 			form = layui.form,
 			$ = layui.$;
+
 	})
+
+	//设置标签iframe高度
+	function setLableHeight(lableHeight){
+		// 设置info模板中相应iframe的高度
+		$('iframe[name=lableChoose]').css('height', lableHeight);
+	}
+
+	//接受搜索数据
+	function searchAction(data) {
+		//将搜索传过来的数据反馈到数据表格
+		$('iframe[data-id='+dataId+']')[0].contentWindow.setTable(data);
+	}
+
+
+	//设置数据表格tableOne高度
+	// function setTableOneHeight(tableOneHeight){
+	// 	// 设置info模板中相应iframe的高度
+	// 	$('iframe[name=tableOne]').css('height', tableOneHeight);
+	// }
+	//设置数据表格tableTwo高度
+	// function setTableTwoHeight(tableTwoHeight){
+	// 	// 设置info模板中相应iframe的高度
+	// 	$('iframe[name=tableTwo]').css('height', tableTwoHeight);
+	// }
+
+	// 设置iframe当前标识
+	function setIframeDataId(id) {
+		dataId = id;
+	}
+
+
+
 	//设置iframe高度
 	function setIframeHeight(height) {
 		$('.high-search-iframe').height(height);
 	}
+
 </script>

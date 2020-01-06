@@ -1,0 +1,81 @@
+/*
+ *	作者: zby
+ *	创建时间：
+ *	描述：数据表格组件
+ */
+ @charset "utf-8";
+.table .layui-table th{
+    font-size:12px;
+    font-family:PingFang SC;
+    color: #666666;
+}
+.table .layui-table td{
+    font-size:12px;
+    font-family:PingFang SC;
+    color: #333333;
+}
+.table .status:before{
+    content:'';
+    position: absolute;
+    width:6px;
+    height:6px;
+    background: #54F075;
+    border-radius:50%;
+    left: 6px;
+    top: 50%;
+    margin-top: -2px;
+}
+.table .tableTitle{
+    text-align: left;
+    white-space: nowrap;
+}
+.table .tableTitle .message{
+     width:68%;
+     padding-left: 5px;
+     white-space: normal;
+}
+.textOverflow{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.textTwoOver{
+    overflow: hidden;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+.table .c6{
+    color: #666666;
+}
+.table .c3{
+    color: #333333;
+}
+.table .pt-10{
+    padding-top: 5px;
+}
+.table .topArrow {
+    transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    font-size: 5px;
+    color: #999;
+    position: absolute;
+    top: -18px;
+}
+.table .bottomArrow {
+    font-size: 5px;
+    color: #999;
+    position: absolute;
+    top: -10px;
+}
+.table .inline_block{
+    display: inline-block;
+    width: 10px;
+    height: 100%;
+    position: relative;
+}
