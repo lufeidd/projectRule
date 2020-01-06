@@ -43,7 +43,14 @@
 		p.title {
 			padding: 20px 0;
 			font-size: 18px;
-			margin-top: 50px;
+			margin: 50px 0 10px 0;
+			border-bottom: 1px #c0c0c0 solid;
+		}
+
+		p.subTitle {
+			font-size: 15px;
+			padding: 20px 0;
+			color: #666;
 		}
 
 		header#header {
@@ -82,7 +89,7 @@
 				<svg class="icon" aria-hidden="true">
 					<use xlink:href="#iconguanlian"></use>
 				</svg>按钮1</p>
-			<button type="button" class="layui-btn">按钮1</button>
+			<button type="button" class="layui-btn">按钮</button>
 			<button type="button" class="layui-btn layui-btn-disabled">按钮1</button>
 			<!-- 按钮2 -->
 			<button type="button" class="layui-btn layui-btn-primary">按钮2</button>
@@ -110,7 +117,8 @@
 				<p class="title">
 					<svg class="icon" aria-hidden="true">
 						<use xlink:href="#iconguanlian"></use>
-					</svg>文本域1</p>
+					</svg>文本域</p>
+					<p class="subTitle">文本域1</p>
 
 				<div class="input-one1-container layui-inline">
 					<input type="text" name="title" placeholder="输入搜索关键字 input-one1-container" autocomplete="off"
@@ -121,20 +129,14 @@
 						class="layui-input">
 				</div>
 
-				<p class="title">
-					<svg class="icon" aria-hidden="true">
-						<use xlink:href="#iconguanlian"></use>
-					</svg>文本域2</p>
+				<p class="subTitle">文本域2</p>
 
 				<div class="input-second-container">
 					<input type="text" name="title" placeholder="输入搜索关键字" autocomplete="off" class="layui-input">
 					<div class="input-number"><span class="input-on-number">0</span>/<span
 							class="input-max-number">100</span></div>
 				</div>
-				<p class="title">
-					<svg class="icon" aria-hidden="true">
-						<use xlink:href="#iconguanlian"></use>
-					</svg>文本域3</p>
+				<p class="subTitle">文本域3</p>
 				<div class="input-third-container">
 					<input type="text" name="title" placeholder="输入搜索关键字" autocomplete="off" class="layui-input">
 					<div class="input-before">￥</div>
@@ -175,7 +177,8 @@
 			<p class="title">
 				<svg class="icon" aria-hidden="true">
 					<use xlink:href="#iconguanlian"></use>
-				</svg>选项卡1</p>
+				</svg>选项卡</p>
+			<p class="subTitle">选项卡1</p>
 			<div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
 				<ul class="layui-tab-title">
 					<li class="layui-this">选项一</li>
@@ -183,10 +186,7 @@
 				</ul>
 				<div class="layui-tab-content"></div>
 			</div>
-			<p class="title">
-				<svg class="icon" aria-hidden="true">
-					<use xlink:href="#iconguanlian"></use>
-				</svg>选项卡2</p>
+			<p class="subTitle">选项卡2</p>
 			<div class="tab-second-container">
 				<div class="tab-second-content active">选项一</div>
 				<div class="tab-second-content">选项二</div>
@@ -227,7 +227,7 @@
 			</form>
 		</article>
 		<article id="rule">
-			
+
 			<p class="title">
 				<svg class="icon" aria-hidden="true">
 					<use xlink:href="#iconguanlian"></use>
