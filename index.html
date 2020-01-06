@@ -7,8 +7,8 @@
 	<link rel="stylesheet" type="text/css" href="layui-2.0/css/layui.css">
 	<!-- 样式重定义 -->
 	<link rel="stylesheet" type="text/css" href="layui-2.0/css/public.css">
-    <!-- 字体图标 -->
-    <script src="layui-2.0/font/iconfont.js"></script>
+	<!-- 字体图标 -->
+	<script src="layui-2.0/font/iconfont.js"></script>
 	<style type="text/css">
 		menu#anchor {
 			position: fixed;
@@ -45,6 +45,7 @@
 			font-size: 18px;
 			margin-top: 50px;
 		}
+
 		header#header {
 			position: fixed;
 			text-align: center;
@@ -99,9 +100,9 @@
 			<!-- 按钮6 -->
 			<button type="button" class="layui-btn layui-btn-six">按钮6<i class="layui-icon layui-icon-down"></i></button>
 			<!-- 固定底部按钮 -->
-			<!--<div class="bottom-layui-btn">
+			<div class="bottom-layui-btn">
 				<button type="button" class="layui-btn">保存并提交</button>
-			</div>-->
+			</div>
 		</article>
 		<article id="input">
 			<form class="layui-form">
@@ -110,11 +111,18 @@
 						<use xlink:href="#iconguanlian"></use>
 					</svg>文本域1</p>
 
-				<input type="text" name="title" placeholder="输入搜索关键字" autocomplete="off" class="layui-input">
+				<div class="input-one1-container layui-inline">
+					<input type="text" name="title" placeholder="输入搜索关键字 input-one1-container" autocomplete="off" class="layui-input">
+				</div>
+				<div class="input-one2-container layui-inline">
+					<input type="text" name="title" placeholder="输入搜索关键字 input-one2-container" autocomplete="off" class="layui-input">
+				</div>
+
 				<p class="title">
 					<svg class="icon" aria-hidden="true">
 						<use xlink:href="#iconguanlian"></use>
 					</svg>文本域2</p>
+
 				<div class="input-second-container">
 					<input type="text" name="title" placeholder="输入搜索关键字" autocomplete="off" class="layui-input">
 					<div class="input-number"><span class="input-on-number">0</span>/<span
@@ -136,7 +144,7 @@
 				<svg class="icon" aria-hidden="true">
 					<use xlink:href="#iconguanlian"></use>
 				</svg>搜索</p>
-			<iframe src="iframe-2.0/search.html" name="high-search"></iframe>
+			<iframe src="iframe-2.0/search.html" name="high-search" class="high-search-iframe"></iframe>
 		</article>
 
 		<article id="color">
@@ -167,6 +175,8 @@
 				<div class="tab-second-content active">选项一</div>
 				<div class="tab-second-content">选项二</div>
 				<div class="tab-second-content">选项三</div>
+				<div class="tab-second-content">选项四</div>
+				<div class="tab-second-content">选项五</div>
 			</div>
 		</article>
 		<article id="select">
@@ -230,6 +240,9 @@
 		var element = layui.element,
 			form = layui.form,
 			$ = layui.$;
-
 	})
+	//设置iframe高度
+	function setIframeHeight (height) {
+		$('.high-search-iframe').height(height);
+	}
 </script>
