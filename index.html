@@ -112,10 +112,12 @@
 					</svg>文本域1</p>
 
 				<div class="input-one1-container layui-inline">
-					<input type="text" name="title" placeholder="输入搜索关键字 input-one1-container" autocomplete="off" class="layui-input">
+					<input type="text" name="title" placeholder="输入搜索关键字 input-one1-container" autocomplete="off"
+						class="layui-input">
 				</div>
 				<div class="input-one2-container layui-inline">
-					<input type="text" name="title" placeholder="输入搜索关键字 input-one2-container" autocomplete="off" class="layui-input">
+					<input type="text" name="title" placeholder="输入搜索关键字 input-one2-container" autocomplete="off"
+						class="layui-input">
 				</div>
 
 				<p class="title">
@@ -184,20 +186,22 @@
 				<svg class="icon" aria-hidden="true">
 					<use xlink:href="#iconguanlian"></use>
 				</svg>下拉</p>
-			<div class="layui-form-item layui-inline">
-				<select name="city" lay-verify="required" class="size">
-					<option value="">未选择</option>
-					<option value="0">1</option>
-					<option value="1">2</option>
-				</select>
-			</div>
-			<div class="layui-form-item layui-inline">
-				<select name="city" lay-verify="required" class="sizeMin">
-					<option value="">未选择</option>
-					<option value="0">1</option>
-					<option value="1">2</option>
-				</select>
-			</div>
+			<form class="layui-form" action="">
+				<div class="layui-form-item layui-inline ">
+					<select name="city" lay-verify="required" class="size">
+						<option value="">未选择</option>
+						<option value="0">1</option>
+						<option value="1">2</option>
+					</select>
+				</div>
+				<div class="layui-form-item layui-inline">
+					<select name="city" lay-verify="required" class="sizeMin">
+						<option value="">未选择</option>
+						<option value="0">1</option>
+						<option value="1">2</option>
+					</select>
+				</div>
+			</form>
 		</article>
 		<article id="checkbox">
 			<p class="title">
@@ -209,6 +213,7 @@
 			</form>
 		</article>
 		<article id="rule">
+			
 			<p class="title">
 				<svg class="icon" aria-hidden="true">
 					<use xlink:href="#iconguanlian"></use>
@@ -242,7 +247,7 @@
 			$ = layui.$;
 	})
 	//设置iframe高度
-	function setIframeHeight (height) {
+	function setIframeHeight(height) {
 		$('.high-search-iframe').height(height);
 	}
 </script>
