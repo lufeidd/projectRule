@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>火把知识-后台</title>
+	<link rel="stylesheet" type="text/css" href="../layui-2.0/css/layui.css">
+	<!-- 公用样式 -->
+	<link rel="stylesheet" type="text/css" href="../layui-2.0/css/public.css">
+</head>
+
+<body>
+	<!--数据表格-->
+	<div class="table">
+		<table class="layui-table" style="table-layout:fixed;margin:0;">
+			<colgroup>
+				<col width="5%">
+				<col width="20%">
+				<col width="15%">
+				<col width="20%">
+				<col width="10%">
+				<col width="10%">
+				<col width="20%">
+			</colgroup>
+			<thead>
+			<tr>
+				<th>
+					<form class="layui-form checkAll" action="">
+						<input type="checkbox" lay-filter="checkAll" lay-skin="primary" >
+					</form>
+				</th>
+				<th style="text-align:left;">商品ID</th>
+				<th style="text-align:center;">商品图片</th>
+				<th style="text-align:center;">专辑名称</th>
+				<th style="text-align:center;">销售价</th>
+				<th style="text-align:center;">原购数量</th>
+				<th style="text-align:center;">操作</th>
+			</tr>
+			</thead>
+			<tbody>
+			<tr>
+				<td>
+					<form class="layui-form" action="">
+						<input type="checkbox" name="item_id" value="" lay-skin="primary" class="test" lay-filter="checkChild">
+					</form>
+				</td>
+				<td class="textOverflow" style="text-align:left;">1002545585/234890007866525</td>
+				<td class="tableTitle" style="text-align: center;">
+					<div class="pic-two">
+						<img src="https://mhuoba.oss-cn-hangzhou.aliyuncs.com/picture/audio/20190812/18/20190812183751909.jpg!w81h50" alt="">
+					</div>
+				</td>
+				<td style="text-align:center;">
+					<p class="textTwoOver">商品标题最多两行题最多两行商品标题最多两行题最多两行 商品标题最多两行商品标题最多两行题最多两行商品标题最多两行题最多两行</p>
+				</td>
+				<td style="text-align:center;">￥76.20</td>
+				<td style="text-align:center;">211155</td>
+				<td style="text-align:center;">
+					<button type="button" class="layui-btn layui-btn-five">编辑</button>
+					<button type="button" class="layui-btn layui-btn-five">删除</button>
+				</td>
+			</tr>
+			</tbody>
+		</table>
+	</div>
+</body>
+
+</html>
+<script type="text/javascript" src="../layui-2.0/layui.js"></script>
+<script type="text/javascript" src="../layui-2.0/jquery3.4.1.js"></script>
+<script type="text/javascript" src="../layui-2.0/public.js"></script>
+<script type="text/javascript">
+
+	//数据表格高度
+	var height;
+
+	//JavaScript代码区域
+	layui.use(['element', 'form'], function() {
+		var element = layui.element,
+				form = layui.form,
+				$ = layui.$;
+		var table = layui.table;
+
+		var laypage = layui.laypage
+				, layer = layui.layer;
+		//自定义样式分页
+		/*laypage.render({
+			elem: 'demo2'
+			, count: 20
+			, layout: ['count', 'prev', 'page', 'next', 'skip']
+			, limit: 10
+			, groups: 5
+			, curr:1
+			, jump: function (obj, first) {
+
+			}
+		});*/
+
+		//初始化高度
+		$(function(){
+			height = $('body').height();
+			setTableTwoHeight(height);
+		});
+
+		form.on('checkbox(checkAll)', function (data) {
+			if(data.elem.checked){
+				$('.table tbody').find('input[lay-filter="checkChild"]').prop('checked',true)
+			}else{
+				$('.table tbody').find('input[lay-filter="checkChild"]').prop('checked',false)
+			}
+			form.render();
+		})
+	});
+
+	// 数据表格
+	function setTableTwoHeight(height) {
+		parent.setTableTwoHeight(height);
+	}
+</script>

@@ -6,13 +6,19 @@
 
 @charset "utf-8";
 
-#select .size{
+.selectOne{
+    width: 470px;
+}
+.selectTwo{
+    width: 260px;
+}
+.select-size{
     width:471px;
     height:38px;
     border-radius:4px;
     border:1px solid #C0C0C0;
 }
-#select .sizeMin{
+.select-sizeMin{
     width:260px;
     height:38px;
     border-radius:4px;

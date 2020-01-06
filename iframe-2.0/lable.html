@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>火把知识-后台</title>
+	<link rel="stylesheet" type="text/css" href="../layui-2.0/css/layui.css">
+	<!-- 公用样式 -->
+	<link rel="stylesheet" type="text/css" href="../layui-2.0/css/public.css">
+</head>
+
+<body>
+	<!-- 标签搜索 -->
+	<div class="input-second-container lable-input-container">
+		<label class="layui-form-label lable-title">添加标签：</label>
+		<div class="layui-inline" style="width: 260px;">
+			<input type="text" name="title" required lay-verify="required" placeholder="默认文本"
+				   autocomplete="off" class="layui-input">
+			<div class="input-number"><span class="input-on-number">0</span>/<span
+					class="input-max-number">10</span></div>
+		</div>
+		<button type="button" class="layui-btn lable-search">搜索</button>
+	</div>
+	<!-- 标签搜索群 -->
+	<div class="lableGroup">
+		<button type="button" class="lable-btn layui-btn-primary" data-id="1">爱情</button>
+		<button type="button" class="lable-btn layui-btn-primary" data-id="2">战争片</button>
+		<button type="button" class="lable-btn layui-btn-primary" data-id="3">战争片战争片</button>
+		<button type="button" class="lable-btn layui-btn-primary" data-id="4">爱情</button>
+		<button type="button" class="lable-btn layui-btn-primary" data-id="5">战争片</button>
+		<button type="button" class="lable-btn layui-btn-primary" data-id="6">战争片战争片</button>
+		<button type="button" class="lable-btn layui-btn-primary" data-id="7">爱情</button>
+		<button type="button" class="lable-btn layui-btn-primary" data-id="8">战争片</button>
+		<button type="button" class="lable-btn layui-btn-primary" data-id="9">战争片战争片</button>
+		<button type="button" class="lable-btn layui-btn-primary" data-id="10">爱情</button>
+		<button type="button" class="lable-btn layui-btn-primary" data-id="11">战争片</button>
+		<button type="button" class="lable-btn layui-btn-primary" data-id="12">战争片战争片</button>
+	</div>
+	<!--已添加标签-->
+	<div class="lableAdd">
+		<label class="layui-form-label lable-title">已添加标签：</label>
+		<div class="layui-inline num" >
+			<span class="lable-on-number">0</span>/<span
+				class="lable-max-number">10</span>
+		</div>
+		<div class="lable-show">
+			<!--<button type="button" class="lable-add-btn">欧美认电视剧
+				<i class="layui-icon layui-icon-close close"></i>
+			</button>-->
+		</div>
+	</div>
+</body>
+
+</html>
+<script type="text/javascript" src="../layui-2.0/layui.js"></script>
+<script type="text/javascript" src="../layui-2.0/jquery3.4.1.js"></script>
+<script type="text/javascript" src="../layui-2.0/public.js"></script>
+<script type="text/javascript">
+	//标签标示id
+	var lableId;
+	//标签添加数量
+	var min = 0;
+	//标签高度
+	var height;
+
+	//初始化高度
+	$(function(){
+		height = $('body').height();
+		setLableHeight(height);
+	});
+
+	// 点击标签选中状态
+	$('body').on('click','.lableGroup .lable-btn',function(){
+		var max = Number($('.lable-max-number').text());
+		var isContain = $(this).hasClass('active');
+		if(isContain){
+			$(this).removeClass('active');
+			lableId = $(this).data('id');
+			$('.lable-show .lable-add-btn').each(function(){
+				var eachId = $(this).data('id');
+				if(eachId == lableId){
+					$(this).remove();
+					min = $('.lable-show .lable-add-btn').length;
+					$('.lable-on-number').text(min);
+				}
+			});
+		}else{
+			min++;
+			if(min <= max){
+				$(this).addClass('active');
+				var text = $(this).text();
+				lableId = $(this).data('id');
+				lableAdd(text,lableId);
+				min = $('.lable-show .lable-add-btn').length;
+				$('.lable-on-number').text(min);
+			}
+		}
+		height = $('body').height();
+		setLableHeight(height);
+	});
+
+	//删除标签
+	$('body').on('click','.lable-show .close',function(){
+		var lableClose = $(this).closest('.lable-add-btn').data('id');
+		$('.lableGroup .lable-btn').each(function(){
+			var eachId = $(this).data('id');
+			if(eachId == lableClose){
+				$(this).removeClass('active');
+			}
+		});
+		$(this).closest('.lable-add-btn').remove();
+		min = $('.lable-show .lable-add-btn').length;
+		$('.lable-on-number').text(min);
+		height = $('body').height();
+		setLableHeight(height);
+	});
+
+	//添加标签
+	function lableAdd (text,id) {
+		var str = '';
+		str += '<button type="button" class="lable-add-btn" data-id="'+ id +'">'+ text +'<i class="layui-icon layui-icon-close close"></i></button>';
+		$(".lable-show").append(str);
+	}
+
+	// 标签
+	function setLableHeight(height) {
+		parent.setLableHeight(height);
+	}
+	// searchAction(999)
+	// 父亲操作儿子-初始化
+	function initLable(argument) {
+		alert(argument)
+	}
+</script>
