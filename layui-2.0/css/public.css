@@ -29,6 +29,7 @@
 
 html {
     background-color: rgb(237, 237, 237);
+    min-width: 1366px;
 }
 
 iframe {
@@ -42,20 +43,28 @@ iframe {
 .layui-body {
     overflow: visible;
 }
+
 .layui-side-scroll {
     width: 200px;
 }
 
-body.large .layui-body,
-body.large .layui-layout-admin .layui-footer {
+.layui-layout-admin .layui-footer {
+    background-color: #fff;
+    left: 200px;
+    height: 30px;
+    padding: 10px 30px;
+}
+
+body.large .layui-body {
     left: 210px;
 }
 
-body.small .layui-body,
-body.small .layui-layout-admin .layui-footer {
+body.small .layui-body {
     left: 70px;
 }
-body.small .breadcrumb-container {
+
+body.small .breadcrumb-container,
+body.small .layui-layout-admin .layui-footer {
     left: 60px;
 }
 
