@@ -77,12 +77,10 @@
 		<a href="#search">搜索</a>
 		<a href="#color">颜色</a>
 		<a href="#tab">选项卡</a>
+		<a href="#layout">表单布局</a>
 	</menu>
-
 	<header id="header">前端开发规范手册</header>
-
 	<section>
-
 		<article id="button">
 			<!-- 按钮1 -->
 			<p class="title">
@@ -118,13 +116,13 @@
 					<svg class="icon" aria-hidden="true">
 						<use xlink:href="#iconguanlian"></use>
 					</svg>文本域</p>
-					<p class="subTitle">文本域1</p>
+				<p class="subTitle">文本域1</p>
 
-				<div class="input-one1-container layui-inline">
+				<div class="input-one1-container">
 					<input type="text" name="title" placeholder="输入搜索关键字 input-one1-container" autocomplete="off"
 						class="layui-input">
 				</div>
-				<div class="input-one2-container layui-inline">
+				<div class="input-one2-container">
 					<input type="text" name="title" placeholder="输入搜索关键字 input-one2-container" autocomplete="off"
 						class="layui-input">
 				</div>
@@ -143,7 +141,6 @@
 				</div>
 			</form>
 		</article>
-
 		<article id="search">
 			<p class="title">
 				<svg class="icon" aria-hidden="true">
@@ -151,7 +148,6 @@
 				</svg>搜索</p>
 			<iframe src="iframe-2.0/search.html" name="high-search" class="high-search-iframe"></iframe>
 		</article>
-
 		<article id="color">
 			<p class="title">
 				<svg class="icon" aria-hidden="true">
@@ -172,7 +168,6 @@
 			<div class="background-color">背景色 #efefef</div>
 			<div class="block-color">区域色 #ffffff</div>
 		</article>
-
 		<article id="tab">
 			<p class="title">
 				<svg class="icon" aria-hidden="true">
@@ -201,14 +196,14 @@
 					<use xlink:href="#iconguanlian"></use>
 				</svg>下拉</p>
 			<form class="layui-form" action="">
-				<div class="layui-form-item layui-inline ">
+				<div class="layui-form-item ">
 					<select name="city" lay-verify="required" class="size">
 						<option value="">未选择</option>
 						<option value="0">1</option>
 						<option value="1">2</option>
 					</select>
 				</div>
-				<div class="layui-form-item layui-inline">
+				<div class="layui-form-item">
 					<select name="city" lay-verify="required" class="sizeMin">
 						<option value="">未选择</option>
 						<option value="0">1</option>
@@ -244,6 +239,34 @@
 			<div style="width: 120px;">
 				<div class="pictureImg"></div>
 			</div>
+		</article>
+		<article id="layout">
+			<p class="title">
+				<svg class="icon" aria-hidden="true">
+					<use xlink:href="#iconguanlian"></use>
+				</svg>表单布局</p>
+			<p class="subTitle">表单布局1 - 预留提示空间</p>
+			<form class="layui-form" action="">
+				<p class="form-title">标题</p>
+				<div class="layui-form-item">
+					<label class="layui-form-label">单行输入框：</label>
+					<div class="layui-input-block">
+						<input type="text" name="title" lay-verify="title" autocomplete="off" placeholder="请输入标题"
+							class="layui-input">
+						<p class="desc">描述</p>
+						<p class="msg">错误提示</p>
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label class="layui-form-label"><span class="tip">*</span>验证必填项：</label>
+					<div class="layui-input-block">
+						<div class="input-one1-container">
+							<input type="text" name="title" placeholder="输入搜索关键字 input-one1-container"
+								autocomplete="off" class="layui-input">
+						</div>
+					</div>
+				</div>
+			</form>
 		</article>
 	</section>
 
