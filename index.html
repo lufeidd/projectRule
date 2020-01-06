@@ -7,32 +7,31 @@
 	<link rel="stylesheet" type="text/css" href="layui-2.0/css/layui.css">
 	<!-- 样式重定义 -->
 	<link rel="stylesheet" type="text/css" href="layui-2.0/css/public.css">
-	<!--公共样式-->
-	<link rel="stylesheet" type="text/css" href="layui-2.0/css/component/select.css">
-	<link rel="stylesheet" type="text/css" href="layui-2.0/css/component/rule.css">
-	<link rel="stylesheet" type="text/css" href="layui-2.0/css/component/pic.css">
+	<!-- 字体图标 -->
+	<script src="layui-2.0/font/iconfont.js"></script>
 	<style type="text/css">
-		#menu {
+		menu#anchor {
 			position: fixed;
 			height: 100%;
-			width: 80px;
+			width: 100px;
 			text-align: center;
 			left: 0;
 			top: 0;
 			overflow: auto;
-			background-color: #f0f0f0;
-			z-index: 1;
+			background-color: #fff;
+			z-index: 1002;
 			padding: 10px;
 			box-sizing: border-box;
+			font-size: 16px;
 		}
 
-		#menu a {
+		#anchor a {
 			display: block;
-			padding: 10px 0;
+			padding: 20px 0;
 		}
 
 		section {
-			margin-left: 100px;
+			margin-left: 120px;
 			padding-bottom: 80px;
 		}
 
@@ -41,26 +40,56 @@
 			height: auto;
 		}
 
-		p {
-			padding: 10px 0;
+		p.title {
+			padding: 20px 0;
+			font-size: 18px;
+			margin: 50px 0 10px 0;
+			border-bottom: 1px #c0c0c0 solid;
+		}
+
+		p.subTitle {
+			font-size: 15px;
+			padding: 20px 0;
+			color: #666;
+		}
+
+		header#header {
+			position: fixed;
+			text-align: center;
+			height: 50px;
+			line-height: 50px;
+			font-size: 16px;
+			top: 0;
+			padding-left: 100px;
+			width: 100%;
+			box-sizing: border-box;
+			background-color: #fff;
+			z-index: 1001;
 		}
 	</style>
 </head>
 
 <body>
 
-	<div id="menu">
+	<menu id="anchor">
+		<a href="/frame.html">框架</a>
 		<a href="#button">按钮</a>
 		<a href="#search">搜索</a>
 		<a href="#color">颜色</a>
 		<a href="#tab">选项卡</a>
-	</div>
+	</menu>
+
+	<header id="header">前端开发规范手册</header>
 
 	<section>
+
 		<article id="button">
 			<!-- 按钮1 -->
-			<p>----- 按钮1 -----</p>
-			<button type="button" class="layui-btn">按钮1</button>
+			<p class="title">
+				<svg class="icon" aria-hidden="true">
+					<use xlink:href="#iconguanlian"></use>
+				</svg>按钮1</p>
+			<button type="button" class="layui-btn">按钮</button>
 			<button type="button" class="layui-btn layui-btn-disabled">按钮1</button>
 			<!-- 按钮2 -->
 			<button type="button" class="layui-btn layui-btn-primary">按钮2</button>
@@ -79,44 +108,77 @@
 			<!-- 按钮6 -->
 			<button type="button" class="layui-btn layui-btn-six">按钮6<i class="layui-icon layui-icon-down"></i></button>
 			<!-- 固定底部按钮 -->
-			<!--<div class="bottom-layui-btn">
+			<div class="bottom-layui-btn">
 				<button type="button" class="layui-btn">保存并提交</button>
-			</div>-->
+			</div>
 		</article>
 		<article id="input">
 			<form class="layui-form">
-				<p>----- 文本域1 -----</p>
+				<p class="title">
+					<svg class="icon" aria-hidden="true">
+						<use xlink:href="#iconguanlian"></use>
+					</svg>文本域</p>
+					<p class="subTitle">文本域1</p>
 
-				<input type="text" name="title" placeholder="输入搜索关键字" autocomplete="off"
-					class="layui-input">
-				<p>----- 文本域2 -----</p>
+				<div class="input-one1-container layui-inline">
+					<input type="text" name="title" placeholder="输入搜索关键字 input-one1-container" autocomplete="off"
+						class="layui-input">
+				</div>
+				<div class="input-one2-container layui-inline">
+					<input type="text" name="title" placeholder="输入搜索关键字 input-one2-container" autocomplete="off"
+						class="layui-input">
+				</div>
+
+				<p class="subTitle">文本域2</p>
+
 				<div class="input-second-container">
-					<input type="text" name="title" placeholder="输入搜索关键字"
-						autocomplete="off" class="layui-input">
+					<input type="text" name="title" placeholder="输入搜索关键字" autocomplete="off" class="layui-input">
 					<div class="input-number"><span class="input-on-number">0</span>/<span
 							class="input-max-number">100</span></div>
 				</div>
-				<p>----- 文本域3 -----</p>
+				<p class="subTitle">文本域3</p>
 				<div class="input-third-container">
-					<input type="text" name="title" placeholder="输入搜索关键字"
-						autocomplete="off" class="layui-input">
+					<input type="text" name="title" placeholder="输入搜索关键字" autocomplete="off" class="layui-input">
 					<div class="input-before">￥</div>
 				</div>
 			</form>
 		</article>
 
 		<article id="search">
-			<p>----- 搜索 -----</p>
-			<iframe src="iframe-2.0/search.html" name="high-search"></iframe>
+			<p class="title">
+				<svg class="icon" aria-hidden="true">
+					<use xlink:href="#iconguanlian"></use>
+				</svg>搜索</p>
+			<iframe src="iframe-2.0/search.html" name="high-search" class="high-search-iframe"></iframe>
 		</article>
 
 		<article id="color">
-			<p>----- 颜色 -----</p>
-			<div class="main-color">品牌色（主色调）</div>
+			<p class="title">
+				<svg class="icon" aria-hidden="true">
+					<use xlink:href="#iconguanlian"></use>
+				</svg>颜色</p>
+			<div class="main-color">品牌色（主色调）#f05654</div>
+			<div class="sub1-color">辅助色（button、可点击文字链接等常用色） #54ACF0</div>
+			<div class="sub2-color">辅助色（侧边导航用色） #262A35</div>
+			<div class="sub3-color">辅助色(弱)（次要button等常用色） #EEF7FD</div>
+			<div class="decor1-color">点缀色（商品状态提示(供货中)等） #F0B354</div>
+			<div class="decor2-color">点缀色（商品状态提示(完成)等） #54F075</div>
+			<div class="txt1-color">重要（主要文字） #333333</div>
+			<div class="txt2-color">次要（次要文字） #666666</div>
+			<div class="txt3-color">较弱（次要文字） #999999</div>
+			<div class="disable-color">置灰（不可点击状态） #cccccc</div>
+			<div class="table-br-color">表格分割线用色 #E3E3E3</div>
+			<div class="table-head-color">表格头部用色 #F0F0F0</div>
+			<div class="background-color">背景色 #efefef</div>
+			<div class="block-color">区域色 #ffffff</div>
 		</article>
 
 		<article id="tab">
-			<p>----- 选项卡1 -----</p>
+			<p class="title">
+				<svg class="icon" aria-hidden="true">
+					<use xlink:href="#iconguanlian"></use>
+				</svg>选项卡</p>
+			<p class="subTitle">选项卡1</p>
 			<div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
 				<ul class="layui-tab-title">
 					<li class="layui-this">选项一</li>
@@ -124,50 +186,94 @@
 				</ul>
 				<div class="layui-tab-content"></div>
 			</div>
-			<p>----- 选项卡2 -----</p>
+			<p class="subTitle">选项卡2</p>
 			<div class="tab-second-container">
 				<div class="tab-second-content active">选项一</div>
 				<div class="tab-second-content">选项二</div>
 				<div class="tab-second-content">选项三</div>
+				<div class="tab-second-content">选项四</div>
+				<div class="tab-second-content">选项五</div>
 			</div>
 		</article>
 		<article id="select">
+<<<<<<< HEAD
 			<p>----- 下拉 -----</p>
 			<div class="layui-form-item layui-inline selectOne">
 				<form class="layui-form" action="">
 					<select name="city" lay-verify="required" class="select-size">
+=======
+			<p class="title">
+				<svg class="icon" aria-hidden="true">
+					<use xlink:href="#iconguanlian"></use>
+				</svg>下拉</p>
+			<form class="layui-form" action="">
+				<div class="layui-form-item layui-inline ">
+					<select name="city" lay-verify="required" class="size">
+>>>>>>> 974e52684f35a527d5fd7608886d9694bc75c3dd
 						<option value="">未选择</option>
 						<option value="0">1</option>
 						<option value="1">2</option>
 					</select>
+<<<<<<< HEAD
 				</form>
 			</div>
 			<div class="layui-form-item layui-inline selectTwo">
 				<form class="layui-form" action="">
 					<select name="city" lay-verify="required" class="select-sizeMin">
+=======
+				</div>
+				<div class="layui-form-item layui-inline">
+					<select name="city" lay-verify="required" class="sizeMin">
+>>>>>>> 974e52684f35a527d5fd7608886d9694bc75c3dd
 						<option value="">未选择</option>
 						<option value="0">1</option>
 						<option value="1">2</option>
 					</select>
+<<<<<<< HEAD
 				</form>
 			</div>
+=======
+				</div>
+			</form>
+>>>>>>> 974e52684f35a527d5fd7608886d9694bc75c3dd
 		</article>
 		<article id="checkbox">
-			<p>----- 复选框 -----</p>
+			<p class="title">
+				<svg class="icon" aria-hidden="true">
+					<use xlink:href="#iconguanlian"></use>
+				</svg>复选框</p>
 			<form class="layui-form" action="">
 				<input type="checkbox" name="item_id" value="" lay-skin="primary">
 			</form>
 		</article>
 		<article id="rule">
+<<<<<<< HEAD
 			<p>----- 法规提示 -----</p>
 			<div class="rule">
+=======
+
+			<p class="title">
+				<svg class="icon" aria-hidden="true">
+					<use xlink:href="#iconguanlian"></use>
+				</svg>法规提示</p>
+			<div>
+>>>>>>> 974e52684f35a527d5fd7608886d9694bc75c3dd
 				请您遵守国家相关规定，切勿上传低俗色情、暴力恐怖、谣言诈骗、侵权盗版等相关内容，火把保有依据国家规定及平台规则进行处理的权利。
 			</div>
 		</article>
 		<article id="pic">
+<<<<<<< HEAD
 			<p>----- 图片比例 -----</p>
 			<div class="pic-one">
 				<img src="" alt="">
+=======
+			<p class="title">
+				<svg class="icon" aria-hidden="true">
+					<use xlink:href="#iconguanlian"></use>
+				</svg>图片比例</p>
+			<div style="width: 120px;">
+				<div class="pictureImg"></div>
+>>>>>>> 974e52684f35a527d5fd7608886d9694bc75c3dd
 			</div>
 			<div class="pic-two">
 				<img src="" alt="">
@@ -196,6 +302,7 @@
 		var element = layui.element,
 			form = layui.form,
 			$ = layui.$;
+<<<<<<< HEAD
 
 	})
 
@@ -216,3 +323,11 @@
 		$('iframe[name=tableTwo]').css('height', tableTwoHeight);
 	}
 </script>
+=======
+	})
+	//设置iframe高度
+	function setIframeHeight(height) {
+		$('.high-search-iframe').height(height);
+	}
+</script>
+>>>>>>> 974e52684f35a527d5fd7608886d9694bc75c3dd

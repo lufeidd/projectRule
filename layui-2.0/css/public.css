@@ -16,6 +16,7 @@
 @import url('component/search.css');
 /* 面包屑 */
 @import url('component/breadcrumb.css');
+<<<<<<< HEAD
 /* 复选框 */
 @import url('component/checkbox.css');
 /* 标签 */
@@ -26,6 +27,15 @@
 @import url('component/rule.css');
 /* 数据表格 */
 @import url('component/table.css');
+=======
+/* 下拉 */
+@import url('component/select.css');
+/* 法规 */
+@import url('component/rule.css');
+/* 图片比例 */
+@import url('component/pic.css');
+
+>>>>>>> 974e52684f35a527d5fd7608886d9694bc75c3dd
 /*
  * 标签重定义
  */
@@ -46,19 +56,34 @@ iframe {
     overflow: visible;
 }
 
-body.large .layui-body,
-body.large .layui-layout-admin .layui-footer {
+.layui-side-scroll {
+    width: 200px;
+}
+
+.layui-layout-admin .layui-footer {
+    background-color: #fff;
+    left: 200px;
+    height: 30px;
+    padding: 10px 30px;
+}
+
+body.large .layui-body {
     left: 210px;
 }
 
-body.small .layui-body,
-body.small .layui-layout-admin .layui-footer {
+body.small .layui-body {
     left: 70px;
+}
+
+body.small .breadcrumb-container,
+body.small .layui-layout-admin .layui-footer {
+    left: 60px;
 }
 
 .layui-layout-admin .layui-body {
     top: 100px;
     background-color: #fff;
+    overflow: auto;
 }
 
 /* 左侧导航 */
@@ -140,9 +165,9 @@ body.small .layui-side.small {
     padding: 8px;
     border-radius: 4px;
     background-color: transparent;
-	box-shadow: none;
-	min-width: 140px;
-	text-align: center;
+    box-shadow: none;
+    min-width: 140px;
+    text-align: center;
 }
 
 .layui-side.small .layui-nav-child::after {
@@ -159,9 +184,9 @@ body.small .layui-side.small {
 }
 
 .layui-side.small .layui-nav-child dd {
-	background-color: #262A35;
-	height: 45px;
-	line-height: 45px;
+    background-color: #262A35;
+    height: 45px;
+    line-height: 45px;
 }
 
 .layui-side.small .layui-nav .layui-nav-child a {
@@ -268,6 +293,58 @@ body.large .layui-side.large {
 
 .main-color {
     color: #f05654;
+}
+
+.sub1-color {
+    color: #54ACF0;
+}
+
+.sub2-color {
+    color: #262A35;
+}
+
+.sub3-color {
+    color: #EEF7FD;
+}
+
+.decor1-color {
+    color: #F0B354;
+}
+
+.decor2-color {
+    color: #54F075;
+}
+
+.txt1-color {
+    color: #333333;
+}
+
+.txt2-color {
+    color: #666666;
+}
+
+.txt3-color {
+    color: #999999;
+}
+
+.disable-color {
+    color: #cccccc;
+}
+
+.table-br-color {
+    color: #E3E3E3;
+}
+
+.table-head-color {
+    color: #F0F0F0;
+}
+
+.background-color {
+    color: #efefef;
+}
+
+.block-color {
+    color: #fff;
 }
 
 /* 字体图标 */

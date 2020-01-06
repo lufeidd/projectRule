@@ -91,29 +91,33 @@
 <script type="text/javascript" src="../layui-2.0/jquery3.4.1.js"></script>
 <script type="text/javascript">
 	// 点击高级按钮
-	$('body').on('click','.high-search-btn',function(){
-		$('.high-search-left').css('float','none')
-		$('.high-search-right').css('float','none')
-		$('.high-search-fold').css('display','none')
-		$('.high-search-open').css('display','block')
+	$('body').on('click', '.high-search-btn', function () {
+		var height = $('body').height();
+		$('.high-search-left').css('float', 'none')
+		$('.high-search-right').css('float', 'none')
+		$('.high-search-fold').css('display', 'none')
+		$('.high-search-open').css('display', 'block')
+		parent.setIframeHeight();
 	})
 	// 点击收起按钮
-	$('body').on('click','.high-search-fold-btn',function(){
+	$('body').on('click', '.high-search-fold-btn', function () {
 		var _val = $('.high-search-container').find('input[name="keyword"]').val();
-		$('.high-search-left').css('float','left')
-		$('.high-search-right').css('float','right')
-		$('.high-search-fold').css('display','block')
-		$('.high-search-open').css('display','none')
+		var height = $('body').height();
+		$('.high-search-left').css('float', 'left')
+		$('.high-search-right').css('float', 'right')
+		$('.high-search-fold').css('display', 'block')
+		$('.high-search-open').css('display', 'none')
 		$('.high-search-container').find('input').val('')
 		$('.high-search-container').find('input[name="keyword"]').val(_val)
+		parent.setIframeHeight();
 	})
 	// 监听关键字输入框
-	$('body').on('input','input[name="keyword"]',function(){
+	$('body').on('input', 'input[name="keyword"]', function () {
 		var _val = $(this).val()
 		$('.high-search-container').find('input[name="keyword"]').val(_val)
 	})
 	// 点击重置按钮
-	$('body').on('click','.high-search-reset-btn',function(){
+	$('body').on('click', '.high-search-reset-btn', function () {
 		$('.high-search-container').find('input').val('')
 	})
 	// 搜索
