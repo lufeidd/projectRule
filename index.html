@@ -133,19 +133,23 @@
 		</article>
 		<article id="select">
 			<p>----- 下拉 -----</p>
-			<div class="layui-form-item layui-inline">
-				<select name="city" lay-verify="required" class="size">
-					<option value="">未选择</option>
-					<option value="0">1</option>
-					<option value="1">2</option>
-				</select>
+			<div class="layui-form-item layui-inline selectOne">
+				<form class="layui-form" action="">
+					<select name="city" lay-verify="required" class="select-size">
+						<option value="">未选择</option>
+						<option value="0">1</option>
+						<option value="1">2</option>
+					</select>
+				</form>
 			</div>
-			<div class="layui-form-item layui-inline">
-				<select name="city" lay-verify="required" class="sizeMin">
-					<option value="">未选择</option>
-					<option value="0">1</option>
-					<option value="1">2</option>
-				</select>
+			<div class="layui-form-item layui-inline selectTwo">
+				<form class="layui-form" action="">
+					<select name="city" lay-verify="required" class="select-sizeMin">
+						<option value="">未选择</option>
+						<option value="0">1</option>
+						<option value="1">2</option>
+					</select>
+				</form>
 			</div>
 		</article>
 		<article id="checkbox">
@@ -156,15 +160,27 @@
 		</article>
 		<article id="rule">
 			<p>----- 法规提示 -----</p>
-			<div>
+			<div class="rule">
 				请您遵守国家相关规定，切勿上传低俗色情、暴力恐怖、谣言诈骗、侵权盗版等相关内容，火把保有依据国家规定及平台规则进行处理的权利。
 			</div>
 		</article>
 		<article id="pic">
 			<p>----- 图片比例 -----</p>
-			<div style="width: 120px;">
-				<div class="pictureImg"></div>
+			<div class="pic-one">
+				<img src="" alt="">
 			</div>
+			<div class="pic-two">
+				<img src="" alt="">
+			</div>
+		</article>
+		<article id="lable">
+			<p>----- 标签 -----</p>
+			<iframe src="iframe-2.0/lable.html" name="lableChoose"></iframe>
+		</article>
+		<article id="table">
+			<p>----- 数据表格 -----</p>
+			<iframe src="iframe-2.0/tableOne.html" name="tableOne"></iframe>
+			<iframe src="iframe-2.0/tableTwo.html" name="tableTwo"></iframe>
 		</article>
 	</section>
 
@@ -180,6 +196,23 @@
 		var element = layui.element,
 			form = layui.form,
 			$ = layui.$;
-		
+
 	})
+
+	//设置标签iframe高度
+	function setLableHeight(lableHeight){
+		// 设置info模板中相应iframe的高度
+		$('iframe[name=lableChoose]').css('height', lableHeight);
+	}
+
+	//设置数据表格tableOne高度
+	function setTableOneHeight(tableOneHeight){
+		// 设置info模板中相应iframe的高度
+		$('iframe[name=tableOne]').css('height', tableOneHeight);
+	}
+	//设置数据表格tableTwo高度
+	function setTableTwoHeight(tableTwoHeight){
+		// 设置info模板中相应iframe的高度
+		$('iframe[name=tableTwo]').css('height', tableTwoHeight);
+	}
 </script>

@@ -1,0 +1,83 @@
+/*
+ *	作者: zby
+ *	创建时间：
+ *	描述：标签组件
+ */
+ @charset "utf-8";
+body{
+    background: #ffffff;
+    height: auto;
+}
+.lable-input-container{
+
+}
+.lable-title{
+    color: #333333;
+    width: 90px;
+}
+.lable-search{
+    margin-left: 20px;
+}
+.lableGroup{
+    margin-top: 20px;
+    margin-left: 120px;
+    height: 108px;
+    overflow: hidden;
+}
+.lableGroup .lable-btn{
+    display: inline-block;
+    height: 28px;
+    line-height: 28px;
+    padding: 0 15px;
+    background: #EEF7FD;
+    color: #333333;
+    white-space: nowrap;
+    text-align: center;
+    font-size: 12px;
+    border: 1px solid #EEF7FD;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-bottom: 8px;
+}
+.lableGroup .lable-btn:hover{
+    border:1px solid #54ACF0;
+}
+.lableGroup .lable-btn.active{
+    background: #54ACF0!important;
+    color: #ffffff!important;
+}
+.lableAdd{
+    margin-top: 25px;
+}
+.lableAdd:after{
+    display:block;
+    clear:both;
+    content:"";
+    visibility:hidden;
+    height:0;
+}
+.lableAdd .num{
+    padding: 9px 0;
+}
+.lableAdd .lable-show{
+    margin-top: 15px;
+    margin-left: 120px;
+}
+.lableAdd .lable-show .lable-add-btn{
+    display: inline-block;
+    height: 28px;
+    line-height: 28px;
+    padding: 0 5px;
+    background: #54ACF0;
+    white-space: nowrap;
+    text-align: center;
+    font-size: 12px;
+    border: 1px solid #54ACF0;
+    border-radius: 4px;
+    cursor: pointer;
+    color: #ffffff;
+    margin: 0 8px 8px 0;
+}
+.lableAdd .lable-show .layui-icon{
+    font-size: 14px!important;
+}
