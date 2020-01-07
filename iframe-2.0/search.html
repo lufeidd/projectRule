@@ -11,7 +11,8 @@
 <body>
 	<!-- 高级搜索 -->
 	<div class="high-search-container">
-		<div class="high-search-left">
+		<form action="" class="layui-form">
+			<!-- <div class="high-search-left">
 			<button type="button" class="layui-btn">导出数据</button>
 			<div class="select-btn-one">
 				<button type="button" class="layui-btn layui-btn-five">批量操作<i class="layui-icon layui-icon-down"></i><i
@@ -22,23 +23,21 @@
 					<dd class="select-btn-tips">选项三</dd>
 				</dl>
 			</div>
-		</div>
-		<div class="high-search-right">
+		</div> -->
+			<!-- <div class="high-search-right"> -->
 			<div class="high-search-fold">
-				<div class="tab-second-container layui-inline">
+				<div class="tab-second-container display-inline">
 					<div class="tab-second-content active">选项一</div>
 					<div class="tab-second-content">选项二</div>
 					<div class="tab-second-content">选项三</div>
 				</div>
-				<div class="tab-search-input layui-inline">
-					<form action="" class="layui-form">
-						<div class="layui-inline">
-							<input type="text" name="keyword" placeholder="输入搜索关键字" autocomplete="off"
-								class="layui-input">
-						</div>
-					</form>
+				<div class="tab-search-input display-inline">
+					<!-- <div class="display-inline"> -->
+						<input type="text" name="keyword" placeholder="输入搜索关键字" autocomplete="off" class="layui-input">
+					<!-- </div> -->
+
 				</div>
-				<div class="layui-inline">
+				<div class="display-inline">
 					<button type="button" class="layui-btn high-search-result-btn">搜索</button>
 					<button type="button" class="layui-btn layui-btn-primary high-search-btn">高级</button>
 				</div>
@@ -50,32 +49,28 @@
 					<div class="tab-second-content">选项三</div>
 				</div>
 				<div class="high-search-input">
-					<form action="" class="layui-form">
-						<div class="layui-inline">
-							<input type="text" name="keyword" placeholder="输入搜索关键字" autocomplete="off"
-								class="layui-input">
-						</div>
-						<div class="layui-inline">
-							<input type="text" name="author" placeholder="请输入作者名称" autocomplete="off"
-								class="layui-input">
-						</div>
-						<div class="layui-inline">
-							<input type="text" name="publishName" placeholder="请输入出版社名称" autocomplete="off"
-								class="layui-input">
-						</div>
-						<div class="layui-inline">
-							<input type="text" name="supplierID" placeholder="请输入销售商户的商户ID" autocomplete="off"
-								class="layui-input">
-						</div>
-					</form>
+					<div class="display-inline">
+						<input type="text" name="keyword" placeholder="输入搜索关键字" autocomplete="off" class="layui-input">
+					</div>
+					<div class="display-inline">
+						<input type="text" name="author" placeholder="请输入作者名称" autocomplete="off" class="layui-input">
+					</div>
+					<div class="display-inline">
+						<input type="text" name="publishName" placeholder="请输入出版社名称" autocomplete="off"
+							class="layui-input">
+					</div>
+					<div class="display-inline">
+						<input type="text" name="supplierID" placeholder="请输入销售商户的商户ID" autocomplete="off"
+							class="layui-input">
+					</div>
 				</div>
 				<div class="high-search-catalog">
 					<span>选择分类：</span>
-					<div class="layui-inline"></div>
+					<div class="display-inline"></div>
 				</div>
 				<div class="high-search-from">
 					<span>渠道来源：</span>
-					<div class="layui-inline">
+					<div class="display-inline">
 						<button type="button" class="layui-btn layui-btn-normal from-btn">全部</button>
 						<button type="button" class="layui-btn layui-btn-warm from-btn">库存充足 </button>
 						<button type="button" class="layui-btn layui-btn-warm from-btn">库存紧张 </button>
@@ -88,7 +83,8 @@
 					<button type="button" class="layui-btn layui-btn-primary high-search-fold-btn">收起</button>
 				</div>
 			</div>
-		</div>
+			<!-- </div> -->
+		</form>
 	</div>
 
 </body>
@@ -98,26 +94,28 @@
 <script type="text/javascript" src="../layui-2.0/jquery3.4.1.js"></script>
 <script type="text/javascript" src="../layui-2.0/public.js"></script>
 <script type="text/javascript">
+	var data = {};
 	// 点击高级按钮
 	$('body').on('click', '.high-search-btn', function () {
-		$('.high-search-left').css('float', 'none')
-		$('.high-search-right').css('float', 'none')
+		// $('.high-search-left').css('float', 'none')
+		// $('.high-search-right').css('float', 'none')
 		$('.high-search-fold').css('display', 'none')
 		$('.high-search-open').css('display', 'block')
 		var height = $('body').height();
-		parent.setIframeHeight(height);
+		// console.log($('body')) 
+		parent.setIframeHeight(height-38,'open');
 	})
 	// 点击收起按钮
 	$('body').on('click', '.high-search-fold-btn', function () {
 		var _val = $('.high-search-container').find('input[name="keyword"]').val();
-		$('.high-search-left').css('float', 'left')
-		$('.high-search-right').css('float', 'right')
+		// $('.high-search-left').css('float', 'left')
+		// $('.high-search-right').css('float', 'right')
 		$('.high-search-fold').css('display', 'block')
 		$('.high-search-open').css('display', 'none')
 		$('.high-search-container').find('input').val('')
 		$('.high-search-container').find('input[name="keyword"]').val(_val)
 		var height = $('body').height();
-		parent.setIframeHeight(height);
+		parent.setIframeHeight(height,'fold');
 	})
 	// 监听关键字输入框
 	$('body').on('input', 'input[name="keyword"]', function () {
@@ -126,17 +124,30 @@
 	})
 	// 点击重置按钮
 	$('body').on('click', '.high-search-reset-btn', function () {
+		// input重置
 		$('.high-search-container').find('input').val('')
+		// 选项卡重置
+		$('.tab-second-container .tab-second-content').removeClass('active')
+		$('.high-search-fold .tab-second-container').find('.tab-second-content').eq(0).addClass('active')
+		$('.high-search-open .tab-second-container').find('.tab-second-content').eq(0).addClass('active')
+		// 渠道来源重置
+		$('.from-btn.layui-btn-normal').removeClass('layui-btn-normal').addClass('layui-btn-warm')
+		$('.from-btn').eq(0).removeClass('layui-btn-warm').addClass('layui-btn-normal')
 	})
 	// 渠道来源
 	$('body').on('click', '.from-btn', function () {
 		$(this).removeClass('layui-btn-warm').addClass('layui-btn-normal')
 		$(this).siblings().removeClass('layui-btn-normal').addClass('layui-btn-warm')
-		console.log($(this).siblings())
 	})
 	// 搜索
-	function searchAction(argument) {
-		parent.searchAction(argument)
+	$('body').on('click', '.high-search-result-btn', function () {
+		searchAction();
+	})
+	// 搜索
+	function searchAction() {
+		// 设置iframe当前标识
+		parent.setIframeDataId('table0');
+		parent.searchAction(data);
 	}
 	// searchAction(999)
 	// 父亲操作儿子-初始化

@@ -6,6 +6,8 @@
 
 @charset "utf-8";
 
+/* 布局 */
+@import url('component/layout.css');
 /* 按钮 */
 @import url('component/button.css');
 /* 选项卡 */
@@ -16,19 +18,25 @@
 @import url('component/search.css');
 /* 面包屑 */
 @import url('component/breadcrumb.css');
-/* 下拉 */
-@import url('component/select.css');
-/* 法规 */
-@import url('component/rule.css');
+/* 复选框 */
+@import url('component/checkbox.css');
+/* 标签 */
+@import url('component/lable.css');
 /* 图片比例 */
 @import url('component/pic.css');
-
+/* 法规提示 */
+@import url('component/rule.css');
+/* 数据表格 */
+@import url('component/table.css');
+/* 下拉 */
+@import url('component/select.css');
 /*
  * 标签重定义
  */
 
 html {
     background-color: rgb(237, 237, 237);
+    line-height: 1.5;
 }
 
 iframe {
@@ -43,14 +51,28 @@ iframe {
     overflow: visible;
 }
 
-body.large .layui-body,
-body.large .layui-layout-admin .layui-footer {
+.layui-side-scroll {
+    width: 200px;
+}
+
+.layui-layout-admin .layui-footer {
+    background-color: #fff;
+    left: 200px;
+    height: 30px;
+    padding: 10px 30px;
+}
+
+body.large .layui-body {
     left: 210px;
 }
 
-body.small .layui-body,
-body.small .layui-layout-admin .layui-footer {
+body.small .layui-body {
     left: 70px;
+}
+
+body.small .breadcrumb-container,
+body.small .layui-layout-admin .layui-footer {
+    left: 60px;
 }
 
 .layui-layout-admin .layui-body {
@@ -146,9 +168,9 @@ body.small .layui-side.small {
     padding: 8px;
     border-radius: 4px;
     background-color: transparent;
-	box-shadow: none;
-	min-width: 140px;
-	text-align: center;
+    box-shadow: none;
+    min-width: 140px;
+    text-align: center;
 }
 
 .layui-side.small .layui-nav-child::after {
@@ -165,9 +187,9 @@ body.small .layui-side.small {
 }
 
 .layui-side.small .layui-nav-child dd {
-	background-color: #262A35;
-	height: 45px;
-	line-height: 45px;
+    background-color: #262A35;
+    height: 45px;
+    line-height: 45px;
 }
 
 .layui-side.small .layui-nav .layui-nav-child a {
@@ -276,6 +298,58 @@ body.large .layui-side.large {
     color: #f05654;
 }
 
+.sub1-color {
+    color: #54ACF0;
+}
+
+.sub2-color {
+    color: #262A35;
+}
+
+.sub3-color {
+    color: #EEF7FD;
+}
+
+.decor1-color {
+    color: #F0B354;
+}
+
+.decor2-color {
+    color: #54F075;
+}
+
+.txt1-color {
+    color: #333333;
+}
+
+.txt2-color {
+    color: #666666;
+}
+
+.txt3-color {
+    color: #999999;
+}
+
+.disable-color {
+    color: #cccccc;
+}
+
+.table-br-color {
+    color: #E3E3E3;
+}
+
+.table-head-color {
+    color: #F0F0F0;
+}
+
+.background-color {
+    color: #efefef;
+}
+
+.block-color {
+    color: #fff;
+}
+
 /* 字体图标 */
 .icon {
     width: 1em;
@@ -285,8 +359,26 @@ body.large .layui-side.large {
     overflow: hidden;
 }
 
-/* 公用类名 */
+/********** 公用类名 ***********/
+/* 行内元素 */
 .display-inline{
 	display: inline-block;
 	position: relative;
+	vertical-align: middle;
+}
+/* 清除浮动 */
+.clear-float::after{
+	content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    clear: both;
+}
+/* 浮左 */
+.float-left{
+	float: left;
+}
+/* 浮右 */
+.float-right{
+	float: right;
 }

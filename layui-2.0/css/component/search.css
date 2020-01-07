@@ -6,16 +6,9 @@
 @charset "utf-8";
 
 .high-search-iframe {
-    /* height: 40px; */
+    height: 38px;
+    background-color: #FFF;
     /* overflow: hidden; */
-}
-
-.high-search-container::after {
-    content: '';
-    display: block;
-    width: 0;
-    height: 0;
-    clear: both;
 }
 
 .high-search-container .high-search-left {
@@ -34,7 +27,6 @@
     margin-left: 10px;
 }
 
-.high-search-container .high-search-open .tab-second-container,
 .high-search-container .high-search-open .high-search-input,
 .high-search-container .high-search-open .high-search-catalog,
 .high-search-container .high-search-open .high-search-from,
