@@ -95,14 +95,32 @@
 			<!-- 删除按钮 -->
 			<button type="button" class="layui-btn layui-btn-danger">删除</button>
 			<!-- 按钮5 -->
-			<button type="button" class="layui-btn layui-btn-five">按钮5<i
-					class="layui-icon layui-icon-down"></i></button>
-			<!-- 按钮6 -->
-			<button type="button" class="layui-btn layui-btn-six">按钮6<i class="layui-icon layui-icon-down"></i></button>
-			<!-- 固定底部按钮 -->
-			<div class="bottom-layui-btn">
-				<button type="button" class="layui-btn">保存并提交</button>
+			<div class="select-btn-one">
+				<button type="button" class="layui-btn layui-btn-five">按钮5<i class="layui-icon layui-icon-down"></i><i
+						class="layui-icon layui-icon-up"></i></button>
+				<dl class="select-btn-downbit">
+					<dd class="select-btn-tips select-btn-this">立即上架</dd>
+					<dd class="select-btn-tips">选项二</dd>
+					<dd class="select-btn-tips">选项三</dd>
+				</dl>
 			</div>
+			<!-- 按钮6 -->
+			<div class="select-btn-two">
+				<button type="button" class="layui-btn layui-btn-six">按钮6<i class="layui-icon layui-icon-down"></i><i
+						class="layui-icon layui-icon-up"></i></button>
+				<dl class="select-btn-downbit">
+					<dd class="select-btn-tips select-btn-this">立即上架</dd>
+					<dd class="select-btn-tips">选项二</dd>
+					<dd class="select-btn-tips">选项三</dd>
+				</dl>
+			</div>
+			<!-- 按钮7 -->
+			<button class="layui-btn layui-btn-normal layui-btn-sm">小型按钮3</button>
+			<button class="layui-btn layui-btn-danger layui-btn-sm">小型删除按钮</button>
+			<!-- 固定底部按钮 -->
+			<!-- <div class="bottom-layui-btn">
+				<button type="button" class="layui-btn">保存并提交</button>
+			</div> -->
 		</article>
 		<article id="input">
 			<form class="layui-form">
@@ -111,11 +129,13 @@
 						<use xlink:href="#iconguanlian"></use>
 					</svg>文本域1</p>
 
-				<div class="input-one1-container layui-inline">
-					<input type="text" name="title" placeholder="输入搜索关键字 input-one1-container" autocomplete="off" class="layui-input">
+				<div class="input-one1-container display-inline">
+					<input type="text" name="title" placeholder="输入搜索关键字 input-one1-container" autocomplete="off"
+						class="layui-input">
 				</div>
-				<div class="input-one2-container layui-inline">
-					<input type="text" name="title" placeholder="输入搜索关键字 input-one2-container" autocomplete="off" class="layui-input">
+				<div class="input-one2-container display-inline">
+					<input type="text" name="title" placeholder="输入搜索关键字 input-one2-container" autocomplete="off"
+						class="layui-input">
 				</div>
 
 				<p class="title">
@@ -226,8 +246,25 @@
 				<div class="pictureImg"></div>
 			</div>
 		</article>
+		<article>
+			<p class="title">
+				<svg class="icon" aria-hidden="true">
+					<use xlink:href="#iconguanlian"></use>
+				</svg>固定底部按钮</p>
+			<div class="layui-footer">
+				<button class="layui-btn">保存并提交</button>
+				<div class="select-btn-two">
+					<button type="button" class="layui-btn layui-btn-six">按钮6<i
+							class="layui-icon layui-icon-down"></i><i class="layui-icon layui-icon-up"></i></button>
+					<dl class="select-btn-upbit">
+						<dd class="select-btn-tips select-btn-this">立即上架</dd>
+						<dd class="select-btn-tips">选项二</dd>
+						<dd class="select-btn-tips">选项三</dd>
+					</dl>
+				</div>
+			</div>
+		</article>
 	</section>
-
 </body>
 
 </html>
@@ -242,7 +279,7 @@
 			$ = layui.$;
 	})
 	//设置iframe高度
-	function setIframeHeight (height) {
+	function setIframeHeight(height) {
 		$('.high-search-iframe').height(height);
 	}
 </script>

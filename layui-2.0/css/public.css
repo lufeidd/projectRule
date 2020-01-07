@@ -54,11 +54,19 @@ body.small .layui-layout-admin .layui-footer {
 }
 
 .layui-layout-admin .layui-body {
-    top: 100px;
+	top: 100px;
+	bottom: 60px;
     background-color: #fff;
     overflow: auto;
 }
-
+/* 底部 */
+.layui-layout-admin .layui-footer{
+	padding:11px 15px;
+	line-height: normal;
+	height: auto;
+	background-color: #FFF;
+	z-index: 9999;
+}
 /* 左侧导航 */
 body.large .layui-side.large {
     width: 200px;
@@ -275,4 +283,10 @@ body.large .layui-side.large {
     vertical-align: -0.2em;
     fill: currentColor;
     overflow: hidden;
+}
+
+/* 公用类名 */
+.display-inline{
+	display: inline-block;
+	position: relative;
 }

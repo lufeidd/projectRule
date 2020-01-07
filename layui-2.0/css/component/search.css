@@ -6,8 +6,8 @@
 @charset "utf-8";
 
 .high-search-iframe {
-    height: 38px;
-    overflow: hidden;
+    /* height: 40px; */
+    /* overflow: hidden; */
 }
 
 .high-search-container::after {

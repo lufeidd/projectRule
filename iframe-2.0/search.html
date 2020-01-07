@@ -13,8 +13,15 @@
 	<div class="high-search-container">
 		<div class="high-search-left">
 			<button type="button" class="layui-btn">导出数据</button>
-			<button type="button" class="layui-btn layui-btn-five">批量操作<i
-					class="layui-icon layui-icon-down"></i></button>
+			<div class="select-btn-one">
+				<button type="button" class="layui-btn layui-btn-five">批量操作<i class="layui-icon layui-icon-down"></i><i
+						class="layui-icon layui-icon-up"></i></button>
+				<dl class="select-btn-downbit">
+					<dd class="select-btn-tips select-btn-this">立即上架</dd>
+					<dd class="select-btn-tips">选项二</dd>
+					<dd class="select-btn-tips">选项三</dd>
+				</dl>
+			</div>
 		</div>
 		<div class="high-search-right">
 			<div class="high-search-fold">
@@ -93,24 +100,24 @@
 <script type="text/javascript">
 	// 点击高级按钮
 	$('body').on('click', '.high-search-btn', function () {
-		var height = $('body').height();
 		$('.high-search-left').css('float', 'none')
 		$('.high-search-right').css('float', 'none')
 		$('.high-search-fold').css('display', 'none')
 		$('.high-search-open').css('display', 'block')
-		parent.setIframeHeight();
+		var height = $('body').height();
+		parent.setIframeHeight(height);
 	})
 	// 点击收起按钮
 	$('body').on('click', '.high-search-fold-btn', function () {
 		var _val = $('.high-search-container').find('input[name="keyword"]').val();
-		var height = $('body').height();
 		$('.high-search-left').css('float', 'left')
 		$('.high-search-right').css('float', 'right')
 		$('.high-search-fold').css('display', 'block')
 		$('.high-search-open').css('display', 'none')
 		$('.high-search-container').find('input').val('')
 		$('.high-search-container').find('input[name="keyword"]').val(_val)
-		parent.setIframeHeight();
+		var height = $('body').height();
+		parent.setIframeHeight(height);
 	})
 	// 监听关键字输入框
 	$('body').on('input', 'input[name="keyword"]', function () {
@@ -120,6 +127,12 @@
 	// 点击重置按钮
 	$('body').on('click', '.high-search-reset-btn', function () {
 		$('.high-search-container').find('input').val('')
+	})
+	// 渠道来源
+	$('body').on('click', '.from-btn', function () {
+		$(this).removeClass('layui-btn-warm').addClass('layui-btn-normal')
+		$(this).siblings().removeClass('layui-btn-normal').addClass('layui-btn-warm')
+		console.log($(this).siblings())
 	})
 	// 搜索
 	function searchAction(argument) {
