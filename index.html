@@ -288,11 +288,15 @@
 				<iframe src="iframe-2.0/tableTwo.html" name="tableTwo" data-id="table1"></iframe>
 			</article>
 			<article id="popup">
+				<p class="title">
+					<svg class="icon" aria-hidden="true">
+						<use xlink:href="#iconguanlian"></use>
+					</svg>弹窗</p>
 				<!-- 弹窗 -->
 				<div>
-					<span id="popup1">弹窗1</span>
-					<span id="popup2">弹窗2</span>
-					<span id="popup3">弹窗3</span>
+					<span id="popup1" class="popup">弹窗1</span>
+					<span id="popup2" class="popup">弹窗2</span>
+					<span id="popup3" class="popup">弹窗3</span>
 				</div>
 			</article>
 
@@ -315,18 +319,10 @@
 			form = layui.form,
 			$ = layui.$;
 
-			// $.ajax
+		// $.ajax
 
 	})
 
-	//弹窗1
-	$("#popup1").click(function () {
-		//默认prompt
-		layer.prompt(function (val, index) {
-			layer.msg('得到了' + val);
-			layer.close(index);
-		});
-	})
 	//设置标签iframe高度
 	function setLableHeight(lableHeight) {
 		// 设置info模板中相应iframe的高度
@@ -363,4 +359,65 @@
 		$('.high-search-iframe').height(height);
 	}
 
+	//弹窗1
+	$("#popup1").click(function () {
+		//默认prompt
+		layer.prompt({
+			btn: ['修 改', '取 消'],
+			success: function (layero, index) {
+				$('.layui-layer-title').text('将当前节目的序号修改为'); //title修改
+				$(".layui-layer-input").attr('placeholder', '默认文本') //input提示修改
+				// $(".layui-layer-prompt").attr('id','layui-layer-prompt')
+				console.log($(".layui-layer-prompt").prop("id"))	
+			},
+			yes: function (index, layero) {
+				//按钮修改的回调
+				// layer.close(index); //如果设定了yes回调，需进行手工关闭		
+				//return false 开启该代码可禁止点击该按钮关闭
+			},
+			btn2: function (index, layero) {
+				//按钮取消的回调
+				// layer.close(index); //如果设定了yes回调，需进行手工关闭
+				//return false 开启该代码可禁止点击该按钮关闭
+			}
+		});
+	})
+	//弹窗2
+	$("#popup2").click(function () {
+		//询问框
+		layer.alert('确定要删除此节目吗？删除后将无法恢复。', {
+			btn: ['删 除', '取 消'],
+			yes: function (index, layero) {
+				//按钮删除的回调
+				// layer.close(index); //如果设定了yes回调，需进行手工关闭
+			},
+			btn2: function (index, layero) {
+				//按钮取消的回调
+				// layer.close(index); //如果设定了yes回调，需进行手工关闭
+				//return false 开启该代码可禁止点击该按钮关闭
+			}
+		});
+	})
+	//弹窗3
+	$("#popup3").click(function () {
+		//页面层
+		layer.open({
+			type: 1,
+			title: '选择纸质书',
+			skin: 'layui-layer-rim', //加上边框
+			area: ['488px', '180px'], //临时宽高
+			btn: ['删 除', '取 消'], //临时按钮
+			shadeClose: true, //点击遮罩层关闭弹窗
+			content: 'html内容', //临时内容
+			yes: function (index, layero) {
+				//按钮1回调
+				// layer.close(index); //如果设定了yes回调，需进行手工关闭
+			},
+			btn2: function (index, layero) {
+				//按钮2回调
+				// layer.close(index); //如果设定了yes回调，需进行手工关闭
+				//return false 开启该代码可禁止点击该按钮关闭
+			}
+		});
+	})
 </script>
