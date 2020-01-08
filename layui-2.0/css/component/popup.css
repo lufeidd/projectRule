@@ -16,27 +16,33 @@
     display: none;
 }
 
-/* 弹窗1 */
-
+/* 弹窗公共 */
 .layui-layer {
-    width: 520px;
-    height: auto;
     background: #FFFFFF;
-    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.16);
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.16) !important;
     border-radius: 4px !important;
+    clear: both;
+}
+
+/* 弹窗1 */
+.layui-layer-prompt {
+    width: 520px;
+    height: 228px;
 }
 
 .layui-layer-prompt .layui-layer-title {
+    padding: 0px;
     border-bottom: none;
     font-size: 14px;
     color: #060606;
-    padding-top: 25px;
+    padding-top: 21px;
     overflow: visible;
     background-color: #FFFFFF;
-    font-family: PingFang SC;
     height: auto;
-    line-height: 0px;
+    line-height: 14px;
     border-radius: 4px;
+    clear: both;
+    padding-left: 20px;
 }
 
 .layui-layer-prompt .layui-layer-btn a {
@@ -47,16 +53,18 @@
     border-radius: 4px;
     padding: 0px;
     margin: 0px;
+    clear: both;
 }
 
 .layui-layer-prompt .layui-layer-btn .layui-layer-btn0 {
-    margin-right: 40px;
+    float: right;
+    margin-right: 30px;
     background-color: #54ACF0;
     border-color: #54ACF0;
 }
 
 .layui-layer-prompt .layui-layer-btn .layui-layer-btn1 {
-    margin-right: 30px;
+    margin-right: 40px;
     border: 1px solid #999999;
     color: #333;
 }
@@ -70,18 +78,25 @@
 }
 
 .layui-layer-prompt .layui-layer-content {
+    padding: 0px !important;
+    padding-left: 20px !important;
     padding-bottom: 0px !important;
-    padding-top: 26px !important;
+    padding-top: 16px !important;
+    clear: both !important;
 }
 
 .layui-layer-prompt .layui-layer-btn {
+    padding: 0px;
+    clear: both;
     padding-top: 60px !important;
     padding-bottom: 40px;
 }
 
 .layui-layer-prompt .layui-layer-content .layui-layer-input {
-    width: 471px;
+    display: inline-block;
+    width: 459px;
     height: 38px;
+    line-height: 38px;
     background: rgba(255, 255, 255, 1);
     border: 1px solid rgba(192, 192, 192, 1);
     border-radius: 4px;
@@ -91,8 +106,7 @@
 
 /* 弹窗2 */
 .layui-layer-dialog {
-    width: 23%;
-    min-width: auto;
+    min-width: auto !important;
 }
 
 .layui-layer-dialog .layui-layer-title {
@@ -101,8 +115,8 @@
 
 .layui-layer-dialog .layui-layer-content {
     padding: 0px !important;
-    line-height: 0px !important;
-    padding-top: 57px !important;
+    height: auto !important;
+    padding-top: 50px !important;
     overflow: visible !important;
     overflow-x: visible !important;
     overflow-y: visible !important;
