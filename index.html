@@ -22,12 +22,12 @@
 			z-index: 1002;
 			padding: 10px;
 			box-sizing: border-box;
-			font-size: 16px;
+			font-size: 15px;
 		}
 
 		#anchor a {
 			display: block;
-			padding: 20px 0;
+			padding: 12px 0;
 		}
 
 		section {
@@ -72,16 +72,30 @@
 <body>
 
 	<menu id="anchor">
-		<a href="/frame.html">框架</a>
+		<a href="#frame">框架</a>
 		<a href="#button">按钮</a>
+		<a href="#input">文本域</a>
 		<a href="#search">搜索</a>
 		<a href="#color">颜色</a>
 		<a href="#tab">选项卡</a>
+		<a href="#select">下拉</a>
+		<a href="#checkbox">复选框</a>
+		<a href="#rule">法规提示</a>
+		<a href="#pic">图片比例</a>
 		<a href="#layout">表单布局</a>
+		<a href="#lable">标签</a>
+		<a href="#table">数据表格</a>
 		<a href="#popup">弹窗</a>
 	</menu>
 	<header id="header">前端开发规范手册</header>
 	<section>
+		<article id="frame">
+			<p class="title">
+				<svg class="icon" aria-hidden="true">
+					<use xlink:href="#iconguanlian"></use>
+				</svg>框架</p>
+			<a href="/frame.html" target="_blank">框架</a>
+		</article>
 		<article id="button">
 			<!-- 按钮1 -->
 			<p class="title">
@@ -272,33 +286,34 @@
 					</div>
 				</div>
 			</form>
-			<article id="lable">
-				<p class="title">
-					<svg class="icon" aria-hidden="true">
-						<use xlink:href="#iconguanlian"></use>
-					</svg>标签</p>
-				<iframe src="iframe-2.0/lable.html" name="lableChoose" data-id="label0"></iframe>
-			</article>
-			<article id="table">
-				<p class="title">
-					<svg class="icon" aria-hidden="true">
-						<use xlink:href="#iconguanlian"></use>
-					</svg>数据表格</p>
-				<iframe src="iframe-2.0/tableOne.html" name="tableOne" data-id="table0"></iframe>
-				<iframe src="iframe-2.0/tableTwo.html" name="tableTwo" data-id="table1"></iframe>
-			</article>
-			<article id="popup">
-				<p class="title">
-					<svg class="icon" aria-hidden="true">
-						<use xlink:href="#iconguanlian"></use>
-					</svg>弹窗</p>
-				<!-- 弹窗 -->
-				<div>
-					<span id="popup1" class="popup">弹窗1</span>
-					<span id="popup2" class="popup">弹窗2</span>
-					<span id="popup3" class="popup">弹窗3</span>
-				</div>
-			</article>
+		</article>
+		<article id="lable">
+			<p class="title">
+				<svg class="icon" aria-hidden="true">
+					<use xlink:href="#iconguanlian"></use>
+				</svg>标签</p>
+			<iframe src="iframe-2.0/lable.html" name="lableChoose" data-id="label0"></iframe>
+		</article>
+		<article id="table">
+			<p class="title">
+				<svg class="icon" aria-hidden="true">
+					<use xlink:href="#iconguanlian"></use>
+				</svg>数据表格</p>
+			<iframe src="iframe-2.0/tableOne.html" name="tableOne" data-id="table0"></iframe>
+			<iframe src="iframe-2.0/tableTwo.html" name="tableTwo" data-id="table1"></iframe>
+		</article>
+		<article id="popup">
+			<p class="title">
+				<svg class="icon" aria-hidden="true">
+					<use xlink:href="#iconguanlian"></use>
+				</svg>弹窗</p>
+			<!-- 弹窗 -->
+			<div>
+				<span id="popup1" class="popup">弹窗1</span>
+				<span id="popup2" class="popup">弹窗2</span>
+				<span id="popup3" class="popup">弹窗3</span>
+			</div>
+		</article>
 
 	</section>
 
