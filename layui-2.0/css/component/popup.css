@@ -6,7 +6,175 @@
 
 @charset "utf-8";
 
-#popup div span {
+.popup {
     padding-right: 20px;
     cursor: pointer;
+}
+
+/* 隐藏x小图标 */
+.layui-layer-setwin {
+    display: none;
+}
+
+/* 弹窗1 */
+
+.layui-layer {
+    width: 520px;
+    height: auto;
+    background: #FFFFFF;
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.16);
+    border-radius: 4px !important;
+}
+
+.layui-layer-prompt .layui-layer-title {
+    border-bottom: none;
+    font-size: 14px;
+    color: #060606;
+    padding-top: 25px;
+    overflow: visible;
+    background-color: #FFFFFF;
+    font-family: PingFang SC;
+    height: auto;
+    line-height: 0px;
+    border-radius: 4px;
+}
+
+.layui-layer-prompt .layui-layer-btn a {
+    width: 92px;
+    height: 38px;
+    text-align: center;
+    line-height: 38px;
+    border-radius: 4px;
+    padding: 0px;
+    margin: 0px;
+}
+
+.layui-layer-prompt .layui-layer-btn .layui-layer-btn0 {
+    margin-right: 40px;
+    background-color: #54ACF0;
+    border-color: #54ACF0;
+}
+
+.layui-layer-prompt .layui-layer-btn .layui-layer-btn1 {
+    margin-right: 30px;
+    border: 1px solid #999999;
+    color: #333;
+}
+
+.layui-layer .layui-layer-btn a:active {
+    opacity: 1;
+}
+
+.layui-layer .layui-layer-btn a:hover {
+    opacity: 1;
+}
+
+.layui-layer-prompt .layui-layer-content {
+    padding-bottom: 0px !important;
+    padding-top: 26px !important;
+}
+
+.layui-layer-prompt .layui-layer-btn {
+    padding-top: 60px !important;
+    padding-bottom: 40px;
+}
+
+.layui-layer-prompt .layui-layer-content .layui-layer-input {
+    width: 471px;
+    height: 38px;
+    background: rgba(255, 255, 255, 1);
+    border: 1px solid rgba(192, 192, 192, 1);
+    border-radius: 4px;
+    color: #999999;
+}
+
+
+/* 弹窗2 */
+.layui-layer-dialog {
+    width: 23%;
+    min-width: auto;
+}
+
+.layui-layer-dialog .layui-layer-title {
+    display: none;
+}
+
+.layui-layer-dialog .layui-layer-content {
+    padding: 0px !important;
+    line-height: 0px !important;
+    padding-top: 57px !important;
+    overflow: visible !important;
+    overflow-x: visible !important;
+    overflow-y: visible !important;
+    text-align: center;
+}
+
+.layui-layer-dialog .layui-layer-btn {
+    padding: 0;
+    padding-top: 71px;
+    padding-bottom: 48px;
+    text-align: center;
+}
+
+.layui-layer-dialog .layui-layer-btn a {
+    width: 92px;
+    height: 38px;
+    text-align: center;
+    line-height: 38px;
+    border-radius: 4px;
+    padding: 0px;
+    margin: 0px;
+}
+
+.layui-layer-dialog .layui-layer-btn0 {
+    border: 1px solid #F05654 !important;
+    background-color: #fff !important;
+    color: #F05654 !important;
+    margin-right: 40px !important;
+}
+
+.layui-layer-dialog .layui-layer-btn1 {
+    border-color: #54ACF0;
+    background-color: #54ACF0;
+    color: #fff;
+}
+
+
+/* 弹窗3 */
+.layui-layer-rim {
+    border: none !important;
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.16) !important;
+    border-radius: 4px !important;
+}
+
+.layui-layer-rim .layui-layer-title {
+    color: #060606;
+    background-color: #F5F5F5;
+    border: none;
+    border-radius: 4px;
+    height: 44px;
+    line-height: 44px;
+}
+
+.layui-layer-rim .layui-layer-btn a {
+    width: 92px;
+    height: 38px;
+    text-align: center;
+    line-height: 38px;
+    border-radius: 4px;
+    padding: 0px;
+    margin: 0px;
+}
+
+.layui-layer-rim .layui-layer-btn0 {
+    border: 1px solid #F05654 !important;
+    background-color: #fff !important;
+    color: #F05654 !important;
+    margin-right: 40px !important;
+}
+
+.layui-layer-rim .layui-layer-btn1 {
+    border-color: #54ACF0;
+    background-color: #54ACF0;
+    color: #fff;
 }
