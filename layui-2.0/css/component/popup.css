@@ -1,0 +1,12 @@
+/*
+ *	作者: ym
+ *	创建时间：
+ *	描述：弹窗
+ */
+
+@charset "utf-8";
+
+#popup div span {
+    padding-right: 20px;
+    cursor: pointer;
+}

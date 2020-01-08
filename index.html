@@ -78,6 +78,7 @@
 		<a href="#color">颜色</a>
 		<a href="#tab">选项卡</a>
 		<a href="#layout">表单布局</a>
+		<a href="#popup">弹窗</a>
 	</menu>
 	<header id="header">前端开发规范手册</header>
 	<section>
@@ -131,8 +132,9 @@
 
 				<div class="input-second-container">
 					<input type="text" name="title" placeholder="输入搜索关键字" autocomplete="off" class="layui-input">
-					<div class="input-number"><span class="input-on-number">0</span>/<span
-							class="input-max-number">100</span></div>
+					<div class="input-number"><span class="input-on-number">0</span>/<span class="input-max-number">100
+							</spani>
+					</div>
 				</div>
 				<p class="subTitle">文本域3</p>
 				<div class="input-third-container">
@@ -285,6 +287,15 @@
 				<iframe src="iframe-2.0/tableOne.html" name="tableOne" data-id="table0"></iframe>
 				<iframe src="iframe-2.0/tableTwo.html" name="tableTwo" data-id="table1"></iframe>
 			</article>
+			<article id="popup">
+				<!-- 弹窗 -->
+				<div>
+					<span id="popup1">弹窗1</span>
+					<span id="popup2">弹窗2</span>
+					<span id="popup3">弹窗3</span>
+				</div>
+			</article>
+
 	</section>
 
 </body>
@@ -299,15 +310,23 @@
 	var dataResult = {};
 
 	//初始化layui
-	layui.use(['element', 'form'], function () {
+	layui.use(['element', 'layer', 'form'], function () {
 		var element = layui.element,
 			form = layui.form,
 			$ = layui.$;
 
-			$.ajax
+			// $.ajax
 
 	})
 
+	//弹窗1
+	$("#popup1").click(function () {
+		//默认prompt
+		layer.prompt(function (val, index) {
+			layer.msg('得到了' + val);
+			layer.close(index);
+		});
+	})
 	//设置标签iframe高度
 	function setLableHeight(lableHeight) {
 		// 设置info模板中相应iframe的高度

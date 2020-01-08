@@ -30,6 +30,8 @@
 @import url('component/table.css');
 /* 下拉 */
 @import url('component/select.css');
+/* 弹窗 */
+@import url('component/popup.css');
 /*
  * 标签重定义
  */
