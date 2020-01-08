@@ -155,3 +155,26 @@
     height: 44px;
     line-height: 44px;
 }
+
+.layui-layer-rim .layui-layer-btn a {
+    width: 92px;
+    height: 38px;
+    text-align: center;
+    line-height: 38px;
+    border-radius: 4px;
+    padding: 0px;
+    margin: 0px;
+}
+
+.layui-layer-rim .layui-layer-btn0 {
+    border: 1px solid #F05654 !important;
+    background-color: #fff !important;
+    color: #F05654 !important;
+    margin-right: 40px !important;
+}
+
+.layui-layer-rim .layui-layer-btn1 {
+    border-color: #54ACF0;
+    background-color: #54ACF0;
+    color: #fff;
+}
