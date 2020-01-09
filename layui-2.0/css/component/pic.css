@@ -16,6 +16,17 @@
     height: 64px;
     display: inline-block;
 }
+.pic-one .noPicture{
+    width: 120px;
+    height: 120px;
+    background: #EFEFEF;
+    border: 1px solid #C0C0C0;
+    color: #999999;
+    font-size: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .pic-one img{
     width: 120px;
     height: 120px;
@@ -23,4 +34,15 @@
 .pic-two img{
     width: 64px;
     height: 64px;
+}
+.pic-two .noPicture{
+    width: 64px;
+    height: 64px;
+    background: #EFEFEF;
+    border: 1px solid #C0C0C0;
+    color: #999999;
+    font-size: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

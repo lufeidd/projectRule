@@ -1,0 +1,978 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>总览-火把知识</title>
+    <meta charset="utf-8">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <link rel="stylesheet" type="text/css" href="layui-2.0/css/layui.css">
+    <!-- 样式重定义 -->
+    <link rel="stylesheet" type="text/css" href="layui-2.0/css/public.css">
+    <!-- 字体图标 -->
+    <script src="layui-2.0/font/iconfont.js"></script>
+</head>
+<style>
+    .etc-picture{
+        font-size: 14px;
+        font-family:PingFang SC;
+    }
+    .etc-picture .red-price{
+        color: #F05654;
+    }
+    .etc-picture .etcCount{
+        color: #999999;
+    }
+    .df{
+        display: flex;
+    }
+    .dfja{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: auto;
+        flex-shrink: 0;
+    }
+    .etc-picture .etc-prompt{
+        display: inline-block;
+        margin-left: 55px;
+        font-size: 12px;
+        color: #999999;
+        vertical-align: bottom;
+    }
+    .etcList{
+        /*width: 60%;
+        border: 1px solid #E3E3E3;*/
+        margin-top: 15px;
+    }
+    .etcList .active .etcli{
+        border-left: 2px solid #54ACF0;
+        background: #F1F3F6;
+    }
+    .etcList .etcli{
+        border: 1px solid #E3E3E3;
+        padding: 10px;
+        font-size: 12px;
+        line-height: 18px;
+        width: 55%;
+        float: left;
+        margin-bottom: -1px;
+        margin-right: -1px;
+    }
+    .etcList .etcli .tally{
+        color: #333333;
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        width: 19px;
+    }
+    .etcList .etcli .etcContent{
+        color: #333333;
+        padding-left: 5px;
+        flex-basis: 70%;
+    }
+    .etcList .etcli .etcContent .name{
+        color: #333333;
+    }
+    .etcList .etcli .etcContent .timeCount{
+        color: #999999;
+        padding-top: 2px;
+    }
+    .etcList .etcli .etcContent .timeCount .count{
+        padding-left: 20px;
+    }
+    .etcList .etcNone{
+        display: none!important;
+    }
+    .etcList .etcClick{
+        display: inline-block;
+        border: 1px solid #E3E3E3;
+        background: #F1F3F6;
+        width: 500px;
+        padding: 20px;
+    }
+    .etcList .etcClick .etcClick-title{
+        margin-bottom: 15px;
+    }
+    .etcList .etcClick .etcClick-show{
+        margin-top: 30px;
+    }
+    .etcList .etcClick .etcBtn{
+        margin-top: 20px;
+        text-align: center;
+    }
+    .etcList .etcClick .etcBtn .layui-btn{
+        background: #F1F3F6;
+    }
+    body .demo-class .layui-layer-btn .layui-layer-btn0{
+        border-color: #fff!important;
+        background-color: #fff!important;
+        color: #F05654!important;
+    }
+    body .demo-class .layui-layer-btn .layui-layer-btn1{
+        border-color: #54ACF0!important;
+        border-radius: 4px;
+        background-color: #54ACF0!important;
+        color: #fff!important;
+    }
+</style>
+<body class="large">
+<script>
+    if (localStorage.getItem('slideState') == 'small') {
+        document.querySelector('body').setAttribute('class', 'small');
+    } else {
+        document.querySelector('body').setAttribute('class', 'large');
+    }
+</script>
+<div class="layui-layout layui-layout-admin">
+    <!-- 供应商logo -->
+    <div class="layui-logo">
+        <img src="layui-2.0/images/logo.png" width="26px" height="27px">
+        <span class="slogan">火把知识服务平台</span>
+        <div class="foldAction">
+            <i class="layui-icon layui-icon-shrink-right"></i>
+            <i class="layui-icon layui-icon-spread-left"></i>
+        </div>
+    </div>
+
+    <!-- 头部 栏目 -->
+    <div class="layui-header">
+        <!-- 头部导航栏右边部分 -->
+        <ul class="layui-nav layui-layout-right">
+            <li class="layui-nav-item">
+                <a href="#">
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#iconmessage-line"></use>
+                    </svg>
+                    <span>私信</span>
+                    <span class="layui-badge-dot"></span>
+                </a>
+            </li>
+            <li class="layui-nav-item">
+                <a href="#">
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#iconnews-line"></use>
+                    </svg>
+                    <span>通知中心</span>
+                    <span class="layui-badge-dot"></span>
+                </a>
+            </li>
+            <li class="layui-nav-item ">
+                <a href="#">
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#iconhelp-line"></use>
+                    </svg>
+                    <span>帮助中心</span>
+                </a>
+            </li>
+            <li class="layui-nav-item">
+                <a href="#">
+                    <img src="http://t.cn/RCzsdCq" class="layui-nav-img">
+                    <span>用户名</span>
+                </a>
+                <dl class="layui-nav-child">
+                    <dd><a href="#">账号主页</a></dd>
+                    <dd><a href="#">修改密码</a></dd>
+                    <dd><a class="logout" href="#">退出登录</a></dd>
+                </dl>
+            </li>
+        </ul>
+    </div>
+
+    <!-- 侧边栏部分 -->
+    <!-- 展开 -->
+    <div class="layui-side layui-bg-black large">
+        <div class="layui-side-scroll">
+            <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
+            <ul class="layui-nav layui-nav-tree">
+                <li class="layui-nav-item">
+                    <a href="#">
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#iconoverview-block"></use>
+                        </svg>
+                        <span>总览</span>
+                    </a>
+                </li>
+                <li class="layui-nav-item layui-nav-itemed">
+                    <a href="#">
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#iconsource-block"></use>
+                        </svg>
+                        <span>发布管理</span>
+                    </a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="#">文章列表</a></dd>
+                        <dd class="layui-this"><a href="#">专辑列表</a></dd>
+                    </dl>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- 收起 -->
+    <div class="layui-side layui-bg-black small">
+        <ul class="layui-nav layui-layout-right">
+            <li class="layui-nav-item">
+                <a href="#">
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#iconoverview-block"></use>
+                    </svg>
+                </a>
+            </li>
+            <li class="layui-nav-item">
+                <a href="#">
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#iconsource-block"></use>
+                    </svg>
+                </a>
+                <dl class="layui-nav-child">
+                    <dd><a href="#">文章列表</a></dd>
+                    <dd><a href="#">专辑列表</a></dd>
+                </dl>
+            </li>
+        </ul>
+    </div>
+
+    <!-- 面包屑 -->
+    <div class="breadcrumb-container">
+            <span class="layui-breadcrumb">
+                <a href="/">首页</a>
+                <a href="/frame.html">框架</a>
+                <a><cite>导航元素</cite></a>
+            </span>
+    </div>
+    <!-- 主体内容 -->
+    <div class="layui-body">
+        <div style="height: auto;">
+            <div>
+                <div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
+                    <ul class="layui-tab-title">
+                        <li class="layui-this">节目管理</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- 警告框 -->
+            <div class="rule">
+                请您遵守国家相关规定，切勿上传低俗色情、暴力恐怖、谣言诈骗、侵权盗版等相关内容，火把保有依据国家规定及平台规则进行处理的权利。
+            </div>
+            <!-- 内容主体区域 -->
+            <form class="layui-form " action="javascript:void(0);">
+                <div style="padding: 15px; background-color: #fff;margin: 10px 15px 0 10px;">
+                    <div class="etc-picture">
+                        <div class="df">
+                            <div class="pic-one">
+                                <img src="https://file.mhuoba.com/shop/3/100021/picture/book/20191108/17/20191108173351194.jpg" alt="">
+                            </div>
+                            <div style="width: 430px;margin-left:10px;">
+                                <div class="textTwoOver">阿狸·旋木花园阿狸·旋木花园阿狸·旋木花园阿狸·旋木花园阿狸·旋木花园阿狸·旋木花园阿狸·旋木花园阿狸·旋木花园阿狸·旋木花园阿狸·旋木花园阿狸·旋木花园阿狸·旋木花园阿狸·旋木花园阿狸·旋木花园阿狸·旋木花园阿狸·旋木花园阿狸·旋木花园</div>
+                                <div style="padding-top: 18px">
+                                    <span class="red-price">￥16.67</span>
+                                    <span class="etcCount" style="padding-left: 10px;">共1245集</span>
+                                </div>
+                                <div style="padding-top: 18px">
+                                    <button type="button" class="layui-btn">上传新节目</button>
+                                    <div class="etc-prompt">请选择2G以内MP3、M4A、MP4文件。</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="etcList" id="demoList">
+                        <div class="jsDrag">
+                            <div class="etcli df">
+                                <div class="tally">
+                                    <div class="tallyValue">1</div>
+                                    <div class="tallySign">、</div>
+                                </div>
+                                <div class="etcContent textOverflow">
+                                    <div class="name textOverflow">
+                                        1111.MP3
+                                    </div>
+                                    <div class="timeCount">
+                                        <span class="time">
+                                            06:32
+                                        </span>
+                                        <span class="count">
+                                            1235次播放
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="sortBox dfja" data-url="/shop/27/100072/file/package/20191202/09/20191202095004662.pdf" style="opacity: 0;">
+                                    <div class="upTop" style="flex-grow: 1;padding-right: 10px;">
+                                        <i class="layui-icon layui-icon-upload-circle" style="font-size: 12px;">
+                                            置顶
+                                        </i>
+                                    </div>
+                                    <div class="up" style="flex-grow: 1;padding-right: 10px;">
+                                        <i class="layui-icon layui-icon-up" style="font-size: 12px;">
+                                            上移
+                                        </i>
+                                    </div>
+                                    <div class="down" style="flex-grow: 1;padding-right: 10px;">
+                                        <i class="layui-icon layui-icon-down" style="font-size: 12px;">
+                                            下移
+                                        </i>
+                                    </div>
+                                    <div class="grounding" style="flex-grow: 1;padding-right: 10px;">
+                                        <i class="layui-icon layui-icon-set-sm" style="font-size: 12px;">
+                                            上架
+                                        </i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="jsDrag">
+                            <div class="etcli df">
+                                <div class="tally">
+                                    <div class="tallyValue">2</div>
+                                    <div class="tallySign">、</div>
+                                </div>
+                                <div class="etcContent textOverflow">
+                                    <div class="name textOverflow">
+                                        2222.MP3
+                                    </div>
+                                    <div class="timeCount">
+                                        <span class="time">
+                                            06:32
+                                        </span>
+                                        <span class="count">
+                                            1235次播放
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="sortBox dfja" data-url="/shop/27/100072/file/package/20191202/09/20191202095004662.pdf" style="opacity: 0;">
+                                    <div class="upTop" style="flex-grow: 1;padding-right: 10px;">
+                                        <i class="layui-icon layui-icon-upload-circle" style="font-size: 12px;">
+                                            置顶
+                                        </i>
+                                    </div>
+                                    <div class="up" style="flex-grow: 1;padding-right: 10px;">
+                                        <i class="layui-icon layui-icon-up" style="font-size: 12px;">
+                                            上移
+                                        </i>
+                                    </div>
+                                    <div class="down" style="flex-grow: 1;padding-right: 10px;">
+                                        <i class="layui-icon layui-icon-down" style="font-size: 12px;">
+                                            下移
+                                        </i>
+                                    </div>
+                                    <div class="grounding" style="flex-grow: 1;padding-right: 10px;">
+                                        <i class="layui-icon layui-icon-set-sm" style="font-size: 12px;">
+                                            上架
+                                        </i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="jsDrag">
+                            <div class="etcli df">
+                                <div class="tally">
+                                    <div class="tallyValue">3</div>
+                                    <div class="tallySign">、</div>
+                                </div>
+                                <div class="etcContent textOverflow">
+                                    <div class="name textOverflow">
+                                        3333.MP3
+                                    </div>
+                                    <div class="timeCount">
+                                        <span class="time">
+                                            06:32
+                                        </span>
+                                        <span class="count">
+                                            1235次播放
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="sortBox dfja" data-url="/shop/27/100072/file/package/20191202/09/20191202095004662.pdf" style="opacity: 0;">
+                                    <div class="upTop" style="flex-grow: 1;padding-right: 10px;">
+                                        <i class="layui-icon layui-icon-upload-circle" style="font-size: 12px;">
+                                            置顶
+                                        </i>
+                                    </div>
+                                    <div class="up" style="flex-grow: 1;padding-right: 10px;">
+                                        <i class="layui-icon layui-icon-up" style="font-size: 12px;">
+                                            上移
+                                        </i>
+                                    </div>
+                                    <div class="down" style="flex-grow: 1;padding-right: 10px;">
+                                        <i class="layui-icon layui-icon-down" style="font-size: 12px;">
+                                            下移
+                                        </i>
+                                    </div>
+                                    <div class="grounding" style="flex-grow: 1;padding-right: 10px;">
+                                        <i class="layui-icon layui-icon-set-sm" style="font-size: 12px;">
+                                            上架
+                                        </i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="jsDrag">
+                            <div class="etcli df">
+                                <div class="tally">
+                                    <div class="tallyValue">4</div>
+                                    <div class="tallySign">、</div>
+                                </div>
+                                <div class="etcContent textOverflow">
+                                    <div class="name textOverflow">
+                                        4444.MP3
+                                    </div>
+                                    <div class="timeCount">
+                                        <span class="time">
+                                            06:32
+                                        </span>
+                                        <span class="count">
+                                            1235次播放
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="sortBox dfja" data-url="/shop/27/100072/file/package/20191202/09/20191202095004662.pdf" style="opacity: 0;">
+                                    <div class="upTop" style="flex-grow: 1;padding-right: 10px;">
+                                        <i class="layui-icon layui-icon-upload-circle" style="font-size: 12px;">
+                                            置顶
+                                        </i>
+                                    </div>
+                                    <div class="up" style="flex-grow: 1;padding-right: 10px;">
+                                        <i class="layui-icon layui-icon-up" style="font-size: 12px;">
+                                            上移
+                                        </i>
+                                    </div>
+                                    <div class="down" style="flex-grow: 1;padding-right: 10px;">
+                                        <i class="layui-icon layui-icon-down" style="font-size: 12px;">
+                                            下移
+                                        </i>
+                                    </div>
+                                    <div class="grounding" style="flex-grow: 1;padding-right: 10px;">
+                                        <i class="layui-icon layui-icon-set-sm" style="font-size: 12px;">
+                                            上架
+                                        </i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="jsDrag">
+                            <div class="etcli df">
+                                <div class="tally">
+                                    <div class="tallyValue">5</div>
+                                    <div class="tallySign">、</div>
+                                </div>
+                                <div class="etcContent textOverflow">
+                                    <div class="name textOverflow">
+                                        5555.MP3
+                                    </div>
+                                    <div class="timeCount">
+                                        <span class="time">
+                                            06:32
+                                        </span>
+                                        <span class="count">
+                                            1235次播放
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="sortBox dfja" data-url="/shop/27/100072/file/package/20191202/09/20191202095004662.pdf" style="opacity: 0;">
+                                    <div class="upTop" style="flex-grow: 1;padding-right: 10px;">
+                                        <i class="layui-icon layui-icon-upload-circle" style="font-size: 12px;">
+                                            置顶
+                                        </i>
+                                    </div>
+                                    <div class="up" style="flex-grow: 1;padding-right: 10px;">
+                                        <i class="layui-icon layui-icon-up" style="font-size: 12px;">
+                                            上移
+                                        </i>
+                                    </div>
+                                    <div class="down" style="flex-grow: 1;padding-right: 10px;">
+                                        <i class="layui-icon layui-icon-down" style="font-size: 12px;">
+                                            下移
+                                        </i>
+                                    </div>
+                                    <div class="grounding" style="flex-grow: 1;padding-right: 10px;">
+                                        <i class="layui-icon layui-icon-set-sm" style="font-size: 12px;">
+                                            上架
+                                        </i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="etcClick etcNone">
+                            <div class="etcClick-title">节目标题</div>
+                            <div class="input-second-container customize">
+                                <input type="text" name="etcUser" placeholder="输入节目标题" autocomplete="off" class="layui-input">
+                                <div class="input-number"><span class="input-on-number">0</span>/<span
+                                        class="input-max-number">35</span></div>
+                            </div>
+                            <div class="etcClick-show">免费试听试看</div>
+                            <input type="checkbox" name="isPlay" lay-skin="switch" lay-filter="isPlay" class="isChecked">
+                            <div class="etcBtn">
+                                <button type="button" class="layui-btn layui-btn-normal updateSort">调整顺序</button>
+                                <button type="button" class="layui-btn layui-btn-danger deleteEtc">删除该节目</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div id="updateNumber" style="padding: 20px;display: none;">
+        <div class="input-one1-container layui-inline" style="width: 350px;">
+            <input type="text" name="jumpNumber" placeholder="默认文本" autocomplete="off"
+                   class="layui-input">
+        </div>
+    </div>
+    <div id="deleteNumber" style="display: none;">
+        <div style="padding:15px;">确定要删除此节目吗？删除后将无法恢复。</div>
+    </div>
+    <div class="bottom-layui-btn" style="margin-left: 190px;">
+        <button type="button" class="layui-btn layui-btn-normal">保存草稿</button>
+        <button type="button" class="layui-btn layui-btn-six">保存并提交<i class="layui-icon layui-icon-down"></i></button>
+    </div>
+    <!-- 底部 -->
+    <div class="layui-footer"></div>
+</div>
+</body>
+
+</html>
+<script type="text/javascript" src="layui-2.0/layui.js"></script>
+<script type="text/javascript" src="layui-2.0/jquery3.4.1.js"></script>
+<script type="text/javascript" src="layui-2.0/drag-arrange.js"></script>
+<script type="text/javascript" src="layui-2.0/public.js"></script>
+<script type="text/javascript">
+    //节目点击修改窗
+    var etcClickUpdate = '<div class="etcClick etcNone"><div class="etcClick-title">节目标题</div><div class="input-second-container customize"><input type="text" name="etcUser" placeholder="输入节目标题" autocomplete="off" class="layui-input"><div class="input-number"><span class="input-on-number">0</span>/<span class="input-max-number">35</span></div></div><div class="etcClick-show">免费试听试看</div><input type="checkbox" name="isPlay" lay-skin="switch" lay-filter="isPlay" class="isChecked"><div class="etcBtn"><button type="button" class="layui-btn layui-btn-normal updateSort">调整顺序</button><button type="button" class="layui-btn layui-btn-danger deleteEtc">删除该节目</button></div></div>'
+
+    //初始化页面
+    $(function(){
+        var etcData = [
+            {etcId:1,etcName:'1111.MP3',etcTime:'06:32',etcPlayCount:'1235次播放',isPlay:'1',isState:'1'},
+            {etcId:2,etcName:'2222.MP3',etcTime:'06:32',etcPlayCount:'1235次播放',isPlay:'0',isState:'1'},
+            {etcId:3,etcName:'3333.MP3',etcTime:'06:32',etcPlayCount:'1235次播放',isPlay:'0',isState:'1'},
+            {etcId:4,etcName:'4444.MP3',etcTime:'06:32',etcPlayCount:'1235次播放',isPlay:'0',isState:'1'},
+            {etcId:5,etcName:'5555.MP3',etcTime:'06:32',etcPlayCount:'1235次播放',isPlay:'0',isState:'1'}
+            ];
+        //存储localStorage数据
+        localStorage.setItem("etcData", JSON.stringify(etcData));
+    });
+
+    const myDrag = {
+        //摧毁拖拽
+        dragDestory(dom) {
+            // 防止事件重复
+            var jsDragArr = Array.prototype.slice.call($(dom));
+            for (var i = 0; i < jsDragArr.length; i++) {
+                var destroy = $(jsDragArr[i]).data('drag-arrange-destroy');
+                if (destroy) {
+                    destroy();
+                    break;
+                }
+            }
+        },
+        //点击排序按钮
+        dragSortClick() {
+            var bl = true;
+            var $that = $(this), s = 'show';
+            var newDrag = Object.create(myDrag);
+
+            function fn1(){
+                $('#jsSortCom').addClass('sorting');
+            }
+            function fn2(){
+                $('#jsSortCom').removeClass('sorting');
+            }
+            bl ? fn1() : fn2();
+            bl = !bl;
+        }
+    };
+    // 置顶
+    $('body').on('click', '.sortBox .upTop', function(){
+        var tallyId = parseInt($(this).closest('.jsDrag').find('.tally .tallyValue').text());
+        topMethod(tallyId);
+    })
+    // 上移
+    $('body').on('click', '.sortBox .up', function(){
+        var tallyId = parseInt($(this).closest('.jsDrag').find('.tally .tallyValue').text());
+        if(tallyId == 1){
+            topMethod(tallyId);
+        }else{
+            var jumpNumber = tallyId - 1;
+            //获取localStorage数据
+            var getEtcData = JSON.parse(localStorage.getItem("etcData"));
+            //更新localStorage数据
+            updateLocalStorage(getEtcData,'jump',tallyId,jumpNumber);
+            //更新页面展示数据
+            updateShowData();
+        }
+    })
+    // 下移
+    $('body').on('click', '.sortBox .down', function(){
+        var tallyId = parseInt($(this).closest('.jsDrag').find('.tally .tallyValue').text());
+        var jumpNumber = tallyId + 1;
+        //获取localStorage数据
+        var getEtcData = JSON.parse(localStorage.getItem("etcData"));
+        //更新localStorage数据
+        updateLocalStorage(getEtcData,'jump',tallyId,jumpNumber);
+        //更新页面展示数据
+        updateShowData();
+    })
+    // 上下架
+    $('body').on('click', '.sortBox .grounding', function(){
+        var tallyId = parseInt($(this).closest('.jsDrag').find('.tally .tallyValue').text());
+        if(isNaN(tallyId)){
+            var fontText = $(this).closest('.jsDrag').find('.etcContent .name').text().trim();
+            //获取localStorage数据
+            var getEtcData = JSON.parse(localStorage.getItem("etcData"));
+            for(var i = 0; i < getEtcData.length; i++) {
+                if(getEtcData[i].etcName == fontText){
+                    if(getEtcData[i].isState == '0'){
+                        getEtcData[i].isState = '1';
+                    }else{
+                        getEtcData[i].isState = '0';
+                    }
+                }
+            }
+            //更新localStorage数据
+            updateLocalStorage(getEtcData,'grounding');
+            //更新页面展示数据
+            updateShowData();
+        }else{
+            //获取localStorage数据
+            var getEtcData = JSON.parse(localStorage.getItem("etcData"));
+            for(var i = 0; i < getEtcData.length; i++) {
+                if(getEtcData[i].etcId == tallyId){
+                    if(getEtcData[i].isState == '0'){
+                        getEtcData[i].isState = '1';
+                    }else{
+                        getEtcData[i].isState = '0';
+                    }
+                }
+            }
+            //更新localStorage数据
+            updateLocalStorage(getEtcData,'grounding');
+            //更新页面展示数据
+            updateShowData();
+        }
+    })
+    //点击其余地方隐藏
+    $('body').on("click", function (e) {
+        var target = $(e.target);
+        if (target.closest(".etcList").length == 0 && target.closest(".layui-layer.layui-layer-page").length == 0 && target.closest(".layui-layer.layui-layer-page").length == 0) {
+            $('.etcList').find('.etcClick').addClass('etcNone');
+            $('.etcList').find('.jsDrag').removeClass('active');
+        }
+    })
+
+    layui.use(['element', 'form'], function () {
+        var element = layui.element,
+        layer = layui.layer,
+        $ = layui.$;
+        var form = layui.form;
+
+        // 拖拽插件重定义
+        myDrag.dragSortClick();
+
+        // 节目编辑
+        $('body').on('click', '.etcList .jsDrag', function(){
+            var tallyId = parseInt($(this).find('.tally .tallyValue').text());
+            if(isNaN(tallyId)){}else{
+                $(this).siblings().removeClass('active');
+                $(this).addClass('active');
+                $(this).closest('.etcList').find('.etcClick').removeClass('etcNone');
+                //获取localStorage数据
+                var getEtcData = JSON.parse(localStorage.getItem("etcData"));
+                for(var i = 0; i < getEtcData.length; i++) {
+                    if(getEtcData[i].etcId == tallyId){
+                        var localName = getEtcData[i].etcName;
+                        var finaName = localName.substring(0,localName.lastIndexOf("."));
+                        $('input[name=etcUser]').val(finaName);
+                        // if(getEtcData[i].isPlay == 1){
+                        //     console.log(111);
+                        //     $('.isChecked').attr('checked',true);
+                        //     form.render();
+                        // }else{
+                        //     console.log(222,$('.isChecked').attr('checked'));
+                        //     $('.isChecked').attr('checked',false);
+                        //     form.render();
+                        // }
+                    }
+                }
+            }
+        })
+
+        //调整序号弹窗
+        $('body').on('click','.updateSort',function(){
+            $('.input-one1-container .layui-input').val('');
+            layer.open({
+                type: 1
+                ,area: ['400px', '180px']
+                ,title: '将当前节目的序号修改为'
+                ,btn: ['修 改', '取 消']
+                ,content: $('#updateNumber')
+                ,closeBtn :0
+                ,yes: function(index, layero){
+                    var tallyId = parseInt($('.jsDrag.active').find('.tally .tallyValue').text());
+                    var jumpNumber = parseInt($('input[name=jumpNumber]').val());
+                    if(jumpNumber == 1){
+                        topMethod(tallyId);
+                        layer.closeAll();
+                        return;
+                    }
+                    var num = 0;
+                    //获取localStorage数据
+                    var getEtcData = JSON.parse(localStorage.getItem("etcData"));
+                    for(var i = 0; i < getEtcData.length; i++) {
+                        if(getEtcData[i].isState == '0'){
+                            num++;
+                        }
+                    }
+                    var number = getEtcData.length - num;
+                    if(jumpNumber <= number && jumpNumber > 0){
+                        //更新localStorage数据
+                        updateLocalStorage(getEtcData,'jump',tallyId,jumpNumber);
+                        //更新页面展示数据
+                        updateShowData();
+                    }else{
+                        layer.msg('输入数字不正规，请重新输入');
+                    }
+                    layer.closeAll();
+                }
+                ,btn2: function(index, layero){
+                    layer.closeAll();
+                }
+            });
+        });
+
+        //删除节目
+        $('body').on('click','.deleteEtc',function(){
+            layer.open({
+                type: 1
+                ,skin: 'demo-class'
+                ,area: ['360px', '120px']
+                ,title: 0
+                ,btn: ['确认删除', '取消']
+                ,content: $('#deleteNumber')
+                ,closeBtn :0
+                ,yes: function(index, layero){
+                    var tallyId = parseInt($('.jsDrag.active').find('.tally .tallyValue').text());
+                    //获取localStorage数据
+                    var getEtcData = JSON.parse(localStorage.getItem("etcData"));
+                    for(var i = 0; i < getEtcData.length; i++) {
+                        if(getEtcData[i].etcId == tallyId){
+                            getEtcData.splice(i,1);
+                            //更新localStorage数据
+                            updateLocalStorage(getEtcData,'grounding');
+                            //更新页面展示数据
+                            updateShowData();
+                            layer.closeAll();
+                        }
+                    }
+                }
+                ,btn2: function(index, layero){
+                    layer.closeAll();
+                }
+            });
+        });
+
+        // 展开收缩
+        $('.foldAction').on('click', function () {
+            var body = $(this).parents('body');
+            var slideState = '';
+            // 展开隐藏图标切换
+            if ($(body).hasClass('small')) {
+                $(body).removeClass('small').addClass('large');
+                slideState = 'large';
+            } else {
+                $(body).removeClass('large').addClass('small');
+                slideState = 'small';
+            }
+            localStorage.setItem('slideState', slideState);
+        })
+
+        //实时修改节目标题
+        $('body').on('input','.customize .layui-input',function(){
+            var updateVal = $(this).val().trim();
+            var tallyId = parseInt($('.jsDrag.active').find('.tally .tallyValue').text());
+            //获取localStorage数据
+            var getEtcData = JSON.parse(localStorage.getItem("etcData"));
+            for(var i = 0; i < getEtcData.length; i++) {
+                if(getEtcData[i].etcId == tallyId){
+                    var localName = getEtcData[i].etcName;
+                    var length = localName.length-4;
+                    var finaName = localName.substr(length);
+                    getEtcData[i].etcName = (updateVal+finaName);
+                    //更新localStorage数据
+                    updateLocalStorage(getEtcData,'grounding');
+                    $('.jsDrag.active').find('.etcContent .name').text(updateVal+finaName);
+                }
+            }
+        })
+
+        //监听checkbox
+        form.on('switch(isPlay)', function(obj){
+            var tallyId = parseInt($('.jsDrag.active').find('.tally .tallyValue').text());
+            var isPlay = obj.elem.checked ? 1 : 0;
+            //获取localStorage数据
+            var getEtcData = JSON.parse(localStorage.getItem("etcData"));
+            for(var i = 0; i < getEtcData.length; i++) {
+                if(getEtcData[i].etcId == tallyId){
+                    getEtcData[i].isPlay = isPlay;
+                    //更新localStorage数据
+                    updateLocalStorage(getEtcData,'grounding');
+                }
+            }
+        })
+
+        //hover显示
+        $("body").on("mouseenter",".jsDrag",function(){
+            $(this).find(".sortBox").css("opacity","1");
+        });
+        $("body").on("mouseleave",".jsDrag",function(){
+            $(this).find(".sortBox").css("opacity","0");
+        });
+    });
+
+    //置顶方法
+    function topMethod(id){
+        //获取localStorage数据
+        var getEtcData = JSON.parse(localStorage.getItem("etcData"));
+        for(var i = 0; i < getEtcData.length; i++) {
+            if(getEtcData[i].etcId == id){
+                var topData = getEtcData[i];
+                getEtcData.splice(i,1);
+                getEtcData.unshift(topData);
+                //更新localStorage数据
+                updateLocalStorage(getEtcData,'grounding');
+                //更新页面展示数据
+                updateShowData();
+            }
+        }
+    }
+
+    //跳转序号
+    function arraymove(arr, fromIndex, toIndex) {
+        var element = arr[fromIndex-1];
+        arr.splice(fromIndex-1, 1);
+        arr.splice(toIndex-1, 0, element);
+        return arr;
+    }
+
+    //更新localStorage数据
+    function updateLocalStorage(data,isType,oldId,newId){
+        var undercarriage = [];
+        var undercarriageIndex = [];
+        switch (isType) {
+            case 'grounding':
+                for(var x = data.length-1; x >= 0; x--) {
+                    if(data[x].isState == '0'){
+                        data[x].etcId = 0;
+                        undercarriageIndex.push(x);
+                        undercarriage.push(data[x]);
+                        data.splice(x,1);
+                    }
+                }
+                for(var y = 0; y < data.length; y++) {
+                    data[y].etcId = (y + 1);
+                }
+                if(undercarriage.length != 0){
+                    for(var z = undercarriage.length-1; z >= 0 ; z--){
+                        data.splice(undercarriageIndex[z],0,undercarriage[z]);
+                    }
+                }
+                break;
+            case 'jump':
+                for(var x = data.length-1; x >= 0; x--) {
+                    if(data[x].isState == '0'){
+                        data[x].etcId = 0;
+                        undercarriageIndex.push(x);
+                        undercarriage.push(data[x]);
+                        data.splice(x,1);
+                    }
+                }
+                arraymove(data, oldId, newId);
+                for(var y = 0; y < data.length; y++) {
+                    data[y].etcId = (y + 1);
+                }
+                if(undercarriage.length != 0){
+                    for(var z = undercarriage.length-1; z >= 0 ; z--){
+                        data.splice(undercarriageIndex[z],0,undercarriage[z]);
+                    }
+                }
+                break;
+            default:
+                for(var y = 0; y < data.length; y++) {
+                    data[y].etcId = (y + 1);
+                }
+                break;
+        }
+        //存储localStorage数据
+        localStorage.setItem("etcData", JSON.stringify(data));
+    }
+    //更新页面展示数据
+    function updateShowData(){
+        //获取localStorage数据
+        var getEtcData = JSON.parse(localStorage.getItem("etcData"));
+        var str = '';
+        for(var i = 0; i < getEtcData.length; i++) {
+            var isState = getEtcData[i].isState;
+            switch (isState) {
+                case '0':
+                    str += '<div class="jsDrag">'+
+                        '<div class="etcli df">'+
+                        '<div class="tally">'+
+                        '<div class="tallyValue"></div>'+
+                        '<div class="tallySign"></div>'+
+                        '</div>'+
+                        '<div class="etcContent textOverflow">'+
+                        '<div class="name textOverflow">'+ getEtcData[i].etcName +'</div>'+
+                        '<div class="timeCount">'+
+                        '<span class="time">'+ getEtcData[i].etcTime +'</span>'+
+                        '<span class="count">'+ getEtcData[i].etcPlayCount +'</span>'+
+                        '</div>'+
+                        '</div>'+
+                        '<div class="sortBox dfja" data-url="/shop/27/100072/file/package/20191202/09/20191202095004662.pdf" style="opacity: 0;">'+
+                        '<div class="grounding" style="flex-grow: 1;padding-right: 10px;">'+
+                        '<i class="layui-icon layui-icon-set-sm" style="font-size: 12px;">下架</i>'+
+                        '</div>'+
+                        '</div>'+
+                        '</div>'+
+                        '</div>';
+                break;
+                case '1':
+                    str += '<div class="jsDrag">'+
+                        '<div class="etcli df">'+
+                        '<div class="tally">'+
+                        '<div class="tallyValue">'+ getEtcData[i].etcId +'</div>'+
+                        '<div class="tallySign">、</div>'+
+                        '</div>'+
+                        '<div class="etcContent textOverflow">'+
+                        '<div class="name textOverflow">'+ getEtcData[i].etcName +'</div>'+
+                        '<div class="timeCount">'+
+                        '<span class="time">'+ getEtcData[i].etcTime +'</span>'+
+                        '<span class="count">'+ getEtcData[i].etcPlayCount +'</span>'+
+                        '</div>'+
+                        '</div>'+
+                        '<div class="sortBox dfja" data-url="/shop/27/100072/file/package/20191202/09/20191202095004662.pdf" style="opacity: 0;">'+
+                        '<div class="upTop" style="flex-grow: 1;padding-right: 10px;">'+
+                        '<i class="layui-icon layui-icon-upload-circle" style="font-size: 12px;">置顶</i>'+
+                        '</div>'+
+                        '<div class="up" style="flex-grow: 1;padding-right: 10px;">'+
+                        '<i class="layui-icon layui-icon-up" style="font-size: 12px;">上移</i>'+
+                        '</div>'+
+                        '<div class="down" style="flex-grow: 1;padding-right: 10px;">'+
+                        '<i class="layui-icon layui-icon-down" style="font-size: 12px;">下移</i>'+
+                        '</div>'+
+                        '<div class="grounding" style="flex-grow: 1;padding-right: 10px;">'+
+                        '<i class="layui-icon layui-icon-set-sm" style="font-size: 12px;">上架</i>'+
+                        '</div>'+
+                        '</div>'+
+                        '</div>'+
+                        '</div>';
+                break;
+                default:
+                break;
+            }
+        }
+        $('.etcList').html('');
+        $('.etcList').append(str);
+        $('.etcList').append(etcClickUpdate);
+        layui.use(['form'], function () {
+            var form = layui.form;
+            form.render();
+        })
+    }
+</script>
