@@ -86,6 +86,7 @@
 		<a href="#lable">标签</a>
 		<a href="#table">数据表格</a>
 		<a href="#popup">弹窗</a>
+		<a href="#popup">下拉联动</a>
 	</menu>
 	<header id="header">前端开发规范手册</header>
 	<section>
@@ -123,7 +124,8 @@
 			<!-- 固定底部按钮 -->
 			<div class="bottom-layui-btn">
 				<button type="button" class="layui-btn layui-btn-normal">保存草稿</button>
-				<button type="button" class="layui-btn layui-btn-six">保存并提交<i class="layui-icon layui-icon-down"></i></button>
+				<button type="button" class="layui-btn layui-btn-six">保存并提交<i
+						class="layui-icon layui-icon-down"></i></button>
 			</div>
 		</article>
 		<article id="input">
@@ -276,14 +278,22 @@
 			<p class="subTitle">表单布局1 - 预留提示空间</p>
 			<form class="layui-form" action="">
 				<p class="form-title">标题</p>
-				<div class="layui-form-item">
+				<div class="layui-form-item input-layout-one">
 					<label class="layui-form-label">单行输入框：</label>
-					<div class="layui-input-block">
-						<input type="text" name="title" lay-verify="title" autocomplete="off" placeholder="请输入标题"
-							class="layui-input">
+					<div class="layui-input-inline context">
+
+						<div class="input-second-container">
+							<input type="text" name="title" placeholder="输入搜索关键字" autocomplete="off"
+								class="layui-input">
+							<div class="input-number"><span class="input-on-number">0</span>/<span
+									class="input-max-number">100
+									</spani>
+							</div>
+						</div>
 						<p class="desc">描述</p>
 						<p class="msg">错误提示</p>
 					</div>
+					<div class="layui-form-mid layui-word-aux">同步图书信息</div>
 				</div>
 				<div class="layui-form-item">
 					<label class="layui-form-label"><span class="tip">*</span>验证必填项：</label>
@@ -295,6 +305,69 @@
 					</div>
 				</div>
 			</form>
+			<p class="subTitle">表单布局2</p>
+
+
+
+			<form class="layui-form" action="">
+				<div class="layui-form-item">
+					<div class="layui-inline">
+						<label class="layui-form-label">出版日期：</label>
+						<div class="layui-input-block">
+							<div class="input-one1-container">
+								<input type="text" name="title" placeholder="输入搜索关键字 input-one1-container"
+									autocomplete="off" class="layui-input">
+							</div>
+						</div>
+					</div>
+					<div class="layui-inline input-layout-two">
+						<label class="layui-form-label">印刷日期：</label>
+						<div class="layui-input-block">
+							<div class="input-one1-container">
+								<input type="text" name="title" placeholder="输入搜索关键字 input-one1-container"
+									autocomplete="off" class="layui-input">
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<div class="layui-inline">
+						<label class="layui-form-label">出版日期：</label>
+						<div class="layui-input-block">
+							<div class="input-one1-container">
+								<input type="text" name="title" placeholder="输入搜索关键字 input-one1-container"
+									autocomplete="off" class="layui-input">
+								<p class="desc">描述</p>
+								<p class="msg">错误提示</p>
+							</div>
+						</div>
+					</div>
+					<div class="layui-inline input-layout-two">
+						<label class="layui-form-label">印刷日期：</label>
+						<div class="layui-input-block">
+							<div class="input-one1-container">
+								<input type="text" name="title" placeholder="输入搜索关键字 input-one1-container"
+									autocomplete="off" class="layui-input">
+								<p class="desc">描述</p>
+								<p class="msg">错误提示</p>
+							</div>
+						</div>
+					</div>
+					<div class="layui-inline">
+						<div class="input-one2-container">
+							<input type="text" name="title" placeholder="输入搜索关键字 input-one2-container"
+								autocomplete="off" class="layui-input">
+							<p class="desc"></p>
+							<p class="msg"></p>
+						</div>
+					</div>
+				</div>
+			</form>
+
+
+
+
+
 		</article>
 		<article id="lable">
 			<p class="title">
@@ -329,9 +402,9 @@
 </body>
 
 </html>
-<script type="text/javascript" src="layui-2.0/js/layui.js"></script>
-<script type="text/javascript" src="layui-2.0/js/jquery3.4.1.js"></script>
-<script type="text/javascript" src="layui-2.0/js/public.js"></script>
+<script type="text/javascript" src="layui-2.0/layui.js"></script>
+<script type="text/javascript" src="layui-2.0/jquery3.4.1.js"></script>
+<script type="text/javascript" src="layui-2.0/public.js"></script>
 <script type="text/javascript">
 	// iframe当前标识
 	var dataId = '';

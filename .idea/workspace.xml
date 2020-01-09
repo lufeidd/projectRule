@@ -220,7 +220,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/layui-2.0/js/layui.js">
+    <entry file="file://$PROJECT_DIR$/layui-2.0/layui.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="25">
           <caret line="1" column="36" selection-start-line="1" selection-start-column="36" selection-end-line="1" selection-end-column="36" />
@@ -307,7 +307,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/layui-2.0/js/public.js">
+    <entry file="file://$PROJECT_DIR$/layui-2.0/public.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
           <caret line="3" column="43" selection-start-line="3" selection-start-column="30" selection-end-line="3" selection-end-column="43" />
