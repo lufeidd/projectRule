@@ -48,6 +48,11 @@ iframe {
     width: 100%;
 }
 
+
+em {
+    font-style: normal;
+}
+
 /* 主体内容 */
 .layui-body {
     overflow: visible;
