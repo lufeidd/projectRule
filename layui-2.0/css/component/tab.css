@@ -78,9 +78,12 @@
     left: 0px;
     top: 0px;
     border: 1px #C0C0C0 solid;
+    border-width: 1px 1px 1px 0;
     box-sizing: border-box;
 }
-
+.tab-second-container .tab-second-content:first-child::after{
+    border-width:1px;
+}
 .tab-second-container .tab-second-content:first-child,
 .tab-second-container .tab-second-content:first-child.active::after,.tab-second-container .tab-second-content:first-child::after {
     border-radius: 4px 0 0 4px;
