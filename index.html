@@ -117,11 +117,32 @@
 			<!-- 删除按钮 -->
 			<button type="button" class="layui-btn layui-btn-danger">删除</button>
 			<!-- 按钮5 -->
-			<button type="button" class="layui-btn layui-btn-five">按钮5<i
-					class="layui-icon layui-icon-down"></i></button>
+			<div class="select-btn-one">
+				<button type="button" class="layui-btn layui-btn-five">按钮5<i class="layui-icon layui-icon-down"></i><i
+						class="layui-icon layui-icon-up"></i></button>
+				<dl class="select-btn-downbit">
+					<dd class="select-btn-tips select-btn-this">立即上架</dd>
+					<dd class="select-btn-tips">选项二</dd>
+					<dd class="select-btn-tips">选项三</dd>
+				</dl>
+			</div>
 			<!-- 按钮6 -->
-			<button type="button" class="layui-btn layui-btn-six">按钮6<i class="layui-icon layui-icon-down"></i></button>
+			<div class="select-btn-two">
+				<button type="button" class="layui-btn layui-btn-six">按钮6<i class="layui-icon layui-icon-down"></i><i
+						class="layui-icon layui-icon-up"></i></button>
+				<dl class="select-btn-downbit">
+					<dd class="select-btn-tips select-btn-this">立即上架</dd>
+					<dd class="select-btn-tips">选项二</dd>
+					<dd class="select-btn-tips">选项三</dd>
+				</dl>
+			</div>
+			<!-- 按钮7 -->
+			<button class="layui-btn layui-btn-normal layui-btn-sm">小型按钮3</button>
+			<button class="layui-btn layui-btn-danger layui-btn-sm">小型删除按钮</button>
 			<!-- 固定底部按钮 -->
+			<!-- <div class="bottom-layui-btn">
+				<button type="button" class="layui-btn">保存并提交</button>
+			</div> -->
 			<div class="bottom-layui-btn">
 				<button type="button" class="layui-btn layui-btn-normal">保存草稿</button>
 				<button type="button" class="layui-btn layui-btn-six">保存并提交<i
@@ -136,11 +157,11 @@
 					</svg>文本域</p>
 				<p class="subTitle">文本域1</p>
 
-				<div class="input-one1-container">
+				<div class="input-one1-container display-inline">
 					<input type="text" name="title" placeholder="输入搜索关键字 input-one1-container" autocomplete="off"
 						class="layui-input">
 				</div>
-				<div class="input-one2-container">
+				<div class="input-one2-container display-inline">
 					<input type="text" name="title" placeholder="输入搜索关键字 input-one2-container" autocomplete="off"
 						class="layui-input">
 				</div>
@@ -165,8 +186,24 @@
 				<svg class="icon" aria-hidden="true">
 					<use xlink:href="#iconguanlian"></use>
 				</svg>搜索</p>
-			<iframe src="iframe-2.0/search.html" name="high-search" class="high-search-iframe"
-				data-id="search0"></iframe>
+			<div class="clear-float">
+				<div class="float-left">
+					<button type="button" class="layui-btn">导出数据</button>
+					<div class="select-btn-one">
+						<button type="button" class="layui-btn layui-btn-five">批量操作<i
+								class="layui-icon layui-icon-down"></i><i class="layui-icon layui-icon-up"></i></button>
+						<dl class="select-btn-downbit">
+							<dd class="select-btn-tips select-btn-this">立即上架</dd>
+							<dd class="select-btn-tips">选项二</dd>
+							<dd class="select-btn-tips">选项三</dd>
+						</dl>
+					</div>
+				</div>
+				<div class="float-right" style="min-width: 623px;">
+					<iframe src="iframe-2.0/search.html" name="high-search" class="high-search-iframe"
+						data-id="search0"></iframe>
+				</div>
+			</div>
 		</article>
 		<article id="color">
 			<p class="title">
@@ -222,8 +259,8 @@
 						<option value="0">1</option>
 						<option value="1">2</option>
 					</select>
+				</div>
 			</form>
-			</div>
 			<div class="selectTwo">
 				<form class="layui-form" action="">
 					<select name="city" lay-verify="required" class="select-sizeMin">
@@ -270,45 +307,43 @@
 				</div>
 			</div>
 		</article>
-		<article id="layout">
+		<article>
 			<p class="title">
 				<svg class="icon" aria-hidden="true">
 					<use xlink:href="#iconguanlian"></use>
-				</svg>表单布局</p>
-			<p class="subTitle">表单布局1 - 预留提示空间</p>
-			<form class="layui-form" action="">
-				<p class="form-title">标题</p>
-				<div class="layui-form-item input-layout-one">
-					<label class="layui-form-label">单行输入框：</label>
-					<div class="layui-input-inline context">
-
-						<div class="input-second-container">
-							<input type="text" name="title" placeholder="输入搜索关键字" autocomplete="off"
-								class="layui-input">
-							<div class="input-number"><span class="input-on-number">0</span>/<span
-									class="input-max-number">100
-									</spani>
-							</div>
-						</div>
-						<p class="desc">描述</p>
-						<p class="msg">错误提示</p>
-					</div>
-					<div class="layui-form-mid layui-word-aux">同步图书信息</div>
+				</svg>固定底部按钮</p>
+			<div class="layui-footer">
+				<button class="layui-btn">保存并提交</button>
+				<div class="select-btn-two">
+					<button type="button" class="layui-btn layui-btn-six">按钮6<i
+							class="layui-icon layui-icon-down"></i><i class="layui-icon layui-icon-up"></i></button>
+					<dl class="select-btn-upbit">
+						<dd class="select-btn-tips select-btn-this">立即上架</dd>
+						<dd class="select-btn-tips">选项二</dd>
+						<dd class="select-btn-tips">选项三</dd>
+					</dl>
 				</div>
-				<div class="layui-form-item">
-					<label class="layui-form-label"><span class="tip">*</span>验证必填项：</label>
-					<div class="layui-input-block">
-						<div class="input-one1-container">
-							<input type="text" name="title" placeholder="输入搜索关键字 input-one1-container"
-								autocomplete="off" class="layui-input">
+			</div>
+			<article id="layout">
+				<p class="title">
+					<svg class="icon" aria-hidden="true">
+						<use xlink:href="#iconguanlian"></use>
+					</svg>表单布局</p>
+				<p class="subTitle">表单布局1 - 预留提示空间</p>
+				<form class="layui-form" action="">
+					<p class="form-title">标题</p>
+					<div class="layui-form-item">
+						<label class="layui-form-label">单行输入框：</label>
+						<div class="layui-input-block">
+							<input type="text" name="title" lay-verify="title" autocomplete="off" placeholder="请输入标题"
+								class="layui-input">
+							<p class="desc">描述</p>
+							<p class="msg">错误提示</p>
 						</div>
 					</div>
 				</div>
 			</form>
 			<p class="subTitle">表单布局2</p>
-
-
-
 			<form class="layui-form" action="">
 				<div class="layui-form-item">
 					<div class="layui-inline">
@@ -364,10 +399,6 @@
 				</div>
 			</form>
 
-
-
-
-
 		</article>
 		<article id="lable">
 			<p class="title">
@@ -398,7 +429,6 @@
 		</article>
 
 	</section>
-
 </body>
 
 </html>
@@ -452,8 +482,16 @@
 
 
 	//设置iframe高度
-	function setIframeHeight(height) {
+	function setIframeHeight(height,type) {
 		$('.high-search-iframe').height(height);
+		console.log(height)
+		if(type == 'open'){
+			$('.high-search-iframe').parent().removeClass('float-right')
+			$('.high-search-iframe').css('margin-top','15px')
+		}else if (type == 'fold'){
+			$('.high-search-iframe').parent().addClass('float-right')
+			$('.high-search-iframe').css('margin-top','0')
+		}
 	}
 
 	//弹窗1

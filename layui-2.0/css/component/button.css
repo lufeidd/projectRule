@@ -94,8 +94,57 @@ button {
 	color:#F05654;
 }
 /* 按钮5 */
-.layui-btn-five,.layui-btn-five:hover,.layui-btn-five:active{
+.select-btn-one,.select-btn-two{
+	display: inline-block;
+	position: relative;
+}
+.select-btn-one:hover .layui-icon-up,.select-btn-two:hover .layui-icon-up{
+	display:inline-block;
+}
+.select-btn-one:hover .layui-icon-down,.select-btn-two:hover .layui-icon-down{
+	display:none;
+}
+.select-btn-one:hover .select-btn-downbit,.select-btn-two:hover .select-btn-downbit,.select-btn-one:hover .select-btn-upbit,.select-btn-two:hover .select-btn-upbit{
+	display:block;
+}
+.select-btn-one .select-btn-downbit,.select-btn-two .select-btn-downbit{
+	position: absolute;
+	min-width: 100%;
+	top: 39px;
+	display: none;
+	z-index: 9;
+}
+.select-btn-one .select-btn-upbit,.select-btn-two .select-btn-upbit{
+	position: absolute;
+	min-width: 100%;
+	bottom: 39px;
+	display: none;
+	z-index: 9999;
+}
+.select-btn-one .select-btn-downbit .select-btn-tips,.select-btn-two .select-btn-downbit .select-btn-tips,.select-btn-one .select-btn-upbit .select-btn-tips,.select-btn-two .select-btn-upbit .select-btn-tips{
+	line-height: 38px;
 	background-color: #FFF;
+	color:#666;
+	cursor: pointer;
+	text-align: center;
+	white-space: nowrap;
+	padding: 0 10px;
+}
+.select-btn-one .select-btn-downbit .select-btn-tips:first-child,.select-btn-two .select-btn-downbit .select-btn-tips:first-child,.select-btn-one .select-btn-upbit .select-btn-tips:first-child,.select-btn-two .select-btn-upbit .select-btn-tips:first-child{
+	border-radius: 4px 4px 0 0;
+}
+.select-btn-one .select-btn-downbit .select-btn-tips:last-child,.select-btn-two .select-btn-downbit .select-btn-tips:last-child,.select-btn-one .select-btn-upbit .select-btn-tips:last-child,.select-btn-two .select-btn-upbit .select-btn-tips:last-child{
+	border-radius: 0 0 4px 4px;
+}
+.select-btn-one .select-btn-downbit .select-btn-tips:hover,.select-btn-two .select-btn-downbit .select-btn-tips:hover,.select-btn-one .select-btn-upbit .select-btn-tips:hover,.select-btn-two .select-btn-upbit .select-btn-tips:hover{
+	background-color: #F0F0F0;
+}
+.select-btn-one .select-btn-downbit .select-btn-tips:active,.select-btn-one .select-btn-downbit .select-btn-tips.select-btn-this,.select-btn-two .select-btn-downbit .select-btn-tips:active,.select-btn-two .select-btn-downbit .select-btn-tips.select-btn-this,.select-btn-one .select-btn-upbit .select-btn-tips:active,.select-btn-one .select-btn-upbit .select-btn-tips.select-btn-this,.select-btn-two .select-btn-upbit .select-btn-tips:active,.select-btn-two .select-btn-upbit .select-btn-tips.select-btn-this{
+	background-color: #54ACF0;
+	color:#FFF;
+}
+.layui-btn-five,.layui-btn-five:hover,.layui-btn-five:active{
+	background-color: #EEF7FD;
 	color:#54ACF0;
 	position: relative;
 }
@@ -105,10 +154,19 @@ button {
 	color:#FFF;
 	position: relative;
 }
+
+.layui-btn-five .layui-icon-up,.layui-btn-six .layui-icon-up{
+	display:none;
+}
 .layui-btn-five .layui-icon,.layui-btn-six .layui-icon{
 	position: relative;
 	right: -8px;
 	font-size: 12px;
+}
+/* 小型按钮 */
+.layui-btn-sm{
+	height: 28px;
+	line-height: 28px;
 }
 /* 固定底部按钮 */
 .bottom-layui-btn{

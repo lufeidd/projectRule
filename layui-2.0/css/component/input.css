@@ -8,10 +8,10 @@
 
 /* 文本域1 */
 .input-one1-container {
-    width: 260px;
+    max-width: 260px;
 }
 .input-one2-container {
-    width: 130px;
+    max-width: 130px;
 }
 .layui-input,
 .layui-textarea {
@@ -32,6 +32,7 @@
 .input-second-container,
 .input-third-container {
     position: relative;
+    max-width: 982px;
 }
 
 .input-second-container .input-number {
