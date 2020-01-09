@@ -22,12 +22,12 @@
 			z-index: 1002;
 			padding: 10px;
 			box-sizing: border-box;
-			font-size: 16px;
+			font-size: 15px;
 		}
 
 		#anchor a {
 			display: block;
-			padding: 20px 0;
+			padding: 12px 0;
 		}
 
 		section {
@@ -72,17 +72,30 @@
 <body>
 
 	<menu id="anchor">
-		<a href="/frame.html">框架</a>
+		<a href="#frame">框架</a>
 		<a href="#button">按钮</a>
+		<a href="#input">文本域</a>
 		<a href="#search">搜索</a>
 		<a href="#color">颜色</a>
 		<a href="#tab">选项卡</a>
+		<a href="#select">下拉</a>
+		<a href="#checkbox">复选框</a>
+		<a href="#rule">法规提示</a>
+		<a href="#pic">图片比例</a>
+		<a href="#layout">表单布局</a>
+		<a href="#lable">标签</a>
+		<a href="#table">数据表格</a>
+		<a href="#popup">弹窗</a>
 	</menu>
-
 	<header id="header">前端开发规范手册</header>
-
 	<section>
-
+		<article id="frame">
+			<p class="title">
+				<svg class="icon" aria-hidden="true">
+					<use xlink:href="#iconguanlian"></use>
+				</svg>框架</p>
+			<a href="/frame.html" target="_blank">框架</a>
+		</article>
 		<article id="button">
 			<!-- 按钮1 -->
 			<p class="title">
@@ -119,13 +132,13 @@
 					<svg class="icon" aria-hidden="true">
 						<use xlink:href="#iconguanlian"></use>
 					</svg>文本域</p>
-					<p class="subTitle">文本域1</p>
+				<p class="subTitle">文本域1</p>
 
-				<div class="input-one1-container layui-inline">
+				<div class="input-one1-container">
 					<input type="text" name="title" placeholder="输入搜索关键字 input-one1-container" autocomplete="off"
 						class="layui-input">
 				</div>
-				<div class="input-one2-container layui-inline">
+				<div class="input-one2-container">
 					<input type="text" name="title" placeholder="输入搜索关键字 input-one2-container" autocomplete="off"
 						class="layui-input">
 				</div>
@@ -134,8 +147,9 @@
 
 				<div class="input-second-container">
 					<input type="text" name="title" placeholder="输入搜索关键字" autocomplete="off" class="layui-input">
-					<div class="input-number"><span class="input-on-number">0</span>/<span
-							class="input-max-number">100</span></div>
+					<div class="input-number"><span class="input-on-number">0</span>/<span class="input-max-number">100
+							</spani>
+					</div>
 				</div>
 				<p class="subTitle">文本域3</p>
 				<div class="input-third-container">
@@ -144,15 +158,14 @@
 				</div>
 			</form>
 		</article>
-
 		<article id="search">
 			<p class="title">
 				<svg class="icon" aria-hidden="true">
 					<use xlink:href="#iconguanlian"></use>
 				</svg>搜索</p>
-			<iframe src="iframe-2.0/search.html" name="high-search" class="high-search-iframe" data-id="search0"></iframe>
+			<iframe src="iframe-2.0/search.html" name="high-search" class="high-search-iframe"
+				data-id="search0"></iframe>
 		</article>
-
 		<article id="color">
 			<p class="title">
 				<svg class="icon" aria-hidden="true">
@@ -173,7 +186,6 @@
 			<div class="background-color">背景色 #efefef</div>
 			<div class="block-color">区域色 #ffffff</div>
 		</article>
-
 		<article id="tab">
 			<p class="title">
 				<svg class="icon" aria-hidden="true">
@@ -202,13 +214,13 @@
 					<use xlink:href="#iconguanlian"></use>
 				</svg>下拉</p>
 			<form class="layui-form" action="">
-				<div class="layui-form-item layui-inline ">
+				<div class="layui-form-item ">
 					<select name="city" lay-verify="required" class="size">
 						<option value="">未选择</option>
 						<option value="0">1</option>
 						<option value="1">2</option>
 					</select>
-				</form>
+			</form>
 			</div>
 			<div class="selectTwo">
 				<form class="layui-form" action="">
@@ -256,6 +268,34 @@
 				</div>
 			</div>
 		</article>
+		<article id="layout">
+			<p class="title">
+				<svg class="icon" aria-hidden="true">
+					<use xlink:href="#iconguanlian"></use>
+				</svg>表单布局</p>
+			<p class="subTitle">表单布局1 - 预留提示空间</p>
+			<form class="layui-form" action="">
+				<p class="form-title">标题</p>
+				<div class="layui-form-item">
+					<label class="layui-form-label">单行输入框：</label>
+					<div class="layui-input-block">
+						<input type="text" name="title" lay-verify="title" autocomplete="off" placeholder="请输入标题"
+							class="layui-input">
+						<p class="desc">描述</p>
+						<p class="msg">错误提示</p>
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label class="layui-form-label"><span class="tip">*</span>验证必填项：</label>
+					<div class="layui-input-block">
+						<div class="input-one1-container">
+							<input type="text" name="title" placeholder="输入搜索关键字 input-one1-container"
+								autocomplete="off" class="layui-input">
+						</div>
+					</div>
+				</div>
+			</form>
+		</article>
 		<article id="lable">
 			<p class="title">
 				<svg class="icon" aria-hidden="true">
@@ -271,6 +311,19 @@
 			<iframe src="iframe-2.0/tableOne.html" name="tableOne" data-id="table0"></iframe>
 			<iframe src="iframe-2.0/tableTwo.html" name="tableTwo" data-id="table1"></iframe>
 		</article>
+		<article id="popup">
+			<p class="title">
+				<svg class="icon" aria-hidden="true">
+					<use xlink:href="#iconguanlian"></use>
+				</svg>弹窗</p>
+			<!-- 弹窗 -->
+			<div>
+				<span id="popup1" class="popup">弹窗1</span>
+				<span id="popup2" class="popup">弹窗2</span>
+				<span id="popup3" class="popup">弹窗3</span>
+			</div>
+		</article>
+
 	</section>
 
 </body>
@@ -285,15 +338,17 @@
 	var dataResult = {};
 
 	//初始化layui
-	layui.use(['element', 'form'], function () {
+	layui.use(['element', 'layer', 'form'], function () {
 		var element = layui.element,
 			form = layui.form,
 			$ = layui.$;
 
+		// $.ajax
+
 	})
 
 	//设置标签iframe高度
-	function setLableHeight(lableHeight){
+	function setLableHeight(lableHeight) {
 		// 设置info模板中相应iframe的高度
 		$('iframe[name=lableChoose]').css('height', lableHeight);
 	}
@@ -301,7 +356,7 @@
 	//接受搜索数据
 	function searchAction(data) {
 		//将搜索传过来的数据反馈到数据表格
-		$('iframe[data-id='+dataId+']')[0].contentWindow.setTable(data);
+		$('iframe[data-id=' + dataId + ']')[0].contentWindow.setTable(data);
 	}
 
 
@@ -328,4 +383,67 @@
 		$('.high-search-iframe').height(height);
 	}
 
+	//弹窗1
+	$("#popup1").click(function () {
+		//默认prompt
+		layer.prompt({
+			btn: ['修 改', '取 消'],
+			area: ['520px', '228px'], //宽高
+			// move: false, //禁止拖拽
+			success: function (layero, index) {
+				$('.layui-layer-title').text('将当前节目的序号修改为'); //title修改
+				$(".layui-layer-input").attr('placeholder', '默认文本') //input placeholder提示修改
+			},
+			yes: function (index, layero) {
+				//按钮修改的回调
+				// layer.close(index); //如果设定了yes回调，需进行手工关闭		
+				//return false 开启该代码可禁止点击该按钮关闭
+			},
+			btn2: function (index, layero) {
+				//按钮取消的回调
+				// layer.close(index); //如果设定了yes回调，需进行手工关闭
+				//return false 开启该代码可禁止点击该按钮关闭
+			}
+		});
+	})
+	//弹窗2
+	$("#popup2").click(function () {
+		//询问框
+		layer.alert('确定要删除此节目吗？删除后将无法恢复。', {
+			btn: ['删 除', '取 消'],
+			area: ['430px', '228px'], //宽高
+			// move: false, //禁止拖拽
+			yes: function (index, layero) {
+				//按钮删除的回调
+				// layer.close(index); //如果设定了yes回调，需进行手工关闭
+			},
+			btn2: function (index, layero) {
+				//按钮取消的回调
+				// layer.close(index); //如果设定了yes回调，需进行手工关闭
+				//return false 开启该代码可禁止点击该按钮关闭
+			}
+		});
+	})
+	//弹窗3
+	$("#popup3").click(function () {
+		//页面层
+		layer.open({
+			type: 1,
+			title: '选择纸质书',//title设置
+			skin: 'layui-layer-rim', //加上边框
+			area: ['488px', '180px'], //宽高
+			content: 'html内容', //内容
+			shadeClose: true,//点击遮罩层隐藏弹窗
+			// move: false, //禁止拖拽
+			yes: function (index, layero) {
+				//按钮1回调
+				// layer.close(index); //如果设定了yes回调，需进行手工关闭
+			},
+			btn2: function (index, layero) {
+				//按钮2回调
+				// layer.close(index); //如果设定了yes回调，需进行手工关闭
+				//return false 开启该代码可禁止点击该按钮关闭
+			}
+		});
+	})
 </script>

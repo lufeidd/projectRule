@@ -6,6 +6,8 @@
 
 @charset "utf-8";
 
+/* 布局 */
+@import url('component/layout.css');
 /* 按钮 */
 @import url('component/button.css');
 /* 选项卡 */
@@ -28,12 +30,15 @@
 @import url('component/table.css');
 /* 下拉 */
 @import url('component/select.css');
+/* 弹窗 */
+@import url('component/popup.css');
 /*
  * 标签重定义
  */
 
 html {
     background-color: rgb(237, 237, 237);
+    line-height: 1.5;
 }
 
 iframe {
