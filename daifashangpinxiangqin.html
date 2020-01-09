@@ -155,13 +155,14 @@
                             <div class="layui-form-item">
                                 <label class="layui-form-label"><span class="tip">*</span>ISBN： </label>
                                 <div class="layui-input-block input-second-container lable-input-container">
-                                    <div class="book-information">
-                                        <input type="text" name="isbn" lay-verify="title" autocomplete="off"
-                                            placeholder="请输入图书ISBN" class="layui-input">
-                                        <span class="synchronization">同步图书信息</span>
+                                    <div class="input-second-container">
+                                        <input type="text" name="isbn" placeholder="输入搜索关键字" autocomplete="off"
+                                            class="layui-input">
+                                        <div class="input-number"><span class="input-on-number">0</span>/<span
+                                                class="input-max-number">100
+                                                </spani>
+                                        </div>
                                     </div>
-                                    <div class="input-number"><span class="input-on-number">0</span>/<span
-                                            class="input-max-number">100</span></div>
                                     <p class="desc">将用于前台信息展示。新版ISBN由13位数字组成，分为5段，在原来的10位数字前加上3位EAN（欧洲商品编号）图书产品代码“978”。
                                     </p>
                                     <p class="msg">ISBN不可为空</p>
@@ -171,8 +172,10 @@
                                 <label class="layui-form-label"><span class="tip">*</span>图书封面： </label>
                                 <div class="layui-input-block input-second-container lable-input-container">
                                     <div class="book-information">
-                                        <input type="text" name="cover" lay-verify="title" autocomplete="off"
-                                            class="layui-input">
+                                        <button type="button" class="layui-btn layui-btn-warm"> +选择图片</button>
+                                        <div>
+                                            <img src="" alt="">
+                                        </div>
                                     </div>
                                     <p class="desc">请上传图片，要求尺寸800*800像素，文件大小5M以内，支持格式PNG、JPEG、JPG。</p>
                                     <p class="msg">图书封面不可为空</p>
@@ -181,12 +184,14 @@
                             <div class="layui-form-item">
                                 <label class="layui-form-label"><span class="tip">*</span>图书名称： </label>
                                 <div class="layui-input-block input-second-container lable-input-container">
-                                    <div class="book-information">
-                                        <input type="text" name="designation" lay-verify="title" autocomplete="off"
-                                            placeholder="请输入图书名称" class="layui-input">
+                                    <div class="input-second-container">
+                                        <input type="text" name="books-name" placeholder="输入搜索关键字" autocomplete="off"
+                                            class="layui-input">
+                                        <div class="input-number"><span class="input-on-number">0</span>/<span
+                                                class="input-max-number">100
+                                                </spani>
+                                        </div>
                                     </div>
-                                    <div class="input-number"><span class="input-on-number">0</span>/<span
-                                            class="input-max-number">100</span></div>
                                     <p class="desc">字叔100字以内</p>
                                     <p class="msg">图书名称不可为空</p>
                                 </div>
@@ -206,12 +211,14 @@
                             <div class="layui-form-item">
                                 <label class="layui-form-label"><span class="tip">*</span>作者： </label>
                                 <div class="layui-input-block input-second-container lable-input-container">
-                                    <div class="book-information">
-                                        <input type="text" name="author" lay-verify="title" autocomplete="off"
-                                            placeholder="请输入作者名称" class="layui-input">
+                                    <div class="input-second-container">
+                                        <input type="text" name="author" placeholder="输入搜索关键字" autocomplete="off"
+                                            class="layui-input">
+                                        <div class="input-number"><span class="input-on-number">0</span>/<span
+                                                class="input-max-number">100
+                                                </spani>
+                                        </div>
                                     </div>
-                                    <div class="input-number"><span class="input-on-number">0</span>/<span
-                                            class="input-max-number">100</span></div>
                                     <p class="desc">将用于前台信息展示，字数100字以内。</p>
                                     <p class="msg">作者名称不可为空</p>
                                 </div>
@@ -219,12 +226,14 @@
                             <div class="layui-form-item">
                                 <label class="layui-form-label"><span class="tip">*</span>出版社：</label>
                                 <div class="layui-input-block input-second-container lable-input-container">
-                                    <div class="book-information">
-                                        <input type="text" name="publishing" lay-verify="title" autocomplete="off"
-                                            placeholder="请输入出版社名称" class="layui-input">
+                                    <div class="input-second-container">
+                                        <input type="text" name="publishing" placeholder="输入搜索关键字" autocomplete="off"
+                                            class="layui-input">
+                                        <div class="input-number"><span class="input-on-number">0</span>/<span
+                                                class="input-max-number">100
+                                                </spani>
+                                        </div>
                                     </div>
-                                    <div class="input-number"><span class="input-on-number">0</span>/<span
-                                            class="input-max-number">100</span></div>
                                     <p class="desc">将用于前台信息展示，字数100字以内。</p>
                                     <p class="msg">出版社名称不可为空</p>
                                 </div>
@@ -347,12 +356,14 @@
                             <div class="layui-form-item">
                                 <label class="layui-form-label"><span class="tip">*</span> 商品标题：</label>
                                 <div class="layui-input-block input-second-container lable-input-container">
-                                    <div class="book-information">
-                                        <input type="text" name="commodity-title" lay-verify="title" autocomplete="off"
-                                            placeholder="请输入商品标题" class="layui-input">
+                                    <div class="input-second-container">
+                                        <input type="text" name="merchandise-title" placeholder="输入搜索关键字" autocomplete="off"
+                                            class="layui-input">
+                                        <div class="input-number"><span class="input-on-number">0</span>/<span
+                                                class="input-max-number">50
+                                                </spani>
+                                        </div>
                                     </div>
-                                    <div class="input-number"><span class="input-on-number">0</span>/<span
-                                            class="input-max-number">50</span></div>
                                     <p class="desc">将用于前台信息展示，字数35字以内。</p>
                                     <p class="msg">商品标题不可为空</p>
                                 </div>
@@ -360,12 +371,14 @@
                             <div class="layui-form-item">
                                 <label class="layui-form-label"><span class="tip">*</span>商品副标题： </label>
                                 <div class="layui-input-block input-second-container lable-input-container">
-                                    <div class="input-third-container ">
-                                        <input type="text" name="subsidiary" placeholder="请输入商品副标题" autocomplete="off"
+                                    <div class="input-second-container">
+                                        <input type="text" name="commodity-subtitle" placeholder="输入搜索关键字" autocomplete="off"
                                             class="layui-input">
+                                        <div class="input-number"><span class="input-on-number">0</span>/<span
+                                                class="input-max-number">50
+                                                </spani>
+                                        </div>
                                     </div>
-                                    <div class="input-number"><span class="input-on-number">0</span>/<span
-                                            class="input-max-number">0</span></div>
                                     <p class="desc">将用于前台信息展示，字数100字以内。</p>
                                     <p class="msg">商品副标题不可为空</p>
                                 </div>
@@ -374,8 +387,10 @@
                                 <label class="layui-form-label"><span class="tip">*</span>商品图： </label>
                                 <div class="layui-input-block input-second-container lable-input-container">
                                     <div class="book-information">
-                                        <input type="text" name="commodity-drawing" lay-verify="title"
-                                            autocomplete="off" class="layui-input">
+                                        <button type="button" class="layui-btn layui-btn-warm"> +选择图片</button>
+                                        <div>
+                                            <img src="" alt="">
+                                        </div>
                                     </div>
                                     <p class="desc">将用于前台展示，要求尺寸800*800像素，文件大小5M以内，支持格式PNG、JPEG、JPG，最多上传5张</p>
                                     <p class="msg">商品主图不可为空</p>
@@ -395,8 +410,7 @@
                                 <label class="layui-form-label">编辑推荐语： </label>
                                 <div class="layui-input-block input-second-container lable-input-container">
                                     <div class="book-information">
-                                        <input type="text" name="suggest" lay-verify="title" autocomplete="off"
-                                            placeholder="" class="layui-input">
+                                        <button type="button" class="layui-btn layui-btn-warm"> +添加</button>
                                     </div>
                                     <p class="desc">将用于前台信息展示，字数1200字以内，支持换行。</p>
                                 </div>
@@ -427,6 +441,42 @@
                                         <div class="float-right"><span class="input-on-number">0</span>/<span
                                                 class="input-max-number">300</span></div>
                                     </div>
+                                </div>
+                            </div>
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">目录： </label>
+                                <div class="layui-input-block input-second-container lable-input-container">
+                                    <div class="book-information">
+                                        <button type="button" class="layui-btn layui-btn-warm"> +添加</button>
+                                    </div>
+                                    <p class="desc">将用于前台信息展示，字数1200字以内，支持换行。</p>
+                                </div>
+                            </div>
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">媒体评论： </label>
+                                <div class="layui-input-block input-second-container lable-input-container">
+                                    <div class="book-information">
+                                        <button type="button" class="layui-btn layui-btn-warm"> +添加</button>
+                                    </div>
+                                    <p class="desc">将用于前台信息展示，字数1200字以内，支持换行。</p>
+                                </div>
+                            </div>
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">试读章节： </label>
+                                <div class="layui-input-block input-second-container lable-input-container">
+                                    <div class="book-information">
+                                        <button type="button" class="layui-btn layui-btn-warm"> +添加</button>
+                                    </div>
+                                    <p class="desc">将用于前台信息展示，字数1200字以内，支持换行。</p>
+                                </div>
+                            </div>
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">前言： </label>
+                                <div class="layui-input-block input-second-container lable-input-container">
+                                    <div class="book-information">
+                                        <button type="button" class="layui-btn layui-btn-warm"> +添加</button>
+                                    </div>
+                                    <p class="desc">将用于前台信息展示，字数1200字以内，支持换行。</p>
                                 </div>
                             </div>
                         </form>
@@ -518,15 +568,12 @@
 </html>
 <script type="text/javascript" src="layui-2.0/layui.js"></script>
 <script type="text/javascript">
-    layui.use(['element', 'jquery', 'form'], function () {
-
-
+    layui.use(['element', 'jquery', 'form', 'layer'], function () {
         // 变量声明
-
         var $ = layui.jquery,
             form = layui.form,
-            element = layui.element;
-        var inputData;
+            element = layui.element,
+            layer = layui.layer;
 
         //方法定义
 
@@ -553,11 +600,7 @@
         })
 
         $('.layui-btn').click(function () {
-            inputData = $('form').serialize().split('=&');
-            console.log(inputData)
-            if(inputData[0] !== ''){
-                console.log('2')
-            }
+
         })
     });
 </script>
