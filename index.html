@@ -109,7 +109,8 @@
 			<button type="button" class="layui-btn layui-btn-six">按钮6<i class="layui-icon layui-icon-down"></i></button>
 			<!-- 固定底部按钮 -->
 			<div class="bottom-layui-btn">
-				<button type="button" class="layui-btn">保存并提交</button>
+				<button type="button" class="layui-btn layui-btn-normal">保存草稿</button>
+				<button type="button" class="layui-btn layui-btn-six">保存并提交<i class="layui-icon layui-icon-down"></i></button>
 			</div>
 		</article>
 		<article id="input">
@@ -226,6 +227,7 @@
 				</svg>复选框</p>
 			<form class="layui-form" action="">
 				<input type="checkbox" name="item_id" value="" lay-skin="primary">
+				<input type="checkbox" name="close" lay-skin="switch">
 			</form>
 		</article>
 		<article id="rule">
@@ -243,8 +245,15 @@
 				<svg class="icon" aria-hidden="true">
 					<use xlink:href="#iconguanlian"></use>
 				</svg>图片比例</p>
+			<div class="pic-one">
+				<div class="noPicture">
+					<img src="" alt="">
+				</div>
+			</div>
 			<div class="pic-two">
-				<img src="" alt="">
+				<div class="noPicture">
+					<img src="" alt="">
+				</div>
 			</div>
 		</article>
 		<article id="lable">
