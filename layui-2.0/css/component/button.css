@@ -176,7 +176,7 @@ button {
 	background-color: #FFF;
 	line-height: 60px;
 	border-top: 1px solid rgba(0,0,0,0.1);
-	z-index: 99;
+	z-index: 999;
 }
 .bottom-layui-btn .layui-btn{
 	margin-left:30px;

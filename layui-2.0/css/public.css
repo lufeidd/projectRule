@@ -30,6 +30,8 @@
 @import url('component/table.css');
 /* 下拉 */
 @import url('component/select.css');
+/* 弹窗 */
+@import url('component/popup.css');
 /*
  * 标签重定义
  */
@@ -78,6 +80,7 @@ body.small .layui-layout-admin .layui-footer {
 .layui-layout-admin .layui-body {
 	top: 100px;
 	bottom: 60px;
+	right: 10px;
     background-color: #fff;
     overflow: auto;
 }
