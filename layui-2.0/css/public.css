@@ -32,6 +32,8 @@
 @import url('component/select.css');
 /* 弹窗 */
 @import url('component/popup.css');
+/* 代发商品详情 */
+@import url('component/daifashangpinxiangqin.css');
 /*
  * 标签重定义
  */
@@ -351,4 +353,15 @@ body.large .layui-side.large {
     vertical-align: -0.2em;
     fill: currentColor;
     overflow: hidden;
+}
+/* 浮动布局 */
+.float-left{
+    float: left;
+}
+.float-right{
+    float: right;
+}
+/* 弹性布局 */
+.dis-flex{
+    display: flex;
 }
