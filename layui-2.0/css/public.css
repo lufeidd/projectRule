@@ -50,6 +50,11 @@ iframe {
     width: 100%;
 }
 
+
+em {
+    font-style: normal;
+}
+
 /* 主体内容 */
 .layui-body {
     overflow: visible;
@@ -353,15 +358,4 @@ body.large .layui-side.large {
     vertical-align: -0.2em;
     fill: currentColor;
     overflow: hidden;
-}
-/* 浮动布局 */
-.float-left{
-    float: left;
-}
-.float-right{
-    float: right;
-}
-/* 弹性布局 */
-.dis-flex{
-    display: flex;
 }

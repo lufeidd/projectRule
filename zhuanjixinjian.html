@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-    <meta charset="UTF-8">
     <title>总览-火把知识</title>
     <meta charset="utf-8">
     <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -12,295 +12,290 @@
     <!-- 字体图标 -->
     <script src="layui-2.0/font/iconfont.js"></script>
 </head>
-<style>
-    .layui-btn-primary {
-        border: 1px solid #999999;
-        background-color: #fff;
-        color: #555;
-    }
-    .layui-btn-primary:hover {
-        border-color:#54ACF0;
-        color:#333;
-        background-color: #fff;
-    }
-    /*上传图片图标内部文字*/
-    #pic .add{
-        position: absolute;
-        color: #999999;
-        top: 50%;
-        left: 50%;
-        margin-top: -10px;
-        margin-left: -24px;
-        font-size: 12px;
-    }
-</style>
 
 <body class="large">
-<script>
-    if (localStorage.getItem('slideState') == 'small') {
-        document.querySelector('body').setAttribute('class', 'small');
-    } else {
-        document.querySelector('body').setAttribute('class', 'large');
-    }
-</script>
-<div class="layui-layout layui-layout-admin">
-    <!-- 供应商logo -->
-    <div class="layui-logo">
-        <img src="layui-2.0/images/logo.png" width="26px" height="27px">
-        <span class="slogan">火把知识服务平台</span>
-        <div class="foldAction">
-            <i class="layui-icon layui-icon-shrink-right"></i>
-            <i class="layui-icon layui-icon-spread-left"></i>
+    <script>
+        if (localStorage.getItem('slideState') == 'small') {
+            document.querySelector('body').setAttribute('class', 'small');
+        } else {
+            document.querySelector('body').setAttribute('class', 'large');
+        }
+    </script>
+    <div class="layui-layout layui-layout-admin">
+        <!-- 供应商logo -->
+        <div class="layui-logo">
+            <img src="layui-2.0/images/logo.png" width="26px" height="27px">
+            <span class="slogan">火把知识服务平台</span>
+            <div class="foldAction">
+                <i class="layui-icon layui-icon-shrink-right"></i>
+                <i class="layui-icon layui-icon-spread-left"></i>
+            </div>
         </div>
-    </div>
 
-    <!-- 头部 栏目 -->
-    <div class="layui-header">
-        <!-- 头部导航栏右边部分 -->
-        <ul class="layui-nav layui-layout-right">
-            <li class="layui-nav-item">
-                <a href="#">
-                    <svg class="icon" aria-hidden="true">
-                        <use xlink:href="#iconmessage-line"></use>
-                    </svg>
-                    <span>私信</span>
-                    <span class="layui-badge-dot"></span>
-                </a>
-            </li>
-            <li class="layui-nav-item">
-                <a href="#">
-                    <svg class="icon" aria-hidden="true">
-                        <use xlink:href="#iconnews-line"></use>
-                    </svg>
-                    <span>通知中心</span>
-                    <span class="layui-badge-dot"></span>
-                </a>
-            </li>
-            <li class="layui-nav-item ">
-                <a href="#">
-                    <svg class="icon" aria-hidden="true">
-                        <use xlink:href="#iconhelp-line"></use>
-                    </svg>
-                    <span>帮助中心</span>
-                </a>
-            </li>
-            <li class="layui-nav-item">
-                <a href="#">
-                    <img src="http://t.cn/RCzsdCq" class="layui-nav-img">
-                    <span>用户名</span>
-                </a>
-                <dl class="layui-nav-child">
-                    <dd><a href="#">账号主页</a></dd>
-                    <dd><a href="#">修改密码</a></dd>
-                    <dd><a class="logout" href="#">退出登录</a></dd>
-                </dl>
-            </li>
-        </ul>
-    </div>
+        <!-- 头部 栏目 -->
+        <div class="layui-header">
+            <!-- 头部导航栏右边部分 -->
+            <ul class="layui-nav layui-layout-right">
+                <li class="layui-nav-item">
+                    <a href="#">
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#iconmessage-line"></use>
+                        </svg>
+                        <span>私信</span>
+                        <span class="layui-badge-dot"></span>
+                    </a>
+                </li>
+                <li class="layui-nav-item">
+                    <a href="#">
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#iconnews-line"></use>
+                        </svg>
+                        <span>通知中心</span>
+                        <span class="layui-badge-dot"></span>
+                    </a>
+                </li>
+                <li class="layui-nav-item ">
+                    <a href="#">
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#iconhelp-line"></use>
+                        </svg>
+                        <span>帮助中心</span>
+                    </a>
+                </li>
+                <li class="layui-nav-item">
+                    <a href="#">
+                        <img src="http://t.cn/RCzsdCq" class="layui-nav-img">
+                        <span>用户名</span>
+                    </a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="#">账号主页</a></dd>
+                        <dd><a href="#">修改密码</a></dd>
+                        <dd><a class="logout" href="#">退出登录</a></dd>
+                    </dl>
+                </li>
+            </ul>
+        </div>
 
-    <!-- 侧边栏部分 -->
-    <!-- 展开 -->
-    <div class="layui-side layui-bg-black large">
-        <div class="layui-side-scroll">
-            <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
-            <ul class="layui-nav layui-nav-tree">
+        <!-- 侧边栏部分 -->
+        <!-- 展开 -->
+        <div class="layui-side layui-bg-black large">
+            <div class="layui-side-scroll">
+                <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
+                <ul class="layui-nav layui-nav-tree">
+                    <li class="layui-nav-item">
+                        <a href="#">
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#iconoverview-block"></use>
+                            </svg>
+                            <span>总览</span>
+                        </a>
+                    </li>
+                    <li class="layui-nav-item layui-nav-itemed">
+                        <a href="#">
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#iconsource-block"></use>
+                            </svg>
+                            <span>发布管理</span>
+                        </a>
+                        <dl class="layui-nav-child">
+                            <dd><a href="#">文章列表</a></dd>
+                            <dd class="layui-this"><a href="#">专辑列表</a></dd>
+                        </dl>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- 收起 -->
+        <div class="layui-side layui-bg-black small">
+            <ul class="layui-nav layui-layout-right">
                 <li class="layui-nav-item">
                     <a href="#">
                         <svg class="icon" aria-hidden="true">
                             <use xlink:href="#iconoverview-block"></use>
                         </svg>
-                        <span>总览</span>
                     </a>
                 </li>
-                <li class="layui-nav-item layui-nav-itemed">
+                <li class="layui-nav-item">
                     <a href="#">
                         <svg class="icon" aria-hidden="true">
                             <use xlink:href="#iconsource-block"></use>
                         </svg>
-                        <span>发布管理</span>
                     </a>
                     <dl class="layui-nav-child">
                         <dd><a href="#">文章列表</a></dd>
-                        <dd class="layui-this"><a href="#">专辑列表</a></dd>
+                        <dd><a href="#">专辑列表</a></dd>
                     </dl>
                 </li>
             </ul>
         </div>
-    </div>
-    <!-- 收起 -->
-    <div class="layui-side layui-bg-black small">
-        <ul class="layui-nav layui-layout-right">
-            <li class="layui-nav-item">
-                <a href="#">
-                    <svg class="icon" aria-hidden="true">
-                        <use xlink:href="#iconoverview-block"></use>
-                    </svg>
-                </a>
-            </li>
-            <li class="layui-nav-item">
-                <a href="#">
-                    <svg class="icon" aria-hidden="true">
-                        <use xlink:href="#iconsource-block"></use>
-                    </svg>
-                </a>
-                <dl class="layui-nav-child">
-                    <dd><a href="#">文章列表</a></dd>
-                    <dd><a href="#">专辑列表</a></dd>
-                </dl>
-            </li>
-        </ul>
-    </div>
 
-    <!-- 主体内容 -->
-    <div class="layui-body" style="position: relative;">
         <!-- 面包屑 -->
         <div class="breadcrumb-container">
-                <span class="layui-breadcrumb">
-                    <a href="/">首页</a>
-                    <a href="/frame.html">框架</a>
-                    <a><cite>导航元素</cite></a>
-                </span>
+            <span class="layui-breadcrumb">
+                <a href="/">首页</a>
+                <a href="/frame.html">框架</a>
+                <a><cite>导航元素</cite></a>
+            </span>
         </div>
-        <div>
-            <div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
-                <ul class="layui-tab-title">
-                    <li class="layui-this">音视频专辑新建</li>
-                </ul>
-            </div>
-        </div>
-        <!-- 警告框 -->
-        <div class="rule">
-            请您遵守国家相关规定，切勿上传低俗色情、暴力恐怖、谣言诈骗、侵权盗版等相关内容，火把保有依据国家规定及平台规则进行处理的权利。
-        </div>
-        <!-- 内容主体区域 -->
-        <form class="layui-form " action="javascript:void(0);">
-            <div style="padding: 15px; background-color: #fff;margin: 10px 15px 0 10px;">
-                <div style="padding-bottom: 10px;">
-                    专辑基本信息
-                </div>
-                <!-- 基本信息部分 -->
-                <div id="basic_info">
-                    <div>
-                        <div class="input-second-container">
-                            <label class="layui-form-label" style="color: #333333;width: 90px;"><span style="color: #F05654;">*</span>专辑名称：</label>
-                            <div class="layui-inline" style="width: 850px;">
-                                <input type="text" name="title" required lay-verify="required" placeholder="输入专辑名称"
-                                       autocomplete="off" class="layui-input">
-                                <div class="input-number"><span class="input-on-number">0</span>/<span
-                                        class="input-max-number">100</span></div>
-                            </div>
-                        </div>
-                        <div style="color: #999999;font-size: 12px;padding-top: 8px;margin-left: 120px;">
-                            字数100字以内
-                        </div>
-                        <div style="color: #F05654;font-size: 12px;padding-top: 8px;margin-left: 120px;">
-                            专辑名称不可为空
-                        </div>
-                    </div>
-                    <div style="margin-top: 10px;">
-                        <div class="input-second-container">
-                            <label class="layui-form-label" style="color: #333333;width: 90px;"><span style="color: #F05654;">*</span>专辑副标题：</label>
-                            <div class="layui-inline" style="width: 850px;">
-                                <input type="text" name="title" required lay-verify="required" placeholder="输入专辑副标题"
-                                       autocomplete="off" class="layui-input">
-                                <div class="input-number"><span class="input-on-number">0</span>/<span
-                                        class="input-max-number">100</span></div>
-                            </div>
-                        </div>
-                        <div style="color: #999999;font-size: 12px;padding-top: 8px;margin-left: 120px;">
-                            字数100字以内
-                        </div>
-                        <div style="color: #F05654;font-size: 12px;padding-top: 8px;margin-left: 120px;">
-                            专辑副标题不可为空
-                        </div>
-                    </div>
-                    <div style="margin-top:10px;">
-                        <label class="layui-form-label" style="color: #333333;width: 90px;"><span style="color: #F05654;">*</span>图书封面：</label>
-                        <button type="button" class="layui-btn layui-btn-warm">+上传图片</button>
-                        <div class="pic" style="margin: 10px 0 0 120px;">
-                            <div style="width: 120px;">
-                                <div class="pictureImg">
-                                    <div class="add">尚未上传</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div style="color: #999999;font-size: 12px;padding-top: 8px;margin-left: 120px;">
-                            请上传图片，要求尺寸800*800像素，文件大小5M以内，支持格式PNG、JPEG、JPG。
-                        </div>
-                        <div style="color: #F05654;font-size: 12px;padding-top: 8px;margin-left: 120px;">
-                            图书封面不可为空
-                        </div>
-                    </div>
-                    <div style="margin-top:10px;">
-                        <label class="layui-form-label" style="color: #333333;width: 90px;"><span style="color: #F05654;">*</span>专辑销售价：</label>
-                        <div class="layui-inline">
-                            <div class="layui-form">
-                                <div class="layui-form-item" style="color: #999999;">
-                                    <input type="radio" name="album_sale" value="" title="免费">
-                                    <input type="radio" name="album_sale" value="" title="完成购买">
-                                    <input type="radio" name="album_sale" value="" title="单集购买">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="input-third-container" style="width: 260px;margin-left: 120px;">
-                            <input type="text" name="sale" placeholder="请输入整张专辑购买价格"
-                                   autocomplete="off" class="layui-input">
-                            <div class="input-before">￥</div>
-                        </div>
-                        <div style="color: #999999;font-size: 12px;padding-top: 8px;margin-left: 120px;">
-                            专辑免费或收费可以随时修改。
-                        </div>
-                        <div style="color: #999999;font-size: 12px;padding-top: 8px;margin-left: 120px;">
-                            免费收听的专辑修改为收费时，原有免费收听的用户需要付费才可以收听专辑。
-                        </div>
-                        <div style="color: #F05654;font-size: 12px;padding-top: 8px;margin-left: 120px;">
-                            专辑销售价不可为空
-                        </div>
-                    </div>
-                    <div style="margin-top:10px;">
-                        <label class="layui-form-label" style="color: #333333;width: 90px;"><span style="color: #F05654;">*</span>系统分类：</label>
-                        <div class="layui-inline">
-                            <select name="city" lay-verify="required" class="select-size">
-                                <option value="">未选择</option>
-                                <option value="0">1</option>
-                                <option value="1">2</option>
-                            </select>
-                        </div>
-                        <div style="color: #999999;font-size: 12px;padding-top: 8px;margin-left: 120px;">
-                            请选择专辑的系统分类
-                        </div>
-                        <div style="color: #F05654;font-size: 12px;padding-top: 8px;margin-left: 120px;">
-                            专辑分类不可为空
-                        </div>
-                    </div>
-                    <div class="margin-top: 40px;">
-                        <div style="padding-bottom: 10px;">
-                            图文介绍
-                        </div>
-                        <div style="margin-top:15px;">
-                            <label class="layui-form-label" style="color: #333333;width: 90px;"><span style="color: #F05654;">*</span>图文介绍：</label>
-                            <div class="layui-inline" style="padding-top: 9px;">
-                                <textarea name="desc" class="layui-textarea" style="width: 850px;height: 350px;"></textarea>
-                            </div>
-                            <div style="color: #999999;font-size: 12px;padding-top: 8px;margin-left: 120px;">
-                                将用于前台信息展示，内容大小不限。
-                            </div>
-                            <div style="color: #F05654;font-size: 12px;padding-top: 8px;margin-left: 120px;">
-                                图文介绍不可为空
-                            </div>
-                        </div>
-                    </div>
-                    <div class="margin-top: 40px;">
-                        <div style="padding-bottom: 10px;">
-                            推荐标签
-                        </div>
-                        <iframe src="iframe-2.0/lable.html" name="lableChoose" frameborder="0" scrolling="no" style="width: 1000px;"></iframe>
+        <!-- 主体内容 -->
+        <div class="layui-body">
+            <div style="height: auto;">
+                <div>
+                    <div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
+                        <ul class="layui-tab-title">
+                            <li class="layui-this">音视频专辑新建</li>
+                        </ul>
                     </div>
                 </div>
+                <!-- 警告框 -->
+                <div class="rule">
+                    请您遵守国家相关规定，切勿上传低俗色情、暴力恐怖、谣言诈骗、侵权盗版等相关内容，火把保有依据国家规定及平台规则进行处理的权利。
+                </div>
+                <!-- 内容主体区域 -->
+                <form class="layui-form " action="javascript:void(0);">
+                    <div style="padding: 15px; background-color: #fff;margin: 10px 15px 0 10px;">
+                        <div style="padding-bottom: 10px;">
+                            专辑基本信息
+                        </div>
+                        <!-- 基本信息部分 -->
+                        <div id="basic_info">
+                            <div>
+                                <div class="input-second-container">
+                                    <label class="layui-form-label" style="color: #333333;width: 90px;"><span
+                                            style="color: #F05654;">*</span>专辑名称：</label>
+                                    <div class="layui-inline" style="width: 850px;">
+                                        <input type="text" name="title" required lay-verify="required"
+                                            placeholder="输入专辑名称" autocomplete="off" class="layui-input">
+                                        <div class="input-number"><span class="input-on-number">0</span>/<span
+                                                class="input-max-number">100</span></div>
+                                    </div>
+                                </div>
+                                <div style="color: #999999;font-size: 12px;padding-top: 8px;margin-left: 120px;">
+                                    字数100字以内
+                                </div>
+                                <div style="color: #F05654;font-size: 12px;padding-top: 8px;margin-left: 120px;">
+                                    专辑名称不可为空
+                                </div>
+                            </div>
+                            <div style="margin-top: 10px;">
+                                <div class="input-second-container">
+                                    <label class="layui-form-label" style="color: #333333;width: 90px;"><span
+                                            style="color: #F05654;">*</span>专辑副标题：</label>
+                                    <div class="layui-inline" style="width: 850px;">
+                                        <input type="text" name="title" required lay-verify="required"
+                                            placeholder="输入专辑副标题" autocomplete="off" class="layui-input">
+                                        <div class="input-number"><span class="input-on-number">0</span>/<span
+                                                class="input-max-number">100</span></div>
+                                    </div>
+                                </div>
+                                <div style="color: #999999;font-size: 12px;padding-top: 8px;margin-left: 120px;">
+                                    字数100字以内
+                                </div>
+                                <div style="color: #F05654;font-size: 12px;padding-top: 8px;margin-left: 120px;">
+                                    专辑副标题不可为空
+                                </div>
+                            </div>
+                            <div style="margin-top:10px;">
+                                <label class="layui-form-label" style="color: #333333;width: 90px;"><span
+                                        style="color: #F05654;">*</span>图书封面：</label>
+                                <button type="button" class="layui-btn layui-btn-warm" id="uploadMainImg">+上传图片</button>
+                                <div class="picPicture" style="margin: 10px 0 0 120px;">
+                                    <div class="pic-one">
+                                        <div class="noPicture">
+                                            <!--<img src="http://file.mhuoba.com/shop/27/100072/picture/pages/20191213/11/20191213114757525.png" alt="">-->
+                                            尚未上传
+                                        </div>
+                                    </div>
+                                </div>
+                                <div style="color: #999999;font-size: 12px;padding-top: 8px;margin-left: 120px;">
+                                    请上传图片，要求尺寸800*800像素，文件大小5M以内，支持格式PNG、JPEG、JPG。
+                                </div>
+                                <div style="color: #F05654;font-size: 12px;padding-top: 8px;margin-left: 120px;">
+                                    图书封面不可为空
+                                </div>
+                            </div>
+                            <div style="margin-top:10px;">
+                                <label class="layui-form-label" style="color: #333333;width: 90px;"><span
+                                        style="color: #F05654;">*</span>专辑销售价：</label>
+                                <div class="layui-inline">
+                                    <div class="layui-form">
+                                        <div class="layui-form-item" style="color: #999999;">
+                                            <input type="radio" name="album_sale" value="" title="免费">
+                                            <input type="radio" name="album_sale" value="" title="完成购买">
+                                            <input type="radio" name="album_sale" value="" title="单集购买">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="input-third-container" style="width: 260px;margin-left: 120px;">
+                                    <input type="text" name="sale" placeholder="请输入整张专辑购买价格" autocomplete="off"
+                                        class="layui-input">
+                                    <div class="input-before">￥</div>
+                                </div>
+                                <div style="color: #999999;font-size: 12px;padding-top: 8px;margin-left: 120px;">
+                                    专辑免费或收费可以随时修改。
+                                </div>
+                                <div style="color: #999999;font-size: 12px;padding-top: 8px;margin-left: 120px;">
+                                    免费收听的专辑修改为收费时，原有免费收听的用户需要付费才可以收听专辑。
+                                </div>
+                                <div style="color: #F05654;font-size: 12px;padding-top: 8px;margin-left: 120px;">
+                                    专辑销售价不可为空
+                                </div>
+                            </div>
+                            <div style="margin-top:10px;">
+                                <label class="layui-form-label" style="color: #333333;width: 90px;"><span
+                                        style="color: #F05654;">*</span>系统分类：</label>
+                                <div class="layui-inline">
+                                    <select name="city" lay-verify="required" class="select-size">
+                                        <option value="">未选择</option>
+                                        <option value="0">1</option>
+                                        <option value="1">2</option>
+                                    </select>
+                                </div>
+                                <div style="color: #999999;font-size: 12px;padding-top: 8px;margin-left: 120px;">
+                                    请选择专辑的系统分类
+                                </div>
+                                <div style="color: #F05654;font-size: 12px;padding-top: 8px;margin-left: 120px;">
+                                    专辑分类不可为空
+                                </div>
+                            </div>
+                            <div class="margin-top: 40px;">
+                                <div style="padding-bottom: 10px;">
+                                    图文介绍
+                                </div>
+                                <div style="margin-top:15px;">
+                                    <label class="layui-form-label" style="color: #333333;width: 90px;"><span
+                                            style="color: #F05654;">*</span>图文介绍：</label>
+                                    <div class="layui-inline" style="padding-top: 9px;">
+                                        <textarea name="desc" class="layui-textarea"
+                                            style="width: 850px;height: 350px;"></textarea>
+                                    </div>
+                                    <div style="color: #999999;font-size: 12px;padding-top: 8px;margin-left: 120px;">
+                                        将用于前台信息展示，内容大小不限。
+                                    </div>
+                                    <div style="color: #F05654;font-size: 12px;padding-top: 8px;margin-left: 120px;">
+                                        图文介绍不可为空
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="margin-top: 40px;">
+                                <div style="padding-bottom: 10px;">
+                                    推荐标签
+                                </div>
+                                <iframe src="iframe-2.0/lable.html" name="lableChoose" frameborder="0" scrolling="no"
+                                    style="width: 1000px;"></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </form>
             </div>
-        </form>
+        </div>
+        <div class="bottom-layui-btn" style="margin-left: 190px;">
+            <button type="button" class="layui-btn layui-btn-normal">保存草稿</button>
+            <button type="button" class="layui-btn layui-btn-six">上传节目</button>
+        </div>
+        <!-- 底部 -->
+        <div class="layui-footer"></div>
     </div>
-</div>
 </body>
 
 </html>
@@ -308,15 +303,10 @@
 <script type="text/javascript" src="layui-2.0/jquery3.4.1.js"></script>
 <script type="text/javascript" src="layui-2.0/public.js"></script>
 <script type="text/javascript">
-    layui.use(['element', 'form'], function () {
-        var element = layui.element,
-            form = layui.form,
+    layui.use(['upload', 'form'], function () {
+        var upload = layui.upload,
             $ = layui.$;
-
-        // 搜索
-        function searchAction(argument) {
-            alert(argument)
-        }
+        var form = layui.form;
 
         // 展开收缩
         $('.foldAction').on('click', function () {
@@ -332,12 +322,54 @@
             }
             localStorage.setItem('slideState', slideState);
         })
+
+        //图片上传 之 主图和其他附图
+        upload.render({
+            elem: '#uploadMainImg'
+            , accept: 'file' //普通文件
+            , exts: 'jpeg|jpg|png'
+            , size: 5 * 1024
+            , multiple: true
+            , url: ''
+            , before: function (obj) {
+                /*obj.preview(function(index, file, result){
+                    var img_text = file.name;
+                    console.log(img_text);
+                })*/
+            }
+            , done: function (res, index, upload) {
+                if (res.code === 1) {
+                    layer.msg(res.msg);
+                } else {
+                    pictureAddData(res.data);
+                }
+            }
+            , error: function (index) {
+                layer.msg('上传失败');
+                return false;
+            }
+        });
     });
 
+    //添加图片
+    function pictureAddData(data) {
+        var s = '';
+        s += '<div class="pic-one">' +
+            '<div class="noPicture">' +
+            '<img src="' + data.src + '" alt="">' +
+            '</div>' +
+            '</div>';
+        $('.picPicture').append(s);
+    }
+
+    // 搜索
+    function searchAction(argument) {
+        alert(argument)
+    }
+
     //设置标签iframe高度
-    function setIframeHeight(height){
+    function setIframeHeight(height) {
         // 设置info模板中相应iframe的高度
         $('iframe[name=lableChoose]').css('height', height);
     }
 </script>
-

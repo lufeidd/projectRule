@@ -4,19 +4,46 @@
 	<meta charset="UTF-8">
 	<title>火把知识-后台</title>
 	<link rel="stylesheet" type="text/css" href="../layui-2.0/css/layui.css">
+	<link rel="stylesheet" type="text/css" href="../layui-2.0/inputtags/inputTags.css">
 	<!-- 公用样式 -->
 	<link rel="stylesheet" type="text/css" href="../layui-2.0/css/public.css">
 </head>
-
+<style>
+	#tags {
+		margin: 0;
+		padding: 0;
+	}
+	#tags span{
+		color: #ffffff;
+		background-color: #54ACF0;
+		margin-left: 3px;
+	}
+	#tags .close{
+		color: #ffffff;
+	}
+	#tags .close:hover{
+		background: #54ACF0;
+	}
+	#inputTagsUser[type='text'], #inputTagsUser[type='text']:focus {
+		line-height: 25px;
+		display: inline;
+		width: 150px;
+		margin: 0;
+		padding: 0 6px;
+		border: 0 none;
+		outline: 0 none;
+		box-shadow: none;
+	}
+</style>
 <body>
 	<!-- 标签搜索 -->
 	<div class="input-second-container lable-input-container">
 		<label class="layui-form-label lable-title">添加标签：</label>
-		<div class="layui-inline" style="width: 260px;">
-			<input type="text" name="title" required lay-verify="required" placeholder="默认文本"
-				   autocomplete="off" class="layui-input">
-			<div class="input-number"><span class="input-on-number">0</span>/<span
-					class="input-max-number">10</span></div>
+		<div class="layui-inline" id="tags" style="width: 260px;">
+			<input type="text" name="inputTags" id="inputTags" required lay-verify="required" placeholder="默认文本"
+				   autocomplete="off" class="layui-input" onkeypress="javascript:return gosearch();">
+			<div class="input-number"><span class="input-on-number" style="padding: 0;background-color:#fff;color:#999999;">0</span>/<span
+					class="input-max-number" style="padding: 0;background-color:#fff;color:#999999;">10</span></div>
 		</div>
 		<button type="button" class="layui-btn lable-search">搜索</button>
 	</div>
@@ -54,6 +81,7 @@
 <script type="text/javascript" src="../layui-2.0/layui.js"></script>
 <script type="text/javascript" src="../layui-2.0/jquery3.4.1.js"></script>
 <script type="text/javascript" src="../layui-2.0/public.js"></script>
+<script type="text/javascript" src="../layui-2.0/inputtags/inputTags.js"></script>
 <script type="text/javascript">
 	//标签标示id
 	var lableId;
@@ -62,6 +90,21 @@
 	//标签高度
 	var height;
 
+	layui.use(['element'], function () {
+		var inputTags = layui.inputTags;
+		var element = layui.element;
+		var form = layui.form;
+		$ = layui.$;
+		//搜索插件
+		inputTags.render({
+			elem:'#inputTags',//定义输入框input对象
+			content: [],//默认标签
+			aldaBtn: false,//是否开启获取所有数据的按钮
+			done: function(value){ //回车后的回调
+				//console.log(value)
+			}
+		});
+	})
 	//初始化高度
 	$(function(){
 		height = $('body').height();
