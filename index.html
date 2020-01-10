@@ -156,7 +156,7 @@
 				<p class="subTitle">文本域3</p>
 				<div class="input-third-container">
 					<input type="text" name="title" placeholder="输入搜索关键字" autocomplete="off" class="layui-input">
-					<div class="input-before">￥</div> 
+					<div class="input-before">￥</div>
 				</div>
 			</form>
 		</article>
@@ -386,6 +386,7 @@
 				<span id="popup1" class="popup">弹窗1</span>
 				<span id="popup2" class="popup">弹窗2</span>
 				<span id="popup3" class="popup">弹窗3</span>
+
 			</div>
 		</article>
 		<article id="date">
@@ -502,11 +503,31 @@
 		//页面层
 		layer.open({
 			type: 1,
-			title: '选择纸质书', //title设置
+			title: '申请商户补偿', //title设置
 			skin: 'layui-layer-rim', //加上边框
-			area: ['488px', '180px'], //宽高
-			content: 'html内容', //内容
-			shadeClose: true, //点击遮罩层隐藏弹窗
+			area: ['600px', '328px'], //宽高
+			btn: ['确 定', '取 消'], //btn按钮
+			content: "<form class='layui-form' action=''>" +
+				"<div class='layui-form-item input-layout-one'>" +
+				"<label class='layui-form-label'>补偿金额： </label>" +
+				"<div class='layui-input-block input-second-container lable-input-container'>" +
+				"<div class='input-third-container input-one1-container'>" +
+				"<input type='text' name='pricing' placeholder='最多23.00' autocomplete='off' class='layui-input'>" +
+				"<div class='input-before'>￥</div>" +
+				"</div>" +
+				"<p class='msg'>图书定价不可为空</p>" +
+				"</div>" +
+				"</div>" +
+				"<div class='layui-form-item input-layout-one'>" +
+				"<label class='layui-form-label'>补偿原因： </label>" +
+				"<div class='layui-input-block input-second-container lable-input-container'>" +
+				"<div class='input-third-container input-one1-container'>" +
+				"<input type='text' name='pricing' placeholder='请输入补偿原因' autocomplete='off' class='layui-input'>" +
+				"</div>" +
+				"</div>" +
+				"</div>" +
+				"</form>", //内容
+			// shadeClose: true, //点击遮罩层隐藏弹窗
 			// move: false, //禁止拖拽
 			yes: function (index, layero) {
 				//按钮1回调

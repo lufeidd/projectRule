@@ -147,37 +147,63 @@
                     <div class="rule">
                         此订单为代发订单。
                     </div>
-                    <div>
-                        <form class="layui-form" action="">
-                            <div class="layui-form-item input-layout-one">
-                                <label class="layui-form-label">订单号： </label>
-                                <div class="layui-input-inline">
-                                    <div class="input-second-container padd-top">
-                                        深渊上的火
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="layui-form-item">
-                                <label class="layui-form-label">买家下单时间： </label>
-                                <div class="layui-input-block input-second-container lable-input-container">
-                                    <div class="book-information padd-top">
-                                        2019-12-04 18:24:01
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="layui-form-item input-layout-one">
-                                <label class="layui-form-label">订单状态： </label>
-                                <div class="layui-input-block input-second-container lable-input-container">
-                                    <div class="input-second-container padd-top main-color">
-                                        已取消
-                                    </div>
-                                </div>
-                            </div>
-                        </form>
+                    <!-- 订单 -->
+                    <div class="order-details">
+                        <div class="order-number"><span>订单号： </span> <span class="order-content">深渊上的火</span></div>
+                        <div class="buyer"><span> 买家下单时间： </span><span class="buyerOrderTime">2019-12-04 18:24:01</span>
+                        </div>
+                        <div class="order-status"><span>订单状态： </span> <span class="status main-color">已取消</span></div>
                     </div>
+                    <!-- 订单信息 -->
+                    <div class="order-information">
+                        <!-- 收货人信息： -->
+                        <div class="information">
+                            <p>收货人信息：</p>
+                            <ul>
+                                <li> <em>账 &nbsp; &nbsp;&nbsp;号：</em><span class="account">13975842188</span></li>
+                                <li><em>收 货 人：</em><span class="consignee">张三</span></li>
+                                <li><em>手机号码：</em><span class="cellphone-number">19828738273</span></li>
+                                <li><em>手机号码：</em><span class="">19828738273</span></li>
+                                <li><em>邮 &nbsp; &nbsp;&nbsp;编：</em><span class="postal-code">310014</span></li>
+                            </ul>
+                        </div>
+                        <!-- 支付及配送方式： -->
+                        <div class="information">
+                            <p>支付及配送方式：</p>
+                            <ul>
+                                <li> <em>支付方式：</em><span class="on-line">网上支付</span></li>
+                                <li><em>送货方式：</em><span class="homeDeliveryService">送货上门</span></li>
+                                <li><em>支付金额：￥</em><span class="payment-amount ">83.22</span></li>
+                                <li><em>运 &nbsp; &nbsp; &nbsp;&nbsp;费：￥</em><span class="freight">0.00</span></li>
+                                <li><em>发货日期：</em><span class="delivery-date">2015-04-06 09:29:43</span></li>
+                                <li><em>发货公司：</em><span class="delivery-company">顺丰速运（运单号：589624884791）</span></li>
+                            </ul>
+                        </div>
+                        <!-- 发票信息： -->
+                        <div class="information">
+                            <p>发票信息：</p>
+                            <ul>
+                                <li> <em>发片类型：</em><span class="electronic-invoice ">电子发票</span></li>
+                                <li><em>开票单位：</em><span class="individual">个人</span></li>
+                                <li><em>开票金额：¥</em><span class="invoice-amount ">83.22</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="remarks">
+                        <div class="remarks-information">
+                            <span class="main-color">备注：</span>
+                            <span class="remarks-content">备注文案备注备注文案备注备注文案备注备注文案备注备注文案备注备注文案备注备注文案备注备注文案备注
+                                备注文案备注备注文案备注备注文案备注备注文案备注备注文案备注备注文案备注备注文案备注备注文案备注备注文案备注备注文案备注备注
+                                文案备注备注文文案备注备注文案备注备注文案备注</span>
+                        </div>
+                        <div class="preserve-remarks">
+                            <button type="button" class="layui-btn">保存备注</button>
+                        </div>
+                    </div>
+
                     <!--商品清单  -->
-                    <div>
-                        <p class="form-title">商品清单：</p>
+                    <div class="layui-tab-content">
+                        <p class="form-title" style="padding-bottom:20px;">商品清单：</p>
                         <div class="table">
                             <table class="layui-table" style="table-layout:fixed;margin:0;">
                                 <colgroup>
@@ -191,7 +217,7 @@
                                 </colgroup>
                                 <thead>
                                     <tr>
-                                        <th>
+                                        <th style="text-align:center;">
                                             <form class="layui-form checkAll" action="">
                                                 <input type="checkbox" lay-filter="checkAll" lay-skin="primary">
                                             </form>
@@ -206,7 +232,7 @@
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td>
+                                        <td style="text-align:center;">
                                             <form class="layui-form" action="">
                                                 <input type="checkbox" name="item_id" value="" lay-skin="primary"
                                                     class="test" lay-filter="checkChild">
@@ -228,15 +254,40 @@
                                         <td style="text-align:center;">211155</td>
                                         <td style="text-align:center;">
                                             <button type="button" class="layui-btn layui-btn-five">编辑</button>
-                                            <button type="button" class="layui-btn layui-btn-five">删除</button>
+                                            <button type="button" class="layui-btn layui-btn-danger">删除</button>
                                         </td>
                                     </tr>
                                 </tbody>
                             </table>
+
                         </div>
+                        <!-- 金额明细 -->
+                        <div class="price-detail">
+                            <div class="detail-left">
+                                <ul>
+                                    <li>
+                                        商品总额: ¥<span>84.90</span>
+                                    </li>
+                                    <li>
+                                        满减: -¥<span>84.90</span>
+                                    </li>
+                                    <li>
+                                        优惠券: -¥<span>1.00</span>
+                                    </li>
+                                    <li>
+                                        运费: ¥<span>4.90</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="detail-right main-color">
+                                应付总额: ¥<span>82.22</span>
+                            </div>
+                        </div>
+
+
+
                     </div>
                 </div>
-
             </div>
         </div>
 
@@ -248,10 +299,11 @@
 </html>
 <script type="text/javascript" src="layui-2.0/layui.js"></script>
 <script type="text/javascript">
-    layui.use(['element', 'jquery', 'form', 'layer'], function () {
+    layui.use(['element', 'jquery', 'form', 'layer', 'table'], function () {
         // 变量声明
         var $ = layui.jquery,
             form = layui.form,
+            table = layui.table,
             element = layui.element,
             layer = layui.layer;
 
@@ -279,16 +331,7 @@
             localStorage.setItem('slideState', slideState);
         })
 
-        $('.layui-btn').click(function () {
-
-        })
-
-        //初始化高度
-        $(function () {
-            height = $('body').height();
-            setTableTwoHeight(height);
-        });
-
+        //表格全选
         form.on('checkbox(checkAll)', function (data) {
             if (data.elem.checked) {
                 $('.table tbody').find('input[lay-filter="checkChild"]').prop('checked', true)
@@ -297,9 +340,10 @@
             }
             form.render();
         })
+
+        //删除
+        $(".layui-btn-danger").click(function () {
+            $(this).parents('tr').remove()
+        })
     });
-    // 数据表格
-    function setTableTwoHeight(height) {
-        parent.setTableTwoHeight(height);
-    }
 </script>
