@@ -32,6 +32,8 @@
 @import url('component/select.css');
 /* 弹窗 */
 @import url('component/popup.css');
+/* 代发商品详情 */
+@import url('component/daifashangpinxiangqin.css');
 /*
  * 标签重定义
  */
@@ -46,6 +48,11 @@ iframe {
     padding: 0;
     margin: 0;
     width: 100%;
+}
+
+
+em {
+    font-style: normal;
 }
 
 /* 主体内容 */
