@@ -94,3 +94,26 @@
     top: -1px;
     border: 1px #54ACF0 solid;
 }
+/*分页样式----------------------------*/
+.table .layui-table tbody tr:last-child:hover{
+    background-color: #ffffff;
+}
+.layui-laypage .layui-laypage-curr .layui-laypage-em {
+    position: absolute;
+    left: -1px;
+    top: -1px;
+    padding: 1px;
+    width: 100%;
+    height: 100%;
+    background-color: #54ACF0;
+}
+.layui-laypage .layui-laypage-curr em {
+    position: relative;
+    color: #fff;
+}
+.layui-laypage a:hover {
+    color:#54ACF0
+}
+.layui-laypage input:focus,.layui-laypage select:focus {
+    border-color:#54ACF0!important
+}

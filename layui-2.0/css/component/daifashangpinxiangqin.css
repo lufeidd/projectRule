@@ -87,3 +87,11 @@
     min-width: 928px;
     width: 928px;
 } */
+
+.padd-top{
+    padding-top: 10px;
+}
+
+.float-left{
+    float: left;
+}
