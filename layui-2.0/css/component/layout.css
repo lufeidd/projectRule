@@ -43,3 +43,26 @@
     color: #333;
     line-height: 1;
 }
+
+.input-layout-one .context {
+    width: 980px;
+}
+
+.layui-text em, .layui-word-aux {
+    color: #54ACF0!important;
+    font-size: 12px;
+}
+
+.layui-form-item .layui-input-inline {
+    margin-right: 8px;
+}
+
+.input-layout-two .layui-form-label {
+    width: 310px;
+}
+.input-layout-two .layui-input-block {
+    margin-left: 310px;
+}
+.layui-form-item .layui-inline {
+    margin-right: 5px;
+}

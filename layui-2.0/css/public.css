@@ -32,6 +32,8 @@
 @import url('component/select.css');
 /* 弹窗 */
 @import url('component/popup.css');
+/* 代发商品详情 */
+@import url('component/daifashangpinxiangqin.css');
 /*
  * 标签重定义
  */
@@ -46,6 +48,11 @@ iframe {
     padding: 0;
     margin: 0;
     width: 100%;
+}
+
+
+em {
+    font-style: normal;
 }
 
 /* 主体内容 */
@@ -78,11 +85,20 @@ body.small .layui-layout-admin .layui-footer {
 }
 
 .layui-layout-admin .layui-body {
-    top: 100px;
+	top: 100px;
+	bottom: 60px;
+	right: 10px;
     background-color: #fff;
     overflow: auto;
 }
-
+/* 底部 */
+.layui-layout-admin .layui-footer{
+	padding:11px 15px;
+	line-height: normal;
+	height: auto;
+	background-color: #FFF;
+	z-index: 9999;
+}
 /* 左侧导航 */
 body.large .layui-side.large {
     width: 200px;
@@ -351,4 +367,28 @@ body.large .layui-side.large {
     vertical-align: -0.2em;
     fill: currentColor;
     overflow: hidden;
+}
+
+/********** 公用类名 ***********/
+/* 行内元素 */
+.display-inline{
+	display: inline-block;
+	position: relative;
+	vertical-align: middle;
+}
+/* 清除浮动 */
+.clear-float::after{
+	content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    clear: both;
+}
+/* 浮左 */
+.float-left{
+	float: left;
+}
+/* 浮右 */
+.float-right{
+	float: right;
 }
