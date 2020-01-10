@@ -1,8 +1,8 @@
 /*
 * @Author: layui-2
 * @Date:   2018-08-31 11:40:42
-* @Last Modified by:   layui-2
-* @Last Modified time: 2018-09-04 14:44:38
+ * @Last Modified by: xxx
+ * @Last Modified time: 2020-01-10 13:21:54
 */
 layui.define(['jquery','layer'],function(exports){
   "use strict";
@@ -126,4 +126,4 @@ layui.define(['jquery','layer'],function(exports){
     return thisinputTags.call(inst);
   };
   exports('inputTags',inputTags);
-}).link('./inputTags.css')
+}).link('../../css/component/lable.css')
