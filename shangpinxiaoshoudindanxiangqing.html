@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>总览-火把知识</title>
+    <meta charset="utf-8">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <link rel="stylesheet" type="text/css" href="layui-2.0/css/layui.css">
+    <!-- 样式重定义 -->
+    <link rel="stylesheet" type="text/css" href="layui-2.0/css/public.css">
+    <!-- 字体图标 -->
+    <script src="layui-2.0/font/iconfont.js"></script>
+</head>
+
+<body class="large">
+    <script>
+        if (localStorage.getItem('slideState') == 'small') {
+            document.querySelector('body').setAttribute('class', 'small');
+        } else {
+            document.querySelector('body').setAttribute('class', 'large');
+        }
+    </script>
+    <div class="layui-layout layui-layout-admin">
+        <!-- 供应商logo -->
+        <div class="layui-logo">
+            <img src="layui-2.0/images/logo.png" width="26px" height="27px">
+            <span class="slogan">火把知识服务平台</span>
+            <div class="foldAction">
+                <i class="layui-icon layui-icon-shrink-right"></i>
+                <i class="layui-icon layui-icon-spread-left"></i>
+            </div>
+        </div>
+
+        <!-- 头部 栏目 -->
+        <div class="layui-header">
+            <!-- 头部导航栏右边部分 -->
+            <ul class="layui-nav layui-layout-right">
+                <li class="layui-nav-item">
+                    <a href="#">
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#iconmessage-line"></use>
+                        </svg>
+                        <span>私信</span>
+                        <span class="layui-badge-dot"></span>
+                    </a>
+                </li>
+                <li class="layui-nav-item">
+                    <a href="#">
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#iconnews-line"></use>
+                        </svg>
+                        <span>通知中心</span>
+                        <span class="layui-badge-dot"></span>
+                    </a>
+                </li>
+                <li class="layui-nav-item ">
+                    <a href="#">
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#iconhelp-line"></use>
+                        </svg>
+                        <span>帮助中心</span>
+                    </a>
+                </li>
+                <li class="layui-nav-item">
+                    <a href="#">
+                        <img src="http://t.cn/RCzsdCq" class="layui-nav-img">
+                        <span>用户名</span>
+                    </a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="#">账号主页</a></dd>
+                        <dd><a href="#">修改密码</a></dd>
+                        <dd><a class="logout" href="#">退出登录</a></dd>
+                    </dl>
+                </li>
+            </ul>
+        </div>
+
+        <!-- 侧边栏部分 -->
+        <!-- 展开 -->
+        <div class="layui-side layui-bg-black large">
+            <div class="layui-side-scroll">
+                <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
+                <ul class="layui-nav layui-nav-tree">
+                    <li class="layui-nav-item">
+                        <a href="#">
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#iconoverview-block"></use>
+                            </svg>
+                            <span>总览</span>
+                        </a>
+                    </li>
+                    <li class="layui-nav-item layui-nav-itemed">
+                        <a href="#">
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#iconsource-block"></use>
+                            </svg>
+                            <span>发布管理</span>
+                        </a>
+                        <dl class="layui-nav-child">
+                            <dd><a href="#">文章列表</a></dd>
+                            <dd class="layui-this"><a href="#">专辑列表</a></dd>
+                        </dl>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- 收起 -->
+        <div class="layui-side layui-bg-black small">
+            <ul class="layui-nav layui-layout-right">
+                <li class="layui-nav-item">
+                    <a href="#">
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#iconoverview-block"></use>
+                        </svg>
+                    </a>
+                </li>
+                <li class="layui-nav-item">
+                    <a href="#">
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#iconsource-block"></use>
+                        </svg>
+                    </a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="#">文章列表</a></dd>
+                        <dd><a href="#">专辑列表</a></dd>
+                    </dl>
+                </li>
+            </ul>
+        </div>
+
+        <!-- 面包屑 -->
+        <div class="breadcrumb-container">
+            <span class="layui-breadcrumb">
+                <a href="/">首页</a>
+                <a href="/frame.html">框架</a>
+                <a><cite>导航元素</cite></a>
+            </span>
+        </div>
+        <!-- 主体内容 -->
+        <div class="layui-body">
+            <div class="layui-tab layui-tab-brief contentBox" lay-filter="docDemoTabBrief">
+                <ul class="layui-tab-title">
+                    <li class="layui-this">商品销售订单详情</li>
+                </ul>
+                <div class="layui-tab-content">
+                    <div class="rule">
+                        此订单为代发订单。
+                    </div>
+                    <div>
+                        <form class="layui-form" action="">
+                            <div class="layui-form-item input-layout-one">
+                                <label class="layui-form-label">订单号： </label>
+                                <div class="layui-input-inline">
+                                    <div class="input-second-container padd-top">
+                                        深渊上的火
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">买家下单时间： </label>
+                                <div class="layui-input-block input-second-container lable-input-container">
+                                    <div class="book-information padd-top">
+                                        2019-12-04 18:24:01
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="layui-form-item input-layout-one">
+                                <label class="layui-form-label">订单状态： </label>
+                                <div class="layui-input-block input-second-container lable-input-container">
+                                    <div class="input-second-container padd-top main-color">
+                                        已取消
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <!--商品清单  -->
+                    <div>
+                        <p class="form-title">商品清单：</p>
+                        <div class="table">
+                            <table class="layui-table" style="table-layout:fixed;margin:0;">
+                                <colgroup>
+                                    <col width="5%">
+                                    <col width="20%">
+                                    <col width="15%">
+                                    <col width="20%">
+                                    <col width="10%">
+                                    <col width="10%">
+                                    <col width="20%">
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th>
+                                            <form class="layui-form checkAll" action="">
+                                                <input type="checkbox" lay-filter="checkAll" lay-skin="primary">
+                                            </form>
+                                        </th>
+                                        <th style="text-align:left;">商品ID</th>
+                                        <th style="text-align:center;">商品图片</th>
+                                        <th style="text-align:center;">专辑名称</th>
+                                        <th style="text-align:center;">销售价</th>
+                                        <th style="text-align:center;">原购数量</th>
+                                        <th style="text-align:center;">操作</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <form class="layui-form" action="">
+                                                <input type="checkbox" name="item_id" value="" lay-skin="primary"
+                                                    class="test" lay-filter="checkChild">
+                                            </form>
+                                        </td>
+                                        <td class="textOverflow" style="text-align:left;">1002545585/234890007866525
+                                        </td>
+                                        <td class="tableTitle" style="text-align: center;">
+                                            <div class="pic-two">
+                                                <img src="https://mhuoba.oss-cn-hangzhou.aliyuncs.com/picture/audio/20190812/18/20190812183751909.jpg!w81h50"
+                                                    alt="">
+                                            </div>
+                                        </td>
+                                        <td style="text-align:center;">
+                                            <p class="textTwoOver">商品标题最多两行题最多两行商品标题最多两行题最多两行
+                                                商品标题最多两行商品标题最多两行题最多两行商品标题最多两行题最多两行</p>
+                                        </td>
+                                        <td style="text-align:center;">￥76.20</td>
+                                        <td style="text-align:center;">211155</td>
+                                        <td style="text-align:center;">
+                                            <button type="button" class="layui-btn layui-btn-five">编辑</button>
+                                            <button type="button" class="layui-btn layui-btn-five">删除</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- 底部 -->
+        <div class="layui-footer"></div>
+    </div>
+</body>
+
+</html>
+<script type="text/javascript" src="layui-2.0/layui.js"></script>
+<script type="text/javascript">
+    layui.use(['element', 'jquery', 'form', 'layer'], function () {
+        // 变量声明
+        var $ = layui.jquery,
+            form = layui.form,
+            element = layui.element,
+            layer = layui.layer;
+
+        //方法定义
+
+        function GetQueryString(name) { //获取地址栏上的数据
+            var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+            var r = window.location.search.substr(1).match(reg);
+            if (r != null) return unescape(r[2]);
+            return null;
+        }
+
+        // 展开收缩
+        $('.foldAction').on('click', function () {
+            var body = $(this).parents('body');
+            var slideState = '';
+            // 展开隐藏图标切换
+            if ($(body).hasClass('small')) {
+                $(body).removeClass('small').addClass('large');
+                slideState = 'large';
+            } else {
+                $(body).removeClass('large').addClass('small');
+                slideState = 'small';
+            }
+            localStorage.setItem('slideState', slideState);
+        })
+
+        $('.layui-btn').click(function () {
+
+        })
+
+        //初始化高度
+        $(function () {
+            height = $('body').height();
+            setTableTwoHeight(height);
+        });
+
+        form.on('checkbox(checkAll)', function (data) {
+            if (data.elem.checked) {
+                $('.table tbody').find('input[lay-filter="checkChild"]').prop('checked', true)
+            } else {
+                $('.table tbody').find('input[lay-filter="checkChild"]').prop('checked', false)
+            }
+            form.render();
+        })
+    });
+    // 数据表格
+    function setTableTwoHeight(height) {
+        parent.setTableTwoHeight(height);
+    }
+</script>

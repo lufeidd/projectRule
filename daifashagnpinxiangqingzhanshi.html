@@ -141,7 +141,7 @@
         <div class="layui-body">
             <div class="layui-tab layui-tab-brief contentBox" lay-filter="docDemoTabBrief">
                 <ul class="layui-tab-title">
-                    <li class="layui-this">代发商品详情编辑</li>
+                    <li class="layui-this">代发商品详情展示</li>
                 </ul>
                 <div class="layui-tab-content">
                     <div class="rule">
@@ -152,91 +152,53 @@
                         <form class="layui-form" action="">
                             <p class="form-title">纸质书基本信息</p>
                             <div class="layui-form-item input-layout-one">
-                                <label class="layui-form-label">单行输入框：</label>
+                                <label class="layui-form-label"><span class="tip">*</span>ISBN： </label>
                                 <div class="layui-input-inline context">
-                                    <div class="input-second-container">
-                                        <input type="text" name="isbn" placeholder="输入搜索关键字" autocomplete="off"
-                                            class="layui-input">
-                                        <div class="input-number"><span class="input-on-number">0</span>/<span
-                                                class="input-max-number">100
-                                            </span>
-                                        </div>
+                                    <div class="input-second-container padd-top">
+                                        9787121379666
                                     </div>
-                                    <p class="desc">
-                                        将用于前台信息展示。新版ISBN由13位数字组成，分为5段，在原来的10位数字前加上3位EAN（欧洲商品编号）图书产品代码“978”。
-                                    </p>
-                                    <p class="msg">ISBN不可为空</p>
                                 </div>
-                                <div class="layui-form-mid layui-word-aux">同步图书信息</div>
                             </div>
                             <div class="layui-form-item">
                                 <label class="layui-form-label"><span class="tip">*</span>图书封面： </label>
                                 <div class="layui-input-block input-second-container lable-input-container">
                                     <div class="book-information">
-                                        <button type="button" class="layui-btn layui-btn-warm"> +选择图片</button>
                                         <div>
                                             <img src="" alt="">
                                         </div>
                                     </div>
-                                    <p class="desc">请上传图片，要求尺寸800*800像素，文件大小5M以内，支持格式PNG、JPEG、JPG。</p>
-                                    <p class="msg">图书封面不可为空</p>
                                 </div>
                             </div>
                             <div class="layui-form-item input-layout-one">
                                 <label class="layui-form-label"><span class="tip">*</span>图书名称： </label>
                                 <div class="layui-input-block input-second-container lable-input-container">
-                                    <div class="input-second-container context">
-                                        <input type="text" name="books-name" placeholder="输入搜索关键字" autocomplete="off"
-                                            class="layui-input">
-                                        <div class="input-number"><span class="input-on-number">0</span>/<span
-                                                class="input-max-number">100
-                                            </span>
-                                        </div>
+                                    <div class="input-second-container padd-top">
+                                        深渊上的火
                                     </div>
-                                    <p class="desc">字叔100字以内</p>
-                                    <p class="msg">图书名称不可为空</p>
                                 </div>
                             </div>
                             <div class="layui-form-item input-layout-one">
                                 <label class="layui-form-label"><span class="tip">*</span>图书定价： </label>
                                 <div class="layui-input-block input-second-container lable-input-container">
-                                    <div class="input-third-container input-one1-container context">
-                                        <input type="text" name="pricing" placeholder="请输入图书定价" autocomplete="off"
-                                            class="layui-input">
-                                        <div class="input-before">￥</div>
+                                    <div class="input-third-container input-one1-container padd-top">
+                                        ￥ <span class="pricing">16.00</span>
                                     </div>
-                                    <p class="desc">将用于前台信息展示。金额￥100000以内，支持两位小数。</p>
-                                    <p class="msg">图书定价不可为空</p>
                                 </div>
                             </div>
                             <div class="layui-form-item input-layout-one">
                                 <label class="layui-form-label"><span class="tip">*</span>作者： </label>
                                 <div class="layui-input-block input-second-container lable-input-container">
-                                    <div class="input-second-container context">
-                                        <input type="text" name="author" placeholder="输入搜索关键字" autocomplete="off"
-                                            class="layui-input">
-                                        <div class="input-number"><span class="input-on-number">0</span>/<span
-                                                class="input-max-number">100
-                                            </span>
-                                        </div>
+                                    <div class="input-second-container padd-top">
+                                        佛诺·文奇
                                     </div>
-                                    <p class="desc">将用于前台信息展示，字数100字以内。</p>
-                                    <p class="msg">作者名称不可为空</p>
                                 </div>
                             </div>
                             <div class="layui-form-item input-layout-one">
                                 <label class="layui-form-label"><span class="tip">*</span>出版社：</label>
                                 <div class="layui-input-block input-second-container lable-input-container">
-                                    <div class="input-second-container context">
-                                        <input type="text" name="publishing" placeholder="输入搜索关键字" autocomplete="off"
-                                            class="layui-input">
-                                        <div class="input-number"><span class="input-on-number">0</span>/<span
-                                                class="input-max-number">100
-                                            </span>
-                                        </div>
+                                    <div class="input-second-container padd-top">
+                                        重庆出版社
                                     </div>
-                                    <p class="desc">将用于前台信息展示，字数100字以内。</p>
-                                    <p class="msg">出版社名称不可为空</p>
                                 </div>
                             </div>
                         </form>
@@ -249,20 +211,16 @@
                                 <div class="layui-inline">
                                     <label class="layui-form-label">出版日期：</label>
                                     <div class="layui-input-block">
-                                        <div class="input-one1-container">
-                                            <input type="text" name="publish-date"
-                                                placeholder="输入搜索关键字 input-one1-container" autocomplete="off"
-                                                class="layui-input">
+                                        <div class="input-one1-container padd-top">
+                                            2019-05-06
                                         </div>
                                     </div>
                                 </div>
                                 <div class="layui-inline input-layout-two">
                                     <label class="layui-form-label">印刷日期：</label>
                                     <div class="layui-input-block">
-                                        <div class="input-one1-container">
-                                            <input type="text" name="printing-date"
-                                                placeholder="输入搜索关键字 input-one1-container" autocomplete="off"
-                                                class="layui-input">
+                                        <div class="input-one1-container padd-top">
+                                            2019-05-06
                                         </div>
                                     </div>
                                 </div>
@@ -273,13 +231,8 @@
                                     <label class="layui-form-label">版次：</label>
                                     <div class="layui-input-block">
                                         <div class="input-one1-container">
-                                            <div class="input-second-container context">
-                                                <input type="text" name="edition" placeholder="请输入版次" autocomplete="off"
-                                                    class="layui-input">
-                                                <div class="input-number"><span class="input-on-number">0</span>/<span
-                                                        class="input-max-number">100
-                                                    </span>
-                                                </div>
+                                            <div class="input-second-container padd-top">
+                                                1
                                             </div>
                                         </div>
 
@@ -289,13 +242,8 @@
                                     <label class="layui-form-label">印次：</label>
                                     <div class="layui-input-block">
                                         <div class="input-one1-container">
-                                            <div class="input-second-container context">
-                                                <input type="text" name="printing-date" placeholder="请输入印次"
-                                                    autocomplete="off" class="layui-input">
-                                                <div class="input-number"><span class="input-on-number">0</span>/<span
-                                                        class="input-max-number">10
-                                                    </span>
-                                                </div>
+                                            <div class="input-second-container padd-top">
+                                                2019-05-06
                                             </div>
                                         </div>
                                     </div>
@@ -307,33 +255,14 @@
                             <div class="layui-form-item">
                                 <div class="layui-inline">
                                     <label class="layui-form-label">包装：</label>
-
-                                    <div class="selectTwo float-left">
-                                        <select name="packaging" lay-verify="required" class="select-sizeMin">
-                                            <option value="">未选择</option>
-                                            <option value="1">平装</option>
-                                            <option value="2">精装</option>
-                                            <option value="3">其他</option>
-                                        </select>
+                                    <div class="selectTwo float-left padd-top">
+                                        精装
                                     </div>
                                 </div>
                                 <div class="layui-inline input-layout-two">
                                     <label class="layui-form-label">开本： </label>
-                                    <div class="selectTwo float-left">
-                                        <select name="format" lay-verify="required" class="select-sizeMin">
-                                            <option value="">未选择</option>
-                                            <option value="1">8开</option>
-                                            <option value="2">16开</option>
-                                            <option value="3">32开</option>
-                                            <option value="4">64开</option>
-                                            <option value="5">其他</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="layui-inline">
-                                    <div class="input-one2-container">
-                                        <input type="text" name="title" placeholder="请输入其他开本" autocomplete="off"
-                                            class="layui-input">
+                                    <div class="selectTwo float-left padd-top">
+                                        32开
                                     </div>
                                 </div>
                             </div>
@@ -343,16 +272,9 @@
                                     <label class="layui-form-label">页数：</label>
                                     <div class="layui-input-block">
                                         <div class="input-one1-container">
-                                            <div class="input-second-container context">
-                                                <input type="text" name="pagination" placeholder="请输入版次"
-                                                    autocomplete="off" class="layui-input">
-                                                <div class="input-number"><span class="input-on-number">0</span>/<span
-                                                        class="input-max-number">10
-                                                    </span>
-                                                </div>
+                                            <div class="input-second-container padd-top">
+                                                <span class="pagination">456</span> 页
                                             </div>
-                                            <p class="desc">仅支持整数数字</p>
-                                            <p class="msg">页数信息格式不可为中文</p>
                                         </div>
 
                                     </div>
@@ -361,16 +283,9 @@
                                     <label class="layui-form-label">字数（千字）：</label>
                                     <div class="layui-input-block">
                                         <div class="input-one1-container">
-                                            <div class="input-second-container context">
-                                                <input type="text" name="numberOfWords" placeholder="请输入印次"
-                                                    autocomplete="off" class="layui-input">
-                                                <div class="input-number"><span class="input-on-number">0</span>/<span
-                                                        class="input-max-number">10
-                                                    </span>
-                                                </div>
+                                            <div class="input-second-container padd-top">
+                                                <span class="number-of-words">456</span> 千字
                                             </div>
-                                            <p class="desc">仅支持整数数字</p>
-                                            <p class="msg">页数信息格式不可为中文</p>
                                         </div>
                                     </div>
                                 </div>
@@ -383,141 +298,106 @@
                             <p class="form-title">纸质书商品信息</p>
                             <div class="layui-form-item">
                                 <label class="layui-form-label"><span class="tip">*</span>系统分类： </label>
-                                <div class="layui-input-block input-second-container lable-input-container">
-                                    <select name="system-classify" lay-verify="required" class="size">
-                                        <option value="">文学 / 诗歌词曲 / 外国诗歌</option>
-                                        <option value="1">1</option>
-                                        <option value="2">2</option>
-                                    </select>
-                                    <p class="msg">系统不可为空</p>
+                                <div class="layui-input-block padd-top">
+                                    文学 / 诗歌词曲 / 外国诗歌
                                 </div>
                             </div>
                             <div class="layui-form-item input-layout-one">
                                 <label class="layui-form-label"><span class="tip">*</span> 商品标题：</label>
                                 <div class="layui-input-block input-second-container lable-input-container">
-                                    <div class="input-second-container context">
-                                        <input type="text" name="merchandise-title" placeholder="输入搜索关键字"
-                                            autocomplete="off" class="layui-input">
-                                        <div class="input-number"><span class="input-on-number">0</span>/<span
-                                                class="input-max-number">50
-                                            </span>
-                                        </div>
+                                    <div class="input-second-container padd-top">
+                                        哈利波特与魔法石（《语文》教材推荐阅读书目，新英国版） [7-10岁]
                                     </div>
-                                    <p class="desc">将用于前台信息展示，字数35字以内。</p>
-                                    <p class="msg">商品标题不可为空</p>
                                 </div>
                             </div>
                             <div class="layui-form-item input-layout-one">
                                 <label class="layui-form-label"><span class="tip">*</span>商品副标题： </label>
                                 <div class="layui-input-block input-second-container lable-input-container">
-                                    <div class="input-second-container context">
-                                        <input type="text" name="commodity-subtitle" placeholder="输入搜索关键字"
-                                            autocomplete="off" class="layui-input">
-                                        <div class="input-number"><span class="input-on-number">0</span>/<span
-                                                class="input-max-number">50
-                                            </span>
-                                        </div>
+                                    <div class="input-second-container padd-top">
+                                        儿童文学经典“哈利·波特”重装上市！ 深受英国小读者喜爱的新版封面 重新设计、充满魔法的正文排版 新增霍格沃茨魔法学校地图拉页 重新修订的完整无删节经典译文
+                                        这是你不能错过的更加精彩、刺激的魔法之旅。
                                     </div>
-                                    <p class="desc">将用于前台信息展示，字数100字以内。</p>
-                                    <p class="msg">商品副标题不可为空</p>
                                 </div>
                             </div>
                             <div class="layui-form-item">
                                 <label class="layui-form-label"><span class="tip">*</span>商品图： </label>
                                 <div class="layui-input-block input-second-container lable-input-container">
                                     <div class="book-information">
-                                        <button type="button" class="layui-btn layui-btn-warm"> +选择图片</button>
                                         <div>
                                             <img src="" alt="">
                                         </div>
                                     </div>
-                                    <p class="desc">将用于前台展示，要求尺寸800*800像素，文件大小5M以内，支持格式PNG、JPEG、JPG，最多上传5张</p>
-                                    <p class="msg">商品主图不可为空</p>
                                 </div>
-                            </div>
-                            <div class="layui-form-item">
-                                <label class="layui-form-label"><span class="tip">*</span>图文介绍： </label>
-                                <div class="layui-input-block input-second-container lable-input-container">
-                                    <div class="book-information">
-                                        <input type="text" name="graphic-introduction" lay-verify="title"
-                                            autocomplete="off" placeholder="" class="layui-input">
-                                    </div>
-                                    <p class="desc">将用于前台信息展示，内容大小不限。</p>
-                                </div>
-                            </div>
-                            <div class="layui-form-item">
-                                <label class="layui-form-label">编辑推荐语： </label>
-                                <div class="layui-input-block input-second-container lable-input-container">
-                                    <div class="book-information">
-                                        <button type="button" class="layui-btn layui-btn-warm"> +添加</button>
-                                    </div>
-                                    <p class="desc">将用于前台信息展示，字数1200字以内，支持换行。</p>
-                                </div>
-                            </div>
-                            <div class="layui-form-item">
-                                <label class="layui-form-label">内容简介： </label>
-                                <div class="layui-input-block input-second-container lable-input-container">
-                                    <div class="book-information">
-                                        <input type="text" name="content-intro" lay-verify="title" autocomplete="off"
-                                            placeholder="" class="layui-input">
-                                        <button type="button" class="layui-btn layui-btn-danger mlfet-13">删除</button>
-                                    </div>
-                                    <div class="desc">将用于前台信息展示，字数1200字以内，支持换行。
-                                        <div class="float-right"><span class="input-on-number">0</span>/<span
-                                                class="input-max-number">50</span></div>
+                                <div class="layui-form-item">
+                                    <label class="layui-form-label"><span class="tip">*</span>图文介绍： </label>
+                                    <div class="layui-input-block input-second-container lable-input-container">
+                                        <div class="book-information">
+                                            <input type="text" name="graphic-introduction" lay-verify="title"
+                                                autocomplete="off" placeholder="" class="layui-input">
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="layui-form-item">
-                                <label class="layui-form-label">作者简介： </label>
-                                <div class="layui-input-block input-second-container lable-input-container">
-                                    <div class="book-information">
-                                        <input type="text" name="author-intro" lay-verify="title" autocomplete="off"
-                                            placeholder="" class="layui-input">
-                                        <button type="button" class="layui-btn layui-btn-danger mlfet-13">删除</button>
-                                    </div>
-                                    <div class="desc">将用于前台信息展示，字数1200字以内，支持换行。
-                                        <div class="float-right"><span class="input-on-number">0</span>/<span
-                                                class="input-max-number">300</span></div>
+                                <div class="layui-form-item">
+                                    <label class="layui-form-label">编辑推荐语： </label>
+                                    <div class="layui-input-block input-second-container lable-input-container">
+                                        <div class="book-information padd-top">
+                                            儿童文学经典“哈利·波特”重装上市！ 深受英国小读者喜爱的新版封面 重新设计、充满魔法的正文排版 新增霍格沃茨魔法学校地图拉页
+                                            重新修订的完整无删节经典译文 这是你不能错过的更加精彩、刺激的魔法之旅。
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="layui-form-item">
-                                <label class="layui-form-label">目录： </label>
-                                <div class="layui-input-block input-second-container lable-input-container">
-                                    <div class="book-information">
-                                        <button type="button" class="layui-btn layui-btn-warm"> +添加</button>
+                                <div class="layui-form-item">
+                                    <label class="layui-form-label">内容简介： </label>
+                                    <div class="layui-input-block input-second-container lable-input-container">
+                                        <div class="book-information padd-top">
+                                            儿童文学经典“哈利·波特”重装上市！ 深受英国小读者喜爱的新版封面 重新设计、充满魔法的正文排版 新增霍格沃茨魔法学校地图拉页
+                                            重新修订的完整无删节经典译文 这是你不能错过的更加精彩、刺激的魔法之旅。
+                                        </div>
                                     </div>
-                                    <p class="desc">将用于前台信息展示，字数1200字以内，支持换行。</p>
                                 </div>
-                            </div>
-                            <div class="layui-form-item">
-                                <label class="layui-form-label">媒体评论： </label>
-                                <div class="layui-input-block input-second-container lable-input-container">
-                                    <div class="book-information">
-                                        <button type="button" class="layui-btn layui-btn-warm"> +添加</button>
+                                <div class="layui-form-item">
+                                    <label class="layui-form-label">作者简介： </label>
+                                    <div class="layui-input-block input-second-container lable-input-container">
+                                        <div class="book-information padd-top">
+                                            .K.罗琳是畅销书“哈利?波特”系列的作者，该系列小说深受读者喜爱，屡创销量纪录。迄今为止，“哈利?波特”系列销量已逾500,000,000册，被翻译成80种语言，并被改编成8部好莱坞大片。J.K.罗琳还为慈善组织撰写过3部“哈利?波特”系列衍生作品，分别是《神奇的魁地奇球》《神奇动物在哪里》（用于资助喜剧救济基金会和“荧光闪烁”）以及《诗翁彼豆故事集》（用于资助“荧光闪烁”）。她还创作了一部以《神奇动物在哪里》为灵感来源的电影剧本，该影片开启了“神奇动物在哪里”电影系列（共5部）。她与他人合作的舞台剧
+                                        </div>
                                     </div>
-                                    <p class="desc">将用于前台信息展示，字数1200字以内，支持换行。</p>
                                 </div>
-                            </div>
-                            <div class="layui-form-item">
-                                <label class="layui-form-label">试读章节： </label>
-                                <div class="layui-input-block input-second-container lable-input-container">
-                                    <div class="book-information">
-                                        <button type="button" class="layui-btn layui-btn-warm"> +添加</button>
+                                <div class="layui-form-item">
+                                    <label class="layui-form-label">目录： </label>
+                                    <div class="layui-input-block input-second-container lable-input-container">
+                                        <div class="book-information padd-top">
+                                            <ul>
+                                                <li class="catalogue"><span class="chapter">第一章</span><span
+                                                        class="chapter-catalogue">我是达摩克</span></li>
+                                            </ul>
+                                        </div>
                                     </div>
-                                    <p class="desc">将用于前台信息展示，字数1200字以内，支持换行。</p>
                                 </div>
-                            </div>
-                            <div class="layui-form-item">
-                                <label class="layui-form-label">前言： </label>
-                                <div class="layui-input-block input-second-container lable-input-container">
-                                    <div class="book-information">
-                                        <button type="button" class="layui-btn layui-btn-warm"> +添加</button>
+                                <div class="layui-form-item">
+                                    <label class="layui-form-label">媒体评论： </label>
+                                    <div class="layui-input-block input-second-container lable-input-container">
+                                        <div class="book-information padd-top">
+                                            .K.罗琳是畅销书“哈利?波特”系列的作者，该系列小说深受读者喜爱，屡创销量纪录。迄今为止，“哈利?波特”系列销量已逾500,000,000册，被翻译成80种语言，并被改编成8部好莱坞大片。J.K.罗琳还为慈善组织撰写过3部“哈利?波特”系列衍生作品，分别是《神奇的魁地奇球》《神奇动物在哪里》（用于资助喜剧救济基金会和“荧光闪烁”）以及《诗翁彼豆故事集》（用于资助“荧光闪烁”）。她还创作了一部以《神奇动物在哪里》为灵感来源的电影剧本，该影片开启了“神奇动物在哪里”电影系列（共5部）。她与他人合作的舞台剧
+                                        </div>
                                     </div>
-                                    <p class="desc">将用于前台信息展示，字数1200字以内，支持换行。</p>
                                 </div>
-                            </div>
+                                <div class="layui-form-item">
+                                    <label class="layui-form-label">试读章节： </label>
+                                    <div class="layui-input-block input-second-container lable-input-container">
+                                        <div class="book-information padd-top">
+                                            .K.罗琳是畅销书“哈利?波特”系列的作者，该系列小说深受读者喜爱，屡创销量纪录。迄今为止，“哈利?波特”系列销量已逾500,000,000册，被翻译成80种语言，并被改编成8部好莱坞大片。J.K.罗琳还为慈善组织撰写过3部“哈利?波特”系列衍生作品，分别是《神奇的魁地奇球》《神奇动物在哪里》（用于资助喜剧救济基金会和“荧光闪烁”）以及《诗翁彼豆故事集》（用于资助“荧光闪烁”）。她还创作了一部以《神奇动物在哪里》为灵感来源的电影剧本，该影片开启了“神奇动物在哪里”电影系列（共5部）。她与他人合作的舞台剧
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="layui-form-item">
+                                    <label class="layui-form-label">前言： </label>
+                                    <div class="layui-input-block input-second-container lable-input-container">
+                                        <div class="book-information padd-top">
+                                            .K.罗琳是畅销书“哈利?波特”系列的作者，该系列小说深受读者喜爱，屡创销量纪录。迄今为止，“哈利?波特”系列销量已逾500,000,000册，被翻译成80种语言，并被改编成8部好莱坞大片。J.K.罗琳还为慈善组织撰写过3部“哈利?波特”系列衍生作品，分别是《神奇的魁地奇球》《神奇动物在哪里》（用于资助喜剧救济基金会和“荧光闪烁”）以及《诗翁彼豆故事集》（用于资助“荧光闪烁”）。她还创作了一部以《神奇动物在哪里》为灵感来源的电影剧本，该影片开启了“神奇动物在哪里”电影系列（共5部）。她与他人合作的舞台剧
+                                        </div>
+                                    </div>
+                                </div>
                         </form>
                     </div>
                     <!-- 代发信息 -->
@@ -530,10 +410,6 @@
                                     <div class="layui-unselect layui-form-select padd-top">
                                         ￥<span>15.00</span>
                                     </div>
-                                </div>
-                            </div>
-                            <div class="layui-form-item">
-                                <div class="layui-input-block input-second-container lable-input-container">
                                     <p class="desc">[代销成本价]=[系统平均成本]+[代销成本折扣]×[定价]</p>
                                     <p class="desc">[系统平均成本]将根据订单产生时系统内的实时平均成本计算，可能存在小幅度偏差</p>
                                 </div>
@@ -541,12 +417,10 @@
                             <div class="layui-form-item">
                                 <label class="layui-form-label"><span class="tip">*</span>代发外部ID： </label>
                                 <div class="layui-input-block input-second-container lable-input-container">
-                                    <div class="input-third-container input-one1-container">
-                                        <input type="text" name="external-id" placeholder="请输入代发外部ID" autocomplete="off"
-                                            class="layui-input">
+                                    <div class="input-third-container padd-top">
+                                        AJR666787
                                     </div>
                                     <p class="desc">代发外部ID]用于代发供货商的系统对接</p>
-                                    <p class="msg">代发外部id不可为空</p>
                                 </div>
                             </div>
                             <div class="layui-form-item">
@@ -555,13 +429,7 @@
                                     <div class="book-information padd-top">
                                         库存充足
                                     </div>
-                                </div>
-                            </div>
-                            <div class="layui-form-item">
-                                <div class="layui-input-block input-second-container  al-items-center">
-                                    <div class="desc">
-                                        根据系统同步库存数量，具体库存数值不向代销商户显示。
-                                    </div>
+                                    <p class="desc">根据系统同步库存数量，具体库存数值不向代销商户显示。</p>
                                 </div>
                             </div>
                             <div class="layui-form-item">
