@@ -8,10 +8,10 @@
 
 /* 文本域1 */
 .input-one1-container {
-    max-width: 260px;
+    width: 260px;
 }
 .input-one2-container {
-    max-width: 130px;
+    width: 130px;
 }
 .layui-input,
 .layui-textarea {
@@ -32,7 +32,7 @@
 .input-second-container,
 .input-third-container {
     position: relative;
-    max-width: 982px;
+    width: 982px;
 }
 
 .input-second-container .input-number {
@@ -43,14 +43,36 @@
     color: #999999;
 }
 
-/* 文本域3 */
-.input-third-container .layui-input {
+/* 文本域3,6 */
+.input-third-container .layui-input,.input-six-container .layui-input {
     padding-left: 20px;
 }
 
-.input-third-container .input-before {
+.input-third-container .input-before,.input-six-container .input-before {
     position: absolute;
     left: 5px;
     top: 50%;
     margin-top: -9px;
+}
+.input-six-container{
+    width: 260px;
+    position: relative;
+}
+/* 文本域4 */
+.input-four-container .layui-textarea{
+    width: 982px;
+    height: 354px;
+}
+/* 文本域5 */
+.input-five-container{
+    width: 982px;
+}
+.input-five-container .layui-textarea{
+    width: 982px;
+    height: 103px;
+    color: #999999;
+}
+.input-five-container .desc,.input-five-container .input-number{
+    font-size: 12px;
+    color: #999999;
 }

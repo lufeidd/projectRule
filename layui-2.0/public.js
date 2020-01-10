@@ -16,4 +16,16 @@
         $(this).addClass('active')
         $(this).siblings().removeClass('active')
     })
+    // 文本域第五种限制输入字数
+    $('body').on('input','.input-five-container .layui-textarea',function(){
+        var input_first_val = $(this).val().trim();
+        var _max_number = Number($(this).parents('.input-five-container').find('.input-max-number').text());
+        if(input_first_val.length <= _max_number){
+            $(this).parents('.input-five-container').find('.input-on-number').text(input_first_val.length)
+        }else{
+            var _limit_number = input_first_val.toString().substring(0,_max_number);
+            $(this).parents('.input-five-container').find('.input-on-number').text(_limit_number.length)
+            $(this).val(_limit_number)
+        }
+    })
 })()
