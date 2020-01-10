@@ -103,7 +103,7 @@
 		$('.high-search-open').css('display', 'block')
 		var height = $('body').height();
 		// console.log($('body')) 
-		parent.setIframeHeight(height-38,'open');
+		parent.setIframeHeight(height-38,'hight-search-iframe','open');
 	})
 	// 点击收起按钮
 	$('body').on('click', '.high-search-fold-btn', function () {
@@ -115,7 +115,7 @@
 		$('.high-search-container').find('input').val('')
 		$('.high-search-container').find('input[name="keyword"]').val(_val)
 		var height = $('body').height();
-		parent.setIframeHeight(height,'fold');
+		parent.setIframeHeight(height,'hight-search-iframe','fold');
 	})
 	// 监听关键字输入框
 	$('body').on('input', 'input[name="keyword"]', function () {
