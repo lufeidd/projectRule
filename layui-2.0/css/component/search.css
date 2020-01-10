@@ -7,11 +7,7 @@
 
 .high-search-iframe {
     height: 38px;
-    background-color: #FFF;
     /* overflow: hidden; */
-}
-.high-search-container{
-    background-color: #FFF;
 }
 .high-search-container .high-search-left {
     float: left;
