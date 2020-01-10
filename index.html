@@ -418,8 +418,136 @@
 					<svg class="icon" aria-hidden="true">
 						<use xlink:href="#iconguanlian"></use>
 					</svg>数据表格</p>
-				<iframe src="iframe-2.0/tableOne.html" name="tableOne" data-id="table0"></iframe>
-				<iframe src="iframe-2.0/tableTwo.html" name="tableTwo" data-id="table1"></iframe>
+				<!--数据表格1-->
+				<div class="table">
+					<table class="layui-table" style="table-layout:fixed;margin:0;">
+						<colgroup>
+							<col width="50">
+							<col width="138">
+							<col width="6%">
+							<col width="19%">
+							<col width="8%">
+							<col width="8%">
+							<col width="10%">
+							<col width="10%">
+							<col width="12%">
+							<col>
+						</colgroup>
+						<thead>
+						<tr>
+							<th>
+								<form class="layui-form checkAll" action="">
+									<input type="checkbox" lay-filter="checkAll" lay-skin="primary" >
+								</form>
+							</th>
+							<th style="text-align:left;">商品ID</th>
+							<th style="cursor: pointer;text-align:left;">状态</th>
+							<th style="text-align:left;">商品信息</th>
+							<th style="text-align:center;">定价
+								<span class="inline_block">
+						<i class="layui-icon layui-icon-triangle-d topArrow sortprice" data-type="asc"></i>
+						<i class="layui-icon layui-icon-triangle-d bottomArrow sortprice" data-type="desc"></i>
+					</span>
+							</th>
+							<th style="text-align:center;">销售价
+								<span class="inline_block">
+						<i class="layui-icon layui-icon-triangle-d topArrow sortprice" data-type="asc"></i>
+						<i class="layui-icon layui-icon-triangle-d bottomArrow sortprice" data-type="desc"></i>
+					</span>
+							</th>
+							<th style="text-align:center;">库存数</th>
+							<th style="text-align:center;">外部ID</th>
+							<th style="text-align:center;">最新修改时间</th>
+							<th style="text-align:center;">操作</th>
+						</tr>
+						</thead>
+						<tbody>
+						<tr>
+							<td>
+								<form class="layui-form" action="">
+									<input type="checkbox" name="item_id" value="" lay-skin="primary" class="test" lay-filter="checkChild">
+								</form>
+							</td>
+							<td style="text-align:left;">1002545585</td>
+							<td class="status" style="text-align:left;">已上架</td>
+							<td class="tableTitle">
+								<div class="pic-two">
+									<img src="https://mhuoba.oss-cn-hangzhou.aliyuncs.com/picture/audio/20190812/18/20190812183751909.jpg!w81h50" alt="">
+								</div>
+								<div class="layui-inline message">
+									<p class="textTwoOver" title="">商品标题最多两行题最多两行行商品标题最多两行最多两行最多两行</p>
+									<p class="textOverflow c6 pt-10" title="">
+										作者姓名作者姓名作者姓名作者姓名作者姓名
+									</p>
+									<p class="c6 pt-10">6646444215</p>
+								</div>
+							</td>
+							<td style="text-align:center;">￥88.00</td>
+							<td style="text-align:center;">￥76.20</td>
+							<td style="text-align:center;">211155</td>
+							<td style="text-align:center;">J40045467</td>
+							<td style="text-align:center;">2019-02-06 15:05:16</td>
+							<td style="text-align:center;white-space: nowrap;">
+								<button type="button" class="layui-btn layui-btn-five">链接</button>
+								<button type="button" class="layui-btn layui-btn-five">编辑</button>
+							</td>
+						</tr>
+						</tbody>
+					</table>
+				</div>
+				<!--数据表格2-->
+				<div class="table">
+					<table class="layui-table" style="table-layout:fixed;margin:0;">
+						<colgroup>
+							<col width="50">
+							<col width="20%">
+							<col width="15%">
+							<col width="20%">
+							<col width="10%">
+							<col width="10%">
+							<col width="20%">
+						</colgroup>
+						<thead>
+						<tr>
+							<th>
+								<form class="layui-form checkAll" action="">
+									<input type="checkbox" lay-filter="checkAll" lay-skin="primary" >
+								</form>
+							</th>
+							<th style="text-align:left;">商品ID</th>
+							<th style="text-align:center;">商品图片</th>
+							<th style="text-align:center;">专辑名称</th>
+							<th style="text-align:center;">销售价</th>
+							<th style="text-align:center;">原购数量</th>
+							<th style="text-align:center;">操作</th>
+						</tr>
+						</thead>
+						<tbody>
+						<tr>
+							<td>
+								<form class="layui-form" action="">
+									<input type="checkbox" name="item_id" value="" lay-skin="primary" class="test" lay-filter="checkChild">
+								</form>
+							</td>
+							<td class="textOverflow" style="text-align:left;">1002545585/234890007866525</td>
+							<td class="tableTitle" style="text-align: center;">
+								<div class="pic-two">
+									<img src="https://mhuoba.oss-cn-hangzhou.aliyuncs.com/picture/audio/20190812/18/20190812183751909.jpg!w81h50" alt="">
+								</div>
+							</td>
+							<td style="text-align:center;">
+								<p class="textTwoOver">商品标题最多两行题最多两行商品标题最多两行题最多两行 商品标题最多两行商品标题最多两行题最多两行商品标题最多两行题最多两行</p>
+							</td>
+							<td style="text-align:center;">￥76.20</td>
+							<td style="text-align:center;">211155</td>
+							<td style="text-align:center;white-space: nowrap;">
+								<button type="button" class="layui-btn layui-btn-five">编辑</button>
+								<button type="button" class="layui-btn layui-btn-five">删除</button>
+							</td>
+						</tr>
+						</tbody>
+					</table>
+				</div>
 			</article>
 			<article id="popup">
 				<p class="title">
@@ -451,6 +579,15 @@
 		var element = layui.element,
 			form = layui.form,
 			$ = layui.$;
+
+		form.on('checkbox(checkAll)', function (data) {
+			if(data.elem.checked){
+				$('.table tbody').find('input[lay-filter="checkChild"]').prop('checked',true)
+			}else{
+				$('.table tbody').find('input[lay-filter="checkChild"]').prop('checked',false)
+			}
+			form.render();
+		})
 
 		// $.ajax
 
@@ -513,7 +650,7 @@
 			},
 			yes: function (index, layero) {
 				//按钮修改的回调
-				// layer.close(index); //如果设定了yes回调，需进行手工关闭		
+				// layer.close(index); //如果设定了yes回调，需进行手工关闭
 				//return false 开启该代码可禁止点击该按钮关闭
 			},
 			btn2: function (index, layero) {
