@@ -17,6 +17,7 @@
 .layui-textarea {
     border-color: #C0C0C0;
     border-radius: 4px;
+    resize: none;
 }
 
 .layui-input::placeholder {
@@ -75,4 +76,7 @@
 .input-five-container .desc,.input-five-container .input-number{
     font-size: 12px;
     color: #999999;
+}
+.input-five-container .desc,.input-five-container .input-number{
+    margin-top:5px;
 }
