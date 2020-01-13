@@ -124,7 +124,8 @@ function ajaxCascaderTemplate(_elem, _url, _type) {
                     //     // minLabel: 1,
                     //     // placeholder: '请输入搜索词'
                     // }
-                    // ,clear: true            
+                    // ,clear: true
+                    ,width:'471'            
                     , value: 0
                     , getChildren: function (value, callback) {
                         var data = []

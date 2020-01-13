@@ -16,15 +16,15 @@ html #layuicss-ajaxCascader{
     
 }
 .cascader-disabled .cascader-input{
-    color: #c0c4cc;
+    color: #999999;
     cursor: not-allowed;
 }
 .cascader-disabled .cascader-input:focus{
-    border-color:#e6e6e6 !important;
+    border-color:#C0C0C0 !important;
     outline: none;
 }
 .cascader-disabled .cascader-i{
-    color: #c0c4cc;
+    color: #C0C0C0;
 }
 .cascader-input{
     border-radius: 4px;
@@ -35,10 +35,10 @@ html #layuicss-ajaxCascader{
     cursor: default;
 }
 .cascader-input:focus{
-    border-color: #409eff !important;
+    border-color: #54ACF0 !important;
 }
 .cascader-input::-webkit-input-placeholder{
-	color: #c0c4cc;
+	color: #C0C0C0;
 }
 .cascader-i{
 	position:absolute;
@@ -48,7 +48,7 @@ html #layuicss-ajaxCascader{
     transition: transform 0.2s;
 }
 .cascader-ul i{
-    padding-left: 15px;
+    /* padding-left: 15px; */
 }
 .cascader-ul p{
     display: flex;
@@ -69,11 +69,11 @@ html #layuicss-ajaxCascader{
 	border: 1px solid #e4e7ed;
     border-radius: 2px;
     box-shadow: 0 2px 12px 0 rgba(0,0,0,.1);
-    margin: 10px 0;
+    margin: 2px 0;
     transition:left 0.2s;
 }
 /* 三角形样式 */
-.cascader-model::before{
+/* .cascader-model::before{
 	box-sizing: content-box;
     width: 0px;
     height: 0px;
@@ -88,8 +88,8 @@ html #layuicss-ajaxCascader{
     display: block;
     content:'';
     z-index: 12;
-}
-.cascader-model::after{
+} */
+/* .cascader-model::after{
 	box-sizing: content-box;
     width: 0px;
     height: 0px;
@@ -104,7 +104,7 @@ html #layuicss-ajaxCascader{
     display: block;
     content:'';
     z-index:10
-}
+} */
 
 .cascader-model ul{
 	display: inline-block;
@@ -113,6 +113,7 @@ html #layuicss-ajaxCascader{
     overflow-y: auto;
     border-right: 1px solid #e4e7ed;
     padding: 5px 0;
+    box-sizing: border-box;
 }
 /* 滚动条样式设置 */
 .cascader-model ul::-webkit-scrollbar{
@@ -135,7 +136,7 @@ html #layuicss-ajaxCascader{
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    color: #606266;
+    color: #333333;
     height: 34px;
     line-height: 1.5;
     box-sizing: border-box;
@@ -145,10 +146,10 @@ html #layuicss-ajaxCascader{
     justify-content: space-between;
 }
 .cascader-model ul li.cascader-choose-active{
-	color: #409eff;
+	color: #54ACF0;
 }
 .cascader-model ul li:hover{
-	background-color: #f5f7fa;
+	background-color: #EEF7FD;
 }
 .rotate{
     transform-origin:center center;
@@ -167,4 +168,9 @@ html #layuicss-ajaxCascader{
     font-size: 18px;
     cursor: pointer;
     display: none;
+}
+.cascader-overflow{
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
 }
