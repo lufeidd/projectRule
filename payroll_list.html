@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>总览-火把知识</title>
+    <meta charset="utf-8">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <link rel="stylesheet" type="text/css" href="layui-2.0/css/layui.css">
+    <!-- 样式重定义 -->
+    <link rel="stylesheet" type="text/css" href="layui-2.0/css/public.css">
+    <!-- 字体图标 -->
+    <script src="layui-2.0/font/iconfont.js"></script>
+</head>
+
+<body class="large">
+    <script>
+        if (localStorage.getItem('slideState') == 'small') {
+            document.querySelector('body').setAttribute('class', 'small');
+        } else {
+            document.querySelector('body').setAttribute('class', 'large');
+        }
+    </script>
+    <div class="layui-layout layui-layout-admin">
+        <!-- 供应商logo -->
+        <div class="layui-logo">
+            <img src="layui-2.0/images/logo.png" width="26px" height="27px">
+            <span class="slogan">火把知识服务平台</span>
+            <div class="foldAction">
+                <i class="layui-icon layui-icon-shrink-right"></i>
+                <i class="layui-icon layui-icon-spread-left"></i>
+            </div>
+        </div>
+
+        <!-- 头部 栏目 -->
+        <div class="layui-header">
+            <!-- 头部导航栏右边部分 -->
+            <ul class="layui-nav layui-layout-right">
+                <li class="layui-nav-item">
+                    <a href="#">
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#iconmessage-line"></use>
+                        </svg>
+                        <span>私信</span>
+                        <span class="layui-badge-dot"></span>
+                    </a>
+                </li>
+                <li class="layui-nav-item">
+                    <a href="#">
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#iconnews-line"></use>
+                        </svg>
+                        <span>通知中心</span>
+                        <span class="layui-badge-dot"></span>
+                    </a>
+                </li>
+                <li class="layui-nav-item ">
+                    <a href="#">
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#iconhelp-line"></use>
+                        </svg>
+                        <span>帮助中心</span>
+                    </a>
+                </li>
+                <li class="layui-nav-item">
+                    <a href="#">
+                        <img src="http://t.cn/RCzsdCq" class="layui-nav-img">
+                        <span>用户名</span>
+                    </a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="#">账号主页</a></dd>
+                        <dd><a href="#">修改密码</a></dd>
+                        <dd><a class="logout" href="#">退出登录</a></dd>
+                    </dl>
+                </li>
+            </ul>
+        </div>
+
+        <!-- 侧边栏部分 -->
+        <!-- 展开 -->
+        <div class="layui-side layui-bg-black large">
+            <div class="layui-side-scroll">
+                <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
+                <ul class="layui-nav layui-nav-tree">
+                    <li class="layui-nav-item">
+                        <a href="#">
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#iconoverview-block"></use>
+                            </svg>
+                            <span>总览</span>
+                        </a>
+                    </li>
+                    <li class="layui-nav-item">
+                        <a href="#">
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#iconsource-block"></use>
+                            </svg>
+                            <span>发布管理</span>
+                        </a>
+                        <dl class="layui-nav-child">
+                            <dd><a href="#">文章列表</a></dd>
+                            <dd><a href="#">专辑列表</a></dd>
+                        </dl>
+                    </li>
+                    <li class="layui-nav-item  layui-nav-itemed">
+                        <a href="#">
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icondistribution"></use>
+                            </svg>
+                            <span>代发系统</span>
+                        </a>
+                        <dl class="layui-nav-child">
+                            <dd class="layui-this"><a href="#">代发商品库</a></dd>
+                        </dl>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- 收起 -->
+        <div class="layui-side layui-bg-black small">
+            <ul class="layui-nav layui-layout-right">
+                <li class="layui-nav-item">
+                    <a href="#">
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#iconoverview-block"></use>
+                        </svg>
+                    </a>
+                </li>
+                <li class="layui-nav-item">
+                    <a href="#">
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#iconsource-block"></use>
+                        </svg>
+                    </a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="#">文章列表</a></dd>
+                        <dd><a href="#">专辑列表</a></dd>
+                    </dl>
+                </li>
+            </ul>
+        </div>
+
+        <!-- 面包屑 -->
+        <div class="breadcrumb-container">
+            <span class="layui-breadcrumb">
+                <a href="/">首页</a>
+                <a href="/frame.html">框架</a>
+                <a><cite>导航元素</cite></a>
+            </span>
+        </div>
+        <!-- 主体内容 -->
+        <div class="layui-body">
+            <div style="height: auto;">
+                <div>
+                    <div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
+                        <ul class="layui-tab-title">
+                            <li class="layui-this">代发商品库</li>
+                            <li>授权商户管理</li>
+                            <li>代发订单查询</li>
+                        </ul>
+                    </div>
+                </div>
+                <form class="layui-form " action="javascript:void(0);">
+                    <div style="padding: 15px; background-color: #fff;margin: 10px 15px 0 10px;">
+                        <div class="clear-float">
+                            <div class="float-left">
+                                <button type="button" class="layui-btn">导出数据</button>
+                                <div class="select-btn-one">
+                                    <button type="button" class="layui-btn layui-btn-five">批量操作<i
+                                            class="layui-icon layui-icon-down"></i><i
+                                            class="layui-icon layui-icon-up"></i></button>
+                                    <dl class="select-btn-downbit">
+                                        <dd class="select-btn-tips select-btn-this">立即上架</dd>
+                                        <dd class="select-btn-tips">选项二</dd>
+                                        <dd class="select-btn-tips">选项三</dd>
+                                    </dl>
+                                </div>
+                            </div>
+                            <div class="float-right" style="min-width: 623px;">
+                                <iframe src="iframe-2.0/search.html" name="high-search" class="high-search-iframe"
+                                    data-id="search0"></iframe>
+                            </div>
+                        </div>
+                        <!--数据表格-->
+                        <div class="table" style="margin-top: 20px;">
+                            <table class="layui-table" style="table-layout:fixed;margin:0;">
+                                <colgroup>
+                                    <col width="50">
+                                    <col width="138">
+                                    <col width="6%">
+                                    <col width="19%">
+                                    <col width="8%">
+                                    <col width="8%">
+                                    <col width="10%">
+                                    <col width="10%">
+                                    <col width="12%">
+                                    <col>
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th>
+                                            <form class="layui-form checkAll" action="">
+                                                <input type="checkbox" lay-filter="checkAll" lay-skin="primary">
+                                            </form>
+                                        </th>
+                                        <th style="text-align:left;">商品ID</th>
+                                        <th style="cursor: pointer;text-align:left;">状态</th>
+                                        <th style="text-align:left;">商品信息</th>
+                                        <th style="text-align:center;">成本价
+                                            <span class="inline_block">
+                                                <i class="layui-icon layui-icon-triangle-d topArrow sortprice"
+                                                    data-type="asc"></i>
+                                                <i class="layui-icon layui-icon-triangle-d bottomArrow sortprice"
+                                                    data-type="desc"></i>
+                                            </span>
+                                        </th>
+                                        <th>运费</th>
+                                        <th style="text-align:center;">销售价
+                                            <span class="inline_block">
+                                                <i class="layui-icon layui-icon-triangle-d topArrow sortprice"
+                                                    data-type="asc"></i>
+                                                <i class="layui-icon layui-icon-triangle-d bottomArrow sortprice"
+                                                    data-type="desc"></i>
+                                            </span>
+                                        </th>
+                                        <th style="text-align:center;">库存数</th>
+                                        <th style="text-align:center;">外部ID</th>
+                                        <th style="text-align:center;">最新修改时间</th>
+                                        <th style="text-align:center;">操作</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <form class="layui-form" action="">
+                                                <input type="checkbox" name="item_id" value="" lay-skin="primary"
+                                                    class="test" lay-filter="checkChild">
+                                            </form>
+                                        </td>
+                                        <td style="text-align:left;">1002545585</td>
+                                        <td class="status" style="text-align:left;">已上架</td>
+                                        <td class="tableTitle">
+                                            <div class="pic-two">
+                                                <img src="https://mhuoba.oss-cn-hangzhou.aliyuncs.com/picture/audio/20190812/18/20190812183751909.jpg!w81h50"
+                                                    alt="">
+                                            </div>
+                                            <div class="layui-inline message">
+                                                <p class="textTwoOver" title="">商品标题最多两行题最多两行行商品标题最多两行最多两行最多两行</p>
+                                                <p class="textOverflow c6 pt-10" title="">
+                                                    作者姓名作者姓名作者姓名作者姓名作者姓名
+                                                </p>
+                                                <p class="c6 pt-10">6646444215</p>
+                                            </div>
+                                        </td>
+                                        <td style="text-align:center;">￥88.00</td>
+                                        <td style="text-align:center;">￥76.20</td>
+                                        <td style="text-align:center;">211155</td>
+                                        <td style="text-align:center;">J40045467</td>
+                                        <td style="text-align:center;">2019-02-06 15:05:16</td>
+                                        <td style="text-align:center;">
+                                            <button type="button" class="layui-btn layui-btn-five">链接</button>
+                                            <button type="button" class="layui-btn layui-btn-five">编辑</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="10" style="height:40px;padding:0 15px 0 0;text-align: right;">
+                                            <div id="demo"></div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- 底部 -->
+        <!-- <div class="layui-footer"></div> -->
+    </div>
+</body>
+
+</html>
+<script type="text/javascript" src="layui-2.0/layui.js"></script>
+<script type="text/javascript" src="layui-2.0/jquery3.4.1.js"></script>
+<script type="text/javascript" src="layui-2.0/drag-arrange.js"></script>
+<script type="text/javascript" src="layui-2.0/public.js"></script>
+<script type="text/javascript">
+    //初始化layui
+    layui.use(['element', 'form', 'laypage'], function () {
+        var element = layui.element,
+            form = layui.form,
+            $ = layui.$;
+        var table = layui.table;
+
+        var laypage = layui.laypage
+            , layer = layui.layer;
+
+        //自定义样式分页
+        laypage.render({
+            elem: 'demo'
+            , count: 20
+            , layout: ['count', 'prev', 'page', 'next', 'skip']
+            , limit: 10
+            , groups: 5
+            , curr: 1
+            , jump: function (obj, first) {
+                if (!first) {
+                    var stype = '';
+                    if ($('.sortprice').is('.cl-red')) {
+                        stype = $('.sortprice.cl-red').data('type');
+                    }
+
+                    window.location.href = '';
+                }
+            }
+        });
+
+        form.on('checkbox(checkAll)', function (data) {
+            if (data.elem.checked) {
+                $('.table tbody').find('input[lay-filter="checkChild"]').prop('checked', true)
+            } else {
+                $('.table tbody').find('input[lay-filter="checkChild"]').prop('checked', false)
+            }
+            form.render();
+        })
+
+        form.on('checkbox(checkChild)', function (data) {
+            var _length = $('.table tbody').find('input[lay-filter="checkChild"]');
+            var _num = 0;
+            for (var i = 0; i < _length.length; i++) {
+                if ($(_length[i]).prop('checked')) {
+                    _num++;
+                }
+            }
+
+            if (_num == _length.length) {
+                $('.table thead').find('input[lay-filter="checkAll"]').prop('checked', true);
+            } else {
+                $('.table thead').find('input[lay-filter="checkAll"]').prop('checked', false);
+            }
+            form.render();
+        })
+
+        $('.sortprice').on('click', function () {
+            var stype = $(this).data('type');
+            window.location.href = '/resource/vedio/lists?' + $("#formsearch").serialize() + '&stype=' + stype;
+        });
+
+        // 展开收缩
+        $('.foldAction').on('click', function () {
+            var body = $(this).parents('body');
+            var slideState = '';
+            // 展开隐藏图标切换
+            if ($(body).hasClass('small')) {
+                $(body).removeClass('small').addClass('large');
+                slideState = 'large';
+            } else {
+                $(body).removeClass('large').addClass('small');
+                slideState = 'small';
+            }
+            localStorage.setItem('slideState', slideState);
+        })
+    });
+
+    //接受搜索数据
+    function searchAction(data) {
+        //将搜索传过来的数据反馈到数据表格
+        $('iframe[data-id=' + dataId + ']')[0].contentWindow.setTable(data);
+    }
+
+    // 设置iframe当前标识
+    function setIframeDataId(id) {
+        dataId = id;
+    }
+
+    function setIframeHeight(height, type) {
+        $('.high-search-iframe').height(height);
+        console.log(height)
+        if (type == 'open') {
+            $('.high-search-iframe').parent().removeClass('float-right')
+            $('.high-search-iframe').css('margin-top', '15px')
+        } else if (type == 'fold') {
+            $('.high-search-iframe').parent().addClass('float-right')
+            $('.high-search-iframe').css('margin-top', '0')
+        }
+    }
+</script>

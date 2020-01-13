@@ -87,6 +87,7 @@
 		<a href="#table">数据表格</a>
 		<a href="#popup">弹窗</a>
 		<a href="#date">日期选择</a>
+		<a href="#cascader">级联</a>
 	</menu>
 	<header id="header">前端开发规范手册</header>
 	<section>
@@ -117,11 +118,32 @@
 			<!-- 删除按钮 -->
 			<button type="button" class="layui-btn layui-btn-danger">删除</button>
 			<!-- 按钮5 -->
-			<button type="button" class="layui-btn layui-btn-five">按钮5<i
-					class="layui-icon layui-icon-down"></i></button>
+			<div class="select-btn-one">
+				<button type="button" class="layui-btn layui-btn-five">按钮5<i class="layui-icon layui-icon-down"></i><i
+						class="layui-icon layui-icon-up"></i></button>
+				<dl class="select-btn-downbit">
+					<dd class="select-btn-tips select-btn-this">立即上架</dd>
+					<dd class="select-btn-tips">选项二</dd>
+					<dd class="select-btn-tips">选项三</dd>
+				</dl>
+			</div>
 			<!-- 按钮6 -->
-			<button type="button" class="layui-btn layui-btn-six">按钮6<i class="layui-icon layui-icon-down"></i></button>
+			<div class="select-btn-two">
+				<button type="button" class="layui-btn layui-btn-six">按钮6<i class="layui-icon layui-icon-down"></i><i
+						class="layui-icon layui-icon-up"></i></button>
+				<dl class="select-btn-downbit">
+					<dd class="select-btn-tips select-btn-this">立即上架</dd>
+					<dd class="select-btn-tips">选项二</dd>
+					<dd class="select-btn-tips">选项三</dd>
+				</dl>
+			</div>
+			<!-- 按钮7 -->
+			<button class="layui-btn layui-btn-normal layui-btn-sm">小型按钮3</button>
+			<button class="layui-btn layui-btn-danger layui-btn-sm">小型删除按钮</button>
 			<!-- 固定底部按钮 -->
+			<!-- <div class="bottom-layui-btn">
+				<button type="button" class="layui-btn">保存并提交</button>
+			</div> -->
 			<div class="bottom-layui-btn">
 				<button type="button" class="layui-btn layui-btn-normal">保存草稿</button>
 				<button type="button" class="layui-btn layui-btn-six">保存并提交<i
@@ -136,11 +158,11 @@
 					</svg>文本域</p>
 				<p class="subTitle">文本域1</p>
 
-				<div class="input-one1-container">
+				<div class="input-one1-container display-inline">
 					<input type="text" name="title" placeholder="输入搜索关键字 input-one1-container" autocomplete="off"
 						class="layui-input">
 				</div>
-				<div class="input-one2-container">
+				<div class="input-one2-container display-inline">
 					<input type="text" name="title" placeholder="输入搜索关键字 input-one2-container" autocomplete="off"
 						class="layui-input">
 				</div>
@@ -150,11 +172,31 @@
 				<div class="input-second-container">
 					<input type="text" name="title" placeholder="输入搜索关键字" autocomplete="off" class="layui-input">
 					<div class="input-number"><span class="input-on-number">0</span>/<span class="input-max-number">100
-							</spani>
+						</span>
 					</div>
 				</div>
 				<p class="subTitle">文本域3</p>
 				<div class="input-third-container">
+					<input type="text" name="title" placeholder="输入搜索关键字" autocomplete="off" class="layui-input">
+					<div class="input-before">￥</div>
+				</div>
+				<p class="subTitle">文本域4</p>
+				<div class="input-four-container">
+					<textarea name="desc" placeholder="请输入内容" class="layui-textarea"></textarea>
+				</div>
+				<p class="subTitle">文本域5</p>
+				<div class="input-five-container">
+					<textarea name="desc" placeholder="请输入内容" class="layui-textarea"></textarea>
+					<div class="clear-float">
+						<div class="desc float-left">将用于前台信息展示，字数300字以内，支持换行。 拷贝</div>
+						<div class="input-number float-right"><span class="input-on-number">0</span>/<span
+								class="input-max-number">300
+							</span>
+						</div>
+					</div>
+				</div>
+				<p class="subTitle">文本域6</p>
+				<div class="input-six-container">
 					<input type="text" name="title" placeholder="输入搜索关键字" autocomplete="off" class="layui-input">
 					<div class="input-before">￥</div>
 				</div>
@@ -165,8 +207,94 @@
 				<svg class="icon" aria-hidden="true">
 					<use xlink:href="#iconguanlian"></use>
 				</svg>搜索</p>
-			<iframe src="iframe-2.0/search.html" name="high-search" class="high-search-iframe"
-				data-id="search0"></iframe>
+			<div class="clear-float">
+				<div class="float-left" style="margin-bottom: 15px;">
+					<button type="button" class="layui-btn">导出数据</button>
+					<div class="select-btn-one">
+						<button type="button" class="layui-btn layui-btn-five">批量操作<i
+								class="layui-icon layui-icon-down"></i><i class="layui-icon layui-icon-up"></i></button>
+						<dl class="select-btn-downbit">
+							<dd class="select-btn-tips select-btn-this">立即上架</dd>
+							<dd class="select-btn-tips">选项二</dd>
+							<dd class="select-btn-tips">选项三</dd>
+						</dl>
+					</div>
+				</div>
+				<div class="float-right" data-type="float">
+					<!-- 高级搜索 -->
+					<div class="high-search-container">
+						<form action="" class="layui-form">
+							<div class="high-search-fold">
+								<div class="tab-second-container display-inline">
+									<div class="tab-second-content active">选项一</div>
+									<div class="tab-second-content">选项二</div>
+									<div class="tab-second-content">选项三</div>
+								</div>
+								<div class="tab-search-input display-inline">
+									<!-- <div class="display-inline"> -->
+									<input type="text" name="keyword" placeholder="输入搜索关键字" autocomplete="off"
+										class="layui-input">
+									<!-- </div> -->
+
+								</div>
+								<div class="display-inline">
+									<button type="button" class="layui-btn high-search-result-btn">搜索</button>
+									<button type="button"
+										class="layui-btn layui-btn-primary high-search-btn">高级</button>
+								</div>
+							</div>
+							<div class="high-search-open">
+								<div class="tab-second-container">
+									<div class="tab-second-content active">选项一</div>
+									<div class="tab-second-content">选项二</div>
+									<div class="tab-second-content">选项三</div>
+								</div>
+								<div class="high-search-input">
+									<div class="display-inline">
+										<input type="text" name="keyword" placeholder="输入搜索关键字" autocomplete="off"
+											class="layui-input">
+									</div>
+									<div class="display-inline">
+										<input type="text" name="author" placeholder="请输入作者名称" autocomplete="off"
+											class="layui-input">
+									</div>
+									<div class="display-inline">
+										<input type="text" name="publishName" placeholder="请输入出版社名称" autocomplete="off"
+											class="layui-input">
+									</div>
+									<div class="display-inline">
+										<input type="text" name="supplierID" placeholder="请输入销售商户的商户ID"
+											autocomplete="off" class="layui-input">
+									</div>
+								</div>
+								<div class="high-search-catalog">
+									<span>选择分类：</span>
+									<div class="display-inline" style="width: 471px;">
+										<cascader id="demo1"></cascader>
+									</div>
+								</div>
+								<div class="high-search-from">
+									<span>渠道来源：</span>
+									<div class="display-inline">
+										<button type="button" class="layui-btn layui-btn-normal from-btn">全部</button>
+										<button type="button" class="layui-btn layui-btn-warm from-btn">库存充足 </button>
+										<button type="button" class="layui-btn layui-btn-warm from-btn">库存紧张 </button>
+										<button type="button" class="layui-btn layui-btn-warm from-btn">缺货中</button>
+									</div>
+								</div>
+								<div class="high-search-bottom">
+									<button type="button" class="layui-btn high-search-result-btn">搜索</button>
+									<button type="button"
+										class="layui-btn layui-btn-primary high-search-reset-btn">重置</button>
+									<button type="button"
+										class="layui-btn layui-btn-primary high-search-fold-btn">收起</button>
+								</div>
+							</div>
+							<!-- </div> -->
+						</form>
+					</div>
+				</div>
+			</div>
 		</article>
 		<article id="color">
 			<p class="title">
@@ -222,8 +350,8 @@
 						<option value="0">1</option>
 						<option value="1">2</option>
 					</select>
+				</div>
 			</form>
-			</div>
 			<div class="selectTwo">
 				<form class="layui-form" action="">
 					<select name="city" lay-verify="required" class="select-sizeMin">
@@ -232,6 +360,10 @@
 						<option value="1">2</option>
 					</select>
 				</form>
+			</div>
+			<p class="title">多级联下拉框</p>
+			<div>
+				<cascader id="demo2"></cascader>
 			</div>
 		</article>
 		<article id="checkbox">
@@ -267,6 +399,24 @@
 			<div class="pic-two">
 				<div class="noPicture">
 					<img src="" alt="">
+				</div>
+			</div>
+		</article>
+		<article>
+			<p class="title">
+				<svg class="icon" aria-hidden="true">
+					<use xlink:href="#iconguanlian"></use>
+				</svg>固定底部按钮</p>
+			<div class="layui-footer">
+				<button class="layui-btn">保存并提交</button>
+				<div class="select-btn-two">
+					<button type="button" class="layui-btn layui-btn-six">按钮6<i
+							class="layui-icon layui-icon-down"></i><i class="layui-icon layui-icon-up"></i></button>
+					<dl class="select-btn-upbit">
+						<dd class="select-btn-tips select-btn-this">立即上架</dd>
+						<dd class="select-btn-tips">选项二</dd>
+						<dd class="select-btn-tips">选项三</dd>
+					</dl>
 				</div>
 			</div>
 		</article>
@@ -402,8 +552,15 @@
 			<div>
 			</div>
 		</article>
+    
+    
+		<article id="cascader">
+			<p class="title">
+				<svg class="icon" aria-hidden="true">
+					<use xlink:href="#iconguanlian"></use>
+				</svg>级联</p>
+		</article>
 	</section>
-
 </body>
 
 </html>
@@ -450,23 +607,24 @@
 		$('iframe[name=lableChoose]').css('height', lableHeight);
 	}
 
-	//接受搜索数据
-	function searchAction(data) {
-		//将搜索传过来的数据反馈到数据表格
-		$('iframe[data-id=' + dataId + ']')[0].contentWindow.setTable(data);
-	}
-
+	// 搜索
+	searchTemplate()
+	// 级联
+	$('cascader').each(function () {
+		var _id = '#' + $(this).attr('id');
+		ajaxCascaderTemplate(_id, 'https://open.gog.cn/appz/region/getRegion/', 'init');
+	})
 
 	//设置数据表格tableOne高度
-	// function setTableOneHeight(tableOneHeight){
-	// 	// 设置info模板中相应iframe的高度
-	// 	$('iframe[name=tableOne]').css('height', tableOneHeight);
-	// }
+	function setTableOneHeight(tableOneHeight) {
+		// 设置info模板中相应iframe的高度
+		$('iframe[name=tableOne]').css('height', tableOneHeight);
+	}
 	//设置数据表格tableTwo高度
-	// function setTableTwoHeight(tableTwoHeight){
-	// 	// 设置info模板中相应iframe的高度
-	// 	$('iframe[name=tableTwo]').css('height', tableTwoHeight);
-	// }
+	function setTableTwoHeight(tableTwoHeight) {
+		// 设置info模板中相应iframe的高度
+		$('iframe[name=tableTwo]').css('height', tableTwoHeight);
+	}
 
 	// 设置iframe当前标识
 	function setIframeDataId(id) {
@@ -476,8 +634,24 @@
 
 
 	//设置iframe高度
-	function setIframeHeight(height) {
-		$('.high-search-iframe').height(height);
+	function setIframeHeight(height, type, hight_sign) {
+		switch (type) {
+			case 'hight-search-iframe':
+				$('.high-search-iframe').height(height);
+				console.log(height)
+				if (hight_sign == 'open') {
+					$('.high-search-iframe').parent().removeClass('float-right')
+					$('.high-search-iframe').css('margin-top', '15px')
+				} else if (hight_sign == 'fold') {
+					$('.high-search-iframe').parent().addClass('float-right')
+					$('.high-search-iframe').css('margin-top', '0')
+				}
+				break;
+			case '':
+				break;
+			default:
+				break;
+		}
 	}
 
 	//弹窗1
