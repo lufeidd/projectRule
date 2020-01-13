@@ -395,3 +395,7 @@ body.large .layui-side.large {
 .float-right {
     float: right;
 }
+
+.layui-btn+.layui-btn {
+    margin-left: 0;
+}
