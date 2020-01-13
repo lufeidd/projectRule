@@ -307,7 +307,7 @@
                                     <label class="layui-form-label">包装：</label>
                                     <div class="layui-input-block">
                                         <div class="selectTwo float-left">
-                                            <select name="package" lay-verify="required" lay-filter='packaging'
+                                            <select name="package" lay-verify="required" lay-filter='packaging'  autocomplete="off"
                                                 class="select-sizeMin">
                                                 <option value="">未选择</option>
                                                 <option value="平装">平装</option>
@@ -321,7 +321,7 @@
                                     <label class="layui-form-label">开本： </label>
                                     <div class="layui-input-block">
                                         <div class="selectTwo float-left">
-                                            <select name="format" lay-verify="required" lay-filter='format'
+                                            <select name="format" lay-verify="required" lay-filter='format'  autocomplete="off"
                                                 class="select-sizeMin">
                                                 <option value="">未选择</option>
                                                 <option value="8">8开</option>
@@ -386,7 +386,7 @@
                             <div class="layui-form-item">
                                 <label class="layui-form-label"><span class="tip">*</span>系统分类： </label>
                                 <div class="layui-input-block">
-                                    <select name="categoryname" lay-verify="required" lay-filter='systemClassify'
+                                    <select name="categoryname" lay-verify="required"  lay-filter='systemClassify' autocomplete="off"
                                         class="size">
                                         <option value="">文学 / 诗歌词曲 / 外国诗歌</option>
                                         <option value="1">1</option>
@@ -442,8 +442,7 @@
                                 <label class="layui-form-label"><span class="tip">*</span>图文介绍： </label>
                                 <div class="layui-input-block ">
                                     <div class="book-information">
-                                        <input type="text" name="graphic-introduction" lay-verify="title"
-                                            autocomplete="off" data-id='1' placeholder="" class="layui-input">
+
                                     </div>
                                     <p class="desc">将用于前台信息展示，内容大小不限。</p>
                                 </div>
@@ -458,7 +457,7 @@
                                 </div>
                                 <div class="layui-input-block " style="display: none;">
                                     <div class="book-information">
-                                        <input type="text" name="editorsRecommendation" lay-verify="title"
+                                        <input type="text" name="editorsRecommendation" lay-verify="title" autocomplete="off"
                                             disabled='disabled' data-id='1' placeholder="" class="layui-input">
                                         <button type="button"
                                             class="layui-btn layui-btn-danger mlfet-13 delete">删除</button>
@@ -479,7 +478,7 @@
                                 </div>
                                 <div class="layui-input-block " style="display: none;">
                                     <div class="book-information">
-                                        <input type="text" name="intro" lay-verify="title" disabled='disabled'
+                                        <input type="text" name="intro" lay-verify="title" disabled='disabled' autocomplete="off"
                                             data-id='1' placeholder="" class="layui-input">
                                         <button type="button"
                                             class="layui-btn layui-btn-danger mlfet-13 delete">删除</button>
@@ -500,7 +499,7 @@
                                 </div>
                                 <div class="layui-input-block " style="display: none;">
                                     <div class="book-information">
-                                        <input type="text" name="author_intro" lay-verify="title" disabled='disabled'
+                                        <input type="text" name="author_intro" lay-verify="title" disabled='disabled' autocomplete="off" 
                                             data-id='1' placeholder="" class="layui-input">
                                         <button type="button"
                                             class="layui-btn layui-btn-danger mlfet-13 delete">删除</button>
@@ -521,7 +520,7 @@
                                 </div>
                                 <div class="layui-input-block" style="display: none;">
                                     <div class="book-information">
-                                        <input type="text" name="author-intro" lay-verify="title" disabled='disabled'
+                                        <input type="text" name="author-intro" lay-verify="title" disabled='disabled' autocomplete="off"
                                             data-id='1' placeholder="" class="layui-input">
                                         <button type="button"
                                             class="layui-btn layui-btn-danger mlfet-13 delete">删除</button>
@@ -542,7 +541,7 @@
                                 </div>
                                 <div class="layui-input-block " style="display: none;">
                                     <div class="book-information">
-                                        <input type="text" name="media_comments" lay-verify="title" disabled='disabled'
+                                        <input type="text" name="media_comments" lay-verify="title" disabled='disabled' autocomplete="off"
                                             data-id='1' placeholder="" class="layui-input">
                                         <button type="button"
                                             class="layui-btn layui-btn-danger mlfet-13 delete">删除</button>
@@ -563,7 +562,7 @@
                                 </div>
                                 <div class="layui-input-block " style="display: none;">
                                     <div class="book-information">
-                                        <input type="text" name="author-intro" lay-verify="title" disabled='disabled'
+                                        <input type="text" name="author-intro" lay-verify="title" disabled='disabled' autocomplete="off"
                                             data-id='1' placeholder="" class="layui-input">
                                         <button type="button"
                                             class="layui-btn layui-btn-danger mlfet-13 delete">删除</button>
@@ -584,7 +583,7 @@
                                 </div>
                                 <div class="layui-input-block " style="display: none;">
                                     <div class="book-information">
-                                        <input type="text" name="author-intro" lay-verify="title" disabled='disabled'
+                                        <input type="text" name="author-intro" lay-verify="title" disabled='disabled' autocomplete="off"
                                             data-id='1' placeholder="" class="layui-input">
                                         <button type="button"
                                             class="layui-btn layui-btn-danger mlfet-13 delete">删除</button>
@@ -651,7 +650,7 @@
                             </div>
                             <div class="layui-form-item">
                                 <label class="layui-form-label">发货地区： </label>
-                                <div class="layui-input-block input-second-container   al-items-center">
+                                <div class="layui-input-block input-second-container  al-items-center">
                                     <div class="book-information padd-top">
                                         库存充足
                                     </div>
@@ -698,6 +697,7 @@
             merchantNum = /(^[1-9]*$)/, //验证必须为整数
             space = /\s/, //验证不能有空格
             goods_pic, //存储商品图
+            data, //储存要发送给后台的数据
             pic, //存储图书封面图
             packaging, //储存包装的value值 
             format, //储存开本的value值
@@ -761,23 +761,13 @@
         //监听下拉'select(a)'
         function dropDown(el, Identity) {
             form.on(el, function (data) {
-                switch (Identity) {
-                    case 'packaging':
-                        packaging = data.value; //储存包装的value值 
-                        break;
-                    case 'format':
-                        format = data.value; //储存开本的value值
-                        if (format == '其他') {
-                            $(".else-format").show();
-                            $(".else-format").attr("disabled", false);
-                            console.log($(".else-format").val())
-                        } else {
-                            $(".else-format").hide();
-                        }
-                        break;
-                    case 'systemClassify':
-                        systemClassify = data.value; //储存系统分类的value值 
-                        break;
+                format = data.value; //储存开本的value值
+                if (format == '其他') {
+                    $(".else-format").show();
+                    $(".else-format").attr("disabled", false);
+
+                } else {
+                    $(".else-format").hide();
                 }
             });
         }
@@ -815,7 +805,7 @@
         })
 
         //同步图书信息
-        $(".layui-word-aux").click(function() {
+        $(".layui-word-aux").click(function () {
             console.log('ss')
         })
 
@@ -869,12 +859,110 @@
 
         //提交
         $(".submit").click(function () {
-            siginList = $('form').serializeArray(); //表单序列化为数组对象
+            siginList = $('input[autocomplete=off]').serializeArray(); //表单序列化为数组对象
             var arr = siginList.every(function (itme) {
                 return itme.value != ''; //判断所有value不为空
             })
+            console.log(siginList)
             if (arr) {
-                console.log($('form').serialize())
+                data = {
+                    code: '0000',
+                    dispatch_data: {
+                        author: siginList[3].value //作者
+                            ,
+                        // author_alias: "" //作者笔名
+                        //     ,
+                        author_intro: "无" //作者简介
+                            ,
+                        book_title: siginList[1].value //书名
+                            ,
+                        catalog: "上卷：始计" //目录信息
+                            ,
+                        categoryname: siginList[13].value //系统分类
+                            ,
+                        contents: '<img src="http://images.bookuu.com/book_image/detail/30/60/74/30607496-856824.jpg" alt=""><img src="http://images.bookuu.com/book_image/detail/30/60/74/30607496-326979.jpg" alt=""><img src="http://images.bookuu.com/book_image/detail/30/60/74/30607496-255502.jpg" alt=""><img src="http://images.bookuu.com/book_image/detail/30/60/74/30607496-466714.jpg" alt=""><img src="http://images.bookuu.com/book_image/detail/30/60/74/30607496-853813.jpg" alt=""><img src="http://images.bookuu.com/book_image/detail/30/60/74/30607496-878328.jpg" alt=""><img src="http://images.bookuu.com/book_image/detail/30/60/74/30607496-640175.jpg" alt=""><img src="http://images.bookuu.com/book_image/detail/30/60/74/30607496-711619.jpg" alt=""><img src="http://images.bookuu.com/book_image/detail/30/60/74/30607496-657471.jpg" alt=""><img src="http://images.bookuu.com/book_image/detail/30/60/74/30607496-301607.jpg" alt="">' //图文描述
+                            ,
+                        cost_price: "3.00" //成本价
+                            ,
+                        create_time: "2020-01-10 15:17:58" //创建时间
+                            ,
+                        dispatch_id: 15 //代发商品ID
+                            ,
+                        format: siginList[10].value //开本
+                            ,
+                        goods_pic: "/shop/1/10/picture/book/20200110/15/20200110151758598.jpg|/shop/1/10/picture/book/20200110/15/20200110151758208.jpg|/shop/1/10/picture/book/20200110/15/20200110151758867.jpg|/shop/1/10/picture/book/20200110/15/20200110151758311.jpg" //商品图片
+                            ,
+                        goods_pic_url: [ //带域名的商品图片
+                            "http://file.huoba.dev.ldl/shop/1/10/picture/book/20200110/15/20200110151758598.jpg",
+                            "http://file.huoba.dev.ldl/shop/1/10/picture/book/20200110/15/20200110151758208.jpg",
+                            "http://file.huoba.dev.ldl/shop/1/10/picture/book/20200110/15/20200110151758867.jpg",
+                            "http://file.huoba.dev.ldl/shop/1/10/picture/book/20200110/15/20200110151758311.jpg"
+                        ],
+                        intro: "《孙子兵法》是我国古代流传下来的*早、*完整、***的军事著作。其军事思想对中国历代军事家、政治家、思想家产生了**深远的影响。" //内容简介
+                            ,
+                        is_onsale: 0 //市场上下架，0下架；1上架；2已失效
+                            ,
+                        is_show: 1 //代发市场展示，0不显示；1显示
+                            ,
+                        isbn: siginList[0].value //书号
+                            ,
+                        market_price: "29.80" //市场价
+                            ,
+                        media_comments: "" //媒体评论
+                            ,
+                        onsale_time: null //上架时间
+                            ,
+                        outer_id: "30607496" //商家唯一编码
+                            ,
+                        package: siginList[9].value //包装 平装  精装
+                            ,
+                        page_count: siginList[11].value //页数
+                            ,
+                        parter_num: 0 //渠道方数量
+                            ,
+                        pic: "/shop/1/10/picture/book/20200110/15/20200110151758598.jpg" //封面图
+                            ,
+                        pic_url: "http://file.huoba.dev.ldl/shop/1/10/picture/book/20200110/15/20200110151758598.jpg" //带域名的封面图片
+                            ,
+                        preface: "" //
+                            ,
+                        price: "10.49" //建议售价
+                            ,
+                        print_date: "2019-03-01" //前言
+                            ,
+                        print_number: siginList[8].value //印次
+                            ,
+                        publish_date: siginList[5].value //出版日期
+                            ,
+                        publish_number: siginList[7].value //版次
+                            ,
+                        publisher: siginList[4].value //出版社
+                            ,
+                        recommend_desc: "现代军事、经济、外交领域的智囊。↵人无常师，水无常形。兵无常势，文无定法。" //编辑推荐语
+                            ,
+                        sale_num: 0 //代发销量
+                            ,
+                        stock: 0 //库存
+                            ,
+                        sub_title: siginList[15].value //副标题
+                            ,
+                        supplier_id: 1 //供应商ID
+                            ,
+                        system_cid: 591 //系统分类ID
+                            ,
+                        tag_name: null //标签名
+                            ,
+                        title: siginList[14].value //标题
+                            ,
+                        type: 3 //商品类型,3=> 纸书
+                            ,
+                        update_time: "2020-01-10 15:17:58" //更新时间
+                            ,
+                        wonderful_page: "" //精彩页试读
+                            ,
+                        words_count: siginList[12].value //字数
+                    }
+                } //储存要发送给后台的数据
             }
 
         })

@@ -219,3 +219,43 @@
 .layui-layer-rim .layui-form-item:nth-child(1) {
     margin-bottom: 30px;
 }
+
+
+/* alert弹窗 */
+.alert {
+    width: 270px;
+    height: 150px;
+    background: #FFFFFF;
+    border-radius: 4px;
+
+}
+
+.alert .layui-layer-content {
+    padding-top: 21px !important;
+    padding-left: 8px !important;
+    text-align: left;
+    line-height: 10px !important;
+}
+
+.alert .layui-layer-btn {
+    padding: 0px;
+    text-align: right;
+    margin-top: 23px;
+}
+
+.alert .layui-layer-btn a {
+    padding: 0px;
+    width: 66px;
+    height: 28px;
+    line-height: 28px;
+    text-align: center;
+    background: rgba(84, 172, 240, 1);
+    border-radius: 4px;
+}
+
+.alert .layui-layer-btn0 {
+    border: none !important;
+    background-color: #54ACF0 !important;
+    color: #fff !important;
+    margin-right: 20px !important;
+}

@@ -229,15 +229,16 @@
                                 </div>
                             </div>
                             <div class="layui-form-item input-layout-one">
-                                <label class="layui-form-label"><span class="tip">*</span>图书定价： </label>
-                                <div class="layui-input-block input-second-container lable-input-container">
+                                <label class="layui-form-label"><span class="tip">*</span>专辑销售价： </label>
+                                <div class="layui-input-block">
                                     <div class="input-third-container input-one1-container context">
-                                        <input type="text" name="pricing" placeholder="请输入图书定价" class="layui-input"
+                                        <input type="text" name="pricing" placeholder="请输入整张专辑购买价格" class="layui-input"
                                             autocomplete="off">
                                         <div class="input-before">￥</div>
                                     </div>
-                                    <p class="desc">将用于前台信息展示。金额￥100000以内，支持两位小数。</p>
-                                    <p class="msg">图书定价不可为空</p>
+                                    <p class="desc">专辑免费或收费可以随时修改。</p>
+                                    <p class="desc">免费收听的专辑修改为收费时，原有免费收听的用户需要付费才可以收听专辑。</p>
+                                    <p class="msg">专辑销售价不可为空</p>
                                 </div>
                             </div>
                             <div class="layui-form-item">
@@ -245,7 +246,7 @@
                                 <div class="layui-input-block input-second-container lable-input-container">
                                     <select name="system-classify" lay-verify="required" lay-filter='systemClassify'
                                         class="size">
-                                        <option value="">文学 / 诗歌词曲 / 外国诗歌</option>
+                                        <option value="">课程 / 小学 / 英语</option>
                                         <option value="1">1</option>
                                         <option value="2">2</option>
                                     </select>
@@ -325,8 +326,7 @@
             <!-- 固定底部按钮 -->
             <div class="bottom-layui-btn">
                 <button type="button" class="layui-btn layui-btn-normal">保存草稿</button>
-                <button type="button" class="layui-btn layui-btn-six">保存并提交<i
-                        class="layui-icon layui-icon-down"></i></button>
+                <button type="button" class="layui-btn layui-btn-six">上传节目</button>
             </div>
         </div>
 
@@ -337,8 +337,9 @@
 
 </html>
 <script type="text/javascript" src="layui-2.0/layui.js"></script>
-<script type="text/javascript" src="../layui-2.0/public.js"></script>
-<!-- <script type="text/javascript" src="../layui-2.0/inputtags/inputTags.js"></script> -->
+<script type="text/javascript" src="layui-2.0/jquery3.4.1.js"></script>
+<script type="text/javascript" src="layui-2.0/public.js"></script>
+<script type="text/javascript" src="./layui-2.0/js/component/lable.js"></script>
 <script type="text/javascript">
     layui.use(['element', 'jquery', 'form', 'layer', 'upload'], function () {
         // 变量声明
@@ -355,6 +356,8 @@
         //标签高度
         var height;
 
+        var merchantNum = /(^[1-9]*$)/; //验证必须为整数
+
         //方法定义
         function GetQueryString(name) { //获取地址栏上的数据
             var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
@@ -365,21 +368,35 @@
 
 
 
+
+
+
+        $('.layui-input[name=pricing]').blur(function () {//验证专辑销售价
+            var _this = $(this);
+            if (merchantNum.test(_this.val()) && _this.val() != '') {
+                _this.parents().nextAll('.msg').css("opacity", '0');
+            } else {
+                _this.parents().nextAll('.msg').css('opacity', '1');
+            }
+
+        })
+
+
         //搜索插件
         inputTags.render({
             elem: '#inputTags', //定义输入框input对象
             content: [], //默认标签
             aldaBtn: false, //是否开启获取所有数据的按钮
             done: function (value) { //回车后的回调
-                //console.log(value)
+                // console.log(value)
             }
         });
 
-        //初始化高度
-        $(function () {
-            height = $('body').height();
-            setLableHeight(height);
-        });
+        // //初始化高度
+        // $(function () {
+        //     height = $('body').height();
+        //     setLableHeight(height);
+        // });
 
         // 点击标签选中状态
         $('body').on('click', '.lableGroup .lable-btn', function () {
@@ -408,7 +425,7 @@
                 }
             }
             height = $('body').height();
-            setLableHeight(height);
+            // setLableHeight(height);
         });
 
         //删除标签
@@ -424,7 +441,7 @@
             min = $('.lable-show .lable-add-btn').length;
             $('.lable-on-number').text(min);
             height = $('body').height();
-            setLableHeight(height);
+            // setLableHeight(height);
         });
 
         //添加标签
@@ -436,9 +453,9 @@
         }
 
         // 标签
-        function setLableHeight(height) {
-            parent.setLableHeight(height);
-        }
+        // function setLableHeight(height) {
+        //     parent.setLableHeight(height);
+        // }
         // searchAction(999)
         // 父亲操作儿子-初始化
         function initLable(argument) {
