@@ -156,7 +156,7 @@
                                 <div class="layui-input-inline context">
                                     <div class="input-second-container">
                                         <input type="text" name="isbn" placeholder="输入搜索关键字" autocomplete="off"
-                                            class="layui-input">
+                                            data-id='1' class="layui-input">
                                         <div class="input-number"><span class="input-on-number">0</span>/<span
                                                 class="input-max-number">100
                                             </span>
@@ -173,9 +173,9 @@
                                 <label class="layui-form-label"><span class="tip">*</span>图书封面： </label>
                                 <div class="layui-input-block input-second-container lable-input-container">
                                     <div class="book-information">
-                                        <button type="button" class="layui-btn layui-btn-warm"> +选择图片</button>
+                                        <button type="button" class="layui-btn test1 layui-btn-warm"> +选择图片</button>
                                         <div>
-                                            <img src="" alt="">
+                                            <img src="" alt="" id="demo1" data-src="">
                                         </div>
                                     </div>
                                     <p class="desc">请上传图片，要求尺寸800*800像素，文件大小5M以内，支持格式PNG、JPEG、JPG。</p>
@@ -187,7 +187,7 @@
                                 <div class="layui-input-block input-second-container lable-input-container">
                                     <div class="input-second-container context">
                                         <input type="text" name="books-name" placeholder="输入搜索关键字" autocomplete="off"
-                                            class="layui-input">
+                                            data-id='1' class="layui-input">
                                         <div class="input-number"><span class="input-on-number">0</span>/<span
                                                 class="input-max-number">100
                                             </span>
@@ -201,8 +201,8 @@
                                 <label class="layui-form-label"><span class="tip">*</span>图书定价： </label>
                                 <div class="layui-input-block input-second-container lable-input-container">
                                     <div class="input-third-container input-one1-container context">
-                                        <input type="text" name="pricing" placeholder="请输入图书定价" autocomplete="off"
-                                            class="layui-input">
+                                        <input type="text" name="pricing" placeholder="请输入图书定价" class="layui-input"
+                                            autocomplete="off">
                                         <div class="input-before">￥</div>
                                     </div>
                                     <p class="desc">将用于前台信息展示。金额￥100000以内，支持两位小数。</p>
@@ -214,7 +214,7 @@
                                 <div class="layui-input-block input-second-container lable-input-container">
                                     <div class="input-second-container context">
                                         <input type="text" name="author" placeholder="输入搜索关键字" autocomplete="off"
-                                            class="layui-input">
+                                            data-id='1' class="layui-input">
                                         <div class="input-number"><span class="input-on-number">0</span>/<span
                                                 class="input-max-number">100
                                             </span>
@@ -229,7 +229,7 @@
                                 <div class="layui-input-block input-second-container lable-input-container">
                                     <div class="input-second-container context">
                                         <input type="text" name="publishing" placeholder="输入搜索关键字" autocomplete="off"
-                                            class="layui-input">
+                                            data-id='1' class="layui-input">
                                         <div class="input-number"><span class="input-on-number">0</span>/<span
                                                 class="input-max-number">100
                                             </span>
@@ -252,7 +252,7 @@
                                         <div class="input-one1-container">
                                             <input type="text" name="publish-date"
                                                 placeholder="输入搜索关键字 input-one1-container" autocomplete="off"
-                                                class="layui-input">
+                                                data-id='1' class="layui-input">
                                         </div>
                                     </div>
                                 </div>
@@ -262,7 +262,7 @@
                                         <div class="input-one1-container">
                                             <input type="text" name="printing-date"
                                                 placeholder="输入搜索关键字 input-one1-container" autocomplete="off"
-                                                class="layui-input">
+                                                data-id='1' class="layui-input">
                                         </div>
                                     </div>
                                 </div>
@@ -275,7 +275,7 @@
                                         <div class="input-one1-container">
                                             <div class="input-second-container context">
                                                 <input type="text" name="edition" placeholder="请输入版次" autocomplete="off"
-                                                    class="layui-input">
+                                                    data-id='1' class="layui-input">
                                                 <div class="input-number"><span class="input-on-number">0</span>/<span
                                                         class="input-max-number">100
                                                     </span>
@@ -291,7 +291,7 @@
                                         <div class="input-one1-container">
                                             <div class="input-second-container context">
                                                 <input type="text" name="printing-date" placeholder="请输入印次"
-                                                    autocomplete="off" class="layui-input">
+                                                    autocomplete="off" data-id='1' class="layui-input">
                                                 <div class="input-number"><span class="input-on-number">0</span>/<span
                                                         class="input-max-number">10
                                                     </span>
@@ -309,7 +309,8 @@
                                     <label class="layui-form-label">包装：</label>
 
                                     <div class="selectTwo float-left">
-                                        <select name="packaging" lay-verify="required" class="select-sizeMin">
+                                        <select name="packaging" lay-verify="required" lay-filter='packaging'
+                                            class="select-sizeMin">
                                             <option value="">未选择</option>
                                             <option value="1">平装</option>
                                             <option value="2">精装</option>
@@ -320,7 +321,8 @@
                                 <div class="layui-inline input-layout-two">
                                     <label class="layui-form-label">开本： </label>
                                     <div class="selectTwo float-left">
-                                        <select name="format" lay-verify="required" class="select-sizeMin">
+                                        <select name="format" lay-verify="required" lay-filter='format'
+                                            class="select-sizeMin">
                                             <option value="">未选择</option>
                                             <option value="1">8开</option>
                                             <option value="2">16开</option>
@@ -331,9 +333,9 @@
                                     </div>
                                 </div>
                                 <div class="layui-inline">
-                                    <div class="input-one2-container">
-                                        <input type="text" name="title" placeholder="请输入其他开本" autocomplete="off"
-                                            class="layui-input">
+                                    <div class="input-one2-container" style="opacity: 0;">
+                                        <input type="text" name="title" placeholder="请输入其他开本" data-id='1'
+                                            disabled='disabled' class="layui-input">
                                     </div>
                                 </div>
                             </div>
@@ -384,7 +386,8 @@
                             <div class="layui-form-item">
                                 <label class="layui-form-label"><span class="tip">*</span>系统分类： </label>
                                 <div class="layui-input-block input-second-container lable-input-container">
-                                    <select name="system-classify" lay-verify="required" class="size">
+                                    <select name="system-classify" lay-verify="required" lay-filter='systemClassify'
+                                        class="size">
                                         <option value="">文学 / 诗歌词曲 / 外国诗歌</option>
                                         <option value="1">1</option>
                                         <option value="2">2</option>
@@ -397,7 +400,7 @@
                                 <div class="layui-input-block input-second-container lable-input-container">
                                     <div class="input-second-container context">
                                         <input type="text" name="merchandise-title" placeholder="输入搜索关键字"
-                                            autocomplete="off" class="layui-input">
+                                            autocomplete="off" data-id='1' class="layui-input">
                                         <div class="input-number"><span class="input-on-number">0</span>/<span
                                                 class="input-max-number">50
                                             </span>
@@ -412,7 +415,7 @@
                                 <div class="layui-input-block input-second-container lable-input-container">
                                     <div class="input-second-container context">
                                         <input type="text" name="commodity-subtitle" placeholder="输入搜索关键字"
-                                            autocomplete="off" class="layui-input">
+                                            autocomplete="off" data-id='1' class="layui-input">
                                         <div class="input-number"><span class="input-on-number">0</span>/<span
                                                 class="input-max-number">50
                                             </span>
@@ -426,7 +429,7 @@
                                 <label class="layui-form-label"><span class="tip">*</span>商品图： </label>
                                 <div class="layui-input-block input-second-container lable-input-container">
                                     <div class="book-information">
-                                        <button type="button" class="layui-btn layui-btn-warm"> +选择图片</button>
+                                        <button type="button" class="layui-btn layui-btn-warm "> +选择图片</button>
                                         <div>
                                             <img src="" alt="">
                                         </div>
@@ -440,27 +443,48 @@
                                 <div class="layui-input-block input-second-container lable-input-container">
                                     <div class="book-information">
                                         <input type="text" name="graphic-introduction" lay-verify="title"
-                                            autocomplete="off" placeholder="" class="layui-input">
+                                            autocomplete="off" data-id='1' placeholder="" class="layui-input">
                                     </div>
                                     <p class="desc">将用于前台信息展示，内容大小不限。</p>
                                 </div>
                             </div>
                             <div class="layui-form-item">
                                 <label class="layui-form-label">编辑推荐语： </label>
-                                <div class="layui-input-block input-second-container lable-input-container">
+                                <div class="layui-input-block input-second-container lable-input-container ">
                                     <div class="book-information">
-                                        <button type="button" class="layui-btn layui-btn-warm"> +添加</button>
+                                        <button type="button" class="layui-btn layui-btn-warm addition"> +添加</button>
                                     </div>
                                     <p class="desc">将用于前台信息展示，字数1200字以内，支持换行。</p>
+                                </div>
+                                <div class="layui-input-block input-second-container lable-input-container "
+                                    style="display: none;">
+                                    <div class="book-information">
+                                        <input type="text" name="editorsRecommendation " lay-verify="title"
+                                            disabled='disabled' data-id='1' placeholder="" class="layui-input">
+                                        <button type="button"
+                                            class="layui-btn layui-btn-danger mlfet-13 delete">删除</button>
+                                    </div>
+                                    <div class="desc">将用于前台信息展示，字数1200字以内，支持换行。
+                                        <div class="float-right"><span class="input-on-number">0</span>/<span
+                                                class="input-max-number">50</span></div>
+                                    </div>
                                 </div>
                             </div>
                             <div class="layui-form-item">
                                 <label class="layui-form-label">内容简介： </label>
-                                <div class="layui-input-block input-second-container lable-input-container">
+                                <div class="layui-input-block input-second-container lable-input-container ">
                                     <div class="book-information">
-                                        <input type="text" name="content-intro" lay-verify="title" autocomplete="off"
-                                            placeholder="" class="layui-input">
-                                        <button type="button" class="layui-btn layui-btn-danger mlfet-13">删除</button>
+                                        <button type="button" class="layui-btn layui-btn-warm addition"> +添加</button>
+                                    </div>
+                                    <p class="desc">将用于前台信息展示，字数1200字以内，支持换行。</p>
+                                </div>
+                                <div class="layui-input-block input-second-container lable-input-container"
+                                    style="display: none;">
+                                    <div class="book-information">
+                                        <input type="text" name="content-intro" lay-verify="title" disabled='disabled'
+                                            data-id='1' placeholder="" class="layui-input">
+                                        <button type="button"
+                                            class="layui-btn layui-btn-danger mlfet-13 delete">删除</button>
                                     </div>
                                     <div class="desc">将用于前台信息展示，字数1200字以内，支持换行。
                                         <div class="float-right"><span class="input-on-number">0</span>/<span
@@ -470,11 +494,19 @@
                             </div>
                             <div class="layui-form-item">
                                 <label class="layui-form-label">作者简介： </label>
-                                <div class="layui-input-block input-second-container lable-input-container">
+                                <div class="layui-input-block input-second-container lable-input-container ">
                                     <div class="book-information">
-                                        <input type="text" name="author-intro" lay-verify="title" autocomplete="off"
-                                            placeholder="" class="layui-input">
-                                        <button type="button" class="layui-btn layui-btn-danger mlfet-13">删除</button>
+                                        <button type="button" class="layui-btn layui-btn-warm addition"> +添加</button>
+                                    </div>
+                                    <p class="desc">将用于前台信息展示，字数1200字以内，支持换行。</p>
+                                </div>
+                                <div class="layui-input-block input-second-container lable-input-container"
+                                    style="display: none;">
+                                    <div class="book-information">
+                                        <input type="text" name="author-intro" lay-verify="title" disabled='disabled'
+                                            data-id='1' placeholder="" class="layui-input">
+                                        <button type="button"
+                                            class="layui-btn layui-btn-danger mlfet-13 delete">删除</button>
                                     </div>
                                     <div class="desc">将用于前台信息展示，字数1200字以内，支持换行。
                                         <div class="float-right"><span class="input-on-number">0</span>/<span
@@ -486,36 +518,88 @@
                                 <label class="layui-form-label">目录： </label>
                                 <div class="layui-input-block input-second-container lable-input-container">
                                     <div class="book-information">
-                                        <button type="button" class="layui-btn layui-btn-warm"> +添加</button>
+                                        <button type="button" class="layui-btn layui-btn-warm addition"> +添加</button>
                                     </div>
                                     <p class="desc">将用于前台信息展示，字数1200字以内，支持换行。</p>
+                                </div>
+                                <div class="layui-input-block input-second-container lable-input-container"
+                                    style="display: none;">
+                                    <div class="book-information">
+                                        <input type="text" name="author-intro" lay-verify="title" disabled='disabled'
+                                            data-id='1' placeholder="" class="layui-input">
+                                        <button type="button"
+                                            class="layui-btn layui-btn-danger mlfet-13 delete">删除</button>
+                                    </div>
+                                    <div class="desc">将用于前台信息展示，字数1200字以内，支持换行。
+                                        <div class="float-right"><span class="input-on-number">0</span>/<span
+                                                class="input-max-number">300</span></div>
+                                    </div>
                                 </div>
                             </div>
                             <div class="layui-form-item">
                                 <label class="layui-form-label">媒体评论： </label>
                                 <div class="layui-input-block input-second-container lable-input-container">
                                     <div class="book-information">
-                                        <button type="button" class="layui-btn layui-btn-warm"> +添加</button>
+                                        <button type="button" class="layui-btn layui-btn-warm addition"> +添加</button>
                                     </div>
                                     <p class="desc">将用于前台信息展示，字数1200字以内，支持换行。</p>
+                                </div>
+                                <div class="layui-input-block input-second-container lable-input-container"
+                                    style="display: none;">
+                                    <div class="book-information">
+                                        <input type="text" name="author-intro" lay-verify="title" disabled='disabled'
+                                            data-id='1' placeholder="" class="layui-input">
+                                        <button type="button"
+                                            class="layui-btn layui-btn-danger mlfet-13 delete">删除</button>
+                                    </div>
+                                    <div class="desc">将用于前台信息展示，字数1200字以内，支持换行。
+                                        <div class="float-right"><span class="input-on-number">0</span>/<span
+                                                class="input-max-number">300</span></div>
+                                    </div>
                                 </div>
                             </div>
                             <div class="layui-form-item">
                                 <label class="layui-form-label">试读章节： </label>
                                 <div class="layui-input-block input-second-container lable-input-container">
                                     <div class="book-information">
-                                        <button type="button" class="layui-btn layui-btn-warm"> +添加</button>
+                                        <button type="button" class="layui-btn layui-btn-warm addition"> +添加</button>
                                     </div>
                                     <p class="desc">将用于前台信息展示，字数1200字以内，支持换行。</p>
+                                </div>
+                                <div class="layui-input-block input-second-container lable-input-container"
+                                    style="display: none;">
+                                    <div class="book-information">
+                                        <input type="text" name="author-intro" lay-verify="title" disabled='disabled'
+                                            data-id='1' placeholder="" class="layui-input">
+                                        <button type="button"
+                                            class="layui-btn layui-btn-danger mlfet-13 delete">删除</button>
+                                    </div>
+                                    <div class="desc">将用于前台信息展示，字数1200字以内，支持换行。
+                                        <div class="float-right"><span class="input-on-number">0</span>/<span
+                                                class="input-max-number">300</span></div>
+                                    </div>
                                 </div>
                             </div>
                             <div class="layui-form-item">
                                 <label class="layui-form-label">前言： </label>
                                 <div class="layui-input-block input-second-container lable-input-container">
                                     <div class="book-information">
-                                        <button type="button" class="layui-btn layui-btn-warm"> +添加</button>
+                                        <button type="button" class="layui-btn layui-btn-warm addition"> +添加</button>
                                     </div>
                                     <p class="desc">将用于前台信息展示，字数1200字以内，支持换行。</p>
+                                </div>
+                                <div class="layui-input-block input-second-container lable-input-container"
+                                    style="display: none;">
+                                    <div class="book-information">
+                                        <input type="text" name="author-intro" lay-verify="title" disabled='disabled'
+                                            data-id='1' placeholder="" class="layui-input">
+                                        <button type="button"
+                                            class="layui-btn layui-btn-danger mlfet-13 delete">删除</button>
+                                    </div>
+                                    <div class="desc">将用于前台信息展示，字数1200字以内，支持换行。
+                                        <div class="float-right"><span class="input-on-number">0</span>/<span
+                                                class="input-max-number">300</span></div>
+                                    </div>
                                 </div>
                             </div>
                         </form>
@@ -543,7 +627,7 @@
                                 <div class="layui-input-block input-second-container lable-input-container">
                                     <div class="input-third-container input-one1-container">
                                         <input type="text" name="external-id" placeholder="请输入代发外部ID" autocomplete="off"
-                                            class="layui-input">
+                                            data-id='1' class="layui-input">
                                     </div>
                                     <p class="desc">代发外部ID]用于代发供货商的系统对接</p>
                                     <p class="msg">代发外部id不可为空</p>
@@ -595,7 +679,7 @@
             </div>
 
             <div class="bottom-layui-btn">
-                <button type="button" class="layui-btn">保存并提交</button>
+                <button type="button" class="layui-btn submit">保存并提交</button>
             </div>
         </div>
 
@@ -607,14 +691,87 @@
 </html>
 <script type="text/javascript" src="layui-2.0/layui.js"></script>
 <script type="text/javascript">
-    layui.use(['element', 'jquery', 'form', 'layer'], function () {
+    layui.use(['element', 'jquery', 'form', 'layer', 'upload'], function () {
         // 变量声明
         var $ = layui.jquery,
             form = layui.form,
+            upload = layui.upload,
             element = layui.element,
             layer = layui.layer;
+        var siginList, //储存input的value值
+            regs = /^(?!0+(?:\.0+)?$)(?:[1-9]\d{0,5}|0)(?:\.\d{1,2})?$/, //正则验证最大输入6位最多可以带两位小数
+            merchantNum = /(^[1-9]*$)/, //验证必须为整数
+            space = /\s/, //验证不能有空格
+            packaging, //储存包装的value值 
+            format, //储存开本的value值
+            systemClassify; //储存系统分类的value值 
 
         //方法定义
+        function verify(Identity, ele, canonical) { //input 验证
+            $(ele).blur(function () {
+                var _this = $(this);
+                switch (Identity) {
+                    case 'on':
+                        if (canonical.test(_this.val())) {
+                            _this.parents().nextAll('.msg').css("opacity", '0');
+                        } else {
+                            _this.parents().nextAll('.msg').css('opacity', '1');
+                        }
+                        break;
+                    case 'off':
+                        if (_this.val() == '') {
+                            _this.parents().nextAll('.msg').css("opacity", '1');
+                        } else {
+                            _this.parents().nextAll('.msg').css('opacity', '0');
+                        }
+                        break;
+                }
+            })
+        }
+
+        // function verifys(Identity, ele) { //input 验证
+        //     $(ele).blur(function () {
+        //         var _this = $(this);
+
+        //         switch (Identity) {
+        //             case 'off':
+        //                 if (_this.val() == '') {
+        //                     _this.parents().nextAll('.msg').css("opacity", '1');
+        //                 } else {
+        //                     _this.parents().nextAll('.msg').css('opacity', '0');
+        //                 }
+        //                 break;
+        //         }
+        //     })
+        // }
+        //监听下拉'select(a)'
+        // function dropDown(el, Identity) {
+        //     form.on(el, function (data) {
+        //         switch (Identity) {
+        //             case 'packaging':
+        //                 packaging = data.value; //储存包装的value值 
+        //                 break;
+        //             case 'format':
+        //                 format = data.value; //储存开本的value值
+        //                 break;
+        //             case 'systemClassify':
+        //                 systemClassify = data.value; //储存系统分类的value值 
+        //                 break;
+        //         }
+        //     });
+        // }
+
+        // //调用上面的方法
+
+        // dropDown('select(packaging)', 'packaging'); //包装下拉 
+        // dropDown('select(format)', 'format'); //开本下拉 
+        // dropDown('select(systemClassify)', 'systemClassify'); //系统分类下拉 
+
+
+        verify('on', ".layui-input[name=pricing]", regs); //
+        verify('on', ".layui-input[name=pagination]", merchantNum); //
+        verify('on', ".layui-input[name=numberOfWords]", merchantNum); //
+        verify('off', "input[data-id=1]", null); //
 
         function GetQueryString(name) { //获取地址栏上的数据
             var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
@@ -638,7 +795,62 @@
             localStorage.setItem('slideState', slideState);
         })
 
-        $('.layui-btn').click(function () {
+        //普通图片上传
+        var uploadInst = upload.render({
+            elem: '.test1',
+            url: '/upload/',
+            before: function (obj) {
+                //预读本地文件示例，不支持ie8
+                obj.preview(function (index, file, result) {
+                    $('#demo1').attr('src', result); //图片链接（base64）
+                });
+            },
+            done: function (res) {
+                //如果上传失败
+                if (res.code > 0) {
+                    return layer.msg('上传失败');
+                    console.log(res)
+                }
+
+                //上传成功
+            },
+            error: function () {
+                //演示失败状态，并实现重传
+                var demoText = $('#demoText');
+                demoText.html(
+                    '<span style="color: #FF5722;">上传失败</span> <a class="layui-btn layui-btn-xs demo-reload">重试</a>'
+                );
+                demoText.find('.demo-reload').on('click', function () {
+                    uploadInst.upload();
+                });
+            }
+        });
+
+
+        //添加
+        $(".addition").click(function () {
+            $(this).parents('.lable-input-container').hide();
+            $(this).parents('.input-second-container').next().show();
+            $(this).parents('.input-second-container').next().find('.layui-input').attr("disabled",
+                false);
+        })
+        //删除
+        $(".delete").click(function () {
+            $(this).parents('.lable-input-container').hide();
+            $(this).parents('.input-second-container ').prevAll().show();
+            $(this).parents('.input-second-container').prevAll().find('.layui-input').attr("disabled",
+                true);
+        })
+
+        //提交
+        $(".submit").click(function () {
+            siginList = $('form').serializeArray();//表单序列化为数组对象
+            var arr = siginList.every(function (itme) {
+                return itme.value != ''; //判断所有value不为空
+            })
+            if (arr) {
+                console.log($('form').serialize())
+            }
 
         })
     });

@@ -14,7 +14,12 @@
     float: left;
 }
 
-
+.msg{
+    opacity: 0;
+}
+.input-third-container .input-before{
+    margin-top: -11px;
+}
 
 /* 商品销售订单详情页开始 */
 

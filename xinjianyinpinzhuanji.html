@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>总览-火把知识</title>
+    <meta charset="utf-8">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <link rel="stylesheet" type="text/css" href="layui-2.0/css/layui.css">
+    <!-- 样式重定义 -->
+    <link rel="stylesheet" type="text/css" href="layui-2.0/css/public.css">
+    <!-- 字体图标 -->
+    <script src="layui-2.0/font/iconfont.js"></script>
+    <style>
+        #tags {
+            margin: 0;
+            padding: 0;
+        }
+
+        #tags span {
+            color: #ffffff;
+            background-color: #54ACF0;
+            margin-left: 3px;
+        }
+
+        #tags .close {
+            color: #ffffff;
+        }
+
+        #tags .close:hover {
+            background: #54ACF0;
+        }
+
+        #inputTagsUser[type='text'],
+        #inputTagsUser[type='text']:focus {
+            line-height: 25px;
+            display: inline;
+            width: 150px;
+            margin: 0;
+            padding: 0 6px;
+            border: 0 none;
+            outline: 0 none;
+            box-shadow: none;
+        }
+    </style>
+</head>
+
+<body class="large">
+    <script>
+        if (localStorage.getItem('slideState') == 'small') {
+            document.querySelector('body').setAttribute('class', 'small');
+        } else {
+            document.querySelector('body').setAttribute('class', 'large');
+        }
+    </script>
+    <div class="layui-layout layui-layout-admin">
+        <!-- 供应商logo -->
+        <div class="layui-logo">
+            <img src="layui-2.0/images/logo.png" width="26px" height="27px">
+            <span class="slogan">火把知识服务平台</span>
+            <div class="foldAction">
+                <i class="layui-icon layui-icon-shrink-right"></i>
+                <i class="layui-icon layui-icon-spread-left"></i>
+            </div>
+        </div>
+
+        <!-- 头部 栏目 -->
+        <div class="layui-header">
+            <!-- 头部导航栏右边部分 -->
+            <ul class="layui-nav layui-layout-right">
+                <li class="layui-nav-item">
+                    <a href="#">
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#iconmessage-line"></use>
+                        </svg>
+                        <span>私信</span>
+                        <span class="layui-badge-dot"></span>
+                    </a>
+                </li>
+                <li class="layui-nav-item">
+                    <a href="#">
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#iconnews-line"></use>
+                        </svg>
+                        <span>通知中心</span>
+                        <span class="layui-badge-dot"></span>
+                    </a>
+                </li>
+                <li class="layui-nav-item ">
+                    <a href="#">
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#iconhelp-line"></use>
+                        </svg>
+                        <span>帮助中心</span>
+                    </a>
+                </li>
+                <li class="layui-nav-item">
+                    <a href="#">
+                        <img src="http://t.cn/RCzsdCq" class="layui-nav-img">
+                        <span>用户名</span>
+                    </a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="#">账号主页</a></dd>
+                        <dd><a href="#">修改密码</a></dd>
+                        <dd><a class="logout" href="#">退出登录</a></dd>
+                    </dl>
+                </li>
+            </ul>
+        </div>
+
+        <!-- 侧边栏部分 -->
+        <!-- 展开 -->
+        <div class="layui-side layui-bg-black large">
+            <div class="layui-side-scroll">
+                <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
+                <ul class="layui-nav layui-nav-tree">
+                    <li class="layui-nav-item">
+                        <a href="#">
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#iconoverview-block"></use>
+                            </svg>
+                            <span>总览</span>
+                        </a>
+                    </li>
+                    <li class="layui-nav-item layui-nav-itemed">
+                        <a href="#">
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#iconsource-block"></use>
+                            </svg>
+                            <span>发布管理</span>
+                        </a>
+                        <dl class="layui-nav-child">
+                            <dd><a href="#">文章列表</a></dd>
+                            <dd class="layui-this"><a href="#">专辑列表</a></dd>
+                        </dl>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- 收起 -->
+        <div class="layui-side layui-bg-black small">
+            <ul class="layui-nav layui-layout-right">
+                <li class="layui-nav-item">
+                    <a href="#">
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#iconoverview-block"></use>
+                        </svg>
+                    </a>
+                </li>
+                <li class="layui-nav-item">
+                    <a href="#">
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#iconsource-block"></use>
+                        </svg>
+                    </a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="#">文章列表</a></dd>
+                        <dd><a href="#">专辑列表</a></dd>
+                    </dl>
+                </li>
+            </ul>
+        </div>
+
+        <!-- 面包屑 -->
+        <div class="breadcrumb-container">
+            <span class="layui-breadcrumb">
+                <a href="/">首页</a>
+                <a href="/frame.html">框架</a>
+                <a><cite>导航元素</cite></a>
+            </span>
+        </div>
+        <!-- 主体内容 -->
+        <div class="layui-body">
+            <div class="layui-tab layui-tab-brief contentBox" lay-filter="docDemoTabBrief">
+                <ul class="layui-tab-title">
+                    <li class="layui-this">音视频专辑新建</li>
+                </ul>
+                <div class="layui-tab-content">
+                    <div class="rule">
+                        请遵守国家相关规定，切勿上传低俗色情、暴力恐怖、谣言诈骗、侵权盗版等相关内容。火把平台保有依据国家规定及平台规则进行处理的权利。
+                    </div>
+                    <!-- 专辑基本信息 -->
+                    <div>
+                        <form class="layui-form" action="">
+                            <p class="form-title">专辑基本信息</p>
+                            <div class="layui-form-item input-layout-one">
+                                <label class="layui-form-label"><span class="tip">*</span>专辑名称： </label>
+                                <div class="layui-input-inline context">
+                                    <div class="input-second-container">
+                                        <input type="text" name="isbn" placeholder="请输入专辑名称" autocomplete="off"
+                                            data-id='1' class="layui-input">
+                                        <div class="input-number"><span class="input-on-number">0</span>/<span
+                                                class="input-max-number">100
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <p class="desc">
+                                        字数100字以内
+                                    </p>
+                                    <p class="msg">专辑名称不可为空</p>
+                                </div>
+                            </div>
+                            <div class="layui-form-item input-layout-one">
+                                <label class="layui-form-label"><span class="tip">*</span>专辑副标题： </label>
+                                <div class="layui-input-block input-second-container lable-input-container">
+                                    <div class="input-second-container context">
+                                        <input type="text" name="books-name" placeholder="请输入专辑副标题" autocomplete="off"
+                                            data-id='1' class="layui-input">
+                                        <div class="input-number"><span class="input-on-number">0</span>/<span
+                                                class="input-max-number">100
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <p class="desc">字叔100字以内</p>
+                                    <p class="msg">专辑副标题不可为空</p>
+                                </div>
+                            </div>
+                            <div class="layui-form-item">
+                                <label class="layui-form-label"><span class="tip">*</span>专辑副标题： </label>
+                                <div class="layui-input-block input-second-container lable-input-container">
+                                    <div class="book-information">
+                                        <button type="button" class="layui-btn test1 layui-btn-warm"> +选择图片</button>
+                                        <div>
+                                            <img src="" alt="" id="demo1" data-src="">
+                                        </div>
+                                    </div>
+                                    <p class="desc">请上传图片，要求尺寸800*800像素，文件大小5M以内，支持格式PNG、JPEG、JPG。</p>
+                                    <p class="msg">图书封面不可为空</p>
+                                </div>
+                            </div>
+                            <div class="layui-form-item input-layout-one">
+                                <label class="layui-form-label"><span class="tip">*</span>图书定价： </label>
+                                <div class="layui-input-block input-second-container lable-input-container">
+                                    <div class="input-third-container input-one1-container context">
+                                        <input type="text" name="pricing" placeholder="请输入图书定价" class="layui-input"
+                                            autocomplete="off">
+                                        <div class="input-before">￥</div>
+                                    </div>
+                                    <p class="desc">将用于前台信息展示。金额￥100000以内，支持两位小数。</p>
+                                    <p class="msg">图书定价不可为空</p>
+                                </div>
+                            </div>
+                            <div class="layui-form-item">
+                                <label class="layui-form-label"><span class="tip">*</span>系统分类： </label>
+                                <div class="layui-input-block input-second-container lable-input-container">
+                                    <select name="system-classify" lay-verify="required" lay-filter='systemClassify'
+                                        class="size">
+                                        <option value="">文学 / 诗歌词曲 / 外国诗歌</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                    </select>
+                                    <p class="msg">系统不可为空</p>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <!--图文介绍  -->
+                    <div>
+                        <form class="layui-form" action="">
+                            <p class="form-title">图文介绍</p>
+
+                            <div class="layui-form-item input-layout-one">
+                                <label class="layui-form-label"><span class="tip">*</span> 图文介绍： </label>
+                                <div class="layui-input-block input-second-container lable-input-container">
+                                    <div class="input-second-container context">
+                                        <input type="text" name="merchandise-title" placeholder="输入搜索关键字"
+                                            autocomplete="off" data-id='1' class="layui-input">
+                                    </div>
+                                    <p class="desc">将用于前台信息展示，内容大小不限。</p>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <!-- 代发信息 -->
+                    <div>
+                        <p class="form-title">代发信息</p>
+                        <div class="layui-form-item">
+                            <!-- 标签搜索 -->
+                            <div class="input-second-container lable-input-container">
+                                <label class="layui-form-label lable-title">添加标签：</label>
+                                <div class="layui-inline" id="tags" style="width: 260px;">
+                                    <input type="text" name="inputTags" id="inputTags" required lay-verify="required"
+                                        placeholder="默认文本" autocomplete="off" class="layui-input"
+                                        onkeypress="javascript:return gosearch();">
+                                    <div class="input-number"><span class="input-on-number"
+                                            style="padding: 0;background-color:#fff;color:#999999;">0</span>/<span
+                                            class="input-max-number"
+                                            style="padding: 0;background-color:#fff;color:#999999;">10</span></div>
+                                </div>
+                                <button type="button" class="layui-btn lable-search">搜索</button>
+                            </div>
+                            <!-- 标签搜索群 -->
+                            <div class="lableGroup">
+                                <button type="button" class="lable-btn layui-btn-primary" data-id="1">爱情</button>
+                                <button type="button" class="lable-btn layui-btn-primary" data-id="2">战争片</button>
+                                <button type="button" class="lable-btn layui-btn-primary" data-id="3">战争片战争片</button>
+                                <button type="button" class="lable-btn layui-btn-primary" data-id="4">爱情</button>
+                                <button type="button" class="lable-btn layui-btn-primary" data-id="5">战争片</button>
+                                <button type="button" class="lable-btn layui-btn-primary" data-id="6">战争片战争片</button>
+                                <button type="button" class="lable-btn layui-btn-primary" data-id="7">爱情</button>
+                                <button type="button" class="lable-btn layui-btn-primary" data-id="8">战争片</button>
+                                <button type="button" class="lable-btn layui-btn-primary" data-id="9">战争片战争片</button>
+                                <button type="button" class="lable-btn layui-btn-primary" data-id="10">爱情</button>
+                                <button type="button" class="lable-btn layui-btn-primary" data-id="11">战争片</button>
+                                <button type="button" class="lable-btn layui-btn-primary" data-id="12">战争片战争片</button>
+                            </div>
+                            <!--已添加标签-->
+                            <div class="lableAdd">
+                                <label class="layui-form-label lable-title">已添加标签：</label>
+                                <div class="layui-inline num">
+                                    <span class="lable-on-number">0</span>/<span class="lable-max-number">10</span>
+                                </div>
+                                <div class="lable-show">
+                                    <!--<button type="button" class="lable-add-btn">欧美认电视剧
+				                                <i class="layui-icon layui-icon-close close"></i>
+			                                </button>-->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- 固定底部按钮 -->
+            <div class="bottom-layui-btn">
+                <button type="button" class="layui-btn layui-btn-normal">保存草稿</button>
+                <button type="button" class="layui-btn layui-btn-six">保存并提交<i
+                        class="layui-icon layui-icon-down"></i></button>
+            </div>
+        </div>
+
+        <!-- 底部 -->
+        <div class="layui-footer"></div>
+    </div>
+</body>
+
+</html>
+<script type="text/javascript" src="layui-2.0/layui.js"></script>
+<!-- <script type="text/javascript" src="../layui-2.0/public.js"></script> -->
+<!-- <script type="text/javascript" src="../layui-2.0/inputtags/inputTags.js"></script> -->
+<script type="text/javascript">
+    layui.use(['element', 'jquery', 'form', 'layer', 'upload'], function () {
+        // 变量声明
+        var $ = layui.jquery,
+            form = layui.form,
+            upload = layui.upload,
+            element = layui.element,
+            inputTags = layui.inputTags,
+            layer = layui.layer;
+        //标签标示id
+        var lableId;
+        //标签添加数量
+        var min = 0;
+        //标签高度
+        var height;
+
+        //方法定义
+        function GetQueryString(name) { //获取地址栏上的数据
+            var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+            var r = window.location.search.substr(1).match(reg);
+            if (r != null) return unescape(r[2]);
+            return null;
+        }
+
+
+
+        //搜索插件
+        inputTags.render({
+            elem: '#inputTags', //定义输入框input对象
+            content: [], //默认标签
+            aldaBtn: false, //是否开启获取所有数据的按钮
+            done: function (value) { //回车后的回调
+                //console.log(value)
+            }
+        });
+
+        //初始化高度
+        $(function () {
+            height = $('body').height();
+            setLableHeight(height);
+        });
+
+        // 点击标签选中状态
+        $('body').on('click', '.lableGroup .lable-btn', function () {
+            var max = Number($('.lable-max-number').text());
+            var isContain = $(this).hasClass('active');
+            if (isContain) {
+                $(this).removeClass('active');
+                lableId = $(this).data('id');
+                $('.lable-show .lable-add-btn').each(function () {
+                    var eachId = $(this).data('id');
+                    if (eachId == lableId) {
+                        $(this).remove();
+                        min = $('.lable-show .lable-add-btn').length;
+                        $('.lable-on-number').text(min);
+                    }
+                });
+            } else {
+                min++;
+                if (min <= max) {
+                    $(this).addClass('active');
+                    var text = $(this).text();
+                    lableId = $(this).data('id');
+                    lableAdd(text, lableId);
+                    min = $('.lable-show .lable-add-btn').length;
+                    $('.lable-on-number').text(min);
+                }
+            }
+            height = $('body').height();
+            setLableHeight(height);
+        });
+
+        //删除标签
+        $('body').on('click', '.lable-show .close', function () {
+            var lableClose = $(this).closest('.lable-add-btn').data('id');
+            $('.lableGroup .lable-btn').each(function () {
+                var eachId = $(this).data('id');
+                if (eachId == lableClose) {
+                    $(this).removeClass('active');
+                }
+            });
+            $(this).closest('.lable-add-btn').remove();
+            min = $('.lable-show .lable-add-btn').length;
+            $('.lable-on-number').text(min);
+            height = $('body').height();
+            setLableHeight(height);
+        });
+
+        //添加标签
+        function lableAdd(text, id) {
+            var str = '';
+            str += '<button type="button" class="lable-add-btn" data-id="' + id + '">' + text +
+                '<i class="layui-icon layui-icon-close close"></i></button>';
+            $(".lable-show").append(str);
+        }
+
+        // 标签
+        function setLableHeight(height) {
+            parent.setLableHeight(height);
+        }
+        // searchAction(999)
+        // 父亲操作儿子-初始化
+        function initLable(argument) {
+            alert(argument)
+        }
+
+
+        // 展开收缩
+        $('.foldAction').on('click', function () {
+            var body = $(this).parents('body');
+            var slideState = '';
+            // 展开隐藏图标切换
+            if ($(body).hasClass('small')) {
+                $(body).removeClass('small').addClass('large');
+                slideState = 'large';
+            } else {
+                $(body).removeClass('large').addClass('small');
+                slideState = 'small';
+            }
+            localStorage.setItem('slideState', slideState);
+        })
+
+        //普通图片上传
+        var uploadInst = upload.render({
+            elem: '.test1',
+            url: '/upload/',
+            before: function (obj) {
+                //预读本地文件示例，不支持ie8
+                obj.preview(function (index, file, result) {
+                    $('#demo1').attr('src', result); //图片链接（base64）
+                });
+            },
+            done: function (res) {
+                //如果上传失败
+                if (res.code > 0) {
+                    return layer.msg('上传失败');
+                    console.log(res)
+                }
+
+                //上传成功
+            },
+            error: function () {
+                //演示失败状态，并实现重传
+                var demoText = $('#demoText');
+                demoText.html(
+                    '<span style="color: #FF5722;">上传失败</span> <a class="layui-btn layui-btn-xs demo-reload">重试</a>'
+                );
+                demoText.find('.demo-reload').on('click', function () {
+                    uploadInst.upload();
+                });
+            }
+        });
+    });
+</script>

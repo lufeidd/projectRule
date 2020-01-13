@@ -375,8 +375,8 @@
             form = layui.form,
             element = layui.element,
             layer = layui.layer;
-
-        //方法定义
+        var valPricing; //储存input 的value值
+        //方法定义merchantNum = /(^[1-9]*$)/, //验证必须为整数
 
         function GetQueryString(name) { //获取地址栏上的数据
             var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
@@ -422,7 +422,7 @@
                     "<label class='layui-form-label'>补偿金额： </label>" +
                     "<div class='layui-input-block input-second-container lable-input-container'>" +
                     "<div class='input-third-container input-one1-container'>" +
-                    "<input type='number' name='pricing' placeholder='最多23.00' autocomplete='off' class='layui-input'>" +
+                    "<input type='text' name='pricing' placeholder='最多23.00' autocomplete='off' class='layui-input'>" +
                     "<div class='input-before'>￥</div>" +
                     "</div>" +
                     "<p class='msg'>图书定价不可为空</p>" +
@@ -440,15 +440,17 @@
                 // shadeClose: true, //点击遮罩层隐藏弹窗
                 // move: false, //禁止拖拽
                 success: function (layero, index) { //弹出回调
-                    $(".msg").hide();
+                    // $(".msg").hide();
                 },
                 yes: function (index, layero) {
+                    valPricing = $(".layui-input[name=pricing]").val()
                     //按钮1回调
-                    // layer.close(index); //如果设定了yes回调，需进行手工关闭
-                    if($(".layui-input[name=pricing]").val() <= "23" && $(".layui-input[name=pricing]").val() >= '0'){
+                    // layer.close(index); //如果设定了yes回调，需进行手工关闭&&
+                    if (valPricing <= 23 && valPricing >= 0) {
                         //
-                    }else{
-                        $(".msg").show();
+                        $(".msg").css('opacity', '0');
+                    } else {
+                        $(".msg").css('opacity', '1');
                     }
                 },
                 btn2: function (index, layero) {
