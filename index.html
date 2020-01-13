@@ -139,6 +139,15 @@
 			<!-- 按钮7 -->
 			<button class="layui-btn layui-btn-normal layui-btn-sm">小型按钮3</button>
 			<button class="layui-btn layui-btn-danger layui-btn-sm">小型删除按钮</button>
+			<!-- 固定底部按钮 -->
+			<!-- <div class="bottom-layui-btn">
+				<button type="button" class="layui-btn">保存并提交</button>
+			</div> -->
+			<div class="bottom-layui-btn">
+				<button type="button" class="layui-btn layui-btn-normal">保存草稿</button>
+				<button type="button" class="layui-btn layui-btn-six">保存并提交<i
+						class="layui-icon layui-icon-down"></i></button>
+			</div>
 		</article>
 		<article id="input">
 			<form class="layui-form">
@@ -162,11 +171,31 @@
 				<div class="input-second-container">
 					<input type="text" name="title" placeholder="输入搜索关键字" autocomplete="off" class="layui-input">
 					<div class="input-number"><span class="input-on-number">0</span>/<span class="input-max-number">100
-							</spani>
+						</span>
 					</div>
 				</div>
 				<p class="subTitle">文本域3</p>
 				<div class="input-third-container">
+					<input type="text" name="title" placeholder="输入搜索关键字" autocomplete="off" class="layui-input">
+					<div class="input-before">￥</div>
+				</div>
+				<p class="subTitle">文本域4</p>
+				<div class="input-four-container">
+					<textarea name="desc" placeholder="请输入内容" class="layui-textarea"></textarea>
+				</div>
+				<p class="subTitle">文本域5</p>
+				<div class="input-five-container">
+					<textarea name="desc" placeholder="请输入内容" class="layui-textarea"></textarea>
+					<div class="clear-float">
+						<div class="desc float-left">将用于前台信息展示，字数300字以内，支持换行。 拷贝</div>
+						<div class="input-number float-right"><span class="input-on-number">0</span>/<span
+								class="input-max-number">300
+							</span>
+						</div>
+					</div>
+				</div>
+				<p class="subTitle">文本域6</p>
+				<div class="input-six-container">
 					<input type="text" name="title" placeholder="输入搜索关键字" autocomplete="off" class="layui-input">
 					<div class="input-before">￥</div>
 				</div>
@@ -605,17 +634,16 @@
 		$('iframe[data-id=' + dataId + ']')[0].contentWindow.setTable(data);
 	}
 
-
 	//设置数据表格tableOne高度
-	// function setTableOneHeight(tableOneHeight){
-	// 	// 设置info模板中相应iframe的高度
-	// 	$('iframe[name=tableOne]').css('height', tableOneHeight);
-	// }
+	function setTableOneHeight(tableOneHeight) {
+		// 设置info模板中相应iframe的高度
+		$('iframe[name=tableOne]').css('height', tableOneHeight);
+	}
 	//设置数据表格tableTwo高度
-	// function setTableTwoHeight(tableTwoHeight){
-	// 	// 设置info模板中相应iframe的高度
-	// 	$('iframe[name=tableTwo]').css('height', tableTwoHeight);
-	// }
+	function setTableTwoHeight(tableTwoHeight) {
+		// 设置info模板中相应iframe的高度
+		$('iframe[name=tableTwo]').css('height', tableTwoHeight);
+	}
 
 	// 设置iframe当前标识
 	function setIframeDataId(id) {
@@ -625,15 +653,23 @@
 
 
 	//设置iframe高度
-	function setIframeHeight(height, type) {
-		$('.high-search-iframe').height(height);
-		console.log(height)
-		if (type == 'open') {
-			$('.high-search-iframe').parent().removeClass('float-right')
-			$('.high-search-iframe').css('margin-top', '15px')
-		} else if (type == 'fold') {
-			$('.high-search-iframe').parent().addClass('float-right')
-			$('.high-search-iframe').css('margin-top', '0')
+	function setIframeHeight(height, type, hight_sign) {
+		switch (type) {
+			case 'hight-search-iframe':
+				$('.high-search-iframe').height(height);
+				console.log(height)
+				if (hight_sign == 'open') {
+					$('.high-search-iframe').parent().removeClass('float-right')
+					$('.high-search-iframe').css('margin-top', '15px')
+				} else if (hight_sign == 'fold') {
+					$('.high-search-iframe').parent().addClass('float-right')
+					$('.high-search-iframe').css('margin-top', '0')
+				}
+				break;
+			case '':
+				break;
+			default:
+				break;
 		}
 	}
 

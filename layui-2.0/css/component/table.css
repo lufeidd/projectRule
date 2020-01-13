@@ -21,7 +21,18 @@
     height:6px;
     background: #54F075;
     border-radius:50%;
-    left: 6px;
+    left: 28px;
+    top: 50%;
+    margin-top: -2px;
+}
+.table .statusB:before{
+    content:'';
+    position: absolute;
+    width:6px;
+    height:6px;
+    background: #999999;
+    border-radius:50%;
+    left: 28px;
     top: 50%;
     margin-top: -2px;
 }

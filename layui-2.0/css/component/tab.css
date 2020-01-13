@@ -110,9 +110,6 @@
     border: 1px #54ACF0 solid;
 }
 /*分页样式----------------------------*/
-.table .layui-table tbody tr:last-child:hover{
-    background-color: #ffffff;
-}
 .layui-laypage .layui-laypage-curr .layui-laypage-em {
     position: absolute;
     left: -1px;
