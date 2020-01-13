@@ -32,6 +32,9 @@
 @import url('component/select.css');
 /* 弹窗 */
 @import url('component/popup.css');
+/* 日期选择 */
+@import url('component/date.css');
+
 /*
  * 标签重定义
  */

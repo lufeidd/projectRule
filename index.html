@@ -86,6 +86,7 @@
 		<a href="#lable">标签</a>
 		<a href="#table">数据表格</a>
 		<a href="#popup">弹窗</a>
+		<a href="#date">日期选择</a>
 		<a href="#cascader">级联</a>
 	</menu>
 	<header id="header">前端开发规范手册</header>
@@ -430,7 +431,6 @@
 				<div class="layui-form-item input-layout-one">
 					<label class="layui-form-label">单行输入框：</label>
 					<div class="layui-input-inline context">
-
 						<div class="input-second-container">
 							<input type="text" name="title" placeholder="输入搜索关键字" autocomplete="off"
 								class="layui-input">
@@ -535,15 +535,31 @@
 				<span id="popup1" class="popup">弹窗1</span>
 				<span id="popup2" class="popup">弹窗2</span>
 				<span id="popup3" class="popup">弹窗3</span>
+				<span id="alert" class="popup">弹窗alert</span>
+
 			</div>
 		</article>
+		<article id="date">
+			<p class="title">
+				<svg class="icon" aria-hidden="true">
+					<use xlink:href="#iconguanlian"></use>
+				</svg>日期选择</p>
+
+			<div class="layui-inline">
+				<input type="text" class="layui-input test1" placeholder="请选择日期">
+			</div>
+			<!-- 弹窗 -->
+			<div>
+			</div>
+		</article>
+    
+    
 		<article id="cascader">
 			<p class="title">
 				<svg class="icon" aria-hidden="true">
 					<use xlink:href="#iconguanlian"></use>
 				</svg>级联</p>
 		</article>
-
 	</section>
 </body>
 
@@ -557,13 +573,32 @@
 	var dataResult = {};
 
 	//初始化layui
-	layui.use(['element', 'layer', 'form'], function () {
+	layui.use(['element', 'laydate', 'layer', 'form'], function () {
 		var element = layui.element,
 			form = layui.form,
+			laydate = layui.laydate,
 			$ = layui.$;
 
 		// $.ajax
 
+		//日期选择
+		laydate.render({
+			elem: '.test1', //指定元素
+			ready: function (date) {
+				//得到初始的日期时间对象：{year: 2017, month: 8, date: 18, hours: 0, minutes: 0, seconds: 0}
+				// console.log(date);
+				$('.laydate-footer-btns .laydate-btns-clear').text('重置'); //改变按钮text
+			},
+			done: function (value, date, endDate) {
+				//当选择日期之后改变按钮颜色
+				$('.laydate-footer-btns .laydate-btns-clear').css('color', "#333"); //重置按钮
+				$('.laydate-footer-btns .laydate-btns-now').css('color', "#333"); //现在按钮
+				// console.log(value); //得到日期生成的值，如：2017-08-18
+				// //得到日期时间对象：{year: 2017, month: 8, date: 18, hours: 0, minutes: 0, seconds: 0}
+				// console.log(date);
+				// console.log(endDate); //得结束的日期时间对象，开启范围选择（range: true）才会返回。对象成员同上。
+			}
+		});
 	})
 
 	//设置标签iframe高度
@@ -571,6 +606,7 @@
 		// 设置info模板中相应iframe的高度
 		$('iframe[name=lableChoose]').css('height', lableHeight);
 	}
+
 	// 搜索
 	searchTemplate()
 	// 级联
@@ -578,6 +614,7 @@
 		var _id = '#' + $(this).attr('id');
 		ajaxCascaderTemplate(_id, 'https://open.gog.cn/appz/region/getRegion/', 'init');
 	})
+
 	//设置数据表格tableOne高度
 	function setTableOneHeight(tableOneHeight) {
 		// 设置info模板中相应iframe的高度
@@ -663,11 +700,31 @@
 		//页面层
 		layer.open({
 			type: 1,
-			title: '选择纸质书',//title设置
+			title: '申请商户补偿', //title设置
 			skin: 'layui-layer-rim', //加上边框
-			area: ['488px', '180px'], //宽高
-			content: 'html内容', //内容
-			shadeClose: true,//点击遮罩层隐藏弹窗
+			area: ['600px', '328px'], //宽高
+			btn: ['确 定', '取 消'], //btn按钮
+			content: "<form class='layui-form' action=''>" +
+				"<div class='layui-form-item input-layout-one'>" +
+				"<label class='layui-form-label'>补偿金额： </label>" +
+				"<div class='layui-input-block input-second-container lable-input-container'>" +
+				"<div class='input-third-container input-one1-container'>" +
+				"<input type='text' name='pricing' placeholder='最多23.00' autocomplete='off' class='layui-input'>" +
+				"<div class='input-before'>￥</div>" +
+				"</div>" +
+				"<p class='msg'>图书定价不可为空</p>" +
+				"</div>" +
+				"</div>" +
+				"<div class='layui-form-item input-layout-one'>" +
+				"<label class='layui-form-label'>补偿原因： </label>" +
+				"<div class='layui-input-block input-second-container lable-input-container'>" +
+				"<div class='input-third-container input-one1-container'>" +
+				"<input type='text' name='pricing' placeholder='请输入补偿原因' autocomplete='off' class='layui-input'>" +
+				"</div>" +
+				"</div>" +
+				"</div>" +
+				"</form>", //内容
+			// shadeClose: true, //点击遮罩层隐藏弹窗
 			// move: false, //禁止拖拽
 			yes: function (index, layero) {
 				//按钮1回调
@@ -677,6 +734,18 @@
 				//按钮2回调
 				// layer.close(index); //如果设定了yes回调，需进行手工关闭
 				//return false 开启该代码可禁止点击该按钮关闭
+			}
+		});
+	})
+
+	$("#alert").click(function () {
+		layer.open({
+			title: '提示:',
+			content: '请输入搜索关键字',
+			success:function(data){
+			$(".layui-layer-dialog").addClass('alert');
+			$(".alert .layui-layer-title").show();
+			$('.layui-layer-setwin').show();
 			}
 		});
 	})
