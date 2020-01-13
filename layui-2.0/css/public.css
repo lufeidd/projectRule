@@ -34,6 +34,8 @@
 @import url('component/popup.css');
 /* 代发商品详情 */
 @import url('component/daifashangpinxiangqin.css');
+/* 日期选择 */
+@import url('component/date.css');
 /*
  * 标签重定义
  */
