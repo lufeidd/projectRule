@@ -86,7 +86,7 @@
 		<a href="#lable">标签</a>
 		<a href="#table">数据表格</a>
 		<a href="#popup">弹窗</a>
-		<a href="#popup">下拉联动</a>
+		<a href="#cascader">级联</a>
 	</menu>
 	<header id="header">前端开发规范手册</header>
 	<section>
@@ -418,33 +418,47 @@
 					</dl>
 				</div>
 			</div>
-			<article id="layout">
-				<p class="title">
-					<svg class="icon" aria-hidden="true">
-						<use xlink:href="#iconguanlian"></use>
-					</svg>表单布局</p>
-				<p class="subTitle">表单布局1 - 预留提示空间</p>
-				<form class="layui-form" action="">
-					<p class="form-title">标题</p>
-					<div class="layui-form-item input-layout-one">
-						<label class="layui-form-label">单行输入框：</label>
-						<div class="layui-input-inline context">
+		</article>
+		<article id="layout">
+			<p class="title">
+				<svg class="icon" aria-hidden="true">
+					<use xlink:href="#iconguanlian"></use>
+				</svg>表单布局</p>
+			<p class="subTitle">表单布局1 - 预留提示空间</p>
+			<form class="layui-form" action="">
+				<p class="form-title">标题</p>
+				<div class="layui-form-item input-layout-one">
+					<label class="layui-form-label">单行输入框：</label>
+					<div class="layui-input-inline context">
 
-							<div class="input-second-container">
-								<input type="text" name="title" placeholder="输入搜索关键字" autocomplete="off"
-									class="layui-input">
-								<div class="input-number"><span class="input-on-number">0</span>/<span
-										class="input-max-number">100
-										</spani>
-								</div>
+						<div class="input-second-container">
+							<input type="text" name="title" placeholder="输入搜索关键字" autocomplete="off"
+								class="layui-input">
+							<div class="input-number"><span class="input-on-number">0</span>/<span
+									class="input-max-number">100
+									</spani>
 							</div>
-							<p class="desc">描述</p>
-							<p class="msg">错误提示</p>
 						</div>
-						<div class="layui-form-mid layui-word-aux">同步图书信息</div>
+						<p class="desc">描述</p>
+						<p class="msg">错误提示</p>
 					</div>
-					<div class="layui-form-item">
-						<label class="layui-form-label"><span class="tip">*</span>验证必填项：</label>
+					<div class="layui-form-mid layui-word-aux">同步图书信息</div>
+				</div>
+				<div class="layui-form-item">
+					<label class="layui-form-label"><span class="tip">*</span>验证必填项：</label>
+					<div class="layui-input-block">
+						<div class="input-one1-container">
+							<input type="text" name="title" placeholder="输入搜索关键字 input-one1-container"
+								autocomplete="off" class="layui-input">
+						</div>
+					</div>
+				</div>
+			</form>
+			<p class="subTitle">表单布局2</p>
+			<form class="layui-form" action="">
+				<div class="layui-form-item">
+					<div class="layui-inline">
+						<label class="layui-form-label">出版日期：</label>
 						<div class="layui-input-block">
 							<div class="input-one1-container">
 								<input type="text" name="title" placeholder="输入搜索关键字 input-one1-container"
@@ -452,90 +466,83 @@
 							</div>
 						</div>
 					</div>
-				</form>
-				<p class="subTitle">表单布局2</p>
-				<form class="layui-form" action="">
-					<div class="layui-form-item">
-						<div class="layui-inline">
-							<label class="layui-form-label">出版日期：</label>
-							<div class="layui-input-block">
-								<div class="input-one1-container">
-									<input type="text" name="title" placeholder="输入搜索关键字 input-one1-container"
-										autocomplete="off" class="layui-input">
-								</div>
-							</div>
-						</div>
-						<div class="layui-inline input-layout-two">
-							<label class="layui-form-label">印刷日期：</label>
-							<div class="layui-input-block">
-								<div class="input-one1-container">
-									<input type="text" name="title" placeholder="输入搜索关键字 input-one1-container"
-										autocomplete="off" class="layui-input">
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="layui-form-item">
-						<div class="layui-inline">
-							<label class="layui-form-label">出版日期：</label>
-							<div class="layui-input-block">
-								<div class="input-one1-container">
-									<input type="text" name="title" placeholder="输入搜索关键字 input-one1-container"
-										autocomplete="off" class="layui-input">
-									<p class="desc">描述</p>
-									<p class="msg">错误提示</p>
-								</div>
-							</div>
-						</div>
-						<div class="layui-inline input-layout-two">
-							<label class="layui-form-label">印刷日期：</label>
-							<div class="layui-input-block">
-								<div class="input-one1-container">
-									<input type="text" name="title" placeholder="输入搜索关键字 input-one1-container"
-										autocomplete="off" class="layui-input">
-									<p class="desc">描述</p>
-									<p class="msg">错误提示</p>
-								</div>
-							</div>
-						</div>
-						<div class="layui-inline">
-							<div class="input-one2-container">
-								<input type="text" name="title" placeholder="输入搜索关键字 input-one2-container"
+					<div class="layui-inline input-layout-two">
+						<label class="layui-form-label">印刷日期：</label>
+						<div class="layui-input-block">
+							<div class="input-one1-container">
+								<input type="text" name="title" placeholder="输入搜索关键字 input-one1-container"
 									autocomplete="off" class="layui-input">
-								<p class="desc"></p>
-								<p class="msg"></p>
 							</div>
 						</div>
 					</div>
-				</form>
-			</article>
-			<article id="lable">
-				<p class="title">
-					<svg class="icon" aria-hidden="true">
-						<use xlink:href="#iconguanlian"></use>
-					</svg>标签</p>
-				<iframe src="iframe-2.0/lable.html" name="lableChoose" data-id="label0"></iframe>
-			</article>
-			<article id="table">
-				<p class="title">
-					<svg class="icon" aria-hidden="true">
-						<use xlink:href="#iconguanlian"></use>
-					</svg>数据表格</p>
-				<iframe src="iframe-2.0/tableOne.html" name="tableOne" data-id="table0"></iframe>
-				<iframe src="iframe-2.0/tableTwo.html" name="tableTwo" data-id="table1"></iframe>
-			</article>
-			<article id="popup">
-				<p class="title">
-					<svg class="icon" aria-hidden="true">
-						<use xlink:href="#iconguanlian"></use>
-					</svg>弹窗</p>
-				<!-- 弹窗 -->
-				<div>
-					<span id="popup1" class="popup">弹窗1</span>
-					<span id="popup2" class="popup">弹窗2</span>
-					<span id="popup3" class="popup">弹窗3</span>
 				</div>
-			</article>
+				<div class="layui-form-item">
+					<div class="layui-inline">
+						<label class="layui-form-label">出版日期：</label>
+						<div class="layui-input-block">
+							<div class="input-one1-container">
+								<input type="text" name="title" placeholder="输入搜索关键字 input-one1-container"
+									autocomplete="off" class="layui-input">
+								<p class="desc">描述</p>
+								<p class="msg">错误提示</p>
+							</div>
+						</div>
+					</div>
+					<div class="layui-inline input-layout-two">
+						<label class="layui-form-label">印刷日期：</label>
+						<div class="layui-input-block">
+							<div class="input-one1-container">
+								<input type="text" name="title" placeholder="输入搜索关键字 input-one1-container"
+									autocomplete="off" class="layui-input">
+								<p class="desc">描述</p>
+								<p class="msg">错误提示</p>
+							</div>
+						</div>
+					</div>
+					<div class="layui-inline">
+						<div class="input-one2-container">
+							<input type="text" name="title" placeholder="输入搜索关键字 input-one2-container"
+								autocomplete="off" class="layui-input">
+							<p class="desc"></p>
+							<p class="msg"></p>
+						</div>
+					</div>
+				</div>
+			</form>
+		</article>
+		<article id="lable">
+			<p class="title">
+				<svg class="icon" aria-hidden="true">
+					<use xlink:href="#iconguanlian"></use>
+				</svg>标签</p>
+			<iframe src="iframe-2.0/lable.html" name="lableChoose" data-id="label0"></iframe>
+		</article>
+		<article id="table">
+			<p class="title">
+				<svg class="icon" aria-hidden="true">
+					<use xlink:href="#iconguanlian"></use>
+				</svg>数据表格</p>
+			<iframe src="iframe-2.0/tableOne.html" name="tableOne" data-id="table0"></iframe>
+			<iframe src="iframe-2.0/tableTwo.html" name="tableTwo" data-id="table1"></iframe>
+		</article>
+		<article id="popup">
+			<p class="title">
+				<svg class="icon" aria-hidden="true">
+					<use xlink:href="#iconguanlian"></use>
+				</svg>弹窗</p>
+			<!-- 弹窗 -->
+			<div>
+				<span id="popup1" class="popup">弹窗1</span>
+				<span id="popup2" class="popup">弹窗2</span>
+				<span id="popup3" class="popup">弹窗3</span>
+			</div>
+		</article>
+		<article id="cascader">
+			<p class="title">
+				<svg class="icon" aria-hidden="true">
+					<use xlink:href="#iconguanlian"></use>
+				</svg>级联</p>
+		</article>
 
 	</section>
 </body>
