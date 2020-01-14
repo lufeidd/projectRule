@@ -331,7 +331,7 @@
         </div>
 
         <!-- 底部 -->
-        <div class="layui-footer"></div>
+        <!-- <div class="layui-footer"></div> -->
     </div>
 </body>
 
@@ -371,7 +371,7 @@
 
 
 
-        $('.layui-input[name=pricing]').blur(function () {//验证专辑销售价
+        $('.layui-input[name=pricing]').blur(function () { //验证专辑销售价
             var _this = $(this);
             if (merchantNum.test(_this.val()) && _this.val() != '') {
                 _this.parents().nextAll('.msg').css("opacity", '0');

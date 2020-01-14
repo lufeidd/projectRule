@@ -398,3 +398,8 @@ body.large .layui-side.large {
 .float-right {
     float: right;
 }
+
+/* 提示隐藏 */
+.msg{
+    opacity: 0;
+}
