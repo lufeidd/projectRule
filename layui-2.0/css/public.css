@@ -399,6 +399,12 @@ body.large .layui-side.large {
     float: right;
 }
 
+<<<<<<< HEAD
 .layui-btn+.layui-btn {
     margin-left: 0;
+=======
+/* 提示隐藏 */
+.msg{
+    opacity: 0;
+>>>>>>> 8a1e0bf348e0af97a061f1e61b1f9cbf96750687
 }
