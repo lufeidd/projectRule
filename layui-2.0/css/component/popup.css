@@ -256,7 +256,9 @@
 .padd-top {
     padding-top: 10px;
 }
-
+.padd-left{
+    padding-left: 10px;
+}
 .alert .layui-layer-btn0 {
     border: none !important;
     background-color: #54ACF0 !important;

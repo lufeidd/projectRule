@@ -387,7 +387,7 @@
                             <div class="layui-form-item">
                                 <label class="layui-form-label"><span class="tip">*</span>系统分类： </label>
                                 <div class="layui-input-block">
-                                    <cascader id="demo2"></cascader>
+                                    <cascader id="demo2" name="systemClassify"></cascader>
                                     <p class="msg">系统不可为空</p>
                                 </div>
                             </div>
@@ -425,19 +425,19 @@
                                 <label class="layui-form-label"><span class="tip">*</span>商品图： </label>
                                 <div class="layui-input-block">
                                     <div class="book-information">
-                                        <button type="button" class="layui-btn layui-btn-warm "> +选择图片</button>
-                                        <div>
-                                            <img src="" alt="">
-                                        </div>
+                                        <button type="button" class="layui-btn layui-btn-warm " id="test2">
+                                            +选择图片</button>
+                                        <div class="layui-upload-list" id="demo3"></div>
                                     </div>
-                                    <p class="desc">将用于前台展示，要求尺寸800*800像素，文件大小5M以内，支持格式PNG、JPEG、JPG，最多上传5张</p>
+                                    <p class="desc">将用于前台展示，要求尺寸800*800像素，文件大小5M以内，支持格式PNG、JPEG、JPG，最多上传6张</p>
                                     <p class="msg">商品主图不可为空</p>
                                 </div>
                             </div>
                             <div class="layui-form-item">
                                 <label class="layui-form-label"><span class="tip">*</span>图文介绍： </label>
                                 <div class="layui-input-block ">
-                                    <div class="book-information">
+                                    <div class="layui-inline" style="width:982px;">
+                                        <textarea id="goods_desc"></textarea>
                                     </div>
                                     <p class="desc">将用于前台信息展示，内容大小不限。</p>
                                 </div>
@@ -634,7 +634,7 @@
                                     <div class="input-one1-container">
                                         <input type="text" name="outer_id" placeholder="请输入代发外部ID" class="layui-input">
                                     </div>
-                                    <p class="desc">代发外部ID]用于代发供货商的系统对接</p>
+                                    <p class="desc">代发外部ID用于代发供货商的系统对接</p>
                                     <p class="msg">代发外部id不可为空</p>
                                 </div>
                             </div>
@@ -698,10 +698,11 @@
 <script type="text/javascript" src="layui-2.0/jquery3.4.1.js"></script>
 <script type="text/javascript" src="layui-2.0/public.js"></script>
 <script type="text/javascript">
-    layui.use(['element', 'jquery', 'form', 'laydate', 'upload'], function () {
+    layui.use(['element', 'jquery', 'form', 'laydate', 'layedit', 'upload'], function () {
         // 变量声明
         var $ = layui.jquery,
             form = layui.form,
+            layedit = layui.layedit,
             laydate = layui.laydate,
             upload = layui.upload,
             element = layui.element;
@@ -724,6 +725,7 @@
             wonderful_page, //储存精彩页试读的value值
             market_price, //储存市场价的value值
             formats, //用来判断是否为其他
+            uplode_brand_id = '10',
             systemClassify = ''; //储存系统分类的value值 
 
         //方法定义
@@ -733,7 +735,6 @@
 
                 switch (Identity) {
                     case 'on':
-                        console.log(ele, canonical)
                         if (canonical.test(_this.val()) && _this.val() != '') {
                             _this.parents().nextAll('.msg').css("opacity", '0');
                         } else {
@@ -804,7 +805,6 @@
         dropDown('select(packaging)', 'packaging'); //包装下拉 
         dropDown('select(format)', 'format'); //开本下拉 
         dropDown('select(systemClassify)', 'systemClassify'); //系统分类下拉 
-
         selectDate('.test-date'); //传入出版日期class
         selectDate('.test-date1'); //传入印刷日期class
 
@@ -820,6 +820,22 @@
             var _id = '#' + $(this).attr('id');
             ajaxCascaderTemplate(_id, 'https://open.gog.cn/appz/region/getRegion/', 'init');
         })
+
+        //富文本编辑器图片上传
+        layedit.set({
+            uploadImage: {
+                url: '/upload?opt_type=dispatch&file_type=Image&brand_id=' + uplode_brand_id, //接口url
+                type: 'post', //默认post
+                success: function (data) {
+                    console.log(data)
+                }
+            }
+        });
+
+        //富文本编辑器
+        var editIndex = layedit.build('goods_desc', {
+            height: 280,
+        });
 
         // 展开收缩
         $('.foldAction').on('click', function () {
@@ -923,23 +939,34 @@
                 //如果上传失败
                 if (res.code > 0) {
                     return layer.msg('上传失败');
-                    console.log(res)
+                } else { //上传成功
+                    console.log(res);
+                    pic = res.data.url;
                 }
 
-                //上传成功
-            },
-            error: function () {
-                //演示失败状态，并实现重传
-                var demoText = $('#demoText');
-                demoText.html(
-                    '<span style="color: #FF5722;">上传失败</span> <a class="layui-btn layui-btn-xs demo-reload">重试</a>'
-                );
-                demoText.find('.demo-reload').on('click', function () {
-                    uploadInst.upload();
-                });
             }
         });
 
+        //多图片上传
+        upload.render({
+            elem: '#test2',
+            url: '/upload/',
+            multiple: true,
+            before: function (obj) {
+                //预读本地文件示例，不支持ie8
+                obj.preview(function (index, file, result) {
+                    if ($('#demo3 img').length == '6') {
+                        layer.msg("最多上传6张")
+                    } else {
+                        $('#demo3').append('<img src="' + result + '" alt="' + file.name +
+                            '" class="layui-upload-img">')
+                    }
+                });
+            },
+            done: function (res) {
+                //上传完毕
+            }
+        });
 
 
         //添加
@@ -962,10 +989,11 @@
             // = siginList.every(function (itme) {
             //     return itme.value != ''; //判断所有value不为空
             // })
-            console.log(siginList)
+            console.log(siginList);
             if (formats == '其他') {
                 format = $(".else-format").val();
             }
+            console.log(pic)
             if (arr) {
                 recommend_desc = $(".layui-textarea[name=recommend_desc]").val(); //编辑推荐语
                 author_intro = $(".layui-textarea[name=author_intro]").val(); //作者简介
@@ -995,7 +1023,7 @@
                         ,
                     format: format //开本
                         ,
-                    goods_pic: "ss|ss" //商品图片
+                    goods_pic: goods_pic //商品图片
                         ,
                     intro: intro //内容简介
                         ,
@@ -1011,7 +1039,7 @@
                         ,
                     page_count: siginList[8].value //页数
                         ,
-                    pic: "/shop/1/10/picture/book/20200110/15/20200110151758598.jpg" //封面图
+                    pic: pic //封面图
                         ,
                     preface: preface //前言
                         ,

@@ -140,15 +140,6 @@
 			<!-- 按钮7 -->
 			<button class="layui-btn layui-btn-normal layui-btn-sm">小型按钮3</button>
 			<button class="layui-btn layui-btn-danger layui-btn-sm">小型删除按钮</button>
-			<!-- 固定底部按钮 -->
-			<!-- <div class="bottom-layui-btn">
-				<button type="button" class="layui-btn">保存并提交</button>
-			</div> -->
-			<div class="bottom-layui-btn">
-				<button type="button" class="layui-btn layui-btn-normal">保存草稿</button>
-				<button type="button" class="layui-btn layui-btn-six">保存并提交<i
-						class="layui-icon layui-icon-down"></i></button>
-			</div>
 		</article>
 		<article id="input">
 			<form class="layui-form">
@@ -552,8 +543,8 @@
 			<div>
 			</div>
 		</article>
-    
-    
+
+
 		<article id="cascader">
 			<p class="title">
 				<svg class="icon" aria-hidden="true">
@@ -742,10 +733,10 @@
 		layer.open({
 			title: '提示:',
 			content: '请输入搜索关键字',
-			success:function(data){
-			$(".layui-layer-dialog").addClass('alert');
-			$(".alert .layui-layer-title").show();
-			$('.layui-layer-setwin').show();
+			success: function (data) {
+				$(".layui-layer-dialog").addClass('alert');
+				$(".alert .layui-layer-title").show();
+				$('.layui-layer-setwin').show();
 			}
 		});
 	})

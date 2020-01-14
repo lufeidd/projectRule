@@ -125,9 +125,5 @@ layui.define(['jquery', 'layer'], function (exports) {
     inst.init();
     return thisinputTags.call(inst);
   };
-<<<<<<< HEAD
-  exports('inputTags',inputTags);
-=======
   exports('inputTags', inputTags);
->>>>>>> zw
 }).link('../../css/component/lable.css')
