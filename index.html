@@ -444,7 +444,7 @@
 					</div>
 				</div>
 			</form>
-			<p class="subTitle">表单布局2</p>
+			<p class="subTitle">标题</p>
 			<form class="layui-form" action="">
 				<div class="layui-form-item">
 					<div class="layui-inline">
@@ -499,6 +499,44 @@
 					</div>
 				</div>
 			</form>
+			<p class="subTitle">表格布局1</p>
+			<table class="table-one" width="100%">
+				<colgroup>
+					<col width="350">
+					<col width="350">
+					<col>
+				</colgroup>
+				<thead>
+					<tr>
+						<th>收货人信息：</th>
+						<th>支付及配送方式：</th>
+						<th>发票信息：</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>账 号：13975842188</td>
+						<td>账 号：13975842188</td>
+						<td>账 号：13975842188</td>
+					</tr>
+					<tr>
+						<td>账 号：13975842188</td>
+						<td>账 号：13975842188</td>
+						<td>账 号：13975842188</td>
+					</tr>
+					<tr>
+						<td>账 号：13975842188</td>
+						<td>账 号：13975842188</td>
+						<td>账 号：13975842188</td>
+					</tr>
+				</tbody>
+				<tfoot>
+					<tr>
+						<td colspan="2"><span class="main-color">备注：</span>备注文案备注备注文案备注备注文案备注备注文案备注备注文案备注备注文案备注备注文案备注备注文案备注备注文案备注备注文案备注备注文
+						</td>
+						<td align="right"><button type="button" class="layui-btn">按钮</button></td>
+					</tr>
+			</table>
 		</article>
 		<article id="lable">
 			<p class="title">
@@ -724,10 +762,10 @@
 		layer.open({
 			title: '提示:',
 			content: '请输入搜索关键字',
-			success:function(data){
-			$(".layui-layer-dialog").addClass('alert');
-			$(".alert .layui-layer-title").show();
-			$('.layui-layer-setwin').show();
+			success: function (data) {
+				$(".layui-layer-dialog").addClass('alert');
+				$(".alert .layui-layer-title").show();
+				$('.layui-layer-setwin').show();
 			}
 		});
 	})

@@ -28,3 +28,6 @@
 .layui-breadcrumb a cite {
     color: #333;
 }
+.layui-breadcrumb a cite.main-color {
+    color: #f05654;
+}

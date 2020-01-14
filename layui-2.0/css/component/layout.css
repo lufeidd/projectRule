@@ -66,3 +66,30 @@
 .layui-form-item .layui-inline {
     margin-right: 5px;
 }
+.table-one {
+    background-color: #F5F5F5;
+    border: 1px #E3E3E3 solid;
+    border-collapse: collapse;
+    min-width: 1050px;
+}
+.table-one td {
+    font-size: 14px;
+    color: #666;
+    padding: 10px 20px;
+    /* text-align: left; */
+    vertical-align: top;
+}
+.table-one th {
+    font-weight: bold;
+    font-size: 14px;
+    color: #333;
+    padding: 20px 20px 10px 20px;
+    text-align: left;
+    vertical-align: top;
+}
+.table-one tfoot {
+    border-top: 1px #E3E3E3 solid;
+}
+.table-one tfoot td {
+    padding: 20px;
+}
