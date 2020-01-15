@@ -94,6 +94,7 @@
     cursor: pointer;
     position: absolute;
     right: 20px;
+    top: 35%;
 }
 .tableIcon-content{
     position: absolute;
