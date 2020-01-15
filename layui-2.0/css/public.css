@@ -396,10 +396,6 @@ body.large .layui-side.large {
 	float: left;
 }
 /* 浮右 */
-<<<<<<< HEAD
-.float-right{
-	float: right;
-=======
 .float-right {
     float: right;
 }
