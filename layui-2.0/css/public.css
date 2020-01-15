@@ -113,6 +113,11 @@ body.small .layui-side.small {
     width: 60px;
 }
 
+.layui-nav .layui-this:after, .layui-nav-bar, .layui-nav-tree .layui-nav-itemed:after,
+.layui-nav .layui-nav-child dd.layui-this a, .layui-nav-child dd.layui-this {
+    background-color: #f05654;
+}
+
 .layui-bg-black {
     background-color: #262A35 !important;
 }
@@ -408,36 +413,36 @@ body.large .layui-side.large {
 
 /* 隐藏滚动条 */
 ::-webkit-scrollbar {
-	width: 0px;
-	height: 10px;
+    width: 0px;
+    height: 10px;
 }
 
 ::-ms-scrollbar {
-	width: 0px;
-	height: 0;
+    width: 0px;
+    height: 0;
 }
 
 ::scrollbar[orient="vertical"] {
-	min-width: 0px !important;
+    min-width: 0px !important;
 }
 
 /* 滚动条的滑轨背景颜色 */
 ::-webkit-scrollbar-track {
-	background-color: rgba(0, 0, 0, .05);
+    background-color: rgba(0, 0, 0, .05);
 }
 
 /* 滑块颜色 */
 ::-webkit-scrollbar-thumb {
-	background-color: rgba(0, 0, 0, .15);
+    background-color: rgba(0, 0, 0, .15);
 }
 
 /* 滑轨两头的监听按钮颜色 */
 ::-webkit-scrollbar-button {
-	height: 0;
-	background-color: rgba(0, 0, 0, .05);
+    height: 0;
+    background-color: rgba(0, 0, 0, .05);
 }
 
 /* 横向滚动条和纵向滚动条相交处尖角的颜色 */
 ::-webkit-scrollbar-corner {
-	background-color: black;
+    background-color: black;
 }
