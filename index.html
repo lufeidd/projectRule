@@ -396,9 +396,20 @@
 				<svg class="icon" aria-hidden="true">
 					<use xlink:href="#iconguanlian"></use>
 				</svg>图片比例</p>
-			<div class="pic-one">
-				<div class="noPicture">
-					<img src="" alt="">
+			<button type="button" class="layui-btn layui-btn-warm" id="uploadOne">+单张上传</button>
+			<div class="picPicture" style="margin: 10px 0;">
+				<div class="pic-one">
+					<div class="noPicture">
+						尚未上传
+					</div>
+				</div>
+			</div>
+			<button type="button" class="layui-btn layui-btn-warm" id="uploadBatch">+批量上传</button>
+			<div class="picPicture" style="margin: 10px 0;">
+				<div class="pic-one">
+					<div class="noPicture">
+						尚未上传
+					</div>
 				</div>
 			</div>
 			<div class="pic-two">
@@ -771,6 +782,72 @@
 					</tbody>
 				</table>
 			</div>
+			<!--数据表格4-->
+			<div class="table">
+				<table class="layui-table" style="table-layout:fixed;margin:0;">
+					<colgroup>
+						<col width="40">
+						<col width="120">
+						<col width="15%">
+						<col width="35%">
+						<col width="15%">
+						<col width="15%">
+						<col width="20%">
+					</colgroup>
+					<thead>
+					<tr>
+						<th>
+							<form class="layui-form checkAll" action="">
+								<input type="checkbox" lay-filter="checkAll" lay-skin="primary" >
+							</form>
+						</th>
+						<th style="text-align:center;">商品ID</th>
+						<th style="text-align:center;">商品图片</th>
+						<th style="text-align:left;">专辑名称</th>
+						<th style="text-align:center;">销售价</th>
+						<th style="text-align:center;">原购数量</th>
+						<th style="text-align:center;">操作</th>
+					</tr>
+					</thead>
+					<tbody>
+					<tr>
+						<td>
+							<form class="layui-form" action="">
+								<input type="checkbox" name="item_id" value="" lay-skin="primary" class="test" lay-filter="checkChild">
+							</form>
+						</td>
+						<td class="textOverflow" style="text-align:left;">1002545585/234890007866525</td>
+						<td class="tableTitle" style="text-align: center;">
+							<div class="pic-two">
+								<img src="https://mhuoba.oss-cn-hangzhou.aliyuncs.com/picture/audio/20190812/18/20190812183751909.jpg!w81h50" alt="">
+							</div>
+						</td>
+						<td style="text-align:left;">
+							<p class="textTwoOver">商品标题最多两行题最多两行商品标题最多两行题最多两行 商品标题最多两行商品标题最多两行题最多两行商品标题最多两行题最多两行</p>
+						</td>
+						<td style="text-align:center;">￥76.20</td>
+						<td style="text-align:center;">211155</td>
+						<td style="text-align:center;white-space: nowrap;">
+							<button type="button" class="layui-btn layui-btn-five">编辑</button>
+							<button type="button" class="layui-btn layui-btn-five">删除</button>
+						</td>
+					</tr>
+					</tbody>
+					<tfoot>
+					<tr>
+						<td colspan="9">
+							<div class="footFlex">
+								<div class="footText">商品总额: ¥84.90</div>
+								<div class="footText">满减: -¥1.00</div>
+								<div class="footText">优惠券: -¥4.90</div>
+								<div class="footText fg">运费: ¥1.00</div>
+								<div class="sum">应付总额: ¥82.22</div>
+							</div>
+						</td>
+					</tr>
+					</tfoot>
+				</table>
+			</div>
 		</article>
 		<article id="popup">
 			<p class="title">
@@ -812,17 +889,64 @@
 <script type="text/javascript" src="layui-2.0/layui.js"></script>
 <script type="text/javascript" src="layui-2.0/jquery3.4.1.js"></script>
 <script type="text/javascript" src="layui-2.0/public.js"></script>
+<script type="text/javascript" src="layui-2.0/template/inputTags/inputTags.js"></script>
 <script type="text/javascript">
 	// iframe当前标识
 	var dataId = '';
 	var dataResult = {};
 
 	//初始化layui
-	layui.use(['element', 'laydate', 'layer', 'form'], function () {
+	layui.use(['element', 'laydate', 'layer', 'form' ,'upload'], function () {
 		var element = layui.element,
 			form = layui.form,
 			laydate = layui.laydate,
-			$ = layui.$;
+			$ = layui.$;;
+			var upload = layui.upload;
+
+			//图片上传 之 主图和其他附图
+			upload.render({
+				elem: '#uploadOne'
+				, accept: 'file' //普通文件
+				, exts: 'jpeg|jpg|png'
+				, size: 5 * 1024
+				,multiple: false
+				, url: '/upload?opt_type=album&file_type=Image&image_type=pic&brand_id=26'
+				, before: function (obj) {
+				}
+				, done: function (res, index, upload) {
+					if(res.code === 1) {
+						layer.msg(res.msg);
+					}else{
+
+					}
+				}
+				, error: function (index) {
+					layer.msg('上传失败');
+					return false;
+				}
+			});
+		//图片上传 之 主图和其他附图
+		upload.render({
+			elem: '#uploadBatch'
+			, accept: 'file' //普通文件
+			, exts: 'jpeg|jpg|png'
+			, size: 5 * 1024
+			,multiple: true
+			, url: '/upload?opt_type=album&file_type=Image&image_type=pic&brand_id=26'
+			, before: function (obj) {
+			}
+			, done: function (res, index, upload) {
+				if(res.code === 1) {
+					layer.msg(res.msg);
+				}else{
+
+				}
+			}
+			, error: function (index) {
+				layer.msg('上传失败');
+				return false;
+			}
+		});
 
 		// $.ajax
 
@@ -892,8 +1016,9 @@
 					$('.high-search-iframe').css('margin-top', '0')
 				}
 				break;
-			case '':
-				break;
+				case 'lable-iframe':
+					$('iframe[name=lableChoose]').css('height', height);
+					break;
 			default:
 				break;
 		}

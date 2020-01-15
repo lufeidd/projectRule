@@ -121,3 +121,23 @@
     border-width: 15px 15px 0 15px;
     border-color: #FFF transparent transparent transparent;
 }
+.table tfoot tr{
+    height: 60px;
+}
+/*flex布局*/
+.table .footFlex{
+    display: flex;
+    align-items: center;
+}
+.table .footFlex .fg{
+    flex-grow: 1;
+}
+.table .footFlex .footText{
+    padding-right: 60px;
+    font-size: 14px;
+}
+.table .footFlex .sum{
+    flex-shrink: 0;
+    font-size: 16px;
+    color: #F05654;
+}
