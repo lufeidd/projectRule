@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>总览-火把知识</title>
+    <meta charset="utf-8">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <link rel="stylesheet" type="text/css" href="layui-2.0/css/layui.css">
+    <!-- 样式重定义 -->
+    <link rel="stylesheet" type="text/css" href="layui-2.0/css/public.css">
+    <!-- 字体图标 -->
+    <script src="layui-2.0/font/iconfont.js"></script>
+</head>
+
+<body class="large">
+    <script>
+        if (localStorage.getItem('slideState') == 'small') {
+            document.querySelector('body').setAttribute('class', 'small');
+        } else {
+            document.querySelector('body').setAttribute('class', 'large');
+        }
+    </script>
+    <div class="layui-layout layui-layout-admin">
+        <!-- 供应商logo -->
+        <div class="layui-logo">
+            <img src="layui-2.0/images/logo.png" width="26px" height="27px">
+            <span class="slogan">火把知识服务平台</span>
+            <div class="foldAction">
+                <i class="layui-icon layui-icon-shrink-right"></i>
+                <i class="layui-icon layui-icon-spread-left"></i>
+            </div>
+        </div>
+
+        <!-- 头部 栏目 -->
+        <div class="layui-header">
+            <!-- 头部导航栏右边部分 -->
+            <ul class="layui-nav layui-layout-right">
+                <li class="layui-nav-item">
+                    <a href="#">
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#iconmessage-line"></use>
+                        </svg>
+                        <span>私信</span>
+                        <span class="layui-badge-dot"></span>
+                    </a>
+                </li>
+                <li class="layui-nav-item">
+                    <a href="#">
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#iconnews-line"></use>
+                        </svg>
+                        <span>通知中心</span>
+                        <span class="layui-badge-dot"></span>
+                    </a>
+                </li>
+                <li class="layui-nav-item ">
+                    <a href="#">
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#iconhelp-line"></use>
+                        </svg>
+                        <span>帮助中心</span>
+                    </a>
+                </li>
+                <li class="layui-nav-item">
+                    <a href="#">
+                        <img src="http://t.cn/RCzsdCq" class="layui-nav-img">
+                        <span>用户名</span>
+                    </a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="#">账号主页</a></dd>
+                        <dd><a href="#">修改密码</a></dd>
+                        <dd><a class="logout" href="#">退出登录</a></dd>
+                    </dl>
+                </li>
+            </ul>
+        </div>
+
+        <!-- 侧边栏部分 -->
+        <!-- 展开 -->
+        <div class="layui-side layui-bg-black large">
+            <div class="layui-side-scroll">
+                <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
+                <ul class="layui-nav layui-nav-tree">
+                    <li class="layui-nav-item">
+                        <a href="#">
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#iconoverview-block"></use>
+                            </svg>
+                            <span>总览</span>
+                        </a>
+                    </li>
+                    <li class="layui-nav-item layui-nav-itemed">
+                        <a href="#">
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#iconsource-block"></use>
+                            </svg>
+                            <span>发布管理</span>
+                        </a>
+                        <dl class="layui-nav-child">
+                            <dd><a href="#">文章列表</a></dd>
+                            <dd class="layui-this"><a href="#">专辑列表</a></dd>
+                        </dl>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- 收起 -->
+        <div class="layui-side layui-bg-black small">
+            <ul class="layui-nav layui-layout-right">
+                <li class="layui-nav-item">
+                    <a href="#">
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#iconoverview-block"></use>
+                        </svg>
+                    </a>
+                </li>
+                <li class="layui-nav-item">
+                    <a href="#">
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#iconsource-block"></use>
+                        </svg>
+                    </a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="#">文章列表</a></dd>
+                        <dd><a href="#">专辑列表</a></dd>
+                    </dl>
+                </li>
+            </ul>
+        </div>
+
+        <!-- 面包屑 -->
+        <div class="breadcrumb-container">
+            <span class="layui-breadcrumb">
+                <a href="/">首页</a>
+                <a href="/frame.html">框架</a>
+                <a><cite>导航元素</cite></a>
+            </span>
+        </div>
+        <!-- 主体内容 -->
+        <div class="layui-body">
+            <div class="layui-tab layui-tab-brief contentBox" lay-filter="docDemoTabBrief">
+                <ul class="layui-tab-title">
+                    <li class="layui-this">商品销售订单详情</li>
+                </ul>
+                <div class="layui-tab-content">
+                    <div class="rule">
+                        此订单为代发订单。
+                    </div>
+                    <!-- 订单 -->
+                    <div class="order-details">
+                        <div class="order-number"><span>订单号： </span> <span class="order-content">深渊上的火</span></div>
+                        <div class="buyer"><span> 买家下单时间： </span><span class="buyerOrderTime">2019-12-04 18:24:01</span>
+                        </div>
+                        <div class="order-status"><span>订单状态： </span> <span class="status main-color">已取消</span></div>
+                    </div>
+                    <!-- 订单信息 -->
+                    <div class="order-information">
+                        <!-- 收货人信息： -->
+                        <div class="information">
+                            <p>收货人信息：</p>
+                            <ul>
+                                <li> <em>账 &nbsp; &nbsp;&nbsp;号：</em><span class="account">13975842188</span></li>
+                                <li><em>收 货 人：</em><span class="consignee">张三</span></li>
+                                <li><em>手机号码：</em><span class="cellphone-number">19828738273</span></li>
+                                <li><em>手机号码：</em><span class="">19828738273</span></li>
+                                <li><em>邮 &nbsp; &nbsp;&nbsp;编：</em><span class="postal-code">310014</span></li>
+                            </ul>
+                        </div>
+                        <!-- 支付及配送方式： -->
+                        <div class="information">
+                            <p>支付及配送方式：</p>
+                            <ul>
+                                <li> <em>支付方式：</em><span class="on-line">网上支付</span></li>
+                                <li><em>送货方式：</em><span class="homeDeliveryService">送货上门</span></li>
+                                <li><em>支付金额：￥</em><span class="payment-amount ">83.22</span></li>
+                                <li><em>运 &nbsp; &nbsp; &nbsp;&nbsp;费：￥</em><span class="freight">0.00</span></li>
+                                <li><em>发货日期：</em><span class="delivery-date">2015-04-06 09:29:43</span></li>
+                                <li><em>发货公司：</em><span class="delivery-company">顺丰速运（运单号：589624884791）</span></li>
+                            </ul>
+                        </div>
+                        <!-- 发票信息： -->
+                        <div class="information">
+                            <p>发票信息：</p>
+                            <ul>
+                                <li> <em>发片类型：</em><span class="electronic-invoice ">电子发票</span></li>
+                                <li><em>开票单位：</em><span class="individual">个人</span></li>
+                                <li><em>开票金额：¥</em><span class="invoice-amount ">83.22</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="remarks">
+                        <div class="remarks-information">
+                            <span class="main-color">备注：</span>
+                            <span class="remarks-content">备注文案备注备注文案备注备注文案备注备注文案备注备注文案备注备注文案备注备注文案备注备注文案备注
+                                备注文案备注备注文案备注备注文案备注备注文案备注备注文案备注备注文案备注备注文案备注备注文案备注备注文案备注备注文案备注备注
+                                文案备注备注文文案备注备注文案备注备注文案备注</span>
+                        </div>
+                        <div class="preserve-remarks">
+                            <button type="button" class="layui-btn">保存备注</button>
+                        </div>
+                    </div>
+
+                    <!--商品清单  -->
+                    <div class="layui-tab-content">
+                        <p class="form-title" style="padding-bottom:20px;">商品清单：</p>
+                        <div class="table">
+                            <table class="layui-table" style="table-layout:fixed;margin:0;">
+                                <colgroup>
+                                    <col width="5%">
+                                    <col width="20%">
+                                    <col width="15%">
+                                    <col width="20%">
+                                    <col width="10%">
+                                    <col width="10%">
+                                    <col width="20%">
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th style="text-align:center;">
+                                            <form class="layui-form checkAll" action="">
+                                                <input type="checkbox" lay-filter="checkAll" lay-skin="primary">
+                                            </form>
+                                        </th>
+                                        <th style="text-align:left;">商品ID</th>
+                                        <th style="text-align:center;">商品图片</th>
+                                        <th style="text-align:center;">专辑名称</th>
+                                        <th style="text-align:center;">销售价</th>
+                                        <th style="text-align:center;">原购数量</th>
+                                        <th style="text-align:center;">操作</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td style="text-align:center;">
+                                            <form class="layui-form" action="">
+                                                <input type="checkbox" name="item_id" value="" lay-skin="primary"
+                                                    class="test" lay-filter="checkChild">
+                                            </form>
+                                        </td>
+                                        <td class="textOverflow" style="text-align:left;">1002545585/234890007866525
+                                        </td>
+                                        <td class="tableTitle" style="text-align: center;">
+                                            <div class="pic-two">
+                                                <img src="https://mhuoba.oss-cn-hangzhou.aliyuncs.com/picture/audio/20190812/18/20190812183751909.jpg!w81h50"
+                                                    alt="">
+                                            </div>
+                                        </td>
+                                        <td style="text-align:center;">
+                                            <p class="textTwoOver">商品标题最多两行题最多两行商品标题最多两行题最多两行
+                                                商品标题最多两行商品标题最多两行题最多两行商品标题最多两行题最多两行</p>
+                                        </td>
+                                        <td style="text-align:center;">￥76.20</td>
+                                        <td style="text-align:center;">211155</td>
+                                        <td style="text-align:center;">
+                                            <button type="button" class="layui-btn layui-btn-five">编辑</button>
+                                            <button type="button" class="layui-btn layui-btn-danger">删除</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                        </div>
+                        <!-- 金额明细 -->
+                        <div class="price-detail">
+                            <div class="detail-left">
+                                <ul>
+                                    <li>
+                                        商品总额: ¥<span>84.90</span>
+                                    </li>
+                                    <li>
+                                        满减: -¥<span>84.90</span>
+                                    </li>
+                                    <li>
+                                        优惠券: -¥<span>1.00</span>
+                                    </li>
+                                    <li>
+                                        运费: ¥<span>4.90</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="detail-right main-color">
+                                应付总额: ¥<span>82.22</span>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 底部 -->
+        <div class="layui-footer"></div>
+    </div>
+</body>
+
+</html>
+<script type="text/javascript" src="layui-2.0/layui.js"></script>
+<script type="text/javascript">
+    layui.use(['element', 'jquery', 'form', 'layer', 'table'], function () {
+        // 变量声明
+        var $ = layui.jquery,
+            form = layui.form,
+            table = layui.table,
+            element = layui.element,
+            layer = layui.layer;
+
+        //方法定义
+
+        function GetQueryString(name) { //获取地址栏上的数据
+            var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+            var r = window.location.search.substr(1).match(reg);
+            if (r != null) return unescape(r[2]);
+            return null;
+        }
+
+        // 展开收缩
+        $('.foldAction').on('click', function () {
+            var body = $(this).parents('body');
+            var slideState = '';
+            // 展开隐藏图标切换
+            if ($(body).hasClass('small')) {
+                $(body).removeClass('small').addClass('large');
+                slideState = 'large';
+            } else {
+                $(body).removeClass('large').addClass('small');
+                slideState = 'small';
+            }
+            localStorage.setItem('slideState', slideState);
+        })
+
+        //表格全选
+        form.on('checkbox(checkAll)', function (data) {
+            if (data.elem.checked) {
+                $('.table tbody').find('input[lay-filter="checkChild"]').prop('checked', true)
+            } else {
+                $('.table tbody').find('input[lay-filter="checkChild"]').prop('checked', false)
+            }
+            form.render();
+        })
+
+        //删除
+        $(".layui-btn-danger").click(function () {
+            $(this).parents('tr').remove()
+        })
+    });
+</script>

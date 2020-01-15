@@ -32,8 +32,16 @@
 @import url('component/select.css');
 /* 弹窗 */
 @import url('component/popup.css');
+<<<<<<< HEAD
 /* 代发商品详情 */
 @import url('component/daifashangpinxiangqin.css');
+=======
+/* 日期选择 */
+@import url('component/date.css');
+/* 徽章 */
+@import url('component/badge.css');
+
+>>>>>>> 42a60ec4a251e0919fc64e4de92200e0afccd34d
 /*
  * 标签重定义
  */
@@ -389,6 +397,52 @@ body.large .layui-side.large {
 	float: left;
 }
 /* 浮右 */
+<<<<<<< HEAD
 .float-right{
 	float: right;
+=======
+.float-right {
+    float: right;
+}
+
+.layui-btn+.layui-btn {
+    margin-left: 0;
+}
+
+
+/* 隐藏滚动条 */
+::-webkit-scrollbar {
+	width: 0px;
+	height: 10px;
+}
+
+::-ms-scrollbar {
+	width: 0px;
+	height: 0;
+}
+
+::scrollbar[orient="vertical"] {
+	min-width: 0px !important;
+}
+
+/* 滚动条的滑轨背景颜色 */
+::-webkit-scrollbar-track {
+	background-color: rgba(0, 0, 0, .05);
+}
+
+/* 滑块颜色 */
+::-webkit-scrollbar-thumb {
+	background-color: rgba(0, 0, 0, .15);
+}
+
+/* 滑轨两头的监听按钮颜色 */
+::-webkit-scrollbar-button {
+	height: 0;
+	background-color: rgba(0, 0, 0, .05);
+}
+
+/* 横向滚动条和纵向滚动条相交处尖角的颜色 */
+::-webkit-scrollbar-corner {
+	background-color: black;
+>>>>>>> 42a60ec4a251e0919fc64e4de92200e0afccd34d
 }

@@ -1,0 +1,42 @@
+ .date .layui-inline {
+    width: 260px;
+}
+
+.layui-laydate {
+    border: 1px solid #F0F0F0 !important;
+    box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.16) !important;
+    border-radius: 4px !important;
+    color: #333333 !important;
+}
+.layui-laydate .layui-laydate-main{
+    width: 260px;
+}
+.laydate-set-ym {
+    color: #333333;
+}
+.layui-laydate .layui-laydate-footer{
+    border-top: 1px solid #f0f0f0;
+}
+.laydate-main-list-0 .layui-laydate-content td:hover,
+.laydate-main-list-0 .layui-laydate-list li:hover {
+    background-color: #F0F0F0;
+}
+
+.laydate-main-list-0 .layui-laydate-content td {
+    color: #333;
+}
+
+.layui-laydate .layui-this {
+    background-color: #54ACF0 !important;
+}
+
+.laydate-main-list-0 .layui-laydate-header i:hover,
+.laydate-main-list-0 .layui-laydate-header span:hover,
+.layui-laydate .layui-laydate-footer span:hover {
+    color: #54ACF0;
+}
+
+.layui-laydate .layui-laydate-footer .laydate-btns-clear,
+.layui-laydate .layui-laydate-footer .laydate-btns-now {
+    color: #999999;
+}

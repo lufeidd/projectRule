@@ -1,47 +1,34 @@
-// 展开收缩
-$('body').on('click', '.foldAction', function () {
-    var body = $(this).parents('body');
-    var slideState = '';
-    // 展开隐藏图标切换
-    if ($(body).hasClass('small')) {
-        $(body).removeClass('small').addClass('large');
-        slideState = 'large';
-    } else {
-        $(body).removeClass('large').addClass('small');
-        slideState = 'small';
-    }
-    localStorage.setItem('slideState', slideState);
-})
-// 文本域第一种限制输入字数
-$('body').on('input', '.input-second-container .layui-input', function () {
-    var input_first_val = $(this).val().trim();
-    var _max_number = Number($(this).next().children('.input-max-number').text());
-    if (input_first_val.length <= _max_number) {
-        $(this).next().children('.input-on-number').text(input_first_val.length)
-    } else {
-        var _limit_number = input_first_val.toString().substring(0, _max_number);
-        $(this).next().children('.input-on-number').text(_limit_number.length)
-        $(this).val(_limit_number)
-    }
-})
-// 选项卡第二种切换
-$('body').on('click', '.tab-second-container .tab-second-content', function () {
-    $(this).addClass('active')
-    $(this).siblings().removeClass('active')
-})
-// 文本域第五种限制输入字数
-$('body').on('input', '.input-five-container .layui-textarea', function () {
-    var input_first_val = $(this).val().trim();
-    var _max_number = Number($(this).parents('.input-five-container').find('.input-max-number').text());
-    if (input_first_val.length <= _max_number) {
-        $(this).parents('.input-five-container').find('.input-on-number').text(input_first_val.length)
-    } else {
-        var _limit_number = input_first_val.toString().substring(0, _max_number);
-        $(this).parents('.input-five-container').find('.input-on-number').text(_limit_number.length)
-        $(this).val(_limit_number)
-    }
-})
-
+(function publicJsUse() {
+    // 文本域第一种限制输入字数
+    $('body').on('input', '.input-second-container .layui-input', function () {
+        var input_first_val = $(this).val().trim();
+        var _max_number = Number($(this).next().children('.input-max-number').text());
+        if (input_first_val.length <= _max_number) {
+            $(this).next().children('.input-on-number').text(input_first_val.length)
+        } else {
+            var _limit_number = input_first_val.toString().substring(0, _max_number);
+            $(this).next().children('.input-on-number').text(_limit_number.length)
+            $(this).val(_limit_number)
+        }
+    })
+    // 选项卡第二种切换
+    $('body').on('click', '.tab-second-container .tab-second-content', function () {
+        $(this).addClass('active')
+        $(this).siblings().removeClass('active')
+    })
+    // 文本域第五种限制输入字数
+    $('body').on('input', '.input-five-container .layui-textarea', function () {
+        var input_first_val = $(this).val().trim();
+        var _max_number = Number($(this).parents('.input-five-container').find('.input-max-number').text());
+        if (input_first_val.length <= _max_number) {
+            $(this).parents('.input-five-container').find('.input-on-number').text(input_first_val.length)
+        } else {
+            var _limit_number = input_first_val.toString().substring(0, _max_number);
+            $(this).parents('.input-five-container').find('.input-on-number').text(_limit_number.length)
+            $(this).val(_limit_number)
+        }
+    })
+})()
 
 // 搜索组件
 function searchTemplate() {
@@ -100,14 +87,27 @@ function searchTemplate() {
         // searchAction();
         // console.log(cascader.getChooseData('#demo1'))
     })
+
+    // 搜索
+    // function searchAction() {
+    // 设置iframe当前标识
+    // parent.setIframeDataId('table0');
+    // parent.searchAction(data);
+    // }
+    // searchAction(999)
+    // 父亲操作儿子-初始化
+    // function initSearch(argument) {
+    // alert(argument)
+    // }
+
+    // });
 }
 
 // ajaxCascader组件模板
-function ajaxCascaderTemplate(_base, _elem, _url, _type) {
-
+function ajaxCascaderTemplate(_elem, _url, _type) {
     // 配置文件
     layui.config({
-        base: _base
+        base: '../layui-2.0/template/ajaxCascader/'
         , version: '1.6'
     });
     layui.use(['jquery', 'ajaxCascader'], function () {
@@ -124,8 +124,8 @@ function ajaxCascaderTemplate(_base, _elem, _url, _type) {
                     //     // minLabel: 1,
                     //     // placeholder: '请输入搜索词'
                     // }
-                    // ,clear: true  
-                    ,width:'471'          
+                    // ,clear: true
+                    ,width:'471'            
                     , value: 0
                     , getChildren: function (value, callback) {
                         var data = []
@@ -146,6 +146,7 @@ function ajaxCascaderTemplate(_base, _elem, _url, _type) {
                         });
                     },
                     clicklast: true,
+                    // chooseData: ["520000000000", "520100000000"]
                 });
                 break;
             case 'default':
@@ -158,6 +159,8 @@ function ajaxCascaderTemplate(_base, _elem, _url, _type) {
                     },
                     { value: '3', label: '333333' },
                 ]
+
+
                 // 直接赋值模式
                 cascader.load({
                     elem: _elem,
@@ -166,8 +169,34 @@ function ajaxCascaderTemplate(_base, _elem, _url, _type) {
                     //     label:'name'
                     // }                  
                     data: codeData,
-                    clicklast: true,
+                    showlast: true,
+                    // width: '100%',
+                    // height: 30,
                     chooseData: ['3']
+                    // [
+                    //     {"id":"0","name":"一般职业"},
+                    //     {"id":"1","name":"农牧业"},
+                    //     {"id":"10","name":"卫生"},
+                    //     {"id":"11","name":"娱乐业"},
+                    //     {"id":"12","name":"文教"},
+                    //     {"id":"13","name":"宗教"},
+                    //     {"id":"14","name":"公共事业"},
+                    //     {"id":"15","name":"商业"},
+                    //     {"id":"16","name":"金融．保险业"},
+                    //     {"id":"17","name":"服务业"},
+                    //     {"id":"18","name":"家庭管理"},
+                    //     {"id":"19","name":"治安人员"},
+                    //     {"id":"2","name":"渔业"},
+                    //     {"id":"20","name":"体育"},
+                    //     {"id":"21","name":"其它"},
+                    //     {"id":"3","name":"木材森林业"},
+                    //     {"id":"4","name":"矿业 采石业"},
+                    //     {"id":"5","name":"交通运输业"},
+                    //     {"id":"6","name":"餐旅业"},
+                    //     {"id":"7","name":"建筑工程业"},
+                    //     {"id":"8","name":"制造业"},
+                    //     {"id":"9","name":"新闻出版广告业"}
+                    // ]
                 });
                 break;
             default:

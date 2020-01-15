@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>总览-火把知识</title>
+    <meta charset="utf-8">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <link rel="stylesheet" type="text/css" href="layui-2.0/css/layui.css">
+    <!-- 样式重定义 -->
+    <link rel="stylesheet" type="text/css" href="layui-2.0/css/public.css">
+    <!-- 字体图标 -->
+    <script src="layui-2.0/font/iconfont.js"></script>
+</head>
+
+<body class="large">
+    <script>
+        if (localStorage.getItem('slideState') == 'small') {
+            document.querySelector('body').setAttribute('class', 'small');
+        } else {
+            document.querySelector('body').setAttribute('class', 'large');
+        }
+    </script>
+    <div class="layui-layout layui-layout-admin">
+        <!-- 供应商logo -->
+        <div class="layui-logo">
+            <img src="layui-2.0/images/logo.png" width="26px" height="27px">
+            <span class="slogan">火把知识服务平台</span>
+            <div class="foldAction">
+                <i class="layui-icon layui-icon-shrink-right"></i>
+                <i class="layui-icon layui-icon-spread-left"></i>
+            </div>
+        </div>
+
+        <!-- 头部 栏目 -->
+        <div class="layui-header">
+            <!-- 头部导航栏右边部分 -->
+            <ul class="layui-nav layui-layout-right">
+                <li class="layui-nav-item">
+                    <a href="#">
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#iconmessage-line"></use>
+                        </svg>
+                        <span>私信</span>
+                        <span class="layui-badge-dot"></span>
+                    </a>
+                </li>
+                <li class="layui-nav-item">
+                    <a href="#">
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#iconnews-line"></use>
+                        </svg>
+                        <span>通知中心</span>
+                        <span class="layui-badge-dot"></span>
+                    </a>
+                </li>
+                <li class="layui-nav-item ">
+                    <a href="#">
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#iconhelp-line"></use>
+                        </svg>
+                        <span>帮助中心</span>
+                    </a>
+                </li>
+                <li class="layui-nav-item">
+                    <a href="#">
+                        <img src="http://t.cn/RCzsdCq" class="layui-nav-img">
+                        <span>用户名</span>
+                    </a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="#">账号主页</a></dd>
+                        <dd><a href="#">修改密码</a></dd>
+                        <dd><a class="logout" href="#">退出登录</a></dd>
+                    </dl>
+                </li>
+            </ul>
+        </div>
+
+        <!-- 侧边栏部分 -->
+        <!-- 展开 -->
+        <div class="layui-side layui-bg-black large">
+            <div class="layui-side-scroll">
+                <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
+                <ul class="layui-nav layui-nav-tree">
+                    <li class="layui-nav-item">
+                        <a href="#">
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#iconoverview-block"></use>
+                            </svg>
+                            <span>总览</span>
+                        </a>
+                    </li>
+                    <li class="layui-nav-item layui-nav-itemed">
+                        <a href="#">
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#iconsource-block"></use>
+                            </svg>
+                            <span>发布管理</span>
+                        </a>
+                        <dl class="layui-nav-child">
+                            <dd><a href="#">文章列表</a></dd>
+                            <dd class="layui-this"><a href="#">专辑列表</a></dd>
+                        </dl>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- 收起 -->
+        <div class="layui-side layui-bg-black small">
+            <ul class="layui-nav layui-layout-right">
+                <li class="layui-nav-item">
+                    <a href="#">
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#iconoverview-block"></use>
+                        </svg>
+                    </a>
+                </li>
+                <li class="layui-nav-item">
+                    <a href="#">
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#iconsource-block"></use>
+                        </svg>
+                    </a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="#">文章列表</a></dd>
+                        <dd><a href="#">专辑列表</a></dd>
+                    </dl>
+                </li>
+            </ul>
+        </div>
+
+        <!-- 面包屑 -->
+        <div class="breadcrumb-container">
+            <span class="layui-breadcrumb">
+                <a href="/">首页</a>
+                <a href="/frame.html">框架</a>
+                <a><cite>导航元素</cite></a>
+            </span>
+        </div>
+        <!-- 主体内容 -->
+        <div class="layui-body">
+            <div class="layui-tab layui-tab-brief contentBox" lay-filter="docDemoTabBrief">
+                <ul class="layui-tab-title">
+                    <li class="layui-this">代发订单详情</li>
+                </ul>
+                <div class="layui-tab-content">
+                    <div class="rule">
+                        关联商户销售订单 <span class="sub1-color">2154548789879</span>
+                    </div>
+                    <!--代发订单信息  -->
+                    <div class="substitute-information">
+                        <div class="padd-left">代发订单信息</div>
+                        <div class="substitute-left">
+                            <ul>
+                                <li>
+                                    <em>当前状态：</em>
+                                    <span class="deduct">扣款中</span>
+                                </li>
+                                <li>
+                                    <em>代发订单号：</em>
+                                    <span class="code">1</span>
+                                </li>
+                                <li>
+                                    <em>创建时间：</em>
+                                    <span class="creation-time">2019-05-06 </span>
+                                    <span class="creation-hms">23:22:21</span>
+                                </li>
+                                <li>
+                                    <em>同步时间：</em>
+                                    <span class="synchronization-time">2019-05-06 </span>
+                                    <span class="synchronization-hms">23:22:21</span>
+                                </li>
+                                <li>
+                                    <em>发货时间：</em>
+                                    <span class="delivery-time ">2019-05-06 </span>
+                                    <span class="delivery-hms">23:22:21</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="substitute-right">
+                            <ul>
+                                <li>
+                                    <em>销售订单状态：</em>
+                                    <span class="order-status">代发货</span>
+                                </li>
+                                <li>
+                                    <em>用户下单时间：</em>
+                                    <span class="order-itme">2019-05-06 </span>
+                                    <span class="order-hms">23:22:21</span>
+                                </li>
+                                <li>
+                                    <em>用户支付时间：</em>
+                                    <span class="timeOfPayment">2019-05-06 </span>
+                                    <span class="payment-hms">23:22:21</span>
+                                </li>
+                                <li>
+                                    <em>用户收货时间：</em>
+                                    <span class="receiving-time">2019-05-06</span>
+                                    <span class="receiving-hms">23:22:21</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- 商品信息 -->
+                    <div class="layui-tab-content">
+                        <p class="form-title" style="padding-bottom:20px;">商品信息 <span
+                                class="apply-compensation">申请商户补偿</span></p>
+                        <div class="table">
+                            <table class="layui-table" style="table-layout:fixed;margin:0;">
+                                <colgroup>
+                                    <col width="5%">
+                                    <col width="15%">
+                                    <col width="20%">
+                                    <col width="10%">
+                                    <col width="10%">
+                                    <col width="10%">
+                                    <col width="20%">
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th style="text-align:center;">
+                                            <form class="layui-form checkAll" action="">
+                                                <input type="checkbox" lay-filter="checkAll" lay-skin="primary">
+                                            </form>
+                                        </th>
+                                        <th style="text-align:left;">代发ID/外部ID</th>
+                                        <th style="text-align:center;">商品信息</th>
+                                        <th style="text-align:center;">销售价</th>
+                                        <th style="text-align:center;">单价成本</th>
+                                        <th style="text-align:center;">数量</th>
+                                        <th style="text-align:center;">总成本 <i class="layui-icon layui-icon-tips"></i>
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td style="text-align:center;">
+                                            <form class="layui-form" action="">
+                                                <input type="checkbox" name="item_id" value="" lay-skin="primary"
+                                                    class="test" lay-filter="checkChild">
+                                            </form>
+                                        </td>
+                                        <td class="textOverflow" style="text-align:left;">
+                                            <p class="substitute-id"> 1002545585/234890007866525</p>
+                                            <p class="txt3-color"> 1002545585/234890007866525</p>
+                                        </td>
+                                        <td class="tableTitle">
+                                            <div class="pic-two">
+                                                <img src="https://mhuoba.oss-cn-hangzhou.aliyuncs.com/picture/audio/20190812/18/20190812183751909.jpg!w81h50"
+                                                    alt="">
+                                            </div>
+                                            <div class="layui-inline message">
+                                                <p class="textTwoOver" title="">商品标题最多两行题最多两行行商品标题最多两行最多两行最多两行</p>
+                                            </div>
+                                        </td>
+                                        <td style="text-align:center;">
+                                            ￥<span class="sales-price">12.55</span>
+                                        </td>
+                                        <td style="text-align:center;">￥<span class="unitPriceCost">76.20</span> </td>
+                                        <td style="text-align:center;" class="quantity">211155</td>
+                                        <td style="text-align:center;">
+                                            ￥<span class="total-cost ">12.55</span>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                        </div>
+                        <div class="price-detail">
+                            <div class="detail-left">
+                                <ul>
+                                    <li>
+                                        商品成本: ¥<span class="commodity-cost">84.90</span>
+                                    </li>
+                                    <li>
+                                        发货成本: ¥<span class="shipments-cost">1.00</span>
+                                    </li>
+                                    <li>
+                                        商户补偿: ¥<span class="merchant-compensation">4.90</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="detail-right main-color">
+                                应付总额: ¥<span class="total-payable">82.22</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!--商品信息  -->
+                    <div class="substitute-information">
+                        <div class="padd-left">商品信息</div>
+                        <div class="substitute-left">
+                            <ul>
+                                <li>
+                                    <em>收货人：</em>
+                                    <span class="consignee">李先生</span>
+                                </li>
+                                <li>
+                                    <em>收获地址：</em>
+                                    <span class="harvest-address">浙江省杭州市余杭区金家渡南路（3号楼33号）</span>
+                                </li>
+                                <li>
+                                    <em>邮编：</em>
+                                    <span class="zip-code">100001</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="substitute-right">
+                            <ul>
+                                <li>
+                                    <em>收获手机号：</em>
+                                    <span class="cellPhoneNumber">19875666666</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!--商户信息  -->
+                    <div class="substitute-information">
+                        <div class="padd-left">商户信息</div>
+                        <div class="substitute-left">
+                            <ul>
+                                <li>
+                                    <em>商户信息： </em>
+                                    <span class="merchant-information">松松社区（577575725757）</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="substitute-right">
+                            <ul>
+                                <li>
+                                    <em>供货商商户信息：</em>
+                                    <span class="supplier-information">火把知识（4154466646464）</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!--操作记录  -->
+                    <div>
+                        <form class="layui-form" action="">
+                            <p class="form-title padd-left">操作记录</p>
+                            <div class="layui-form-item">
+                                <div class="operating-record">
+                                    <ul>
+                                        <li>
+                                            <div class="sales-return">申请退货《<span
+                                                    class="trade-name">这是商品名称</span>》ZHR003，
+                                                数量<span class="return-quantity">3</span>，
+                                                总成本￥<span class=" totalCost">23.00</span>
+                                            </div>
+                                            <div class="operating-itme">
+                                                <span class="ytd">2020-1-21</span>
+                                                <span class="hms">23:12:45</span>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- 底部 -->
+        <div class="layui-footer"></div>
+    </div>
+</body>
+
+</html>
+<script type="text/javascript" src="layui-2.0/layui.js"></script>
+<script type="text/javascript">
+    layui.use(['element', 'jquery', 'form', 'layer'], function () {
+        // 变量声明
+        var $ = layui.jquery,
+            form = layui.form,
+            element = layui.element,
+            layer = layui.layer;
+        var valPricing; //储存input 的value值
+        //方法定义merchantNum = /(^[1-9]*$)/, //验证必须为整数
+
+        function GetQueryString(name) { //获取地址栏上的数据
+            var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+            var r = window.location.search.substr(1).match(reg);
+            if (r != null) return unescape(r[2]);
+            return null;
+        }
+
+        //表格全选
+        form.on('checkbox(checkAll)', function (data) {
+            if (data.elem.checked) {
+                $('.table tbody').find('input[lay-filter="checkChild"]').prop('checked', true)
+            } else {
+                $('.table tbody').find('input[lay-filter="checkChild"]').prop('checked', false)
+            }
+            form.render();
+        })
+        // 展开收缩
+        $('.foldAction').on('click', function () {
+            var body = $(this).parents('body');
+            var slideState = '';
+            // 展开隐藏图标切换
+            if ($(body).hasClass('small')) {
+                $(body).removeClass('small').addClass('large');
+                slideState = 'large';
+            } else {
+                $(body).removeClass('large').addClass('small');
+                slideState = 'small';
+            }
+            localStorage.setItem('slideState', slideState);
+        })
+
+        //申请商户补偿弹窗
+        $('.apply-compensation').click(function () {
+            layer.open({
+                type: 1,
+                title: '申请商户补偿', //title设置
+                skin: 'layui-layer-rim', //加上边框
+                area: ['600px', '328px'], //宽高
+                btn: ['确 定', '取 消'], //btn按钮
+                content: "<form class='layui-form' action=''>" +
+                    "<div class='layui-form-item input-layout-one'>" +
+                    "<label class='layui-form-label'>补偿金额： </label>" +
+                    "<div class='layui-input-block input-second-container lable-input-container'>" +
+                    "<div class='input-third-container input-one1-container'>" +
+                    "<input type='text' name='pricing' placeholder='最多23.00' autocomplete='off' class='layui-input'>" +
+                    "<div class='input-before'>￥</div>" +
+                    "</div>" +
+                    "<p class='msg'>图书定价不可为空</p>" +
+                    "</div>" +
+                    "</div>" +
+                    "<div class='layui-form-item input-layout-one'>" +
+                    "<label class='layui-form-label'>补偿原因： </label>" +
+                    "<div class='layui-input-block input-second-container lable-input-container'>" +
+                    "<div class='input-third-container input-one1-container'>" +
+                    "<input type='text' name='reason' placeholder='请输入补偿原因' autocomplete='off' class='layui-input'>" +
+                    "</div>" +
+                    "</div>" +
+                    "</div>" +
+                    "</form>", //内容
+                // shadeClose: true, //点击遮罩层隐藏弹窗
+                // move: false, //禁止拖拽
+                success: function (layero, index) { //弹出回调
+                    // $(".msg").hide();
+                },
+                yes: function (index, layero) {
+                    valPricing = $(".layui-input[name=pricing]").val()
+                    //按钮1回调
+                    // layer.close(index); //如果设定了yes回调，需进行手工关闭&&
+                    if (valPricing <= 23 && valPricing >= 0) {
+                        //
+                        $(".msg").css('opacity', '0');
+                    } else {
+                        $(".msg").css('opacity', '1');
+                    }
+                },
+                btn2: function (index, layero) {
+                    //按钮2回调
+                    // layer.close(index); //如果设定了yes回调，需进行手工关闭
+                    //return false 开启该代码可禁止点击该按钮关闭
+                }
+            });
+        })
+    });
+</script>
