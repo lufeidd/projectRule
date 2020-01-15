@@ -1,0 +1,19 @@
+/*
+ *	作者: zzy
+ *	创建时间：
+ *	描述：徽章
+ */
+
+.layui-badge,
+.layui-badge-dot,
+.layui-badge-rim {
+    background-color: #F05654;
+}
+.layui-badge-rim {
+    background-color: transparent;
+    border-color: #999;
+    color: #999;
+    line-height: 24px;
+    height: 24px;
+    border-radius: 4px;
+}
