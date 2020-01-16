@@ -19,22 +19,30 @@
     position: absolute;
     width:6px;
     height:6px;
-    background: #54F075;
     border-radius:50%;
     left: 20px;
     top: 50%;
     margin-top: -2px;
 }
+.table .statusA:before{
+    content:'';
+    background: #54F075;
+}
 .table .statusB:before{
     content:'';
-    position: absolute;
-    width:6px;
-    height:6px;
+    background: #F0B354;
+}
+.table .statusC:before{
+    content:'';
+    background: #54ACF0;
+}
+.table .statusD:before{
+    content:'';
     background: #999999;
-    border-radius:50%;
-    left: 20px;
-    top: 50%;
-    margin-top: -2px;
+}
+.table .statusE:before{
+    content:'';
+    background: #F05654;
 }
 .table .tableTitle{
     text-align: left;

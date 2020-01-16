@@ -113,7 +113,6 @@ function ajaxCascaderTemplate(_elem, _url, _type) {
     layui.use(['jquery', 'ajaxCascader'], function () {
         var $ = layui.jquery;
         var cascader = layui.ajaxCascader;
-
         switch (_type) {
             case 'init':
                 // Ajax传参模式
@@ -125,7 +124,7 @@ function ajaxCascaderTemplate(_elem, _url, _type) {
                     //     // placeholder: '请输入搜索词'
                     // }
                     // ,clear: true
-                    ,width:'471'            
+                    ,width:'471'
                     , value: 0
                     , getChildren: function (value, callback) {
                         var data = []
@@ -167,7 +166,7 @@ function ajaxCascaderTemplate(_elem, _url, _type) {
                     // prop:{
                     //     value:'id',
                     //     label:'name'
-                    // }                  
+                    // }
                     data: codeData,
                     showlast: true,
                     // width: '100%',
@@ -210,11 +209,11 @@ function ajaxCascaderTemplate(_elem, _url, _type) {
         //         show: true,
         //         // minLabel: 1,
         //         // placeholder: '请输入搜索词'
-        //     }             
+        //     }
         //     ,value: 0
-        //     ,getChildren: function(value,callback){  
-        //         var data = []               
-        //         $.ajax({                         
+        //     ,getChildren: function(value,callback){
+        //         var data = []
+        //         $.ajax({
         //             url:'https://open.gog.cn/appz/region/getRegion/'+value,
         //             type:'get',
         //             success:function(res){
@@ -259,11 +258,11 @@ function ajaxCascaderTemplate(_elem, _url, _type) {
         //             show: true,
         //             // minLabel: 1,
         //             // placeholder: '请输入搜索词'
-        //         }             
+        //         }
         //         ,value: data.value
-        //         ,getChildren: function(value,callback){  
-        //             var data = []               
-        //             $.ajax({                         
+        //         ,getChildren: function(value,callback){
+        //             var data = []
+        //             $.ajax({
         //                 url:'https://open.gog.cn/appz/region/getRegion/'+value,
         //                 type:'get',
         //                 success:function(res){
