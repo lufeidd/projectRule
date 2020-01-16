@@ -211,6 +211,13 @@
 .layui-layer-rim .layui-form .layui-input-block {
     margin-left: 104px;
 }
+.layui-icon-tips{
+    float: right;
+}
+.layui-layer-rim .input-second-container,
+.layui-layer-rim .input-third-container {
+    width: 471px;
+}
 
 .layui-layer-rim .input-third-container .layui-input {
     width: 471px;
@@ -256,9 +263,11 @@
 .padd-top {
     padding-top: 10px;
 }
-.padd-left{
+
+.padd-left {
     padding-left: 10px;
 }
+
 .alert .layui-layer-btn0 {
     border: none !important;
     background-color: #54ACF0 !important;
