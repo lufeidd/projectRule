@@ -356,6 +356,18 @@
     margin-right: 30px !important;
 }
 
+/* 弹窗6*/
+
+.popup6 .layui-layer-btn{
+    text-align: right;
+}
+.popup6 .layui-layer-btn0{
+    margin-right: 20px !important;
+}
+.popup6 .layui-layer-btn1{
+    margin-right: 30px !important;
+}
+
 
 /* 弹窗confirm */
 .confirm .layui-layer-title {
