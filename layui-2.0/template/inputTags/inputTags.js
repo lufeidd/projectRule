@@ -120,6 +120,7 @@ layui.define(['jquery','layer'],function(exports){
       options.content.splice($.inArray(ThisText,options.content),1);
       var input_lable_num = $('.inputLables').find('.tagsText').text().trim();
       $('.inputLables').find('.input-on-number').text(input_lable_num.length);
+      heightInit();
     })
   };
 
