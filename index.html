@@ -10,19 +10,24 @@
 	<!-- 字体图标 -->
 	<script src="layui-2.0/font/iconfont.js"></script>
 	<style type="text/css">
+		html {
+			background-color: #fff;
+		}
+
 		menu#anchor {
 			position: fixed;
-			height: 100%;
 			width: 100px;
 			text-align: center;
 			left: 0;
 			top: 0;
+			bottom: 0;
 			overflow: auto;
 			background-color: #fff;
 			z-index: 1002;
 			padding: 10px;
 			box-sizing: border-box;
 			font-size: 15px;
+			box-shadow: 0 0 5px rgba(0, 0, 0, .5);
 		}
 
 		#anchor a {
@@ -65,6 +70,7 @@
 			box-sizing: border-box;
 			background-color: #fff;
 			z-index: 1001;
+			box-shadow: 0 0 5px rgba(0, 0, 0, .5);
 		}
 	</style>
 </head>
@@ -80,6 +86,7 @@
 		<a href="#tab">选项卡</a>
 		<a href="#select">下拉</a>
 		<a href="#checkbox">复选框</a>
+		<a href="#radiobox">单选框</a>
 		<a href="#rule">法规提示</a>
 		<a href="#pic">图片比例</a>
 		<a href="#layout">表单布局</a>
@@ -87,8 +94,10 @@
 		<a href="#table">数据表格</a>
 		<a href="#popup">弹窗</a>
 		<a href="#date">日期选择</a>
+		<a href="#badge">徽章</a>
+		<a href="#layedit">富文本编辑器</a>
 	</menu>
-	<header id="header">前端开发规范手册</header>
+	<header id="header">火把知识后台-基于layui框架-前端开发规范手册</header>
 	<section>
 		<article id="frame">
 			<p class="title">
@@ -341,7 +350,7 @@
 						<option value="1">2</option>
 					</select>
 				</div>
-			</form> 
+			</form>
 			<div class="selectTwo">
 				<form class="layui-form" action="">
 					<select name="city" lay-verify="required" class="select-sizeMin">
@@ -351,7 +360,10 @@
 					</select>
 				</form>
 			</div>
-			<p class="title">多级联下拉框</p>
+			<p class="title">
+				<svg class="icon" aria-hidden="true">
+					<use xlink:href="#iconguanlian"></use>
+				</svg>多级联下拉框</p>
 			<div>
 				<cascader id="demo2"></cascader>
 			</div>
@@ -366,8 +378,21 @@
 				<input type="checkbox" name="close" lay-skin="switch">
 			</form>
 		</article>
+		<article id="radiobox">
+			<p class="title">
+				<svg class="icon" aria-hidden="true">
+					<use xlink:href="#iconguanlian"></use>
+				</svg>单选框</p>
+			<div class="layui-form">
+				<div class="layui-form-item" style="color: #999999;">
+					<input type="radio" name="sale_style" value="1" title="免费">
+					<input type="radio" name="sale_style" value="2" title="完成购买">
+					<input type="radio" name="sale_style" value="3" title="单集购买">
+					<input type="radio" name="sale_style" value="3" disabled title="不可选状态">
+				</div>
+			</div>
+		</article>
 		<article id="rule">
-
 			<p class="title">
 				<svg class="icon" aria-hidden="true">
 					<use xlink:href="#iconguanlian"></use>
@@ -381,9 +406,20 @@
 				<svg class="icon" aria-hidden="true">
 					<use xlink:href="#iconguanlian"></use>
 				</svg>图片比例</p>
-			<div class="pic-one">
-				<div class="noPicture">
-					<img src="" alt="">
+			<button type="button" class="layui-btn layui-btn-warm" id="uploadOne">+单张上传</button>
+			<div class="picPicture" style="margin: 10px 0;">
+				<div class="pic-one">
+					<div class="noPicture">
+						尚未上传
+					</div>
+				</div>
+			</div>
+			<button type="button" class="layui-btn layui-btn-warm" id="uploadBatch">+批量上传</button>
+			<div class="picPicture" style="margin: 10px 0;">
+				<div class="pic-one">
+					<div class="noPicture">
+						尚未上传
+					</div>
 				</div>
 			</div>
 			<div class="pic-two">
@@ -417,7 +453,7 @@
 				</svg>表单布局</p>
 			<p class="subTitle">表单布局1 - 预留提示空间</p>
 			<form class="layui-form" action="">
-				<p class="form-title">标题</p>
+				<p class="form-title">标题1</p>
 				<div class="layui-form-item input-layout-one">
 					<label class="layui-form-label">单行输入框：</label>
 					<div class="layui-input-inline context">
@@ -444,7 +480,7 @@
 					</div>
 				</div>
 			</form>
-			<p class="subTitle">标题</p>
+			<p class="subTitle">标题2</p>
 			<form class="layui-form" action="">
 				<div class="layui-form-item">
 					<div class="layui-inline">
@@ -499,6 +535,21 @@
 					</div>
 				</div>
 			</form>
+			<p class="subTitle">标题3</p>
+			<form class="layui-form" action="">
+				<div class="layui-form-item">
+					<label class="layui-form-label">文本：</label>
+					<div class="layui-input-block">
+						<div class="text">文本</div>
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label class="layui-form-label">文本：</label>
+					<div class="layui-input-block">
+						<div class="text">文本</div>
+					</div>
+				</div>
+			</form>
 			<p class="subTitle">表格布局1</p>
 			<table class="table-one" width="100%">
 				<colgroup>
@@ -532,7 +583,8 @@
 				</tbody>
 				<tfoot>
 					<tr>
-						<td colspan="2"><span class="main-color">备注：</span>备注文案备注备注文案备注备注文案备注备注文案备注备注文案备注备注文案备注备注文案备注备注文案备注备注文案备注备注文案备注备注文
+						<td colspan="2"><span
+								class="main-color">备注：</span>备注文案备注备注文案备注备注文案备注备注文案备注备注文案备注备注文案备注备注文案备注备注文案备注备注文案备注备注文案备注备注文
 						</td>
 						<td align="right"><button type="button" class="layui-btn">按钮</button></td>
 					</tr>
@@ -545,13 +597,298 @@
 				</svg>标签</p>
 			<iframe src="iframe-2.0/lable.html" name="lableChoose" data-id="label0"></iframe>
 		</article>
+
 		<article id="table">
 			<p class="title">
 				<svg class="icon" aria-hidden="true">
 					<use xlink:href="#iconguanlian"></use>
 				</svg>数据表格</p>
-			<iframe src="iframe-2.0/tableOne.html" name="tableOne" data-id="table0"></iframe>
-			<iframe src="iframe-2.0/tableTwo.html" name="tableTwo" data-id="table1"></iframe>
+			<!--数据表格1-->
+			<div class="table">
+				<table class="layui-table" style="table-layout:fixed;margin:0;">
+					<colgroup>
+						<col width="40">
+						<col width="100">
+						<col width="100">
+						<col width="40%">
+						<col width="10%">
+						<col width="10%">
+						<col width="10%">
+						<col width="10%">
+						<col width="120">
+						<col width="20%">
+					</colgroup>
+					<thead>
+						<tr>
+							<th>
+								<form class="layui-form checkAll" action="">
+									<input type="checkbox" lay-filter="checkAll" lay-skin="primary">
+								</form>
+							</th>
+							<th style="text-align:center;">商品ID</th>
+							<th style="cursor: pointer;text-align:center;">状态</th>
+							<th style="text-align:left;min-height: 260px;">商品信息</th>
+							<th style="text-align:center;">定价
+								<span class="inline_block">
+									<i class="layui-icon layui-icon-triangle-d topArrow sortprice" data-type="asc"></i>
+									<i class="layui-icon layui-icon-triangle-d bottomArrow sortprice"
+										data-type="desc"></i>
+								</span>
+							</th>
+							<th style="text-align:center;">销售价
+								<span class="inline_block">
+									<i class="layui-icon layui-icon-triangle-d topArrow sortprice" data-type="asc"></i>
+									<i class="layui-icon layui-icon-triangle-d bottomArrow sortprice"
+										data-type="desc"></i>
+								</span>
+							</th>
+							<th style="text-align:center;">库存数</th>
+							<th style="text-align:center;">外部ID</th>
+							<th style="text-align:center;">最新修改时间</th>
+							<th style="text-align:center;">操作
+								<svg class="icon tableIcon" aria-hidden="true">
+									<use xlink:href="#iconicon-tips-line"></use>
+								</svg>
+								<div class="tableIcon-content">
+									<div class="tableIcon-block">我是操作我是操作我是操作我是操作我是操作我是操作我是操作我是操作
+									</div>
+									<div class="tableIcon-hover-arrow"></div>
+								</div>
+							</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>
+								<form class="layui-form" action="">
+									<input type="checkbox" name="item_id" value="" lay-skin="primary" class="test"
+										lay-filter="checkChild">
+								</form>
+							</td>
+							<td style="text-align:center;">1002545585</td>
+							<td class="status" style="text-align:center;">已上架</td>
+							<td class="tableTitle">
+								<div class="pic-two">
+									<img src="https://mhuoba.oss-cn-hangzhou.aliyuncs.com/picture/audio/20190812/18/20190812183751909.jpg!w81h50"
+										alt="">
+								</div>
+								<div class="layui-inline message">
+									<p class="textTwoOver" title="">商品标题最多两行题最多两行行商品标题最多两行最多两行最多两行</p>
+									<p class="textOverflow c6 pt-10" title="">
+										作者姓名作者姓名作者姓名作者姓名作者姓名
+									</p>
+									<p class="c6 pt-10">6646444215</p>
+								</div>
+							</td>
+							<td style="text-align:center;">￥88.00</td>
+							<td style="text-align:center;">￥76.20</td>
+							<td style="text-align:center;">211155</td>
+							<td style="text-align:center;">J40045467</td>
+							<td style="text-align:center;">2019-02-06 15:05:16</td>
+							<td style="text-align:center;white-space: nowrap;">
+								<button type="button" class="layui-btn layui-btn-five">链接</button>
+								<button type="button" class="layui-btn layui-btn-five">编辑</button>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<!--数据表格2-->
+			<div class="table">
+				<table class="layui-table" style="table-layout:fixed;margin:0;">
+					<colgroup>
+						<col width="40">
+						<col width="100">
+						<col width="15%">
+						<col width="35%">
+						<col width="15%">
+						<col width="15%">
+						<col width="20%">
+					</colgroup>
+					<thead>
+						<tr>
+							<th>
+								<form class="layui-form checkAll" action="">
+									<input type="checkbox" lay-filter="checkAll" lay-skin="primary">
+								</form>
+							</th>
+							<th style="text-align:center;">商品ID</th>
+							<th style="text-align:center;">商品图片</th>
+							<th style="text-align:left;">专辑名称</th>
+							<th style="text-align:center;">销售价</th>
+							<th style="text-align:center;">原购数量</th>
+							<th style="text-align:center;">操作
+								<svg class="icon tableIcon" aria-hidden="true">
+									<use xlink:href="#iconicon-tips-line"></use>
+								</svg>
+								<div class="tableIcon-content">
+									<div class="tableIcon-block">我是操作我是操作我是操作我是操作我是操作我是操作我是操作我是操作
+									</div>
+									<div class="tableIcon-hover-arrow"></div>
+								</div>
+							</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>
+								<form class="layui-form" action="">
+									<input type="checkbox" name="item_id" value="" lay-skin="primary" class="test"
+										lay-filter="checkChild">
+								</form>
+							</td>
+							<td class="textOverflow" style="text-align:left;">1002545585/234890007866525</td>
+							<td class="tableTitle" style="text-align: center;">
+								<div class="pic-two">
+									<img src="https://mhuoba.oss-cn-hangzhou.aliyuncs.com/picture/audio/20190812/18/20190812183751909.jpg!w81h50"
+										alt="">
+								</div>
+							</td>
+							<td style="text-align:left;">
+								<p class="textTwoOver">商品标题最多两行题最多两行商品标题最多两行题最多两行 商品标题最多两行商品标题最多两行题最多两行商品标题最多两行题最多两行</p>
+							</td>
+							<td style="text-align:center;">￥76.20</td>
+							<td style="text-align:center;">211155</td>
+							<td style="text-align:center;white-space: nowrap;">
+								<button type="button" class="layui-btn layui-btn-five">编辑</button>
+								<button type="button" class="layui-btn layui-btn-five">删除</button>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<!--数据表格3-->
+			<div class="table">
+				<table class="layui-table" style="table-layout:fixed;margin:0;">
+					<colgroup>
+						<col width="40">
+						<col width="120">
+						<col width="30%">
+						<col width="15%">
+						<col width="15%">
+						<col width="15%">
+						<col width="25%">
+					</colgroup>
+					<thead>
+						<tr>
+							<th>
+								<form class="layui-form checkAll" action="">
+									<input type="checkbox" lay-filter="checkAll" lay-skin="primary">
+								</form>
+							</th>
+							<th style="text-align:center;">代发ID/外部ID</th>
+							<th style="text-align:left;min-width: 260px;">商品信息</th>
+							<th style="text-align:center;min-width: 100px;">销售价</th>
+							<th style="text-align:center;min-width: 100px;">单价成本</th>
+							<th style="text-align:center;min-width: 100px;">数量</th>
+							<th style="text-align:center;min-width: 120px;">总成本
+								<svg class="icon tableIcon" aria-hidden="true">
+									<use xlink:href="#iconicon-tips-line"></use>
+								</svg>
+								<div class="tableIcon-content">
+									<div class="tableIcon-block">我是总成本我是总成本我是总成本我是总成本我是总成本我是总成本我是总成本
+									</div>
+									<div class="tableIcon-hover-arrow"></div>
+								</div>
+							</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>
+								<form class="layui-form" action="">
+									<input type="checkbox" name="item_id" value="" lay-skin="primary" class="test"
+										lay-filter="checkChild">
+								</form>
+							</td>
+							<td class="textOverflow" style="text-align:left;">1002545585/234890007866525</td>
+							<td class="tableTitle">
+								<div class="pic-two">
+									<img src="https://mhuoba.oss-cn-hangzhou.aliyuncs.com/picture/audio/20190812/18/20190812183751909.jpg!w81h50"
+										alt="">
+								</div>
+								<div class="layui-inline message">
+									<p class="textTwoOver" title="">商品标题最多两行题最多两行行商品标题最多两行最多两行最多两行行最多两行最多两行</p>
+								</div>
+							</td>
+							<td style="text-align:center;">￥76.20</td>
+							<td style="text-align:center;">￥76.20</td>
+							<td style="text-align:center;">55</td>
+							<td style="text-align:center;white-space: nowrap;">
+								￥76.20
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<!--数据表格4-->
+			<div class="table">
+				<table class="layui-table" style="table-layout:fixed;margin:0;">
+					<colgroup>
+						<col width="40">
+						<col width="120">
+						<col width="15%">
+						<col width="35%">
+						<col width="15%">
+						<col width="15%">
+						<col width="20%">
+					</colgroup>
+					<thead>
+						<tr>
+							<th>
+								<form class="layui-form checkAll" action="">
+									<input type="checkbox" lay-filter="checkAll" lay-skin="primary">
+								</form>
+							</th>
+							<th style="text-align:center;">商品ID</th>
+							<th style="text-align:center;">商品图片</th>
+							<th style="text-align:left;">专辑名称</th>
+							<th style="text-align:center;">销售价</th>
+							<th style="text-align:center;">原购数量</th>
+							<th style="text-align:center;">操作</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>
+								<form class="layui-form" action="">
+									<input type="checkbox" name="item_id" value="" lay-skin="primary" class="test"
+										lay-filter="checkChild">
+								</form>
+							</td>
+							<td class="textOverflow" style="text-align:left;">1002545585/234890007866525</td>
+							<td class="tableTitle" style="text-align: center;">
+								<div class="pic-two">
+									<img src="https://mhuoba.oss-cn-hangzhou.aliyuncs.com/picture/audio/20190812/18/20190812183751909.jpg!w81h50"
+										alt="">
+								</div>
+							</td>
+							<td style="text-align:left;">
+								<p class="textTwoOver">商品标题最多两行题最多两行商品标题最多两行题最多两行 商品标题最多两行商品标题最多两行题最多两行商品标题最多两行题最多两行</p>
+							</td>
+							<td style="text-align:center;">￥76.20</td>
+							<td style="text-align:center;">211155</td>
+							<td style="text-align:center;white-space: nowrap;">
+								<button type="button" class="layui-btn layui-btn-five">编辑</button>
+								<button type="button" class="layui-btn layui-btn-five">删除</button>
+							</td>
+						</tr>
+					</tbody>
+					<tfoot>
+						<tr>
+							<td colspan="9">
+								<div class="footFlex">
+									<div class="footText">商品总额: ¥84.90</div>
+									<div class="footText">满减: -¥1.00</div>
+									<div class="footText">优惠券: -¥4.90</div>
+									<div class="footText fg">运费: ¥1.00</div>
+									<div class="sum">应付总额: ¥82.22</div>
+								</div>
+							</td>
+						</tr>
+					</tfoot>
+				</table>
+			</div>
 		</article>
 		<article id="popup">
 			<p class="title">
@@ -563,6 +900,9 @@
 				<span id="popup1" class="popup">弹窗1</span>
 				<span id="popup2" class="popup">弹窗2</span>
 				<span id="popup3" class="popup">弹窗3</span>
+				<span id="popup4" class="popup">弹窗4</span>
+				<span id="popup5" class="popup">弹窗5</span>
+				<span id="confirm" class="popup">弹窗confirm</span>
 				<span id="alert" class="popup">弹窗alert</span>
 
 			</div>
@@ -572,12 +912,29 @@
 				<svg class="icon" aria-hidden="true">
 					<use xlink:href="#iconguanlian"></use>
 				</svg>日期选择</p>
-
+			<p class="subTitle">日期选择1</p>
 			<div class="layui-inline">
 				<input type="text" class="layui-input test1" placeholder="请选择日期">
 			</div>
-			<!-- 弹窗 -->
+			<p class="subTitle">日期选择2</p>
+			<div class="layui-inline">
+				<div class="onset">
+					<input type="text" class="layui-input test1" placeholder="开始时间">
+				</div>
+				<div class="terminate">
+					<span></span>
+					<input type="text" class="layui-input test1" placeholder="结束时间">
+				</div>
+			</divc>
+		</article>
+		<article id="badge">
+			<p class="title">
+				<svg class="icon" aria-hidden="true">
+					<use xlink:href="#iconguanlian"></use>
+				</svg>徽章</p>
 			<div>
+				<span class="layui-badge-dot"></span>
+				<span class="layui-badge-rim">徽章</span>
 			</div>
 		</article>
 
@@ -589,26 +946,77 @@
 				</svg>级联</p>
 		</article>
 	</section>
+	<article id="layedit">
+		<p class="title">
+			<svg class="icon" aria-hidden="true">
+				<use xlink:href="#iconguanlian"></use>
+			</svg>富文本</p>
+
+	</article>
 </body>
 
 </html>
 <script type="text/javascript" src="layui-2.0/layui.js"></script>
 <script type="text/javascript" src="layui-2.0/jquery3.4.1.js"></script>
 <script type="text/javascript" src="layui-2.0/public.js"></script>
+<script type="text/javascript" src="layui-2.0/template/inputTags/inputTags.js"></script>
 <script type="text/javascript">
-
-
-
 	// iframe当前标识
 	var dataId = '';
 	var dataResult = {};
 
 	//初始化layui
-	layui.use(['element', 'laydate', 'layer', 'form'], function () {
+	layui.use(['element', 'laydate', 'layer', 'form', 'upload'], function () {
 		var element = layui.element,
 			form = layui.form,
 			laydate = layui.laydate,
-			$ = layui.$;
+			$ = layui.$;;
+		var upload = layui.upload;
+
+		//图片上传 之 主图和其他附图
+		upload.render({
+			elem: '#uploadOne',
+			accept: 'file' //普通文件
+				,
+			exts: 'jpeg|jpg|png',
+			size: 5 * 1024,
+			multiple: false,
+			url: '/upload?opt_type=album&file_type=Image&image_type=pic&brand_id=26',
+			before: function (obj) {},
+			done: function (res, index, upload) {
+				if (res.code === 1) {
+					layer.msg(res.msg);
+				} else {
+
+				}
+			},
+			error: function (index) {
+				layer.msg('上传失败');
+				return false;
+			}
+		});
+		//图片上传 之 主图和其他附图
+		upload.render({
+			elem: '#uploadBatch',
+			accept: 'file' //普通文件
+				,
+			exts: 'jpeg|jpg|png',
+			size: 5 * 1024,
+			multiple: true,
+			url: '/upload?opt_type=album&file_type=Image&image_type=pic&brand_id=26',
+			before: function (obj) {},
+			done: function (res, index, upload) {
+				if (res.code === 1) {
+					layer.msg(res.msg);
+				} else {
+
+				}
+			},
+			error: function (index) {
+				layer.msg('上传失败');
+				return false;
+			}
+		});
 
 		// $.ajax
 
@@ -678,12 +1086,20 @@
 					$('.high-search-iframe').css('margin-top', '0')
 				}
 				break;
-			case '':
+			case 'lable-iframe':
+				$('iframe[name=lableChoose]').css('height', height);
 				break;
 			default:
 				break;
 		}
 	}
+
+	//数据表格图标事件
+	$('.tableIcon').hover(function () {
+		$(this).closest('.table').find('.tableIcon-content').css('display', 'block');
+	}, function () {
+		$(this).closest('.table').find('.tableIcon-content').css('display', 'none');
+	});
 
 	//弹窗1
 	$("#popup1").click(function () {
@@ -698,7 +1114,7 @@
 			},
 			yes: function (index, layero) {
 				//按钮修改的回调
-				// layer.close(index); //如果设定了yes回调，需进行手工关闭		
+				// layer.close(index); //如果设定了yes回调，需进行手工关闭
 				//return false 开启该代码可禁止点击该按钮关闭
 			},
 			btn2: function (index, layero) {
@@ -769,6 +1185,66 @@
 		});
 	})
 
+	//弹窗4
+	$("#popup4").click(function () {
+		//页面层需要引入日期插件
+		layer.open({
+			type: 1,
+			title: '将当前节目的授权时间修改为', //title设置
+			skin: 'layui-layer-rim', //加上边框
+			area: ['520px', '218px'], //宽高
+			btn: ['修 改', '取 消', '修改全部'], //btn按钮
+			content: "<form class='layui-form' action=''>" +
+				"<div class='layui-inline'>" +
+				"<input type='text' class='layui-input test1' placeholder='开始时间'>" +
+				"</div>" +
+				"<div class='layui-inline'><span></span>" +
+				"<input type='text' class='layui-input test1' placeholder='结束时间'>" +
+				"</div>" +
+				"</form>", //内容
+			// shadeClose: true, //点击遮罩层隐藏弹窗
+			// move: false, //禁止拖拽
+			success: function (data) {
+				$(".layui-layer-rim").addClass('popup4');
+			},
+			yes: function (index, layero) {
+				//按钮1回调
+				// layer.close(index); //如果设定了yes回调，需进行手工关闭
+			},
+			btn2: function (index, layero) {
+				//按钮2回调
+				// layer.close(index); //如果设定了yes回调，需进行手工关闭
+				//return false 开启该代码可禁止点击该按钮关闭
+			},
+			btn3: function (index, layero) {
+				//按钮3回调
+				// layer.close(index); //如果设定了yes回调，需进行手工关闭
+				//return false 开启该代码可禁止点击该按钮关闭
+			}
+		});
+	})
+
+	//弹窗5
+	$("#popup5").click(function () {
+		//询问框
+		layer.alert('去上传新节目前，请确认已提交新编辑的内容，否则将丢失 已编辑的内容', {
+			btn: ['前去上传', '取 消'],
+			area: ['430px', '218px'], //宽高
+			// move: false, //禁止拖拽
+			success: function (data) {
+				$(".layui-layer-dialog").addClass('popup5');
+			},
+			yes: function (index, layero) {
+				//按钮删除的回调
+				// layer.close(index); //如果设定了yes回调，需进行手工关闭
+			},
+			btn2: function (index, layero) {
+				//按钮取消的回调
+				// layer.close(index); //如果设定了yes回调，需进行手工关闭
+				//return false 开启该代码可禁止点击该按钮关闭
+			}
+		});
+	})
 	$("#alert").click(function () {
 		layer.open({
 			title: '提示:',
@@ -777,6 +1253,28 @@
 				$(".layui-layer-dialog").addClass('alert');
 				$(".alert .layui-layer-title").show();
 				$('.layui-layer-setwin').show();
+			}
+		});
+	})
+	$("#confirm").click(function () {
+		layer.open({
+			title: '提示的信息',
+			content: '确定内容内容内容内容内容内......',
+			btn: ['确定', '取消'],
+			area: ['270px', '150px'], //宽高
+			success: function (data) {
+				$(".layui-layer-dialog").addClass('confirm');
+				$(".alert .layui-layer-title").show();
+				$('.layui-layer-setwin').show();
+			},
+			yes: function (index, layero) {
+				//按钮1回调
+				// layer.close(index); //如果设定了yes回调，需进行手工关闭
+			},
+			btn2: function (index, layero) {
+				//按钮2回调
+				// layer.close(index); //如果设定了yes回调，需进行手工关闭
+				//return false 开启该代码可禁止点击该按钮关闭
 			}
 		});
 	})

@@ -1,12 +1,12 @@
 /*
 * @Author: layui-2
 * @Date:   2018-08-31 11:40:42
- * @Last Modified by: xxx
- * @Last Modified time: 2020-01-13 14:14:59
+ * @Last Modified by: mikey.zhaopeng
+ * @Last Modified time: 2020-01-10 09:07:45
 */
 layui.define(['jquery', 'layer'], function (exports) {
   "use strict";
-  var $ = layui.jquery, layer = layui.layer
+  var $ = layui.jquery,layer = layui.layer
 
 
     //外部接口
@@ -67,8 +67,8 @@ layui.define(['jquery', 'layer'], function (exports) {
       $('body').append(spantext)
     }
 
-    $.each(options.content, function (index, item) {
-      spans += '<span><em>' + item + '</em><button type="button" class="close">×</button></span>';
+    $.each(options.content,function(index,item){
+      spans +='<span><em class="tagsText">'+item+'</em><button type="button" class="close">×</button></span>';
       // $('<div class="layui-flow-more"><a href="javascript:;">'+ ELEM_TEXT +'</a></div>');
     })
     options.elem.before(spans)
@@ -88,15 +88,15 @@ layui.define(['jquery', 'layer'], function (exports) {
       , spans = ''
       , options = that.config;
     options.elem.focus();
-    options.elem.keypress(function (event) {
+    options.elem.keypress(function(event){
       var keynum = (event.keyCode ? event.keyCode : event.which);
-      if (keynum == '13') {
+      if(keynum == '13'){
         var $val = options.elem.val().trim();
         if (!$val) return false;
         if (options.content.indexOf($val) == -1) {
           options.content.push($val)
           that.render()
-          spans = '<span><em>' + $val + '</em><button type="button" class="close">×</button></span>';
+          spans ='<span><em class="tagsText">'+$val+'</em><button type="button" class="close">×</button></span>';
           options.elem.before(spans)
         }
         options.done && typeof options.done === 'function' && options.done($val);
@@ -112,10 +112,13 @@ layui.define(['jquery', 'layer'], function (exports) {
     $('.albtn').on('click', function () {
       console.log(options.content)
     })
-    $('#tags').on('click', '.close', function () {
+
+    $('.inputLables').on('click','.close',function(){
       var Thisremov = $(this).parent('span').remove(),
-        ThisText = $(Thisremov).find('em').text();
-      options.content.splice($.inArray(ThisText, options.content), 1)
+          ThisText = $(Thisremov).find('em').text();
+      options.content.splice($.inArray(ThisText,options.content),1);
+      var input_lable_num = $('.inputLables').find('.tagsText').text().trim();
+      $('.inputLables').find('.input-on-number').text(input_lable_num.length);
     })
   };
 
@@ -125,5 +128,5 @@ layui.define(['jquery', 'layer'], function (exports) {
     inst.init();
     return thisinputTags.call(inst);
   };
-  exports('inputTags', inputTags);
-}).link('../../css/component/lable.css')
+  exports('inputTags',inputTags);
+}).link('../layui-2.0/css/component/lable.css')

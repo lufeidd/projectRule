@@ -30,6 +30,11 @@
     height: 228px;
 }
 
+.porz {
+    position: relative;
+    z-index: 22;
+}
+
 .layui-layer-prompt .layui-layer-title {
     padding: 0px;
     border-bottom: none;
@@ -211,9 +216,11 @@
 .layui-layer-rim .layui-form .layui-input-block {
     margin-left: 104px;
 }
-.layui-icon-tips{
+
+.layui-icon-tips {
     float: right;
 }
+
 .layui-layer-rim .input-second-container,
 .layui-layer-rim .input-third-container {
     width: 471px;
@@ -273,4 +280,116 @@
     background-color: #54ACF0 !important;
     color: #fff !important;
     margin-right: 20px !important;
+}
+
+/* 弹窗4 */
+.popup4 .layui-input {
+    width: 130px;
+}
+
+.popup4 .layui-inline,
+.popup4 .layui-inline span {
+    float: left;
+    padding-left: 20px;
+}
+
+.popup4 .layui-inline span {
+    position: relative;
+    border: 1px solid #999999;
+    display: inline-block;
+    width: 13px;
+    padding-left: 0;
+    top: 18px;
+    left: -10px;
+}
+
+.popup4 .layui-layer-btn {
+    padding: 0px;
+}
+
+.popup4 .layui-layer-title {
+    background-color: #fff;
+}
+
+.popup4 .layui-layer-content {
+    margin-top: 16px;
+}
+
+.popup4 .layui-layer-btn a {
+    margin: 0 !important;
+    margin-right: 20px !important;
+}
+
+.popup4 .layui-layer-btn2 {
+    padding: 0px;
+    width: 66px;
+    height: 28px;
+    line-height: 28px;
+    text-align: center;
+    background: rgba(84, 172, 240, 1);
+    border-radius: 4px;
+    color: #fff;
+}
+
+
+/* 弹窗5 */
+.popup5 .layui-layer-content {
+    width: 381px !important;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.popup5 .layui-layer-btn {
+    text-align: right;
+    padding-top: 60px;
+    padding-bottom: 0px;
+}
+
+.popup5 .layui-layer-btn1 {
+    margin-right: 30px !important;
+}
+
+.popup5 .layui-layer-btn0 {
+    border: 1px solid #54ACF0 !important;
+    background-color: #fff !important;
+    color: #54ACF0 !important;
+    margin-right: 30px !important;
+}
+
+
+/* 弹窗confirm */
+.confirm .layui-layer-title {
+    display: block;
+}
+
+.confirm .layui-layer-content {
+    line-height: 10px !important;
+    padding-top: 21px !important;
+}
+
+.confirm .layui-layer-btn {
+    text-align: right;
+    padding-top: 23px;
+    padding-bottom: 0px;
+}
+
+.confirm .layui-layer-btn a {
+    width: 66px;
+    height: 28px;
+    line-height: 28px;
+}
+
+.confirm .layui-layer-btn .layui-layer-btn0 {
+    float: right;
+    border: 1px solid #54ACF0 !important;
+    background-color: #54ACF0 !important;
+    color: #FFF !important;
+    margin-right: 20px !important;
+}
+
+.confirm .layui-layer-btn1 {
+    border-color: #999999;
+    background-color: #FFFF;
+    color: #333333;
+    margin-right: 19px !important;
 }
