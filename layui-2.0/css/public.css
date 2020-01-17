@@ -403,6 +403,11 @@ body.large .layui-side.large {
 .layui-btn+.layui-btn {
     margin-left: 0;
 }
+/* 提示隐藏 */
+.msg{
+    opacity: 0;
+}
+
 
 
 /* 隐藏滚动条 */
