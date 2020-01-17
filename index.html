@@ -920,11 +920,11 @@
 			<p class="subTitle">日期选择2</p>
 			<div class="layui-inline">
 				<div class="onset">
-					<input type="text" class="layui-input test1" placeholder="开始时间">
+					<input type="text" class="layui-input test2" placeholder="开始时间">
 				</div>
 				<div class="terminate">
 					<span></span>
-					<input type="text" class="layui-input test1" placeholder="结束时间">
+					<input type="text" class="layui-input test3" placeholder="结束时间">
 				</div>
 				</divc>
 		</article>
@@ -1020,25 +1020,29 @@
 		});
 
 		// $.ajax
-
+		laydateDate('.test1');
+		laydateDate('.test2');
+		laydateDate('.test3');
 		//日期选择
-		laydate.render({
-			elem: '.test1', //指定元素
-			ready: function (date) {
-				//得到初始的日期时间对象：{year: 2017, month: 8, date: 18, hours: 0, minutes: 0, seconds: 0}
-				// console.log(date);
-				$('.laydate-footer-btns .laydate-btns-clear').text('重置'); //改变按钮text
-			},
-			done: function (value, date, endDate) {
-				//当选择日期之后改变按钮颜色
-				$('.laydate-footer-btns .laydate-btns-clear').css('color', "#333"); //重置按钮
-				$('.laydate-footer-btns .laydate-btns-now').css('color', "#333"); //现在按钮
-				// console.log(value); //得到日期生成的值，如：2017-08-18
-				// //得到日期时间对象：{year: 2017, month: 8, date: 18, hours: 0, minutes: 0, seconds: 0}
-				// console.log(date);
-				// console.log(endDate); //得结束的日期时间对象，开启范围选择（range: true）才会返回。对象成员同上。
-			}
-		});
+		function laydateDate(test) {
+			laydate.render({
+				elem: test, //指定元素
+				ready: function (date) {
+					// 得到初始的日期时间对象：{year: 2017, month: 8, date: 18, hours: 0, minutes: 0, seconds: 0}
+					// console.log(date);
+					$('.laydate-footer-btns .laydate-btns-clear').text('重置'); //改变按钮text
+				},
+				done: function (value, date, endDate) {
+					//当选择日期之后改变按钮颜色
+					$('.laydate-footer-btns .laydate-btns-clear').css('color', "#333"); //重置按钮
+					$('.laydate-footer-btns .laydate-btns-now').css('color', "#333"); //现在按钮
+					// console.log(value); //得到日期生成的值，如：2017-08-18
+					// //得到日期时间对象：{year: 2017, month: 8, date: 18, hours: 0, minutes: 0, seconds: 0}
+					// console.log(date);
+					// console.log(endDate); //得结束的日期时间对象，开启范围选择（range: true）才会返回。对象成员同上。
+				}
+			});
+		}
 	})
 
 	//设置标签iframe高度

@@ -16,6 +16,10 @@
      color: #333333 !important;
  }
 
+ .test1 {
+     width: 260px;
+ }
+
  .layui-laydate .layui-laydate-main {
      width: 260px;
  }
@@ -59,13 +63,15 @@
      float: left;
  }
 
- .onset .test1,
- .terminate .test1 {
+ .onset .layui-input,
+ .terminate .layui-input {
      width: 130px;
      height: 38px;
  }
 
- .terminate {}
+ #layui-laydate3 {
+     left: 155px !important;
+ }
 
  .terminate span {
      float: left;
