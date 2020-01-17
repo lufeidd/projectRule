@@ -147,28 +147,85 @@
                     <div class="rule">
                         此订单为代发订单。
                     </div>
+
                     <!-- 订单 -->
-                    <div class="order-details">
-                        <div class="order-number"><span>订单号： </span> <span class="order-content">深渊上的火</span></div>
-                        <div class="buyer"><span> 买家下单时间： </span><span class="buyerOrderTime">2019-12-04 18:24:01</span>
+                    <form action="" class="layui-form ">
+                        <div class="layui-form-item ">
+                            <label class="layui-form-label">订单号： </label>
+                            <div class="layui-input-inline padd-top">
+                                <span class="order-content">深渊上的火</span>
+                            </div>
                         </div>
-                        <div class="order-status"><span>订单状态： </span> <span class="status main-color">已取消</span></div>
-                    </div>
+                        <div class="layui-form-item ">
+                            <label class="layui-form-label">买家下单时间： </label>
+                            <div class="layui-input-inline padd-top">
+                                <span class="buyerOrderTime">2019-12-04 18:24:01</span>
+                            </div>
+                        </div>
+                        <div class="layui-form-item ">
+                            <label class="layui-form-label">订单状态： </label>
+                            <div class="layui-input-inline padd-top">
+                                <span class="status main-color">已取消</span>
+                            </div>
+                        </div>
+                    </form>
+
                     <!-- 订单信息 -->
                     <div class="order-information">
                         <!-- 收货人信息： -->
-                        <div class="information">
-                            <p>收货人信息：</p>
-                            <ul>
-                                <li> <em>账 &nbsp; &nbsp;&nbsp;号：</em><span class="account">13975842188</span></li>
-                                <li><em>收 货 人：</em><span class="consignee">张三</span></li>
-                                <li><em>手机号码：</em><span class="cellphone-number">19828738273</span></li>
-                                <li><em>手机号码：</em><span class="">19828738273</span></li>
-                                <li><em>邮 &nbsp; &nbsp;&nbsp;编：</em><span class="postal-code">310014</span></li>
-                            </ul>
-                        </div>
+                        <table class="table-one" width="100%">
+                            <colgroup>
+                                <col width="33%">
+                                <col width="33%">
+                                <col width="33%">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th>收货人信息：</th>
+                                    <th>支付及配送方式：</th>
+                                    <th>发票信息：</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>账 号：13975842188</td>
+                                    <td><em>支付方式：</em><span class="on-line">网上支付</span></td>
+                                    <td> <em>发片类型：</em><span class="electronic-invoice ">电子发票</span></td>
+                                </tr>
+                                <tr>
+                                    <td><em>收 货 人： </em><span class="consignee">张三</span></td>
+                                    <td><em>送货方式：</em><span class="homeDeliveryService">送货上门</span></td>
+                                    <td><em>开票单位：</em><span class="individual">个人</span></td>
+                                </tr>
+                                <tr>
+                                    <td>手机号码：</em><span class="cellphone">19828738273</span></td>
+                                    <td><em>支付金额：￥</em><span class="payment-amount ">83.22</span></td>
+                                    <td>开票金额：¥</em><span class="invoice-amount ">83.22</span></td>
+                                </tr>
+                                <tr>
+                                    <td><em>邮 &nbsp; &nbsp; &nbsp;&nbsp;编：</em><span class="zip-code ">0.00</span></td>
+                                    <td><em>发货日期：</em><span class="delivery-date">2015-04-06 09:29:43</span></td>
+                                </tr>
+                                <tr>
+                                    <td><em>运 &nbsp; &nbsp; &nbsp;&nbsp;费：￥</em><span class="freight">0.00</span></td>
+                                    <td>发货公司：</em><span class="delivery-company">顺丰速运（运单号：589624884791）</span></td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td colspan="2" >
+                                        <span class="main-color">备注：</span>
+                                        <span class="remarks-content">
+                                            备注文案备注备注文案备注备注文案备注备注文
+                                            案备注备注文案备注备注文案备注备
+                                            注文案备注备注文案备注备注文案备注备注文案备注备注文
+                                        </span>
+                                    </td>
+                                    <td align="right"><button type="button" class="layui-btn">保存备注</button></td>
+                                </tr>
+                        </table>
                         <!-- 支付及配送方式： -->
-                        <div class="information">
+                        <!-- <div class="information">
                             <p>支付及配送方式：</p>
                             <ul>
                                 <li> <em>支付方式：</em><span class="on-line">网上支付</span></li>
@@ -178,9 +235,9 @@
                                 <li><em>发货日期：</em><span class="delivery-date">2015-04-06 09:29:43</span></li>
                                 <li><em>发货公司：</em><span class="delivery-company">顺丰速运（运单号：589624884791）</span></li>
                             </ul>
-                        </div>
+                        </div> -->
                         <!-- 发票信息： -->
-                        <div class="information">
+                        <!-- <div class="information">
                             <p>发票信息：</p>
                             <ul>
                                 <li> <em>发片类型：</em><span class="electronic-invoice ">电子发票</span></li>
@@ -188,8 +245,8 @@
                                 <li><em>开票金额：¥</em><span class="invoice-amount ">83.22</span></li>
                             </ul>
                         </div>
-                    </div>
-                    <div class="remarks">
+                    </div> -->
+                        <!-- <div class="remarks">
                         <div class="remarks-information">
                             <span class="main-color">备注：</span>
                             <span class="remarks-content">备注文案备注备注文案备注备注文案备注备注文案备注备注文案备注备注文案备注备注文案备注备注文案备注
@@ -199,101 +256,101 @@
                         <div class="preserve-remarks">
                             <button type="button" class="layui-btn">保存备注</button>
                         </div>
-                    </div>
+                    </div> -->
 
-                    <!--商品清单  -->
-                    <div class="layui-tab-content">
-                        <p class="form-title" style="padding-bottom:20px;">商品清单：</p>
-                        <div class="table">
-                            <table class="layui-table" style="table-layout:fixed;margin:0;">
-                                <colgroup>
-                                    <col width="5%">
-                                    <col width="20%">
-                                    <col width="15%">
-                                    <col width="20%">
-                                    <col width="10%">
-                                    <col width="10%">
-                                    <col width="20%">
-                                </colgroup>
-                                <thead>
-                                    <tr>
-                                        <th style="text-align:center;">
-                                            <form class="layui-form checkAll" action="">
-                                                <input type="checkbox" lay-filter="checkAll" lay-skin="primary">
-                                            </form>
-                                        </th>
-                                        <th style="text-align:left;">商品ID</th>
-                                        <th style="text-align:center;">商品图片</th>
-                                        <th style="text-align:center;">专辑名称</th>
-                                        <th style="text-align:center;">销售价</th>
-                                        <th style="text-align:center;">原购数量</th>
-                                        <th style="text-align:center;">操作</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td style="text-align:center;">
-                                            <form class="layui-form" action="">
-                                                <input type="checkbox" name="item_id" value="" lay-skin="primary"
-                                                    class="test" lay-filter="checkChild">
-                                            </form>
-                                        </td>
-                                        <td class="textOverflow" style="text-align:left;">1002545585/234890007866525
-                                        </td>
-                                        <td class="tableTitle" style="text-align: center;">
-                                            <div class="pic-two">
-                                                <img src="https://mhuoba.oss-cn-hangzhou.aliyuncs.com/picture/audio/20190812/18/20190812183751909.jpg!w81h50"
-                                                    alt="">
-                                            </div>
-                                        </td>
-                                        <td style="text-align:center;">
-                                            <p class="textTwoOver">商品标题最多两行题最多两行商品标题最多两行题最多两行
-                                                商品标题最多两行商品标题最多两行题最多两行商品标题最多两行题最多两行</p>
-                                        </td>
-                                        <td style="text-align:center;">￥76.20</td>
-                                        <td style="text-align:center;">211155</td>
-                                        <td style="text-align:center;">
-                                            <button type="button" class="layui-btn layui-btn-five">编辑</button>
-                                            <button type="button" class="layui-btn layui-btn-danger">删除</button>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                        <!--商品清单  -->
+                        <div class="layui-tab-content">
+                            <p class="form-title" style="padding-bottom:20px;">商品清单：</p>
+                            <div class="table">
+                                <table class="layui-table" style="table-layout:fixed;margin:0;">
+                                    <colgroup>
+                                        <col width="5%">
+                                        <col width="20%">
+                                        <col width="15%">
+                                        <col width="20%">
+                                        <col width="10%">
+                                        <col width="10%">
+                                        <col width="20%">
+                                    </colgroup>
+                                    <thead>
+                                        <tr>
+                                            <th style="text-align:center;">
+                                                <form class="layui-form checkAll" action="">
+                                                    <input type="checkbox" lay-filter="checkAll" lay-skin="primary">
+                                                </form>
+                                            </th>
+                                            <th style="text-align:left;">商品ID</th>
+                                            <th style="text-align:center;">商品图片</th>
+                                            <th style="text-align:center;">专辑名称</th>
+                                            <th style="text-align:center;">销售价</th>
+                                            <th style="text-align:center;">原购数量</th>
+                                            <th style="text-align:center;">操作</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td style="text-align:center;">
+                                                <form class="layui-form" action="">
+                                                    <input type="checkbox" name="item_id" value="" lay-skin="primary"
+                                                        class="test" lay-filter="checkChild">
+                                                </form>
+                                            </td>
+                                            <td class="textOverflow" style="text-align:left;">1002545585/234890007866525
+                                            </td>
+                                            <td class="tableTitle" style="text-align: center;">
+                                                <div class="pic-two">
+                                                    <img src="https://mhuoba.oss-cn-hangzhou.aliyuncs.com/picture/audio/20190812/18/20190812183751909.jpg!w81h50"
+                                                        alt="">
+                                                </div>
+                                            </td>
+                                            <td style="text-align:center;">
+                                                <p class="textTwoOver">商品标题最多两行题最多两行商品标题最多两行题最多两行
+                                                    商品标题最多两行商品标题最多两行题最多两行商品标题最多两行题最多两行</p>
+                                            </td>
+                                            <td style="text-align:center;">￥76.20</td>
+                                            <td style="text-align:center;">211155</td>
+                                            <td style="text-align:center;">
+                                                <button type="button" class="layui-btn layui-btn-five">编辑</button>
+                                                <button type="button" class="layui-btn layui-btn-danger">删除</button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+
+                            </div>
+                            <!-- 金额明细 -->
+                            <div class="price-detail">
+                                <div class="detail-left">
+                                    <ul>
+                                        <li>
+                                            商品总额: ¥<span>84.90</span>
+                                        </li>
+                                        <li>
+                                            满减: -¥<span>84.90</span>
+                                        </li>
+                                        <li>
+                                            优惠券: -¥<span>1.00</span>
+                                        </li>
+                                        <li>
+                                            运费: ¥<span>4.90</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="detail-right main-color">
+                                    应付总额: ¥<span>82.22</span>
+                                </div>
+                            </div>
+
+
 
                         </div>
-                        <!-- 金额明细 -->
-                        <div class="price-detail">
-                            <div class="detail-left">
-                                <ul>
-                                    <li>
-                                        商品总额: ¥<span>84.90</span>
-                                    </li>
-                                    <li>
-                                        满减: -¥<span>84.90</span>
-                                    </li>
-                                    <li>
-                                        优惠券: -¥<span>1.00</span>
-                                    </li>
-                                    <li>
-                                        运费: ¥<span>4.90</span>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="detail-right main-color">
-                                应付总额: ¥<span>82.22</span>
-                            </div>
-                        </div>
-
-
-
                     </div>
                 </div>
             </div>
-        </div>
 
-        <!-- 底部 -->
-        <div class="layui-footer"></div>
-    </div>
+            <!-- 底部 -->
+            <!-- <div class="layui-footer"></div> -->
+        </div>
 </body>
 
 </html>
