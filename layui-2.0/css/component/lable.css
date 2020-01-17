@@ -7,7 +7,7 @@
 
 .lable-title {
     color: #333333;
-    width: 90px;
+    width: 140px;
 }
 
 .lable-search {
@@ -16,7 +16,7 @@
 
 .lableGroup {
     margin-top: 20px;
-    margin-left: 120px;
+    margin-left: 170px;
     height: 108px;
     overflow: hidden;
 }
@@ -46,14 +46,16 @@
     background: #54ACF0 !important;
     color: #ffffff !important;
 }
+.lableGroup .noLableContent{
+    width: 270px;
+    text-align: center;
+}
 .lableGroup .noLable{
     font-size: 14px;
     color: #999999;
-    margin-left: 100px;
     margin-bottom: 15px;
-}
-.lableGroup .clickLableAdd{
-    margin-left: 65px;
+    width: 270px;
+    text-align: center;
 }
 
 .lableAdd {
@@ -74,7 +76,7 @@
 
 .lableAdd .lable-show {
     margin-top: 15px;
-    margin-left: 120px;
+    margin-left: 170px;
 }
 
 .lableAdd .lable-show .lable-add-btn {

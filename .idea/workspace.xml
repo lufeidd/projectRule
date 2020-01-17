@@ -5,9 +5,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/layui-2.0/css/component/lable.css" beforeDir="false" afterPath="$PROJECT_DIR$/layui-2.0/css/component/lable.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/layui-2.0/css/component/select.css" beforeDir="false" afterPath="$PROJECT_DIR$/layui-2.0/css/component/select.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/layui-2.0/css/component/table.css" beforeDir="false" afterPath="$PROJECT_DIR$/layui-2.0/css/component/table.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/layui-2.0/public.js" beforeDir="false" afterPath="$PROJECT_DIR$/layui-2.0/public.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/layui-2.0/template/inputTags/inputTags.js" beforeDir="false" afterPath="$PROJECT_DIR$/layui-2.0/template/inputTags/inputTags.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -26,8 +24,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="11837">
-              <caret line="1057" column="34" lean-forward="true" selection-start-line="1057" selection-start-column="34" selection-end-line="1057" selection-end-column="34" />
+            <state relative-caret-position="5">
+              <caret line="990" column="59" selection-start-line="990" selection-start-column="59" selection-end-line="990" selection-end-column="59" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#div#0;n#article#3;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#div#2;n#div#1;n#form#0;n#div#0;n#div#1;n#div#0;n#article#3;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -36,7 +34,6 @@
                 <element signature="n#style#0;n#div#0;n#article#10;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#1;n#article#10;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#article#11;n#section#0;n#body#0;n#html#0;n#!!top" />
-                <element signature="n#article#12;n#section#0;n#body#0;n#html#0;n#!!top" />
                 <element signature="n#article#14;n#section#0;n#body#0;n#html#0;n#!!top" />
                 <element signature="n#style#0;n#table#0;n#div#3;n#article#14;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#th#1;n#tr#0;n#thead#0;n#table#0;n#div#3;n#article#14;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -62,10 +59,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>searchAction</find>
-      <find>e63b</find>
-      <find>tally</find>
-      <find>updateShowData</find>
       <find>isplay</find>
       <find>deleteEtc</find>
       <find>更新localStorage数据</find>
@@ -92,6 +85,10 @@
       <find>ajaxCascaderTemplate</find>
       <find>cascader</find>
       <find>popup1</find>
+      <find>select</find>
+      <find>文本域3</find>
+      <find>parent</find>
+      <find>test1</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -120,14 +117,14 @@
         <option value="$PROJECT_DIR$/layui-2.0/css/component/tab.css" />
         <option value="$PROJECT_DIR$/iframe-2.0/tableOne.html" />
         <option value="$PROJECT_DIR$/layui-2.0/js/component/lable.js" />
-        <option value="$PROJECT_DIR$/layui-2.0/template/inputTags/inputTags.js" />
         <option value="$PROJECT_DIR$/iframe-2.0/lable.html" />
         <option value="$PROJECT_DIR$/layui-2.0/css/public.css" />
         <option value="$PROJECT_DIR$/layui-2.0/css/component/select.css" />
-        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/layui-2.0/public.js" />
         <option value="$PROJECT_DIR$/layui-2.0/css/component/table.css" />
+        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/layui-2.0/css/component/lable.css" />
+        <option value="$PROJECT_DIR$/layui-2.0/template/inputTags/inputTags.js" />
       </list>
     </option>
   </component>
@@ -142,7 +139,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -173,10 +169,24 @@
               <item name="css" type="462c0819:PsiDirectoryNode" />
               <item name="component" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="projectRule" type="b2602c69:ProjectViewProjectNode" />
+              <item name="projectRule" type="462c0819:PsiDirectoryNode" />
+              <item name="layui-2.0" type="462c0819:PsiDirectoryNode" />
+              <item name="template" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="projectRule" type="b2602c69:ProjectViewProjectNode" />
+              <item name="projectRule" type="462c0819:PsiDirectoryNode" />
+              <item name="layui-2.0" type="462c0819:PsiDirectoryNode" />
+              <item name="template" type="462c0819:PsiDirectoryNode" />
+              <item name="inputTags" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -225,12 +235,13 @@
       <workItem from="1578877576667" duration="9028000" />
       <workItem from="1578963408057" duration="1831000" />
       <workItem from="1579049796304" duration="7946000" />
-      <workItem from="1579136336031" duration="7418000" />
+      <workItem from="1579136336031" duration="10021000" />
+      <workItem from="1579229212728" duration="1951000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="181511000" />
+    <option name="totallyTimeSpent" value="186065000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -504,16 +515,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/layui-2.0/template/inputTags/inputTags.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="596">
-          <caret line="104" column="47" lean-forward="true" selection-start-line="104" selection-start-column="47" selection-end-line="104" selection-end-column="47" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/layui-2.0/font/iconfont.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="271">
@@ -567,14 +568,27 @@
     <entry file="file://$PROJECT_DIR$/layui-2.0/css/component/lable.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="822">
-          <caret line="170" column="1" selection-start-line="170" selection-start-column="1" selection-end-line="170" selection-end-column="1" />
+          <caret line="172" column="1" selection-start-line="172" selection-start-column="1" selection-end-line="172" selection-end-column="1" />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/layui-2.0/template/inputTags/inputTags.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="148">
+          <caret line="110" column="38" lean-forward="true" selection-start-line="110" selection-start-column="38" selection-end-line="110" selection-end-column="38" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../Huoba/Application/ShopAdmin/Static/style/layui-2.0/css/component/lable.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="11837">
-          <caret line="1057" column="34" lean-forward="true" selection-start-line="1057" selection-start-column="34" selection-end-line="1057" selection-end-column="34" />
+        <state relative-caret-position="5">
+          <caret line="990" column="59" selection-start-line="990" selection-start-column="59" selection-end-line="990" selection-end-column="59" />
           <folding>
             <element signature="n#style#0;n#div#0;n#div#0;n#article#3;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#2;n#div#1;n#form#0;n#div#0;n#div#1;n#div#0;n#article#3;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -583,7 +597,6 @@
             <element signature="n#style#0;n#div#0;n#article#10;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#article#10;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#article#11;n#section#0;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#article#12;n#section#0;n#body#0;n#html#0;n#!!top" />
             <element signature="n#article#14;n#section#0;n#body#0;n#html#0;n#!!top" />
             <element signature="n#style#0;n#table#0;n#div#3;n#article#14;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#th#1;n#tr#0;n#thead#0;n#table#0;n#div#3;n#article#14;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
