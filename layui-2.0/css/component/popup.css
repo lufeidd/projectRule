@@ -358,16 +358,33 @@
 
 /* 弹窗6*/
 
-.popup6 .layui-layer-btn{
+.popup6 .layui-layer-btn,
+.popup7 .layui-layer-btn {
     text-align: right;
 }
-.popup6 .layui-layer-btn0{
+
+.popup6 .layui-layer-btn0,
+.popup7 .layui-layer-btn0 {
     margin-right: 20px !important;
 }
-.popup6 .layui-layer-btn1{
+
+.popup6 .layui-layer-btn1,
+.popup7 .layui-layer-btn1 {
     margin-right: 30px !important;
 }
 
+.popup6 .layui-layer-content,
+.popup7 .layui-layer-content {
+    width: 90%;
+    margin: 0 auto;
+    text-align: left;
+}
+
+/* 弹窗msg */
+.layui-layer-msg .layui-layer-content {
+    padding-top: 0px !important;
+    padding: 10px !important;
+}
 
 /* 弹窗confirm */
 .confirm .layui-layer-title {
