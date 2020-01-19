@@ -8,6 +8,24 @@
      width: 260px;
  }
 
+ /* 光标样式 */
+ .cur-po {
+     cursor: pointer;
+ }
+
+ /* padding */
+ .pl-20 {
+     padding-left: 20px;
+ }
+
+ .pr-20 {
+     padding-right: 20px;
+ }
+
+ .pr-33 {
+     padding-right: 33px;
+ }
+
  /* 日期选择1 */
  .layui-laydate {
      border: 1px solid #F0F0F0 !important;
@@ -15,7 +33,7 @@
      border-radius: 4px !important;
      color: #333333 !important;
  }
-
+ 
  .test1 {
      width: 260px;
  }

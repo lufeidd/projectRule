@@ -34,6 +34,8 @@
 @import url('component/popup.css');
 /* 日期选择 */
 @import url('component/date.css');
+/* 日期选择 */
+@import url('component/layedit.css');
 /* 徽章 */
 @import url('component/badge.css');
 /*
@@ -87,20 +89,22 @@ body.small .layui-layout-admin .layui-footer {
 }
 
 .layui-layout-admin .layui-body {
-	top: 100px;
-	bottom: 60px;
-	right: 10px;
+    top: 100px;
+    bottom: 60px;
+    right: 10px;
     background-color: #fff;
     overflow: auto;
 }
+
 /* 底部 */
-.layui-layout-admin .layui-footer{
-	padding:11px 15px;
-	line-height: normal;
-	height: auto;
-	background-color: #FFF;
-	z-index: 9999;
+.layui-layout-admin .layui-footer {
+    padding: 11px 15px;
+    line-height: normal;
+    height: auto;
+    background-color: #FFF;
+    z-index: 9999;
 }
+
 /* 左侧导航 */
 body.large .layui-side.large {
     width: 200px;
@@ -110,8 +114,11 @@ body.small .layui-side.small {
     width: 60px;
 }
 
-.layui-nav .layui-this:after, .layui-nav-bar, .layui-nav-tree .layui-nav-itemed:after,
-.layui-nav .layui-nav-child dd.layui-this a, .layui-nav-child dd.layui-this {
+.layui-nav .layui-this:after,
+.layui-nav-bar,
+.layui-nav-tree .layui-nav-itemed:after,
+.layui-nav .layui-nav-child dd.layui-this a,
+.layui-nav-child dd.layui-this {
     background-color: #f05654;
 }
 
@@ -378,23 +385,26 @@ body.large .layui-side.large {
 
 /********** 公用类名 ***********/
 /* 行内元素 */
-.display-inline{
-	display: inline-block;
-	position: relative;
-	vertical-align: middle;
+.display-inline {
+    display: inline-block;
+    position: relative;
+    vertical-align: middle;
 }
+
 /* 清除浮动 */
-.clear-float::after{
-	content: '';
+.clear-float::after {
+    content: '';
     display: block;
     width: 0;
     height: 0;
     clear: both;
 }
+
 /* 浮左 */
-.float-left{
-	float: left;
+.float-left {
+    float: left;
 }
+
 /* 浮右 */
 .float-right {
     float: right;
@@ -403,8 +413,9 @@ body.large .layui-side.large {
 .layui-btn+.layui-btn {
     margin-left: 0;
 }
+
 /* 提示隐藏 */
-.msg{
+.msg {
     opacity: 0;
 }
 

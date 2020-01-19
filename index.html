@@ -921,6 +921,7 @@
 				<span id="popup4" class="popup">弹窗4</span>
 				<span id="popup5" class="popup">弹窗5</span>
 				<span id="popup6" class="popup">弹窗6</span>
+				<span id="popup7" class="popup">弹窗7</span>
 				<span id="msg" class="popup">弹窗msg</span>
 				<span id="confirm" class="popup">弹窗confirm</span>
 				<span id="alert" class="popup">弹窗alert</span>
@@ -965,14 +966,20 @@
 					<use xlink:href="#iconguanlian"></use>
 				</svg>级联</p>
 		</article>
+		<article id="layedit">
+			<p class="title">
+				<svg class="icon" aria-hidden="true">
+					<use xlink:href="#iconguanlian"></use>
+				</svg>富文本</p>
+			<!-- 富文本 -->
+			<div>
+				<div class="layui-layedit">
+					<textarea id="goods_desc"></textarea>
+				</div>
+			</div>
+		</article>
 	</section>
-	<article id="layedit">
-		<p class="title">
-			<svg class="icon" aria-hidden="true">
-				<use xlink:href="#iconguanlian"></use>
-			</svg>富文本</p>
 
-	</article>
 </body>
 
 </html>
@@ -986,9 +993,10 @@
 	var dataResult = {};
 
 	//初始化layui
-	layui.use(['element', 'laydate', 'layer', 'form', 'upload'], function () {
+	layui.use(['element', 'laydate', 'layedit', 'layer', 'form', 'upload'], function () {
 		var element = layui.element,
 			form = layui.form,
+			layedit = layui.layedit,
 			laydate = layui.laydate,
 			$ = layui.$;;
 		var upload = layui.upload;
@@ -1062,6 +1070,25 @@
 				}
 			});
 		}
+
+		//富文本编辑器
+		editIndex = layedit.build('goods_desc', {
+			height: 280,
+			tool: [
+				'strong' //加粗
+				, 'italic' //斜体
+				, 'underline' //下划线
+				, 'left' //左对齐
+				, 'center' //居中对齐
+				, 'right' //右对齐
+				, 'image' //插入图片
+			]
+		});
+
+
+
+
+
 	})
 
 	//设置标签iframe高度
@@ -1166,39 +1193,6 @@
 			}
 		});
 	})
-
-	//弹窗msg
-	$("#msg").click(function () {
-		layer.msg('大部分参数都是可以公用的<br>合理搭配，展示不一样的风格', {
-			time: 2000, //2s后自动关闭
-		});
-	})
-
-	//弹窗6
-	$("#popup6").click(function () {
-		//询问框
-		layer.alert('确定要删除此节目吗？删除后将无法恢复。', {
-			btn: ['删 除', '取 消'],
-			area: ['430px', '228px'], //宽高
-			// move: false, //禁止拖拽
-			success: function (data) {
-				$(".layui-layer-dialog").addClass('popup6');
-			},
-			yes: function (index, layero) {
-				//按钮删除的回调
-				// layer.close(index); //如果设定了yes回调，需进行手工关闭
-			},
-			btn2: function (index, layero) {
-				//按钮取消的回调
-				// layer.close(index); //如果设定了yes回调，需进行手工关闭
-				//return false 开启该代码可禁止点击该按钮关闭
-			}
-		});
-	})
-
-
-
-
 
 	//弹窗3
 	$("#popup3").click(function () {
@@ -1314,6 +1308,37 @@
 			}
 		});
 	})
+
+	//弹窗msg
+	$("#msg").click(function () {
+		layer.msg('大部分参数都是可以公用的<br>合理搭配，展示不一样的风格', {
+			time: 2000, //2s后自动关闭
+		});
+	})
+
+	//弹窗6
+	$("#popup6").click(function () {
+		//询问框
+		layer.alert('确定要删除此节目吗？删除后将无法恢复。', {
+			btn: ['删 除', '取 消'],
+			area: ['430px', '228px'], //宽高
+			// move: false, //禁止拖拽
+			success: function (data) {
+				$(".layui-layer-dialog").addClass('popup6');
+			},
+			yes: function (index, layero) {
+				//按钮删除的回调
+				// layer.close(index); //如果设定了yes回调，需进行手工关闭
+			},
+			btn2: function (index, layero) {
+				//按钮取消的回调
+				// layer.close(index); //如果设定了yes回调，需进行手工关闭
+				//return false 开启该代码可禁止点击该按钮关闭
+			}
+		});
+	})
+
+	//弹窗confirm
 	$("#confirm").click(function () {
 		layer.open({
 			title: '提示的信息',
@@ -1331,6 +1356,28 @@
 			},
 			btn2: function (index, layero) {
 				//按钮2回调
+				// layer.close(index); //如果设定了yes回调，需进行手工关闭
+				//return false 开启该代码可禁止点击该按钮关闭
+			}
+		});
+	})
+
+	//弹窗7
+	$("#popup7").click(function () {
+		//询问框
+		layer.alert('正在操作取消商户授权，取消后此商户创建的代发商品将立即下架，进行 中的订单将继续执行。', {
+			btn: ['取消授权', '取 消'],
+			area: ['430px', '228px'], //宽高
+			// move: false, //禁止拖拽
+			success: function (data) {
+				$(".layui-layer-dialog").addClass('popup7');
+			},
+			yes: function (index, layero) {
+				//按钮删除的回调
+				// layer.close(index); //如果设定了yes回调，需进行手工关闭
+			},
+			btn2: function (index, layero) {
+				//按钮取消的回调
 				// layer.close(index); //如果设定了yes回调，需进行手工关闭
 				//return false 开启该代码可禁止点击该按钮关闭
 			}
