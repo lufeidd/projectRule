@@ -3,7 +3,7 @@
  *	创建时间：
  *	描述：数据表格组件
  */
- @charset "utf-8";
+@charset "utf-8";
 .table .layui-table th{
     font-size:12px;
     font-family:PingFang SC;
@@ -19,20 +19,39 @@
     position: absolute;
     width:6px;
     height:6px;
-    background: #54F075;
     border-radius:50%;
-    left: 6px;
+    left: 20px;
     top: 50%;
     margin-top: -2px;
+}
+.table .statusA:before{
+    content:'';
+    background: #54F075;
+}
+.table .statusB:before{
+    content:'';
+    background: #F0B354;
+}
+.table .statusC:before{
+    content:'';
+    background: #54ACF0;
+}
+.table .statusD:before{
+    content:'';
+    background: #999999;
+}
+.table .statusE:before{
+    content:'';
+    background: #F05654;
 }
 .table .tableTitle{
     text-align: left;
     white-space: nowrap;
 }
 .table .tableTitle .message{
-     width:68%;
-     padding-left: 5px;
-     white-space: normal;
+    width:68%;
+    padding-left: 5px;
+    white-space: normal;
 }
 .textOverflow{
     overflow: hidden;
@@ -78,4 +97,55 @@
     width: 10px;
     height: 100%;
     position: relative;
+}
+.tableIcon{
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
+    top: 35%;
+}
+.tableIcon-content{
+    position: absolute;
+    top: -100px;
+    right: 9px;
+    width: 280px;
+    z-index: 99;
+    display: none;
+}
+.tableIcon-block{
+    background-color: #FFF;
+    padding: 15px 20px;
+    color: #999;
+    border-radius: 6px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.06);
+    z-index: 99;
+}
+.tableIcon-hover-arrow{
+    position: absolute;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 15px 15px 0 15px;
+    border-color: #FFF transparent transparent transparent;
+}
+.table tfoot tr{
+    height: 60px;
+}
+/*flex布局*/
+.table .footFlex{
+    display: flex;
+    align-items: center;
+}
+.table .footFlex .fg{
+    flex-grow: 1;
+}
+.table .footFlex .footText{
+    padding-right: 60px;
+    font-size: 14px;
+}
+.table .footFlex .sum{
+    flex-shrink: 0;
+    font-size: 16px;
+    color: #F05654;
 }

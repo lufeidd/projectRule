@@ -37,6 +37,10 @@
     height: 18px;
 }
 
+.layui-form .text {
+    padding: 9px 0;
+}
+
 .layui-form .form-title {
     padding: 20px 0;
     font-size: 14px;
@@ -48,8 +52,9 @@
     width: 980px;
 }
 
-.layui-text em, .layui-word-aux {
-    color: #54ACF0!important;
+.layui-text em,
+.layui-word-aux {
+    color: #54ACF0 !important;
     font-size: 12px;
 }
 
@@ -60,9 +65,57 @@
 .input-layout-two .layui-form-label {
     width: 310px;
 }
+
 .input-layout-two .layui-input-block {
     margin-left: 310px;
 }
+
 .layui-form-item .layui-inline {
     margin-right: 5px;
+}
+
+/* 表格布局 */
+.table-one {
+    background-color: #F5F5F5;
+    border: 1px #E3E3E3 solid;
+    border-collapse: collapse;
+    min-width: 1050px;
+}
+
+.table-one td {
+    font-size: 14px;
+    color: #666;
+    padding: 10px 20px;
+    vertical-align: top;
+}
+
+.table-one th {
+    font-weight: bold;
+    font-size: 14px;
+    color: #333;
+    padding: 20px 20px 10px 20px;
+    text-align: left;
+    vertical-align: top;
+}
+
+.table-one tfoot {
+    border-top: 1px #E3E3E3 solid;
+}
+
+.table-one tfoot td {
+    padding: 20px;
+}
+
+.table-two {
+    border: 1px #E3E3E3 solid;
+    border-width: 1px 1px 0 1px;
+    border-collapse: collapse;
+    width: 980px;
+}
+.table-two td {
+    font-size: 14px;
+    color: #666;
+    padding: 10px 20px;
+    vertical-align: top;
+    border-bottom: 1px #E3E3E3 solid;
 }
