@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b32f145b-3771-48e1-813b-6de760cc7cf0" name="Default Changelist" comment="" />
+    <list default="true" id="b32f145b-3771-48e1-813b-6de760cc7cf0" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/layui-2.0/css/component/lable.css" beforeDir="false" afterPath="$PROJECT_DIR$/layui-2.0/css/component/lable.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/layui-2.0/template/inputTags/inputTags.js" beforeDir="false" afterPath="$PROJECT_DIR$/layui-2.0/template/inputTags/inputTags.js" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -16,17 +21,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1155">
-              <caret line="960" column="66" lean-forward="true" selection-start-line="960" selection-start-column="66" selection-end-line="960" selection-end-column="66" />
+            <state relative-caret-position="232">
+              <caret line="989" column="64" lean-forward="true" selection-start-line="989" selection-start-column="64" selection-end-line="989" selection-end-column="64" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#div#0;n#article#3;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#div#2;n#div#1;n#form#0;n#div#0;n#div#1;n#div#0;n#article#3;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#div#0;n#article#8;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#article#10;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#1;n#article#10;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#article#13;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#div#0;n#article#13;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#1;n#div#0;n#div#0;n#div#0;n#article#13;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#table#0;n#div#0;n#article#14;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#th#1;n#tr#0;n#thead#0;n#table#0;n#div#0;n#article#14;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#th#2;n#tr#0;n#thead#0;n#table#0;n#div#0;n#article#14;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -88,13 +96,22 @@
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/layui-2.0/template/inputTags/inputTags.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="500">
+              <caret line="95" column="48" selection-start-line="95" selection-start-column="48" selection-end-line="95" selection-end-column="48" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
     </leaf>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>isplay</find>
-      <find>deleteEtc</find>
-      <find>更新localStorage数据</find>
       <find>updateLocalStorage</find>
       <find>jumpNum</find>
       <find>fileError</find>
@@ -121,7 +138,10 @@
       <find>select</find>
       <find>文本域3</find>
       <find>parent</find>
+      <find>popup5</find>
+      <find>laydate</find>
       <find>test1</find>
+      <find>标签</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -155,13 +175,13 @@
         <option value="$PROJECT_DIR$/layui-2.0/css/component/select.css" />
         <option value="$PROJECT_DIR$/layui-2.0/public.js" />
         <option value="$PROJECT_DIR$/layui-2.0/css/component/table.css" />
-        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/layui-2.0/css/component/lable.css" />
+        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/layui-2.0/template/inputTags/inputTags.js" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="57" />
     <option name="y" value="4" />
     <option name="width" value="1400" />
@@ -172,6 +192,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -182,44 +203,12 @@
             <path>
               <item name="projectRule" type="b2602c69:ProjectViewProjectNode" />
               <item name="projectRule" type="462c0819:PsiDirectoryNode" />
-              <item name="iframe-2.0" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="projectRule" type="b2602c69:ProjectViewProjectNode" />
-              <item name="projectRule" type="462c0819:PsiDirectoryNode" />
               <item name="layui-2.0" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="projectRule" type="b2602c69:ProjectViewProjectNode" />
-              <item name="projectRule" type="462c0819:PsiDirectoryNode" />
-              <item name="layui-2.0" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="projectRule" type="b2602c69:ProjectViewProjectNode" />
-              <item name="projectRule" type="462c0819:PsiDirectoryNode" />
-              <item name="layui-2.0" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
-              <item name="component" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="projectRule" type="b2602c69:ProjectViewProjectNode" />
-              <item name="projectRule" type="462c0819:PsiDirectoryNode" />
-              <item name="layui-2.0" type="462c0819:PsiDirectoryNode" />
-              <item name="template" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="projectRule" type="b2602c69:ProjectViewProjectNode" />
-              <item name="projectRule" type="462c0819:PsiDirectoryNode" />
-              <item name="layui-2.0" type="462c0819:PsiDirectoryNode" />
-              <item name="template" type="462c0819:PsiDirectoryNode" />
-              <item name="inputTags" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -269,19 +258,20 @@
       <workItem from="1578963408057" duration="1831000" />
       <workItem from="1579049796304" duration="7946000" />
       <workItem from="1579136336031" duration="10021000" />
-      <workItem from="1579229212728" duration="2079000" />
+      <workItem from="1579229212728" duration="8358000" />
+      <workItem from="1579416913295" duration="1344000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="186193000" />
+    <option name="totallyTimeSpent" value="193816000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4989154" visible="true" weight="0.19915701" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4978308" visible="true" weight="0.19915701" />
+      <window_info active="true" id="Structure" order="1" sideWeight="0.5021692" side_tool="true" visible="true" weight="0.19915701" />
       <window_info id="Favorites" order="2" sideWeight="0.5010846" side_tool="true" weight="0.24973656" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.329718" />
@@ -605,29 +595,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/layui-2.0/template/inputTags/inputTags.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="148">
-          <caret line="110" column="38" lean-forward="true" selection-start-line="110" selection-start-column="38" selection-end-line="110" selection-end-column="38" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../Huoba/Application/ShopAdmin/Static/style/layui-2.0/css/component/lable.css">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1155">
-          <caret line="960" column="66" lean-forward="true" selection-start-line="960" selection-start-column="66" selection-end-line="960" selection-end-column="66" />
+        <state relative-caret-position="232">
+          <caret line="989" column="64" lean-forward="true" selection-start-line="989" selection-start-column="64" selection-end-line="989" selection-end-column="64" />
           <folding>
             <element signature="n#style#0;n#div#0;n#div#0;n#article#3;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#2;n#div#1;n#form#0;n#div#0;n#div#1;n#div#0;n#article#3;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#0;n#article#8;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#article#10;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#article#10;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#article#13;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#div#0;n#article#13;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#1;n#div#0;n#div#0;n#div#0;n#article#13;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#table#0;n#div#0;n#article#14;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#th#1;n#tr#0;n#thead#0;n#table#0;n#div#0;n#article#14;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#th#2;n#tr#0;n#thead#0;n#table#0;n#div#0;n#article#14;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -684,6 +667,16 @@
             <element signature="n#style#0;n#td#4;n#tr#0;n#tbody#0;n#table#0;n#div#3;n#article#14;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#td#5;n#tr#0;n#tbody#0;n#table#0;n#div#3;n#article#14;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#td#6;n#tr#0;n#tbody#0;n#table#0;n#div#3;n#article#14;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/layui-2.0/template/inputTags/inputTags.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="500">
+          <caret line="95" column="48" selection-start-line="95" selection-start-column="48" selection-end-line="95" selection-end-column="48" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
           </folding>
         </state>
       </provider>
