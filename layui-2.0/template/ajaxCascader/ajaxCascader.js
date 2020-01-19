@@ -186,9 +186,9 @@
  				// 来自于陈诗樵的BUG修复,github地址:https://github.com/alasq
  				// data[i].children 改为 data[i][param.prop.children]
  				if (data[i].hasChild == true || data[i][param.prop.children]) {
- 					li = li+'>'+data[i][param.prop.label]+'<i class="layui-icon layui-icon-right"></i></li>'
+ 					li = li+'><div style="overflow: hidden;white-space: nowrap;text-overflow: ellipsis;">'+data[i][param.prop.label]+'</div><i class="layui-icon layui-icon-right"></i></li>'
  				} else {
- 					li = li+'><div>'+data[i][param.prop.label]+'</div></li>'
+					 li = li+'><div style="overflow: hidden;white-space: nowrap;text-overflow: ellipsis;">'+data[i][param.prop.label]+'</div></li>'
  				}
  				lis.push(li)
  			}
@@ -279,9 +279,9 @@
 					for (i in data) {
 						if (data[i][prop.label].indexOf(value) > -1) {
 							if (data[i][prop.children] | data[i].hasChild) {
-								lis += '<li value="'+data[i][prop.value]+'" key="'+key1+i+'">'+data[i][prop.label]+'<i class="layui-icon layui-icon-right"></i></li>'
+								lis += '<li value="'+data[i][prop.value]+'" key="'+key1+i+'"><div style="overflow: hidden;white-space: nowrap;text-overflow: ellipsis;">'+data[i][prop.label]+'</div><i class="layui-icon layui-icon-right"></i></li>'
 							} else {
-								lis += '<li value="'+data[i][prop.value]+'" key="'+key1+i+'">'+data[i][prop.label]+'</li>'
+								lis += '<li value="'+data[i][prop.value]+'" key="'+key1+i+'"><div style="overflow: hidden;white-space: nowrap;text-overflow: ellipsis;">'+data[i][prop.label]+'</div></li>'
 							}
 							 
 							renderData.push(data[i])
