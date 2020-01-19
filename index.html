@@ -462,7 +462,7 @@
 								class="layui-input">
 							<div class="input-number"><span class="input-on-number">0</span>/<span
 									class="input-max-number">100
-									</span>
+								</span>
 							</div>
 						</div>
 						<p class="desc">描述</p>
@@ -588,6 +588,24 @@
 						</td>
 						<td align="right"><button type="button" class="layui-btn">按钮</button></td>
 					</tr>
+				</tfoot>
+			</table>
+			<p class="subTitle">表格布局3</p>
+			<table class="table-two">
+				<colgroup>
+					<col>
+					<col width="150">
+				</colgroup>
+				<tbody>
+					<tr>
+						<td>文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本</td>
+						<td>13975842188</td>
+					</tr>
+					<tr>
+						<td>文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文</td>
+						<td>13975842188</td>
+					</tr>
+				</tbody>
 			</table>
 		</article>
 		<article id="lable">
@@ -979,12 +997,12 @@
 		upload.render({
 			elem: '#uploadOne',
 			accept: 'file' //普通文件
-				,
+			,
 			exts: 'jpeg|jpg|png',
 			size: 5 * 1024,
 			multiple: false,
 			url: '/upload?opt_type=album&file_type=Image&image_type=pic&brand_id=26',
-			before: function (obj) {},
+			before: function (obj) { },
 			done: function (res, index, upload) {
 				if (res.code === 1) {
 					layer.msg(res.msg);
@@ -1001,12 +1019,12 @@
 		upload.render({
 			elem: '#uploadBatch',
 			accept: 'file' //普通文件
-				,
+			,
 			exts: 'jpeg|jpg|png',
 			size: 5 * 1024,
 			multiple: true,
 			url: '/upload?opt_type=album&file_type=Image&image_type=pic&brand_id=26',
-			before: function (obj) {},
+			before: function (obj) { },
 			done: function (res, index, upload) {
 				if (res.code === 1) {
 					layer.msg(res.msg);
