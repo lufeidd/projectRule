@@ -384,7 +384,9 @@
     padding-top: 0px !important;
     padding: 10px !important;
 }
-
+.layui-layer-msg i{
+    display: none !important;
+}
 /* 弹窗confirm */
 .confirm .layui-layer-title {
     display: block;

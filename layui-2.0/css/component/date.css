@@ -88,3 +88,10 @@
     top: 18px;
     left: -10px;
 }
+
+
+
+/* 弹窗内的日期选择*/
+#layui-laydate6{
+    left: 755px !important;
+}
