@@ -29,7 +29,34 @@
         }
     })
 })()
+// 列表全选单选关联
+layui.use(['element', 'form'], function () {
+    var form = layui.form;
+    form.on('checkbox(checkAll)', function (data) {
+        if(data.elem.checked){
+            $(this).parents('.layui-table').find('input[lay-filter="checkChild"]').prop('checked',true)
+        }else{
+            $(this).parents('.layui-table').find('input[lay-filter="checkChild"]').prop('checked',false)
+        }
+        form.render();
+    })
+    form.on('checkbox(checkChild)',function(data){
+        var _length = $(this).parents('.layui-table').find('input[lay-filter="checkChild"]');
+        var _num = 0;
+        for(var i = 0;i < _length.length;i++){
+           if($(_length[i]).prop('checked')){
+               _num ++ ;
+           }
+        }
 
+        if(_num == _length.length){
+            $(this).parents('.layui-table').find('input[lay-filter="checkAll"]').prop('checked',true);
+        }else{
+            $(this).parents('.layui-table').find('input[lay-filter="checkAll"]').prop('checked',false);
+        }
+        form.render();
+    })
+})
 // 搜索组件
 function searchTemplate() {
 
@@ -88,19 +115,7 @@ function searchTemplate() {
         // console.log(cascader.getChooseData('#demo1'))
     })
 
-    // 搜索
-    // function searchAction() {
-    // 设置iframe当前标识
-    // parent.setIframeDataId('table0');
-    // parent.searchAction(data);
-    // }
-    // searchAction(999)
-    // 父亲操作儿子-初始化
-    // function initSearch(argument) {
-    // alert(argument)
-    // }
 
-    // });
 }
 
 // ajaxCascader组件模板
