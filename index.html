@@ -605,7 +605,8 @@
 						<td>13975842188</td>
 					</tr>
 					<tr>
-						<td>文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文</td>
+						<td>文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文
+						</td>
 						<td>13975842188</td>
 					</tr>
 				</tbody>
@@ -1028,12 +1029,12 @@
 		upload.render({
 			elem: '#uploadOne',
 			accept: 'file' //普通文件
-			,
+				,
 			exts: 'jpeg|jpg|png',
 			size: 5 * 1024,
 			multiple: false,
 			url: '/upload?opt_type=album&file_type=Image&image_type=pic&brand_id=26',
-			before: function (obj) { },
+			before: function (obj) {},
 			done: function (res, index, upload) {
 				if (res.code === 1) {
 					layer.msg(res.msg);
@@ -1050,12 +1051,12 @@
 		upload.render({
 			elem: '#uploadBatch',
 			accept: 'file' //普通文件
-			,
+				,
 			exts: 'jpeg|jpg|png',
 			size: 5 * 1024,
 			multiple: true,
 			url: '/upload?opt_type=album&file_type=Image&image_type=pic&brand_id=26',
-			before: function (obj) { },
+			before: function (obj) {},
 			done: function (res, index, upload) {
 				if (res.code === 1) {
 					layer.msg(res.msg);
@@ -1101,15 +1102,87 @@
 				'strong' //加粗
 				, 'italic' //斜体
 				, 'underline' //下划线
+				, 'del' //删除线
+
+				, '|' //分割线
+
 				, 'left' //左对齐
 				, 'center' //居中对齐
 				, 'right' //右对齐
+				, 'link' //超链接
+				, 'unlink' //清除链接
+				, 'face' //表情
 				, 'image' //插入图片
+				, 'help' //帮助
 			]
 		});
 
 
-
+		//弹窗4
+		$("#popup4").click(function () {
+			//页面层需要引入日期插件
+			layer.open({
+				type: 1,
+				title: '将当前节目的授权时间修改为', //title设置
+				skin: 'layui-layer-rim', //加上边框
+				area: ['520px', '218px'], //宽高
+				btn: ['修 改', '取 消', '修改全部'], //btn按钮
+				content: "<form class='layui-form' action=''>" +
+					"<div class='layui-inline'>" +
+					"<input type='text' class='layui-input test5' placeholder='开始时间'>" +
+					"</div>" +
+					"<div class='layui-inline'><span></span>" +
+					"<input type='text' class='layui-input test4' placeholder='结束时间'>" +
+					"</div>" +
+					"</form>", //内容
+				// shadeClose: true, //点击遮罩层隐藏弹窗
+				// move: false, //禁止拖拽
+				success: function (data) {
+					$(".layui-layer-rim").addClass('popup4');
+					laydateDate('.test4');
+					laydateDate('.test5');
+					//日期选择
+					function laydateDate(test) {
+						laydate.render({
+							elem: test, //指定元素
+							ready: function (date) {
+								// 得到初始的日期时间对象：{year: 2017, month: 8, date: 18, hours: 0, minutes: 0, seconds: 0}
+								// console.log(date);
+								$('.laydate-footer-btns .laydate-btns-clear').text(
+									'重置'); //改变按钮text
+							},
+							done: function (value, date, endDate) {
+								//当选择日期之后改变按钮颜色
+								$('.laydate-footer-btns .laydate-btns-clear').css(
+									'color',
+									"#333"); //重置按钮
+								$('.laydate-footer-btns .laydate-btns-now').css(
+									'color',
+									"#333"); //现在按钮
+								// console.log(value); //得到日期生成的值，如：2017-08-18
+								// //得到日期时间对象：{year: 2017, month: 8, date: 18, hours: 0, minutes: 0, seconds: 0}
+								// console.log(date);
+								// console.log(endDate); //得结束的日期时间对象，开启范围选择（range: true）才会返回。对象成员同上。
+							}
+						});
+					}
+				},
+				yes: function (index, layero) {
+					//按钮1回调
+					// layer.close(index); //如果设定了yes回调，需进行手工关闭
+				},
+				btn2: function (index, layero) {
+					//按钮2回调
+					// layer.close(index); //如果设定了yes回调，需进行手工关闭
+					//return false 开启该代码可禁止点击该按钮关闭
+				},
+				btn3: function (index, layero) {
+					//按钮3回调
+					// layer.close(index); //如果设定了yes回调，需进行手工关闭
+					//return false 开启该代码可禁止点击该按钮关闭
+				}
+			});
+		})
 
 
 	})
@@ -1260,44 +1333,6 @@
 		});
 	})
 
-	//弹窗4
-	$("#popup4").click(function () {
-		//页面层需要引入日期插件
-		layer.open({
-			type: 1,
-			title: '将当前节目的授权时间修改为', //title设置
-			skin: 'layui-layer-rim', //加上边框
-			area: ['520px', '218px'], //宽高
-			btn: ['修 改', '取 消', '修改全部'], //btn按钮
-			content: "<form class='layui-form' action=''>" +
-				"<div class='layui-inline'>" +
-				"<input type='text' class='layui-input test1' placeholder='开始时间'>" +
-				"</div>" +
-				"<div class='layui-inline'><span></span>" +
-				"<input type='text' class='layui-input test1' placeholder='结束时间'>" +
-				"</div>" +
-				"</form>", //内容
-			// shadeClose: true, //点击遮罩层隐藏弹窗
-			// move: false, //禁止拖拽
-			success: function (data) {
-				$(".layui-layer-rim").addClass('popup4');
-			},
-			yes: function (index, layero) {
-				//按钮1回调
-				// layer.close(index); //如果设定了yes回调，需进行手工关闭
-			},
-			btn2: function (index, layero) {
-				//按钮2回调
-				// layer.close(index); //如果设定了yes回调，需进行手工关闭
-				//return false 开启该代码可禁止点击该按钮关闭
-			},
-			btn3: function (index, layero) {
-				//按钮3回调
-				// layer.close(index); //如果设定了yes回调，需进行手工关闭
-				//return false 开启该代码可禁止点击该按钮关闭
-			}
-		});
-	})
 
 	//弹窗5
 	$("#popup5").click(function () {
