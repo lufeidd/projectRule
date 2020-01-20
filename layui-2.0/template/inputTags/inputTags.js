@@ -87,7 +87,7 @@ layui.define(['jquery','layer'],function(exports){
     var that = this
     ,spans = ''
     ,options = that.config;
-    options.elem.focus();
+    // options.elem.focus();
     options.elem.keypress(function(event){
       var keynum = (event.keyCode ? event.keyCode : event.which);
       if(keynum == '13'){
@@ -101,8 +101,6 @@ layui.define(['jquery','layer'],function(exports){
         }
         options.done && typeof options.done === 'function' && options.done($val);
         options.elem.val('');
-        var height = $('body').height();
-        setIframeHeight(height,'lable-iframe');
       }
     })
   };
@@ -120,7 +118,6 @@ layui.define(['jquery','layer'],function(exports){
       options.content.splice($.inArray(ThisText,options.content),1);
       var input_lable_num = $('.inputLables').find('.tagsText').text().trim();
       $('.inputLables').find('.input-on-number').text(input_lable_num.length);
-      heightInit();
     })
   };
 
