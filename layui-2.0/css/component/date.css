@@ -1,107 +1,90 @@
- /*
+/*
  *	作者: ym
  *	创建时间：
  *	描述：日期选择组件
  */
 
- .date .layui-inline {
-     width: 260px;
- }
+@charset "utf-8";
 
- /* 光标样式 */
- .cur-po {
-     cursor: pointer;
- }
+.date .layui-inline {
+    width: 260px;
+}
 
- /* padding */
- .pl-20 {
-     padding-left: 20px;
- }
 
- .pr-20 {
-     padding-right: 20px;
- }
+/* 日期选择1 */
+.layui-laydate {
+    border: 1px solid #F0F0F0 !important;
+    box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.16) !important;
+    border-radius: 4px !important;
+    color: #333333 !important;
+}
 
- .pr-33 {
-     padding-right: 33px;
- }
+.test1 {
+    width: 260px;
+}
 
- /* 日期选择1 */
- .layui-laydate {
-     border: 1px solid #F0F0F0 !important;
-     box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.16) !important;
-     border-radius: 4px !important;
-     color: #333333 !important;
- }
- 
- .test1 {
-     width: 260px;
- }
+.layui-laydate .layui-laydate-main {
+    width: 260px;
+}
 
- .layui-laydate .layui-laydate-main {
-     width: 260px;
- }
+.laydate-set-ym {
+    color: #333333;
+}
 
- .laydate-set-ym {
-     color: #333333;
- }
+.layui-laydate .layui-laydate-footer {
+    border-top: 1px solid #f0f0f0;
+}
 
- .layui-laydate .layui-laydate-footer {
-     border-top: 1px solid #f0f0f0;
- }
+.laydate-main-list-0 .layui-laydate-content td:hover,
+.laydate-main-list-0 .layui-laydate-list li:hover {
+    background-color: #F0F0F0;
+}
 
- .laydate-main-list-0 .layui-laydate-content td:hover,
- .laydate-main-list-0 .layui-laydate-list li:hover {
-     background-color: #F0F0F0;
- }
+.laydate-main-list-0 .layui-laydate-content td {
+    color: #333;
+}
 
- .laydate-main-list-0 .layui-laydate-content td {
-     color: #333;
- }
+.layui-laydate .layui-this {
+    background-color: #54ACF0 !important;
+}
 
- .layui-laydate .layui-this {
-     background-color: #54ACF0 !important;
- }
+.laydate-main-list-0 .layui-laydate-header i:hover,
+.laydate-main-list-0 .layui-laydate-header span:hover,
+.layui-laydate .layui-laydate-footer span:hover {
+    color: #54ACF0;
+}
 
- .laydate-main-list-0 .layui-laydate-header i:hover,
- .laydate-main-list-0 .layui-laydate-header span:hover,
- .layui-laydate .layui-laydate-footer span:hover {
-     color: #54ACF0;
- }
+.layui-laydate .layui-laydate-footer .laydate-btns-clear,
+.layui-laydate .layui-laydate-footer .laydate-btns-now {
+    color: #999999;
+}
 
- .layui-laydate .layui-laydate-footer .laydate-btns-clear,
- .layui-laydate .layui-laydate-footer .laydate-btns-now {
-     color: #999999;
- }
+/* 日期选择2 */
 
- /* 日期选择2 */
+.onset,
+.terminate {
+    float: left;
+}
 
- .onset,
- .terminate {
-     float: left;
- }
+.onset .layui-input,
+.terminate .layui-input {
+    width: 130px;
+    height: 38px;
+}
 
- .onset .layui-input,
- .terminate .layui-input {
-     width: 130px;
-     height: 38px;
- }
+#layui-laydate3 {
+    left: 155px !important;
+}
 
- #layui-laydate3 {
-     left: 155px !important;
- }
- #layui-laydate4{
-     left: 755px !important;
- }
- .terminate span {
-     float: left;
-     margin-left: 10px;
-     margin-right: 10px;
-     position: relative;
-     border: 1px solid #999999;
-     display: inline-block;
-     width: 13px;
-     padding-left: 0;
-     top: 18px;
-     left: 0px;
- }
+.terminate span {
+    float: left;
+    margin-left: 10px;
+    margin-right: 10px;
+    position: relative;
+    border: 1px solid #999999;
+    display: inline-block;
+    width: 13px;
+    padding-left: 0;
+    top: 18px;
+    left: -10px;
+}
