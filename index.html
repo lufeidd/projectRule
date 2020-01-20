@@ -85,6 +85,7 @@
 		<a href="#color">颜色</a>
 		<a href="#tab">选项卡</a>
 		<a href="#select">下拉</a>
+		<a href="#cascader">多级联下拉框</a>
 		<a href="#checkbox">复选框</a>
 		<a href="#radiobox">单选框</a>
 		<a href="#rule">法规提示</a>
@@ -360,6 +361,8 @@
 					</select>
 				</form>
 			</div>
+		</article>
+		<article id="cascader">
 			<p class="title">
 				<svg class="icon" aria-hidden="true">
 					<use xlink:href="#iconguanlian"></use>
@@ -614,7 +617,35 @@
 				<svg class="icon" aria-hidden="true">
 					<use xlink:href="#iconguanlian"></use>
 				</svg>标签</p>
-			<iframe src="iframe-2.0/lable.html" name="lableChoose" data-id="label0"></iframe>
+			<!-- 标签搜索 -->
+			<div class="input-second-container lable-input-container labelContainer">
+				<label class="layui-form-label lable-title">添加标签：</label>
+				<div class="layui-inline inputLables" style="width: 215px;padding-right: 45px;">
+					<input type="text" name="inputTags" id="inputTags" required lay-verify="required" placeholder="默认文本"
+						   autocomplete="off" class="layui-input" onkeypress="javascript:return gosearch();">
+					<div class="input-number"><span class="input-on-number" style="padding: 0;background-color:#fff;color:#999999;">0</span>/<span
+							class="input-max-number" style="padding: 0;background-color:#fff;color:#999999;">10</span></div>
+				</div>
+				<button type="button" class="layui-btn lable-search lableSearch">搜索</button>
+			</div>
+			<!-- 标签搜索群 -->
+			<div class="lableGroup">
+				<!-- <button type="button" class="lable-btn layui-btn-primary" data-id="1">爱情</button>
+                <button type="button" class="lable-btn layui-btn-primary" data-id="1">爱情</button> -->
+			</div>
+			<!--已添加标签-->
+			<div class="lableAdd">
+				<label class="layui-form-label lable-title">已添加标签：</label>
+				<div class="layui-inline num" >
+					<span class="lable-on-number">0</span>/<span
+						class="lable-max-number">10</span>
+				</div>
+				<div class="lable-show">
+					<!--<button type="button" class="lable-add-btn">欧美认电视剧
+                        <i class="layui-icon layui-icon-close close"></i>
+                    </button>-->
+				</div>
+			</div>
 		</article>
 
 		<article id="table">
@@ -959,14 +990,6 @@
 				<span class="layui-badge-rim">徽章</span>
 			</div>
 		</article>
-
-
-		<article id="cascader">
-			<p class="title">
-				<svg class="icon" aria-hidden="true">
-					<use xlink:href="#iconguanlian"></use>
-				</svg>级联</p>
-		</article>
 		<article id="layedit">
 			<p class="title">
 				<svg class="icon" aria-hidden="true">
@@ -980,13 +1003,13 @@
 			</div>
 		</article>
 	</section>
-
 </body>
 
 </html>
 <script type="text/javascript" src="layui-2.0/layui.js"></script>
 <script type="text/javascript" src="layui-2.0/jquery3.4.1.js"></script>
 <script type="text/javascript" src="layui-2.0/public.js"></script>
+<script type="text/javascript" src="layui-2.0/tags.js"></script>
 <script type="text/javascript" src="layui-2.0/template/inputTags/inputTags.js"></script>
 <script type="text/javascript">
 	// iframe当前标识
@@ -999,7 +1022,7 @@
 			form = layui.form,
 			layedit = layui.layedit,
 			laydate = layui.laydate,
-			$ = layui.$;;
+			$ = layui.$;
 		var upload = layui.upload;
 
 		//图片上传 之 主图和其他附图
