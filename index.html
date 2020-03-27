@@ -9,6 +9,7 @@
 	<!-- 字体图标 -->
 	<script src="layui-2.0/font/iconfont.js"></script>
 	<style type="text/css">
+
 		html {
 			background-color: #fff;
 		}
@@ -73,8 +74,7 @@
 		}
 	</style>
 </head>
-
-<body y>
+<body>
 
 	<menu id="anchor">
 		<a href="#frame">框架</a>
@@ -429,11 +429,26 @@
 					<img src="" alt="">
 				</div>
 			</div>
+			<!-- /*
+			* 作者: ym
+			* 创建时间：2020/3/27
+			* 描述：图片比例组件
+			*/ --> 
+			<div class="picPicture" style="margin: 10px 0;">
+				<div class="pic-three">
+					<div class="noPicture">
+						点击上传
+					</div>
+					<div class="cancel">
+						点击删除
+					</div>
+				</div>
+			</div>
 		</article>
 		<article>
 			<p class="title">
 				<svg class="icon" aria-hidden="true">
-					<use xlink:href="#iconguanlian"></use>
+					<use xlink:href="#iconguanlian"></use>  
 				</svg>固定底部按钮</p>
 			<div class="layui-footer">
 				<button class="layui-btn">保存并提交</button>
@@ -621,9 +636,11 @@
 				<label class="layui-form-label lable-title">添加标签：</label>
 				<div class="layui-inline inputLables" style="width: 215px;padding-right: 45px;">
 					<input type="text" name="inputTags" id="inputTags" required lay-verify="required" placeholder="默认文本"
-						   autocomplete="off" class="layui-input" onkeypress="javascript:return gosearch();">
-					<div class="input-number"><span class="input-on-number" style="padding: 0;background-color:#fff;color:#999999;">0</span>/<span
-							class="input-max-number" style="padding: 0;background-color:#fff;color:#999999;">10</span></div>
+						autocomplete="off" class="layui-input" onkeypress="javascript:return gosearch();">
+					<div class="input-number"><span class="input-on-number"
+							style="padding: 0;background-color:#fff;color:#999999;">0</span>/<span
+							class="input-max-number" style="padding: 0;background-color:#fff;color:#999999;">10</span>
+					</div>
 				</div>
 				<button type="button" class="layui-btn lable-search lableSearch">搜索</button>
 			</div>
@@ -635,9 +652,8 @@
 			<!--已添加标签-->
 			<div class="lableAdd">
 				<label class="layui-form-label lable-title">已添加标签：</label>
-				<div class="layui-inline num" >
-					<span class="lable-on-number">0</span>/<span
-						class="lable-max-number">10</span>
+				<div class="layui-inline num">
+					<span class="lable-on-number">0</span>/<span class="lable-max-number">10</span>
 				</div>
 				<div class="lable-show">
 					<!--<button type="button" class="lable-add-btn">欧美认电视剧
@@ -949,7 +965,7 @@
 				<span id="popup1" class="popup">弹窗1</span>
 				<span id="popup2" class="popup">弹窗2</span>
 				<span id="popup3" class="popup">弹窗3</span>
-				<span id="popup4" class="popup">弹窗4</span>
+				<span id="popup4" class="popup">时间弹窗</span>
 				<span id="popup5" class="popup">弹窗5</span>
 				<span id="popup6" class="popup">弹窗6</span>
 				<span id="popup7" class="popup">弹窗7</span>
@@ -1117,7 +1133,7 @@
 		});
 
 
-		//弹窗4
+		//时间弹窗
 		$("#popup4").click(function () {
 			//页面层需要引入日期插件
 			layer.open({

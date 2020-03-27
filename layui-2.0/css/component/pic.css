@@ -6,17 +6,19 @@
 
 @charset "utf-8";
 
-.pic-one{
+.pic-one {
     width: 120px;
     height: 120px;
     display: inline-block;
 }
-.pic-two{
+
+.pic-two {
     width: 64px;
     height: 64px;
     display: inline-block;
 }
-.pic-one .noPicture{
+
+.pic-one .noPicture {
     width: 120px;
     height: 120px;
     background: #EFEFEF;
@@ -27,15 +29,18 @@
     justify-content: center;
     align-items: center;
 }
-.pic-one img{
+
+.pic-one img {
     width: 120px;
     height: 120px;
 }
-.pic-two img{
+
+.pic-two img {
     width: 64px;
     height: 64px;
 }
-.pic-two .noPicture{
+
+.pic-two .noPicture {
     width: 64px;
     height: 64px;
     background: #EFEFEF;
@@ -45,4 +50,39 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+
+/*
+ *	作者: ym
+ *	创建时间：20203/27
+ *	描述：图片比例组件
+ */
+
+.pic-three {
+    width: 120px;
+    height: 120px;
+    background: #EFEFEF;
+    border: 1px dashed #C0C0C0;
+    color: #999999;
+    font-size: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+}
+
+.pic-three .cancel {
+    width: 120px;
+    height: 120px;
+    background: #000;
+    color: #ffff;
+    opacity: 0.5;
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    cursor: pointer;
 }
