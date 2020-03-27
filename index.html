@@ -430,6 +430,21 @@
 					<img src="" alt="">
 				</div>
 			</div>
+			<!-- /*
+			* 作者: ym
+			* 创建时间：2020/3/7
+			* 描述：图片比例组件
+			*/ --> 
+			<div class="picPicture" style="margin: 10px 0;">
+				<div class="pic-three">
+					<div class="noPicture">
+						点击上传
+					</div>
+					<div class="cancel">
+						点击删除
+					</div>
+				</div>
+			</div>
 		</article>
 		<article>
 			<p class="title">
@@ -622,9 +637,11 @@
 				<label class="layui-form-label lable-title">添加标签：</label>
 				<div class="layui-inline inputLables" style="width: 215px;padding-right: 45px;">
 					<input type="text" name="inputTags" id="inputTags" required lay-verify="required" placeholder="默认文本"
-						   autocomplete="off" class="layui-input" onkeypress="javascript:return gosearch();">
-					<div class="input-number"><span class="input-on-number" style="padding: 0;background-color:#fff;color:#999999;">0</span>/<span
-							class="input-max-number" style="padding: 0;background-color:#fff;color:#999999;">10</span></div>
+						autocomplete="off" class="layui-input" onkeypress="javascript:return gosearch();">
+					<div class="input-number"><span class="input-on-number"
+							style="padding: 0;background-color:#fff;color:#999999;">0</span>/<span
+							class="input-max-number" style="padding: 0;background-color:#fff;color:#999999;">10</span>
+					</div>
 				</div>
 				<button type="button" class="layui-btn lable-search lableSearch">搜索</button>
 			</div>
@@ -636,9 +653,8 @@
 			<!--已添加标签-->
 			<div class="lableAdd">
 				<label class="layui-form-label lable-title">已添加标签：</label>
-				<div class="layui-inline num" >
-					<span class="lable-on-number">0</span>/<span
-						class="lable-max-number">10</span>
+				<div class="layui-inline num">
+					<span class="lable-on-number">0</span>/<span class="lable-max-number">10</span>
 				</div>
 				<div class="lable-show">
 					<!--<button type="button" class="lable-add-btn">欧美认电视剧
@@ -1412,7 +1428,7 @@
 				//按钮1回调
 				// layer.close(index); //如果设定了yes回调，需进行手工关闭
 			},
-			btn2: function (index, layero) { 
+			btn2: function (index, layero) {
 				//按钮2回调
 				// layer.close(index); //如果设定了yes回调，需进行手工关闭
 				//return false 开启该代码可禁止点击该按钮关闭
