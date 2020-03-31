@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<meta charset="UTF-8">
 	<title>火把知识-后台-规范手册</title>
@@ -9,34 +10,40 @@
 	<!-- 字体图标 -->
 	<script src="layui-2.0/font/iconfont.js"></script>
 	<style type="text/css">
-
 		html {
 			background-color: #fff;
 		}
 
 		menu#anchor {
 			position: fixed;
-			width: 100px;
-			text-align: center;
+			width: 130px;
+			text-align: right;
 			left: 0;
 			top: 0;
 			bottom: 0;
 			overflow: auto;
-			background-color: #fff;
-			z-index: 1002;
-			padding: 10px;
+			background-color: #355873;
+			color: #fff;
+			z-index: 999;
 			box-sizing: border-box;
 			font-size: 15px;
-			box-shadow: 0 0 5px rgba(0, 0, 0, .5);
+			margin: 0;
+			padding: 70px 10px 10px 10px;
 		}
 
 		#anchor a {
 			display: block;
-			padding: 12px 0;
+			padding: 8px 0;
+			color: rgba(255, 255, 255, 0.5);
+		}
+
+		#anchor a.active,
+		#anchor a:hover {
+			color: rgba(255, 255, 255, 1);
 		}
 
 		section {
-			margin-left: 120px;
+			margin-left: 140px;
 			padding-bottom: 80px;
 		}
 
@@ -61,19 +68,49 @@
 		header#header {
 			position: fixed;
 			text-align: center;
-			height: 50px;
-			line-height: 50px;
+			height: 60px;
+			line-height: 60px;
 			font-size: 16px;
 			top: 0;
-			padding-left: 100px;
+			padding-left: 120px;
 			width: 100%;
 			box-sizing: border-box;
-			background-color: #fff;
+			background-color: #355873;
+			color: #fff;
 			z-index: 1001;
-			box-shadow: 0 0 5px rgba(0, 0, 0, .5);
+		}
+
+		header#header .logo {
+			position: absolute;
+			left: 0;
+			top: 0;
+			font-size: 15px;
+			line-height: 20px;
+			background-color: #203e55;
+			width: 130px;
+			height: 60px;
+		}
+
+		header#header .logo .txt1 {
+			padding-top: 10px;
+		}
+		header#header .logo .txt2 {
+			font-size: 13px;
+		}
+		header#header .tab {
+			color: rgba(255, 255, 255, .5);
+		}
+		header#header .tab a {
+			color: rgba(255, 255, 255, .5);
+			padding: 0 20px;
+		}
+		header#header .tab a:hover,
+		header#header .tab a.active {
+			color: rgba(255, 255, 255, 1);
 		}
 	</style>
 </head>
+
 <body>
 
 	<menu id="anchor">
@@ -97,7 +134,17 @@
 		<a href="#badge">徽章</a>
 		<a href="#layedit">富文本编辑器</a>
 	</menu>
-	<header id="header">火把知识后台-基于layui框架-前端开发规范手册</header>
+	<header id="header">
+		<div class="logo">
+			<div class="txt1">火把知识</div>
+			<div class="txt2">前端开发规范手册</div>
+		</div>
+		<div class="tab">
+			<a href="#" class="active">后台</a>
+			<span>/</span>
+			<a href="/mobile.html">前台</a>
+		</div>
+	</header>
 	<section>
 		<article id="frame">
 			<p class="title">
@@ -433,7 +480,7 @@
 			* 作者: ym
 			* 创建时间：2020/3/27
 			* 描述：图片比例组件
-			*/ --> 
+			*/ -->
 			<div class="picPicture" style="margin: 10px 0;">
 				<div class="pic-three">
 					<div class="noPicture">
@@ -448,7 +495,7 @@
 		<article>
 			<p class="title">
 				<svg class="icon" aria-hidden="true">
-					<use xlink:href="#iconguanlian"></use>  
+					<use xlink:href="#iconguanlian"></use>
 				</svg>固定底部按钮</p>
 			<div class="layui-footer">
 				<button class="layui-btn">保存并提交</button>
@@ -1044,12 +1091,12 @@
 		upload.render({
 			elem: '#uploadOne',
 			accept: 'file' //普通文件
-				,
+			,
 			exts: 'jpeg|jpg|png',
 			size: 5 * 1024,
 			multiple: false,
 			url: '/upload?opt_type=album&file_type=Image&image_type=pic&brand_id=26',
-			before: function (obj) {},
+			before: function (obj) { },
 			done: function (res, index, upload) {
 				if (res.code === 1) {
 					layer.msg(res.msg);
@@ -1066,12 +1113,12 @@
 		upload.render({
 			elem: '#uploadBatch',
 			accept: 'file' //普通文件
-				,
+			,
 			exts: 'jpeg|jpg|png',
 			size: 5 * 1024,
 			multiple: true,
 			url: '/upload?opt_type=album&file_type=Image&image_type=pic&brand_id=26',
-			before: function (obj) {},
+			before: function (obj) { },
 			done: function (res, index, upload) {
 				if (res.code === 1) {
 					layer.msg(res.msg);
@@ -1131,7 +1178,6 @@
 				, 'help' //帮助
 			]
 		});
-
 
 		//时间弹窗
 		$("#popup4").click(function () {
@@ -1199,7 +1245,6 @@
 			});
 		})
 
-
 	})
 
 	//设置标签iframe高度
@@ -1210,6 +1255,7 @@
 
 	// 搜索
 	searchTemplate()
+
 	// 级联
 	$('cascader').each(function () {
 		var _id = '#' + $(this).attr('id');
@@ -1232,8 +1278,6 @@
 		dataId = id;
 	}
 
-
-
 	//设置iframe高度
 	function setIframeHeight(height, type, hight_sign) {
 		switch (type) {
@@ -1255,6 +1299,12 @@
 				break;
 		}
 	}
+
+	// 左侧导航锚点
+	$('#anchor a').on('click', function () {
+		$('#anchor a').removeClass('active');
+		$(this).addClass('active');
+	})
 
 	//数据表格图标事件
 	$('.tableIcon').hover(function () {
