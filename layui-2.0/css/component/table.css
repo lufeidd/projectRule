@@ -149,3 +149,31 @@
     font-size: 16px;
     color: #F05654;
 }
+/*特殊布局*/
+.table .bgColorBlue{
+    background-color: #EEF7FD;
+}
+.table .marg-20{
+    margin-right: 20px;
+}
+.table .marg-28{
+    margin-right: 28px;
+}
+.table .click-color{
+    color: #54ACF0;
+    cursor:pointer;
+}
+.table .blurs{
+    color: #999999;
+    font-size: 12px;
+}
+.table .goodNum{
+    display: flex;
+}
+.table .goodNum .goodPrice{
+    flex-grow: 1;
+}
+.table .goodNum .goodState{
+    color: #54ACF0;
+    flex-shrink: 0;
+}

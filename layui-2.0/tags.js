@@ -16,13 +16,13 @@ function tagsTemplate(_elem,_type,_data) {
         $ = layui.$;
 
         //搜索插件
-        inputTags.render({
+        /*inputTags.render({
             elem:_elem,//定义输入框input对象
             content: [],//默认标签
             aldaBtn: false,//是否开启获取所有数据的按钮
             done: function(value){ //回车后的回调
             }
-        });
+        });*/
 
         switch(_type){
             case 'init':
@@ -159,10 +159,12 @@ function editLableData(data){
             for(var i = 0; i < data.length; i++){
                 if(data_id == data[i].tag_id){
                     $(this).addClass('active');
-                    lableAdd(data[i].tag_name,data[i].tag_id);
                 }
             }
         });
+        for(var j = 0; j < data.length; j++){
+            lableAdd(data[j].tag_name,data[j].tag_id);
+        }
     }
     
 }

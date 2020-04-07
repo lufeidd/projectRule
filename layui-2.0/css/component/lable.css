@@ -99,7 +99,7 @@
     font-size: 14px !important;
 }
 /*inputtags===============================*/
-.inputLables
+/*.inputLables
 {
     width: 406px;
     margin: 0;
@@ -120,7 +120,6 @@
     height: 16px;
     margin: 3px;
     padding: 4px 22px 5px 9px;
-    cursor: pointer;
     transition: all .2s ease 0s;
     vertical-align: baseline;
     white-space: nowrap;
@@ -170,4 +169,4 @@
     text-align: center;
     color: #fff;
     background: #ffb800;
-}
+}*/
