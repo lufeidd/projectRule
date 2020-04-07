@@ -141,31 +141,38 @@
         <div class="layui-body">
             <div class="layui-tab layui-tab-brief contentBox" lay-filter="docDemoTabBrief">
                 <ul class="layui-tab-title">
-                    <li class="layui-this">代发订单详情</li>
+                    <li class="layui-this">订单详情</li>
                 </ul>
                 <div class="layui-tab-content">
-                    <div class="rule">
-                        关联商户销售订单 <span class="sub1-color">2154548789879</span>
+                    <div class="rule">该订单已关联为代发订单，查看代发订单：
+                        <a href="javascript:;" class="sub1-color">35668487878425</a>
                     </div>
-                    <!--代发订单信息  -->
-
+                    <div class="prompt-order" style="margin-top: 20px;">
+                        <div class='prompt-order-left'>
+                            <p class="sub1-color current-status">待成团</p>
+                            <p class="deadline">将于2020-05-06 23:59:59截至成团</p>
+                        </div>
+                        <div class='prompt-order-right'>
+                            <span>实物</span>
+                            <span>代发</span>
+                            <span>团购</span>
+                            <span>包邮</span>
+                            <span>赠送</span>
+                        </div>
+                        <div style="clear: both;"></div>
+                    </div>
+                    <!--订单详情  -->
                     <div>
                         <form class="layui-form padd-left" action="">
-                            <p class="form-title">代发订单信息</p>
+                            <p class="form-title">订单信息</p>
                             <div class="layui-form-item">
                                 <div class="layui-inline">
-                                    <label class="layui-form-label">当前状态：</label>
+                                    <label class="layui-form-label">
+                                        订单金额：
+                                    </label>
                                     <div class="layui-input-block">
                                         <div class="input-one1-container padd-top">
-                                            <span class="deduct">扣款中</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="layui-inline input-layout-two">
-                                    <label class="layui-form-label">销售订单状态：</label>
-                                    <div class="layui-input-block">
-                                        <div class="input-one1-container padd-top">
-                                            <span class="order-status">代发货</span>
+                                            <span class="order-for-goods-sum">￥15.66</span>
                                         </div>
                                     </div>
                                 </div>
@@ -173,22 +180,22 @@
 
                             <div class="layui-form-item">
                                 <div class="layui-inline">
-                                    <label class="layui-form-label">代发订单号：</label>
+                                    <label class="layui-form-label">下单账号： </label>
                                     <div class="layui-input-block">
                                         <div class="input-one1-container">
                                             <div class="padd-top">
-                                                <span class="code">1</span>
+                                                <span class="account">15987456258</span>
                                             </div>
                                         </div>
 
                                     </div>
                                 </div>
                                 <div class="layui-inline input-layout-two">
-                                    <label class="layui-form-label">用户下单时间：</label>
+                                    <label class="layui-form-label">下单时间： </label>
                                     <div class="layui-input-block">
                                         <div class="input-one1-container">
                                             <div class=" padd-top">
-                                                <span class="order-itme">2019-05-06 </span>
+                                                <span class="order-ytd">2019-05-06 </span>
                                                 <span class="order-hms">23:22:21</span>
                                             </div>
                                         </div>
@@ -200,236 +207,185 @@
 
                             <div class="layui-form-item">
                                 <div class="layui-inline">
-                                    <label class="layui-form-label">创建时间：</label>
+                                    <label class="layui-form-label">支付方式： </label>
                                     <div class="selectTwo float-left padd-top">
-                                        <span class="creation-time">2019-05-06 </span>
-                                        <span class="creation-hms">23:22:21</span>
+                                        支付宝支付
                                     </div>
                                 </div>
                                 <div class="layui-inline input-layout-two">
-                                    <label class="layui-form-label">用户支付时间： </label>
+                                    <label class="layui-form-label">支付时间： </label>
                                     <div class="selectTwo float-left padd-top">
-                                        <span class="timeOfPayment">2019-05-06 </span>
+                                        <span class="payment-ytd">2019-05-06 </span>
                                         <span class="payment-hms">23:22:21</span>
                                     </div>
                                 </div>
                             </div>
 
+                            <div class="layui-form-item input-layout-one">
+                                <label class="layui-form-label">后台订单备注： </label>
+                                <div class="layui-input-inline context" style="width: 471px;">
+                                    <div class="input-second-container">
+                                        <input type="text" name="title" placeholder="仅用于后台记录说明" autocomplete="off"
+                                            class="layui-input" style="width: 471px;">
+                                    </div>
+                                </div>
+                                <div class="layui-form-mid layui-word-aux" style="padding:0px !important;"><button
+                                        type="button" class="layui-btn layui-btn-normal">保存备注</button></div>
+                            </div>
+
+
+                        </form>
+                    </div>
+
+
+                    <!-- 收货信息 -->
+                    <div>
+                        <form class="layui-form padd-left" action="">
+                            <p class="form-title" style="padding-bottom:20px;">收货信息
+                                <a href="javascript:;" class="modify-receipt-information layui-word-aux">修改收货信息</a></p>
                             <div class="layui-form-item">
                                 <div class="layui-inline">
-                                    <label class="layui-form-label">同步时间：</label>
+                                    <label class="layui-form-label">收货人姓名： </label>
                                     <div class="layui-input-block">
-                                        <div class="input-one1-container">
-                                            <div class="padd-top">
-                                                <span class="synchronization-time">2019-05-06 </span>
-                                                <span class="synchronization-hms">23:22:21</span>
-                                            </div>
+                                        <div class="input-one1-container padd-top">
+                                            <span class="receiving-goods">博库</span>
                                         </div>
-
                                     </div>
                                 </div>
                                 <div class="layui-inline input-layout-two">
-                                    <label class="layui-form-label">用户收货时间：</label>
+                                    <label class="layui-form-label">配送方式： </label>
                                     <div class="layui-input-block">
-                                        <div class="input-one1-container">
-                                            <div class=" padd-top">
-                                                <span class="receiving-time">2019-05-06</span>
-                                                <span class="receiving-hms">23:22:21</span>
-                                            </div>
+                                        <div class="input-one1-container padd-top">
+                                            <span class="dispatching-way">送货上门</span>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="layui-form-item">
                                 <div class="layui-inline">
-                                    <label class="layui-form-label">发货时间：</label>
+                                    <label class="layui-form-label">收货人手机号： </label>
                                     <div class="layui-input-block">
-                                        <div class="input-one1-container">
-                                            <div class=" padd-top">
-                                                <span class="delivery-time ">2019-05-06 </span>
-                                                <span class="delivery-hms">23:22:21</span>
-                                            </div>
+                                        <div class="input-one1-container padd-top">
+                                            <span class=" cell-pohone-number">15987456258 </span>
                                         </div>
+                                    </div>
+                                </div>
+
+                                <div class="layui-inline input-layout-two">
+                                    <label class="layui-form-label">邮编： </label>
+                                    <div class="layui-input-block">
+                                        <div class="input-one1-container padd-top">
+                                            <span class="zip-code">100001</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="layui-form-item">
+                                <div class="layui-inline">
+                                    <label class="layui-form-label">收获地址： </label>
+                                    <div class=" float-left padd-top">
+                                        <span class="shipping-address">浙江省杭州市余杭区金家渡南路三号4幢3单元1022室收</span>
                                     </div>
                                 </div>
                             </div>
                         </form>
                     </div>
+
+                    <!--发票信息  -->
+                    <div>
+                        <form class="layui-form padd-left" action="">
+                            <p class="form-title">发票信息</p>
+
+                            <div class="layui-form-item">
+                                <div class="layui-inline">
+                                    <label class="layui-form-label">开票金额： </label>
+                                    <div class="layui-input-block">
+                                        <div class="input-one1-container padd-top">
+                                            <span class="invoice-sum">￥12.00</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="layui-inline input-layout-two">
+                                    <label class="layui-form-label">发票类型： </label>
+                                    <div class="layui-input-block">
+                                        <div class="input-one1-container padd-top">
+                                            <span class="invoice">普通发票</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="layui-form-item">
+                                <div class="layui-inline">
+                                    <label class="layui-form-label">开票主题： </label>
+                                    <div class="layui-input-block">
+                                        <div class=" padd-top">
+                                            <span class="make-outan-invoice">博库网络传媒集团[{税号78794879748497987</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </form>
+                    </div>
+
+
+
+
                     <!-- 商品信息 -->
                     <div class="layui-tab-content padd-left">
-                        <p class="form-title" style="padding-bottom:20px;">商品信息 <span
-                                class="apply-compensation  layui-word-aux">申请商户补偿</span></p>
-                        <div class="table">
+                        <p class="form-title" style="padding-bottom:20px;">商品清单
+                            <a href="javascript:;" class="modify-order-price layui-word-aux">修改订单总价</a></p>
+                        <div class="table table5">
                             <table class="layui-table" style="table-layout:fixed;margin:0;">
                                 <colgroup>
-                                    <col width="5%">
-                                    <col width="15%">
-                                    <col width="20%">
+                                    <col width="21%">
+                                    <col width="30%">
                                     <col width="10%">
                                     <col width="10%">
                                     <col width="10%">
-                                    <col width="20%">
+                                    <col width="25%">
                                 </colgroup>
                                 <thead>
                                     <tr>
-                                        <th style="text-align:center;">
-                                            <form class="layui-form checkAll" action="">
-                                                <input type="checkbox" lay-filter="checkAll" lay-skin="primary">
-                                            </form>
+                                        <th>
+                                            商品ID/外部商品ID
                                         </th>
-                                        <th style="text-align:left;">代发ID/外部ID</th>
-                                        <th style="text-align:center;">商品信息</th>
-                                        <th style="text-align:center;">销售价</th>
-                                        <th style="text-align:center;">单价成本</th>
-                                        <th style="text-align:center;">数量</th>
-                                        <th style="text-align:center;">总成本 <i class="layui-icon layui-icon-tips"></i>
+                                        <th>商品信息</th>
+                                        <th>促销价</th>
+                                        <th>实付价</th>
+                                        <th>数量</th>
+                                        <th style="min-width: 120px;">商品总价
+                                            <svg class="icon tableIcon" aria-hidden="true">
+                                                <use xlink:href="#iconicon-tips-line"></use>
+                                            </svg>
+                                            <div class="tableIcon-content">
+                                                <div class="tableIcon-block">我是总成本我是总成本我是总成本我是总成本我是总成本我是总成本我是总成本
+                                                </div>
+                                                <div class="tableIcon-hover-arrow"></div>
+                                            </div>
                                         </th>
                                     </tr>
                                 </thead>
-                                <tbody>
+                                <tbody class="tbody">
+
+                                </tbody>
+                                <tfoot>
                                     <tr>
-                                        <td style="text-align:center;">
-                                            <form class="layui-form" action="">
-                                                <input type="checkbox" name="item_id" value="" lay-skin="primary"
-                                                    class="test" lay-filter="checkChild">
-                                            </form>
-                                        </td>
-                                        <td class="textOverflow" style="text-align:left;">
-                                            <p class="substitute-id"> 1002545585/234890007866525</p>
-                                            <p class="txt3-color"> 1002545585/234890007866525</p>
-                                        </td>
-                                        <td class="tableTitle">
-                                            <div class="pic-two">
-                                                <img src="https://mhuoba.oss-cn-hangzhou.aliyuncs.com/picture/audio/20190812/18/20190812183751909.jpg!w81h50"
-                                                    alt="">
+                                        <td colspan="9">
+                                            <div class="footFlex">
+                                                <div class="footText">商品总价: ¥84.90</div>
+                                                <div class="footText">优惠价扣减: -¥1.00</div>
+                                                <div class="footText">多商品活动扣减: -¥4.90</div>
+                                                <div class="footText fg">运费: ¥1.00</div>
+                                                <div class="sum">订单总价: ¥82.22</div>
                                             </div>
-                                            <div class="layui-inline message">
-                                                <p class="textTwoOver" title="">商品标题最多两行题最多两行行商品标题最多两行最多两行最多两行</p>
-                                            </div>
-                                        </td>
-                                        <td style="text-align:center;">
-                                            ￥<span class="sales-price">12.55</span>
-                                        </td>
-                                        <td style="text-align:center;">￥<span class="unitPriceCost">76.20</span> </td>
-                                        <td style="text-align:center;" class="quantity">211155</td>
-                                        <td style="text-align:center;">
-                                            ￥<span class="total-cost ">12.55</span>
                                         </td>
                                     </tr>
-                                </tbody>
+                                </tfoot>
                             </table>
-
                         </div>
-                        <div class="price-detail">
-                            <div class="detail-left">
-                                <ul>
-                                    <li>
-                                        商品成本: ¥<span class="commodity-cost">84.90</span>
-                                    </li>
-                                    <li>
-                                        发货成本: ¥<span class="shipments-cost">1.00</span>
-                                    </li>
-                                    <li>
-                                        商户补偿: ¥<span class="merchant-compensation">4.90</span>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="detail-right main-color">
-                                应付总额: ¥<span class="total-payable">82.22</span>
-                            </div>
-                        </div>
-                    </div>
-                    <!--商品信息  -->
-                    <div>
-                        <form class="layui-form padd-left" action="">
-                            <p class="form-title">商品信息</p>
-                            <div class="layui-form-item">
-                                <div class="layui-inline">
-                                    <label class="layui-form-label">收货人：</label>
-                                    <div class="layui-input-block">
-                                        <div class="input-one1-container padd-top">
-                                            <span class="consignee">李先生</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="layui-inline input-layout-two">
-                                    <label class="layui-form-label">收获手机号：</label>
-                                    <div class="layui-input-block">
-                                        <div class="input-one1-container padd-top">
-                                            <span class="cellPhoneNumber">19875666666</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="layui-form-item">
-                                <div class="layui-inline">
-                                    <label class="layui-form-label">收获地址：</label>
-                                    <div class="layui-input-block">
-                                        <div class="padd-top">
-                                                <span class="harvest-address">浙江省杭州市余杭区金家渡南路（3号楼33号）</span>
-                                        </div>
-
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="layui-form-item">
-                                <div class="layui-inline">
-                                    <label class="layui-form-label">邮编：</label>
-                                    <div class="selectTwo float-left padd-top">
-                                        <em>邮编：</em>
-                                        <span class="zip-code">100001</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                    <!--商户信息  -->
-                    <div>
-                        <form class="layui-form padd-left" action="">
-                            <p class="form-title">商户信息</p>
-                            <div class="layui-form-item">
-                                <div class="layui-inline">
-                                    <label class="layui-form-label">商户信息：</label>
-                                    <div class="layui-input-block">
-                                        <div class="input-one1-container padd-top">
-                                            <span class="merchant-information">松松社区（577575725757）</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="layui-inline input-layout-two">
-                                    <label class="layui-form-label">供货商商户信息：</label>
-                                    <div class="layui-input-block">
-                                        <div class="input-one1-container padd-top">
-                                            <span class="supplier-information">火把知识（4154466646464）</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-
-                    <!--操作记录  -->
-                    <div>
-                        <form class="layui-form padd-left" action="">
-                            <p class="form-title padd-left">操作记录</p>
-                            <div class="layui-form-item">
-                                <div class="operating-record">
-                                    <ul>
-                                        <li>
-                                            <div class="sales-return">申请退货《<span
-                                                    class="trade-name">这是商品名称</span>》ZHR003，
-                                                数量<span class="return-quantity">3</span>，
-                                                总成本￥<span class=" totalCost">23.00</span>
-                                            </div>
-                                            <div class="operating-itme">
-                                                <span class="ytd">2020-1-21</span>
-                                                <span class="hms">23:12:45</span>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </form>
                     </div>
                 </div>
 
@@ -450,7 +406,9 @@
             form = layui.form,
             element = layui.element,
             layer = layui.layer;
-        var valPricing; //储存input 的value值
+        var valPricing, //储存input 的value值
+            $html,
+            _html;
         //方法定义merchantNum = /(^[1-9]*$)/, //验证必须为整数
 
         function GetQueryString(name) { //获取地址栏上的数据
@@ -460,15 +418,6 @@
             return null;
         }
 
-        //表格全选
-        form.on('checkbox(checkAll)', function (data) {
-            if (data.elem.checked) {
-                $('.table tbody').find('input[lay-filter="checkChild"]').prop('checked', true)
-            } else {
-                $('.table tbody').find('input[lay-filter="checkChild"]').prop('checked', false)
-            }
-            form.render();
-        })
         // 展开收缩
         $('.foldAction').on('click', function () {
             var body = $(this).parents('body');
@@ -483,6 +432,83 @@
             }
             localStorage.setItem('slideState', slideState);
         })
+
+        var arr = [{
+                id: '包裹1',
+                list: [{
+                    cat_id: 1,
+                    create_time: "2019-06-20 11:09:10",
+                    is_lastlayer: 1.1,
+                    name: "古代言情",
+                    sort: 100,
+                    state: 11
+                }]
+            },
+            {
+                id: '包裹2',
+                list: [{
+                    cat_id: 2,
+                    create_time: "2019-06-20 12:09:10",
+                    is_lastlayer: 1.2,
+                    name: "古代言情",
+                    sort: 200,
+                    state: 22
+                }]
+            },
+            {
+                id: '包裹3',
+                list: [{
+                    cat_id: 3,
+                    create_time: "2019-06-20 13:09:10",
+                    is_lastlayer: 1.3,
+                    name: "古代言情",
+                    sort: 300,
+                    state: 33
+                }]
+            }
+        ];
+        if (arr.length > '0') {
+            for (let j in arr) {
+                $html += "<tr class='prompt-message'>";
+                $html += "<td class='information'>";
+                $html += "<span class='package'>" + arr[j].id + "</span>";
+                $html += "<span class='logistics-status'>已发货</span>";
+                $html += "<span class='logistics-company'>德邦物流:123654789</span>";
+                $html += "<a href='javascript:;' class='sub1-color logistics'>查看物流</a>";
+                $html += "</td>";
+                $html += "<td></td><td></td><td></td><td></td><td></td>";
+                $html += "</tr>";
+                for (let i = 0; i < arr[j].list.length; i++) {
+                    $html += " <tr>";
+                    $html += "<td class='textOverflow'><p>1002545585/2348900078665</p>";
+                    $html += "<p class='txt3-color'>1002545585</p></td>";
+                    $html += "<td class='tableTitle'>";
+                    $html += "<div class='pic-two'>";
+                    $html +=
+                        "<img src='https://mhuoba.oss-cn-hangzhou.aliyuncs.com/picture/audio/20190812/18/20190812183751909.jpg!w81h50' alt=''>";
+                    $html += "</div>";
+                    $html += "<div class='layui-inline message'>";
+                    $html += "<p class='textTwoOver' title=''>商品标题最多两行题最多两行行商品标题最多两行最多两行最多两行行最多两行最多两行</p>";
+                    $html += "</div>";
+                    $html += " </td>";
+                    $html += " <td>";
+                    $html += "<p class='textTwoOver'>" + arr[j].list[i].cat_id + "</p>";
+                    $html += "</td>";
+                    $html += "<td>￥76.20</td>";
+                    $html += "<td>211155</td>";
+                    $html += "<td>";
+                    $html += "<span>￥12.55</span>";
+                    $html += " <span class='sub1-color status'>退款中</span>";
+                    $html += "</td>";
+                    $html += "</tr>";
+                }
+            }
+        } else {
+            $html += "<tr>" +
+                "<td colspan='10' style='text-align: center;''>暂无数据</td>" +
+                "</tr>"
+        }
+        $(".tbody").html($html);
 
         //申请商户补偿弹窗
         $('.apply-compensation').click(function () {
