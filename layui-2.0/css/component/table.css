@@ -109,8 +109,10 @@
     position: absolute;
     top: -10px;
 }
-
-.table .inline_block {
+.table .bottomArrow.active.red,.table .topArrow.active.red{
+    color: #F05654;
+}
+.table .inline_block{
     display: inline-block;
     width: 10px;
     height: 100%;
