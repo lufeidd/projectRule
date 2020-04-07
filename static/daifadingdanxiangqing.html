@@ -6,11 +6,11 @@
     <meta charset="utf-8">
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black" />
-    <link rel="stylesheet" type="text/css" href="layui-2.0/css/layui.css">
+    <link rel="stylesheet" type="text/css" href="../layui-2.0/css/layui.css">
     <!-- 样式重定义 -->
-    <link rel="stylesheet" type="text/css" href="layui-2.0/css/public.css">
+    <link rel="stylesheet" type="text/css" href="../layui-2.0/css/public.css">
     <!-- 字体图标 -->
-    <script src="layui-2.0/font/iconfont.js"></script>
+    <script src="../layui-2.0/font/iconfont.js"></script>
 </head>
 
 <body class="large">
@@ -24,7 +24,7 @@
     <div class="layui-layout layui-layout-admin">
         <!-- 供应商logo -->
         <div class="layui-logo">
-            <img src="layui-2.0/images/logo.png" width="26px" height="27px">
+            <img src="../layui-2.0/images/logo.png" width="26px" height="27px">
             <span class="slogan">火把知识服务平台</span>
             <div class="foldAction">
                 <i class="layui-icon layui-icon-shrink-right"></i>
@@ -337,26 +337,25 @@
                     <div class="layui-tab-content padd-left">
                         <p class="form-title" style="padding-bottom:20px;">商品清单
                             <a href="javascript:;" class="modify-order-price layui-word-aux">修改订单总价</a></p>
-                        <div class="table table5">
+                        <div class="table">
                             <table class="layui-table" style="table-layout:fixed;margin:0;">
                                 <colgroup>
-                                    <col width="21%">
-                                    <col width="30%">
-                                    <col width="10%">
-                                    <col width="10%">
-                                    <col width="10%">
+                                    <col width="15%">
                                     <col width="25%">
+                                    <col width="10%">
+                                    <col width="10%">
+                                    <col width="10%">
+                                    <col width="30%">
                                 </colgroup>
                                 <thead>
                                     <tr>
-                                        <th>
-                                            商品ID/外部商品ID
-                                        </th>
-                                        <th>商品信息</th>
-                                        <th>促销价</th>
-                                        <th>实付价</th>
-                                        <th>数量</th>
-                                        <th style="min-width: 120px;">商品总价
+                                        <th style="text-align:left;">商品ID/外部商品ID</th>
+                                        <th style="text-align:left;">商品信息</th>
+                                        <th style="text-align:left;">促销价</th>
+                                        <th style="text-align:left;">实付价</th>
+                                        <th style="text-align:left;">数量</th>
+                                        <th style="text-align:left;">
+                                            商品总价
                                             <svg class="icon tableIcon" aria-hidden="true">
                                                 <use xlink:href="#iconicon-tips-line"></use>
                                             </svg>
@@ -369,7 +368,43 @@
                                     </tr>
                                 </thead>
                                 <tbody class="tbody">
-
+                                    <tr>
+                                        <td colspan="6" class="bgColorBlue">
+                                            <div class="layui-inline">
+                                                <div class="layui-inline marg-20">包裹1</div>
+                                                <div class="layui-inline marg-20">已发货</div>
+                                                <div class="layui-inline marg-28">德邦物流:123654789</div>
+                                                <div class="layui-inline click-color">查看物流</div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="textOverflow" style="text-align:left;">
+                                            1002545585/2348900078665
+                                            <div class="blurs">
+                                                ZHR002
+                                            </div>
+                                        </td>
+                                        <td class="tableTitle">
+                                            <div class="pic-two">
+                                                <img src="https://mhuoba.oss-cn-hangzhou.aliyuncs.com/picture/audio/20190812/18/20190812183751909.jpg!w81h50"
+                                                    alt="">
+                                            </div>
+                                            <div class="layui-inline message">
+                                                <p class="textTwoOver" title="">商品标题最多两行题最多两行行商品标题最多两行最多两行最多两行行最多两行最多两行
+                                                </p>
+                                            </div>
+                                        </td>
+                                        <td style="text-align:left;">￥12.55</td>
+                                        <td style="text-align:left;">￥12.55</td>
+                                        <td style="text-align:left;">55</td>
+                                        <td>
+                                            <div class="goodNum">
+                                                <div class="goodPrice">￥12.55</div>
+                                                <div class="goodState">退款中</div>
+                                            </div>
+                                        </td>
+                                    </tr>
                                 </tbody>
                                 <tfoot>
                                     <tr>
@@ -378,7 +413,7 @@
                                                 <div class="footText">商品总价: ¥84.90</div>
                                                 <div class="footText">优惠价扣减: -¥1.00</div>
                                                 <div class="footText">多商品活动扣减: -¥4.90</div>
-                                                <div class="footText fg">运费: ¥1.00</div>
+                                                <div class="footText fg">运费: +¥4.90</div>
                                                 <div class="sum">订单总价: ¥82.22</div>
                                             </div>
                                         </td>
@@ -398,7 +433,7 @@
 </body>
 
 </html>
-<script type="text/javascript" src="layui-2.0/layui.js"></script>
+<script type="text/javascript" src="../layui-2.0/layui.js"></script>
 <script type="text/javascript">
     layui.use(['element', 'jquery', 'form', 'layer'], function () {
         // 变量声明
@@ -467,40 +502,40 @@
                 }]
             }
         ];
+
+
+
+
+
         if (arr.length > '0') {
             for (let j in arr) {
-                $html += "<tr class='prompt-message'>";
-                $html += "<td class='information'>";
-                $html += "<span class='package'>" + arr[j].id + "</span>";
-                $html += "<span class='logistics-status'>已发货</span>";
-                $html += "<span class='logistics-company'>德邦物流:123654789</span>";
-                $html += "<a href='javascript:;' class='sub1-color logistics'>查看物流</a>";
-                $html += "</td>";
-                $html += "<td></td><td></td><td></td><td></td><td></td>";
+                $html += "<tr>";
+                $html += "<td colspan='6' class='bgColorBlue'>";
+                $html += "<div class='layui-inline'>";
+                $html += "<div class='layui-inline marg-20'>" + arr[j].id + "</div>";
+                $html += "<div class='layui-inline marg-20'>已发货</div>";
+                $html += " <div class='layui-inline marg-28'>德邦物流:123654789</div>";
+                $html += "<div class='layui-inline click-color'>查看物流</div>";
+                $html += "</div></td>";
                 $html += "</tr>";
+
                 for (let i = 0; i < arr[j].list.length; i++) {
-                    $html += " <tr>";
-                    $html += "<td class='textOverflow'><p>1002545585/2348900078665</p>";
-                    $html += "<p class='txt3-color'>1002545585</p></td>";
-                    $html += "<td class='tableTitle'>";
-                    $html += "<div class='pic-two'>";
+                    $html += "<tr>";
+                    $html += "<td class='textOverflow' style='text-align:left;'>";
+                    $html += "1002545585/2348900078665<div class='blurs'>ZHR002</div></td>";
+                    $html += "<td class='tableTitle'><div class='pic-two'>";
                     $html +=
-                        "<img src='https://mhuoba.oss-cn-hangzhou.aliyuncs.com/picture/audio/20190812/18/20190812183751909.jpg!w81h50' alt=''>";
-                    $html += "</div>";
+                        "<img src='https://mhuoba.oss-cn-hangzhou.aliyuncs.com/picture/audio/20190812/18/20190812183751909.jpg!w81h50' alt=''> </div>";
                     $html += "<div class='layui-inline message'>";
-                    $html += "<p class='textTwoOver' title=''>商品标题最多两行题最多两行行商品标题最多两行最多两行最多两行行最多两行最多两行</p>";
-                    $html += "</div>";
-                    $html += " </td>";
-                    $html += " <td>";
-                    $html += "<p class='textTwoOver'>" + arr[j].list[i].cat_id + "</p>";
-                    $html += "</td>";
-                    $html += "<td>￥76.20</td>";
-                    $html += "<td>211155</td>";
-                    $html += "<td>";
-                    $html += "<span>￥12.55</span>";
-                    $html += " <span class='sub1-color status'>退款中</span>";
-                    $html += "</td>";
-                    $html += "</tr>";
+                    $html +=
+                        "<p class='textTwoOver' title=''>商品标题最多两行题最多两行行商品标题最多两行最多两行最多两行行最多两行最多两行</p></div></td>";
+                    $html += "<td style='text-align:left;'>￥" + arr[j].list[i].sort + "</td>";
+                    $html += "<td style='text-align:left;'>￥" + arr[j].list[i].state + "</td>";
+                    $html += "<td style='text-align:left;'>" + arr[j].list[i].cat_id + "</td>";
+                    $html += "<td><div class='goodNum'>";
+                    $html += "<div class='goodPrice'>￥12.55</div>";
+                    $html += "<div class='goodState'>退款中</div>";
+                    $html += "</div></td></tr>";
                 }
             }
         } else {
