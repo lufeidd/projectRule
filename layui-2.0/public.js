@@ -60,11 +60,6 @@ layui.use(['element', 'form'], function () {
 // 搜索组件
 function searchTemplate() {
 
-    // layui定义
-    // layui.use(['jquery', 'ajaxCascader'], function () {
-    //     var $ = layui.jquery;
-    //     var cascader = layui.ajaxCascader;
-
     // 点击高级按钮
     $('body').on('click', '.high-search-btn', function () {
         $(this).parents('.high-search-container').find('.high-search-fold').css('display', 'none')
@@ -187,114 +182,11 @@ function ajaxCascaderTemplate(_elem, _url, _type) {
                     // width: '100%',
                     // height: 30,
                     chooseData: ['3']
-                    // [
-                    //     {"id":"0","name":"一般职业"},
-                    //     {"id":"1","name":"农牧业"},
-                    //     {"id":"10","name":"卫生"},
-                    //     {"id":"11","name":"娱乐业"},
-                    //     {"id":"12","name":"文教"},
-                    //     {"id":"13","name":"宗教"},
-                    //     {"id":"14","name":"公共事业"},
-                    //     {"id":"15","name":"商业"},
-                    //     {"id":"16","name":"金融．保险业"},
-                    //     {"id":"17","name":"服务业"},
-                    //     {"id":"18","name":"家庭管理"},
-                    //     {"id":"19","name":"治安人员"},
-                    //     {"id":"2","name":"渔业"},
-                    //     {"id":"20","name":"体育"},
-                    //     {"id":"21","name":"其它"},
-                    //     {"id":"3","name":"木材森林业"},
-                    //     {"id":"4","name":"矿业 采石业"},
-                    //     {"id":"5","name":"交通运输业"},
-                    //     {"id":"6","name":"餐旅业"},
-                    //     {"id":"7","name":"建筑工程业"},
-                    //     {"id":"8","name":"制造业"},
-                    //     {"id":"9","name":"新闻出版广告业"}
-                    // ]
                 });
                 break;
             default:
                 break;
         }
 
-        // Ajax传参模式
-        // cascader.load({
-        //     elem: '#demo3'
-        //     ,search: {
-        //         show: true,
-        //         // minLabel: 1,
-        //         // placeholder: '请输入搜索词'
-        //     }
-        //     ,value: 0
-        //     ,getChildren: function(value,callback){
-        //         var data = []
-        //         $.ajax({
-        //             url:'https://open.gog.cn/appz/region/getRegion/'+value,
-        //             type:'get',
-        //             success:function(res){
-        //                 data = res.data;
-        //                 for(var i in data){
-        //                     data[i].value = data[i].id;
-        //                     data[i].label = data[i].name;
-        //                     delete data[i].id;
-        //                     delete data[i].name;
-        //                     data[i].hasChild = true;
-        //                 }
-        //                 callback(data);
-        //             }
-        //         });
-        //     },
-        //     chooseData: ["520000000000"]
-        // });
-
-
-
-        // 其他可选参数
-        // width:250  //input框宽度
-        // height:50  //input框高度
-        // placeholder // input框提示词
-        // prop:{
-        //     value:"value",     // 选择器要获取的字段名称
-        //     label:"label",     // 显示时的名称
-        //     children:'children' // 子集的名称定义
-        // }
-        // time:250    // 下拉菜单显示出来的时间
-        // showlast:false  // 是否只显示选中的最后一级
-        // clicklast:false // 是否最后一级才可点击
-        // checkData:['100','200'] // 回显数据
-
-        // // 监听选中的事件
-        // cascader.on('click','#demo1',function(data){
-        //     // console.log(data)
-        //     // 获取当前已选中的数据,可单独使用
-        //     cascader.load({
-        //         elem: '#demo3'
-        //         ,search: {
-        //             show: true,
-        //             // minLabel: 1,
-        //             // placeholder: '请输入搜索词'
-        //         }
-        //         ,value: data.value
-        //         ,getChildren: function(value,callback){
-        //             var data = []
-        //             $.ajax({
-        //                 url:'https://open.gog.cn/appz/region/getRegion/'+value,
-        //                 type:'get',
-        //                 success:function(res){
-        //                     data = res.data;
-        //                     for(var i in data){
-        //                         data[i].value = data[i].id;
-        //                         data[i].label = data[i].name;
-        //                         delete data[i].id;
-        //                         delete data[i].name;
-        //                         data[i].hasChild = true;
-        //                     }
-        //                     callback(data);
-        //                 }
-        //             });
-        //         },
-        //         chooseData: []
-        //     })
-        // });
     });
 }
