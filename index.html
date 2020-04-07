@@ -94,16 +94,20 @@
 		header#header .logo .txt1 {
 			padding-top: 10px;
 		}
+
 		header#header .logo .txt2 {
 			font-size: 13px;
 		}
+
 		header#header .tab {
 			color: rgba(255, 255, 255, .5);
 		}
+
 		header#header .tab a {
 			color: rgba(255, 255, 255, .5);
 			padding: 0 20px;
 		}
+
 		header#header .tab a:hover,
 		header#header .tab a.active {
 			color: rgba(255, 255, 255, 1);
@@ -449,6 +453,20 @@
 			<div class="rule">
 				请您遵守国家相关规定，切勿上传低俗色情、暴力恐怖、谣言诈骗、侵权盗版等相关内容，火把保有依据国家规定及平台规则进行处理的权利。
 			</div>
+			<div class="prompt-order">
+				<div class='prompt-order-left'>
+					<p class="sub1-color current-status">待成团</p>
+					<p>将于2020-05-06 23:59:59截至成团</p>
+				</div>
+				<div class='prompt-order-right'>
+					<span>实物</span>
+					<span>代发</span>
+					<span>团购</span>
+					<span>包邮</span>
+					<span>赠送</span>
+				</div>
+				<div style="clear: both;"></div>
+			</div>
 		</article>
 		<article id="pic">
 			<p class="title">
@@ -486,9 +504,9 @@
 					<div class="noPicture">
 						点击上传
 					</div>
-					<div class="cancel">
-						点击删除
-					</div>
+				</div>
+				<div class="cancel">
+					点击删除
 				</div>
 			</div>
 		</article>
@@ -1119,6 +1137,132 @@
 					</tfoot>
 				</table>
 			</div>
+
+			<!-- *	作者: ym
+			*	创建时间：2020/04/07
+			*	描述：数据表格组件 -->
+			<!-- 数据表格6 -->
+			<div class="table table6">
+				<table class="layui-table" style="table-layout:fixed;margin:0;">
+					<colgroup>
+						<col width="6%">
+						<col width="3%">
+						<col width="5%">
+						<col width="3%">
+						<col width="5%">
+						<col width="3%">
+						<col width="5%">
+						<col width="3%">
+						<col width="35%">
+					</colgroup>
+					<tbody>
+						<tr>
+							<td colspan="6" class="report-forms-time">
+								<span>2020年03月收支情况报表</span> <span class="serial-number">1077202003</span><span
+									class="time">2020年04月02日 03:15:15</span>
+							</td>
+						</tr>
+						<tr class="bgColorBlue report-forms-particulars ">
+							<td>iOS余额上期结余</td>
+							<td></td>
+							<td>iOS余额充值</td>
+							<td></td>
+							<td>iOS余额退款</td>
+							<td></td>
+							<td>iOS余额消费</td>
+							<td></td>
+							<td>iOS余额当期结余</td>
+						</tr>
+						<tr class="bgColorBlue report-forms-particulars">
+							<td class="last-month-balance">10000.00</td>
+							<td>+</td>
+							<td class="recharge-of-balance">203.00</td>
+							<td>+</td>
+							<td class="refund-of-balance">530.00</td>
+							<td>-</td>
+							<td class="surplus-consumption">120.00</td>
+							<td>=</td>
+							<td class="balance-this-month">1234.00</td>
+						</tr>
+						<tr>
+							<td class="padd-10"></td>
+						</tr>
+						<tr class="bgColorBlue report-forms-particulars marg-top20">
+							<td>Android余额上期结余</td>
+							<td></td>
+							<td>Android余额充值</td>
+							<td></td>
+							<td>Android余额退款</td>
+							<td></td>
+							<td>Android余额消费</td>
+							<td></td>
+							<td>Android余额当期结余</td>
+						</tr>
+						<tr class="bgColorBlue report-forms-particulars">
+							<td class="last-month-balance">10000.00</td>
+							<td>+</td>
+							<td class="recharge-of-balance">203.00</td>
+							<td>+</td>
+							<td class="refund-of-balance">530.00</td>
+							<td>-</td>
+							<td class="surplus-consumption">120.00</td>
+							<td>=</td>
+							<td class="balance-this-month">1234.00</td>
+						</tr>
+						<tr>
+							<td class="padd-10"></td>
+						</tr>
+						<tr class="bgColorBlue report-forms-particulars marg-top20">
+							<td></td>
+							<td></td>
+							<td>支付宝充值</td>
+							<td></td>
+							<td>支付宝退款</td>
+							<td></td>
+							<td>支付宝消费</td>
+							<td></td>
+							<td>支付宝当期变动</td>
+						</tr>
+						<tr class="bgColorBlue report-forms-particulars">
+							<td class="last-month-balance"></td>
+							<td></td>
+							<td class="recharge-of-balance">203.00</td>
+							<td>+</td>
+							<td class="refund-of-balance">530.00</td>
+							<td>-</td>
+							<td class="surplus-consumption">120.00</td>
+							<td>=</td>
+							<td class="balance-this-month">1234.00</td>
+						</tr>
+						<tr>
+							<td class="padd-10"></td>
+						</tr>
+						<tr class="bgColorBlue report-forms-particulars marg-top20">
+							<td></td>
+							<td></td>
+							<td>微信充值</td>
+							<td></td>
+							<td>微信退款</td>
+							<td></td>
+							<td>微信消费</td>
+							<td></td>
+							<td>微信当期变动</td>
+						</tr>
+						<tr class="bgColorBlue report-forms-particulars">
+							<td class="last-month-balance"></td>
+							<td></td>
+							<td class="recharge-of-balance">203.00</td>
+							<td>+</td>
+							<td class="refund-of-balance">530.00</td>
+							<td>-</td>
+							<td class="surplus-consumption">120.00</td>
+							<td>=</td>
+							<td class="balance-this-month">1234.00</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+
 		</article>
 		<article id="popup">
 			<p class="title">
@@ -1134,6 +1278,8 @@
 				<span id="popup5" class="popup">弹窗5</span>
 				<span id="popup6" class="popup">弹窗6</span>
 				<span id="popup7" class="popup">弹窗7</span>
+				<span id="popup8" class="popup">弹窗8</span>
+				<span id="popup9" class="popup">弹窗9</span>
 				<span id="msg" class="popup">弹窗msg</span>
 				<span id="confirm" class="popup">弹窗confirm</span>
 				<span id="alert" class="popup">弹窗alert</span>
@@ -1197,9 +1343,10 @@
 	var dataResult = {};
 
 	//初始化layui
-	layui.use(['element', 'laydate', 'layedit', 'layer', 'form', 'upload'], function () {
+	layui.use(['element', 'laydate', 'table', 'layedit', 'layer', 'form', 'upload'], function () {
 		var element = layui.element,
 			form = layui.form,
+			table = layui.table,
 			layedit = layui.layedit,
 			laydate = layui.laydate,
 			$ = layui.$;
@@ -1209,12 +1356,12 @@
 		upload.render({
 			elem: '#uploadOne',
 			accept: 'file' //普通文件
-			,
+				,
 			exts: 'jpeg|jpg|png',
 			size: 5 * 1024,
 			multiple: false,
 			url: '/upload?opt_type=album&file_type=Image&image_type=pic&brand_id=26',
-			before: function (obj) { },
+			before: function (obj) {},
 			done: function (res, index, upload) {
 				if (res.code === 1) {
 					layer.msg(res.msg);
@@ -1231,12 +1378,12 @@
 		upload.render({
 			elem: '#uploadBatch',
 			accept: 'file' //普通文件
-			,
+				,
 			exts: 'jpeg|jpg|png',
 			size: 5 * 1024,
 			multiple: true,
 			url: '/upload?opt_type=album&file_type=Image&image_type=pic&brand_id=26',
-			before: function (obj) { },
+			before: function (obj) {},
 			done: function (res, index, upload) {
 				if (res.code === 1) {
 					layer.msg(res.msg);
@@ -1363,6 +1510,132 @@
 			});
 		})
 
+
+		//弹窗8
+		$("#popup8").click(function () {
+			layer.open({
+				title: '发货物流确认',
+				content: "<div class='popup8-content'>" +
+					"<div class='selectTwo'> " +
+					" <form class='layui-form' action=''> " +
+					"<select name='city' lay-verify='required' class='select-sizeMin'> " +
+					"<option value=''> 请选择物流方式 </option>" +
+					"<option value='0'> 1 </option>" +
+					"<option value='1'>2</option>" +
+					"</select>" +
+					"</form>" +
+					"</div>" +
+					"<div class='input-second-container'>" +
+					"<input type='text' name='title' placeholder='请输入物流单号' autocomplete='off' class='layui-input'>" +
+					"<div class='input-number'>" +
+					"<span class='input-on-number'>0</span>/" +
+					"<span class='input-max-number'>100" +
+					"</span>" +
+					"</div>" +
+					"</div>" +
+					"</div>",
+				btn: ['取消', '确定'],
+				area: ['520px', '298px'], //宽高
+				success: function (data) {
+					$(".layui-layer-dialog").addClass('popup8');
+					$(".popup8 .layui-layer-title").show();
+					form.render();
+				},
+				yes: function (index, layero) {
+					//按钮1回调
+					// layer.close(index); //如果设定了yes回调，需进行手工关闭
+					layer.closeAll();
+				},
+				btn2: function (index, layero) {
+					//按钮2回调
+					// layer.close(index); //如果设定了yes回调，需进行手工关闭
+					return false //开启该代码可禁止点击该按钮关闭
+				}
+			});
+		})
+
+		//弹窗9
+		$("#popup9").click(function () {
+			layer.open({
+				title: '发货信息确认',
+				content: "<div class='popup9-content'>" +
+					"<div class='location'> " +
+					"<p> " +
+					"确认将以下勾选商品发送至：  " +
+					"</p>" +
+					"<p class='detailed-address'>" +
+					"浙江省杭州市余杭区金家渡南路3号，郭小二，18965895899" +
+					"</p>" +
+					"</div>" +
+					"<div class='selected'>" +
+					"<p>已选中<span class='main-color been-selected'>0</span>件商品<a class='sub1-color reselection' href='javascript:;'>重选</a></p>" +
+					"</div>" +
+					"<div class='table'>" +
+					"<table class='layui-table' style='table-layout:fixed;margin:0;'>" +
+					"<colgroup>" +
+					"<col width='6%'>" +
+					"<col width='50%'>" +
+					"<col width='10%'>" +
+					"</colgroup>" +
+					"<tbody class='tbody-content'>" +
+					"</tbody>" +
+					"</table>" +
+					"</div>" +
+					"</div>",
+				btn: ['取消', '确定'],
+				area: ['520px', '464px'], //宽高
+				success: function (data) {
+					$(".layui-layer-dialog").addClass('popup9');
+					$(".popup9 .layui-layer-title").show();
+					var $html;
+					for (let i = 0; i < 20; i++) {
+						$html += "<tr>";
+						$html += "<td>";
+						$html += "<form class='layui-form' action=''>";
+						$html +=
+							"<input type='checkbox' name='item_id' value='' lay-skin='primary' class='test' lay-filter='checkChild'>";
+						$html += "</form>";
+						$html += "</td>";
+						$html +=
+							"<td class='textOverflow' style='text-align:left;'>1002545585/234890007866525</td>";
+						$html += "<td class='tableTitle'>";
+						$html += "X 333";
+						$html += "</td>";
+						$html += "</tr>";
+						$('.tbody-content').html($html);
+					}
+
+					form.on('checkbox(checkChild)', function (data) {
+						// console.log(data.elem); //得到checkbox原始DOM对象
+						// console.log(data.elem.checked); //是否被选中，true或者false
+						// console.log(data.value); //复选框value值，也可以通过data.elem.value得到
+						// console.log(data.othis); //得到美化后的DOM对象
+						$('.been-selected').text($("input[name='item_id']:checked")
+							.length);
+					})
+
+					$(".reselection").click(function () {
+						console.log($(" .popup9 input[name='item_id']:checked").val());
+						$(".popup9 input[name='item_id']:checked").prop('checked',
+							false);
+						$('.layui-form-checked').removeClass('layui-form-checked');
+						$('.been-selected').text("0");
+
+					})
+					form.render();
+				},
+				yes: function (index, layero) {
+					//按钮1回调
+					// layer.close(index); //如果设定了yes回调，需进行手工关闭
+					layer.closeAll();
+				},
+				btn2: function (index, layero) {
+					//按钮2回调
+					// layer.close(index); //如果设定了yes回调，需进行手工关闭
+					return false //开启该代码可禁止点击该按钮关闭
+				}
+			});
+		})
 	})
 
 	//设置标签iframe高度
