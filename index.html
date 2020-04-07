@@ -16,27 +16,34 @@
 
 		menu#anchor {
 			position: fixed;
-			width: 100px;
-			text-align: center;
+			width: 130px;
+			text-align: right;
 			left: 0;
 			top: 0;
 			bottom: 0;
 			overflow: auto;
-			background-color: #fff;
-			z-index: 1002;
-			padding: 10px;
+			background-color: #355873;
+			color: #fff;
+			z-index: 999;
 			box-sizing: border-box;
 			font-size: 15px;
-			box-shadow: 0 0 5px rgba(0, 0, 0, .5);
+			margin: 0;
+			padding: 70px 10px 10px 10px;
 		}
 
 		#anchor a {
 			display: block;
-			padding: 12px 0;
+			padding: 8px 0;
+			color: rgba(255, 255, 255, 0.5);
+		}
+
+		#anchor a.active,
+		#anchor a:hover {
+			color: rgba(255, 255, 255, 1);
 		}
 
 		section {
-			margin-left: 120px;
+			margin-left: 140px;
 			padding-bottom: 80px;
 		}
 
@@ -61,16 +68,45 @@
 		header#header {
 			position: fixed;
 			text-align: center;
-			height: 50px;
-			line-height: 50px;
+			height: 60px;
+			line-height: 60px;
 			font-size: 16px;
 			top: 0;
-			padding-left: 100px;
+			padding-left: 120px;
 			width: 100%;
 			box-sizing: border-box;
-			background-color: #fff;
+			background-color: #355873;
+			color: #fff;
 			z-index: 1001;
-			box-shadow: 0 0 5px rgba(0, 0, 0, .5);
+		}
+
+		header#header .logo {
+			position: absolute;
+			left: 0;
+			top: 0;
+			font-size: 15px;
+			line-height: 20px;
+			background-color: #203e55;
+			width: 130px;
+			height: 60px;
+		}
+
+		header#header .logo .txt1 {
+			padding-top: 10px;
+		}
+		header#header .logo .txt2 {
+			font-size: 13px;
+		}
+		header#header .tab {
+			color: rgba(255, 255, 255, .5);
+		}
+		header#header .tab a {
+			color: rgba(255, 255, 255, .5);
+			padding: 0 20px;
+		}
+		header#header .tab a:hover,
+		header#header .tab a.active {
+			color: rgba(255, 255, 255, 1);
 		}
 	</style>
 </head>
@@ -98,7 +134,17 @@
 		<a href="#badge">徽章</a>
 		<a href="#layedit">富文本编辑器</a>
 	</menu>
-	<header id="header">火把知识后台-基于layui框架-前端开发规范手册</header>
+	<header id="header">
+		<div class="logo">
+			<div class="txt1">火把知识</div>
+			<div class="txt2">前端开发规范手册</div>
+		</div>
+		<div class="tab">
+			<a href="#" class="active">后台</a>
+			<span>/</span>
+			<a href="/mobile.html">前台</a>
+		</div>
+	</header>
 	<section>
 		<article id="frame">
 			<p class="title">
@@ -969,32 +1015,26 @@
 					</tfoot>
 				</table>
 			</div>
-			<!-- /*
-			* 作者: ym
-			* 创建时间：2020/4/3
-			* 描述：数据表格5
-			*/ -->
-			<!--数据表格5-->
-			<div class="table table5">
+			<!-- 数据表格5 -->
+			<div class="table">
 				<table class="layui-table" style="table-layout:fixed;margin:0;">
 					<colgroup>
-						<col width="20%">
-						<col width="30%">
-						<col width="10%">
-						<col width="10%">
-						<col width="10%">
+						<col width="15%">
 						<col width="25%">
+						<col width="10%">
+						<col width="10%">
+						<col width="10%">
+						<col width="30%">
 					</colgroup>
 					<thead>
 						<tr>
-							<th>
-								商品ID/外部商品ID
-							</th>
-							<th >商品信息</th>
-							<th >促销价</th>
-							<th >实付价</th>
-							<th >数量</th>
-							<th style="min-width: 120px;">商品总价
+							<th style="text-align:left;">商品ID/外部商品ID</th>
+							<th style="text-align:left;">商品信息</th>
+							<th style="text-align:left;">促销价</th>
+							<th style="text-align:left;">实付价</th>
+							<th style="text-align:left;">数量</th>
+							<th style="text-align:left;">
+								商品总价
 								<svg class="icon tableIcon" aria-hidden="true">
 									<use xlink:href="#iconicon-tips-line"></use>
 								</svg>
@@ -1007,28 +1047,24 @@
 						</tr>
 					</thead>
 					<tbody>
-
-						<!-- <tr >
-							<td colspan="10" style="text-align: center;">暂无数据</td>
-						</tr> -->
-
-						<tr class="prompt-message">
-							<td class="information">
-								<span class="package">包裹1</span>
-								<span class="logistics-status">已发货</span>
-								<span class='logistics-company'>德邦物流:123654789</span>
-								<a href="javascript:;" class="sub1-color logistics">查看物流</a>
+						<tr>
+							<td colspan="6" class="bgColorBlue">
+								<div class="layui-inline">
+									<div class="layui-inline marg-20">包裹1</div>
+									<div class="layui-inline marg-20">已发货</div>
+									<div class="layui-inline marg-28">德邦物流:123654789</div>
+									<div class="layui-inline click-color">查看物流</div>
+								</div>
 							</td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
 						</tr>
 						<tr>
-							<td class="textOverflow"><p>1002545585/2348900078665</p>
-							<p class="txt3-color">1002545585</p></td>
-							<td class="tableTitle" >
+							<td class="textOverflow" style="text-align:left;">
+								1002545585/2348900078665
+								<div class="blurs">
+									ZHR002
+								</div>
+							</td>
+							<td class="tableTitle">
 								<div class="pic-two">
 									<img src="https://mhuoba.oss-cn-hangzhou.aliyuncs.com/picture/audio/20190812/18/20190812183751909.jpg!w81h50"
 										alt="">
@@ -1037,14 +1073,48 @@
 									<p class="textTwoOver" title="">商品标题最多两行题最多两行行商品标题最多两行最多两行最多两行行最多两行最多两行</p>
 								</div>
 							</td>
+							<td style="text-align:left;">￥12.55</td>
+							<td style="text-align:left;">￥12.55</td>
+							<td style="text-align:left;">55</td>
 							<td>
-								<p class="textTwoOver">￥12.55 </p>
+								<div class="goodNum">
+									<div class="goodPrice">￥12.55</div>
+									<div class="goodState">退款中</div>
+								</div>
 							</td>
-							<td >￥76.20</td>
-							<td >211155</td>
-							<td >
-								<span>￥12.55</span>
-								<span class="sub1-color status">退款中</span>
+						</tr>
+						<tr>
+							<td colspan="6" class="bgColorBlue">
+								<div class="layui-inline">
+									<div class="layui-inline marg-20">包裹2</div>
+									<div class="layui-inline marg-20">待发货</div>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td class="textOverflow" style="text-align:left;">
+								1002545585/2348900078665
+								<div class="blurs">
+									ZHR002
+								</div>
+							</td>
+							<td class="tableTitle">
+								<div class="pic-two">
+									<img src="https://mhuoba.oss-cn-hangzhou.aliyuncs.com/picture/audio/20190812/18/20190812183751909.jpg!w81h50"
+										alt="">
+								</div>
+								<div class="layui-inline message">
+									<p class="textTwoOver" title="">商品标题最多两行题最多两行行商品标题最多两行最多两行最多两行行最多两行最多两行</p>
+								</div>
+							</td>
+							<td style="text-align:left;">￥12.55</td>
+							<td style="text-align:left;">￥12.55</td>
+							<td style="text-align:left;">55</td>
+							<td>
+								<div class="goodNum">
+									<div class="goodPrice">￥12.55</div>
+									<div class="goodState">退货退款中</div>
+								</div>
 							</td>
 						</tr>
 					</tbody>
@@ -1055,7 +1125,7 @@
 									<div class="footText">商品总价: ¥84.90</div>
 									<div class="footText">优惠价扣减: -¥1.00</div>
 									<div class="footText">多商品活动扣减: -¥4.90</div>
-									<div class="footText fg">运费: ¥1.00</div>
+									<div class="footText fg">运费: +¥4.90</div>
 									<div class="sum">订单总价: ¥82.22</div>
 								</div>
 							</td>
@@ -1157,12 +1227,12 @@
 		upload.render({
 			elem: '#uploadOne',
 			accept: 'file' //普通文件
-				,
+			,
 			exts: 'jpeg|jpg|png',
 			size: 5 * 1024,
 			multiple: false,
 			url: '/upload?opt_type=album&file_type=Image&image_type=pic&brand_id=26',
-			before: function (obj) {},
+			before: function (obj) { },
 			done: function (res, index, upload) {
 				if (res.code === 1) {
 					layer.msg(res.msg);
@@ -1179,12 +1249,12 @@
 		upload.render({
 			elem: '#uploadBatch',
 			accept: 'file' //普通文件
-				,
+			,
 			exts: 'jpeg|jpg|png',
 			size: 5 * 1024,
 			multiple: true,
 			url: '/upload?opt_type=album&file_type=Image&image_type=pic&brand_id=26',
-			before: function (obj) {},
+			before: function (obj) { },
 			done: function (res, index, upload) {
 				if (res.code === 1) {
 					layer.msg(res.msg);
@@ -1244,7 +1314,6 @@
 				, 'help' //帮助
 			]
 		});
-
 
 		//时间弹窗
 		$("#popup4").click(function () {
@@ -1448,6 +1517,7 @@
 
 	// 搜索
 	searchTemplate()
+
 	// 级联
 	$('cascader').each(function () {
 		var _id = '#' + $(this).attr('id');
@@ -1470,8 +1540,6 @@
 		dataId = id;
 	}
 
-
-
 	//设置iframe高度
 	function setIframeHeight(height, type, hight_sign) {
 		switch (type) {
@@ -1493,6 +1561,12 @@
 				break;
 		}
 	}
+
+	// 左侧导航锚点
+	$('#anchor a').on('click', function () {
+		$('#anchor a').removeClass('active');
+		$(this).addClass('active');
+	})
 
 	//数据表格图标事件
 	$('.tableIcon').hover(function () {

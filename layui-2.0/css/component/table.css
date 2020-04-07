@@ -176,76 +176,31 @@
     font-size: 16px;
     color: #F05654;
 }
-
-
-
-/*
-    * 作者: ym
-    * 创建时间：2020/4/3
-    * 描述：数据表格5
-    */
-.table5 {
-    min-width: 1366px;
+/*特殊布局*/
+.table .bgColorBlue{
+    background-color: #EEF7FD;
 }
-
-.table5 .status {
-    float: right;
-    padding-right: 80px;
+.table .marg-20{
+    margin-right: 20px;
 }
-
-.table5 tbody tr:hover {
-    background-color: #FFF !important;
+.table .marg-28{
+    margin-right: 28px;
 }
-
-.table5 .layui-table th:nth-child(1) {
-    border-right: none;
+.table .click-color{
+    color: #54ACF0;
+    cursor:pointer; 
 }
-
-.table5 .layui-table th:nth-child(2),
-.table5 .layui-table th:nth-child(3),
-.table5 .layui-table th:nth-child(4),
-.table5 .layui-table th:nth-child(5) {
-    border-right: none;
-    border-left: none;
+.table .blurs{
+    color: #999999;
+    font-size: 12px;
 }
-
-.table5 .layui-table th:nth-child(6) {
-    border-left: none;
+.table .goodNum{
+    display: flex;
 }
-
-
-.table5 .prompt-message td {
-    border: none;
-    padding: 0px;
-    line-height: 40px;
+.table .goodNum .goodPrice{
+    flex-grow: 1;
 }
-
-.table5 .prompt-message:hover {
-    background-color: #EEF7FD !important;
-}
-
-.table5 .prompt-message td:nth-child(6) {
-    border-right: 1px solid #e6e6e6 !important;
-}
-
-.table5 .information {
-    border-left: 1px solid #e6e6e6 !important;
-}
-
-.table5 .information .package {
-    padding-left: 13px;
-}
-
-.table5 .information .package,
-.table5 .information .logistics-status,
-.table5 .information .logistics-company {
-    padding-left: 20px;
-}
-
-.table5 .information .logistics {
-    margin-left: 20px;
-}
-
-.table5 .prompt-message {
-    background: #EEF7FD;
+.table .goodNum .goodState{
+    color: #54ACF0;
+    flex-shrink: 0;
 }
