@@ -349,11 +349,11 @@
                                 </colgroup>
                                 <thead>
                                     <tr>
-                                        <th style="text-align:left;">商品ID/外部商品ID</th>
-                                        <th style="text-align:left;">商品信息</th>
-                                        <th style="text-align:left;">促销价</th>
-                                        <th style="text-align:left;">实付价</th>
-                                        <th style="text-align:left;">数量</th>
+                                        <th style="text-align:left;border-right: 1px solid #f2f2f2;">商品ID/外部商品ID</th>
+                                        <th style="text-align:left;border-right: 1px solid #f2f2f2;">商品信息</th>
+                                        <th style="text-align:left;border-right: 1px solid #f2f2f2;">促销价</th>
+                                        <th style="text-align:left;border-right: 1px solid #f2f2f2;">实付价</th>
+                                        <th style="text-align:left;border-right: 1px solid #f2f2f2;">数量</th>
                                         <th style="text-align:left;">
                                             商品总价
                                             <svg class="icon tableIcon" aria-hidden="true">
@@ -368,56 +368,8 @@
                                     </tr>
                                 </thead>
                                 <tbody class="tbody">
-                                    <tr>
-                                        <td colspan="6" class="bgColorBlue">
-                                            <div class="layui-inline">
-                                                <div class="layui-inline marg-20">包裹1</div>
-                                                <div class="layui-inline marg-20">已发货</div>
-                                                <div class="layui-inline marg-28">德邦物流:123654789</div>
-                                                <div class="layui-inline click-color">查看物流</div>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="textOverflow" style="text-align:left;">
-                                            1002545585/2348900078665
-                                            <div class="blurs">
-                                                ZHR002
-                                            </div>
-                                        </td>
-                                        <td class="tableTitle">
-                                            <div class="pic-two">
-                                                <img src="https://mhuoba.oss-cn-hangzhou.aliyuncs.com/picture/audio/20190812/18/20190812183751909.jpg!w81h50"
-                                                    alt="">
-                                            </div>
-                                            <div class="layui-inline message">
-                                                <p class="textTwoOver" title="">商品标题最多两行题最多两行行商品标题最多两行最多两行最多两行行最多两行最多两行
-                                                </p>
-                                            </div>
-                                        </td>
-                                        <td style="text-align:left;">￥12.55</td>
-                                        <td style="text-align:left;">￥12.55</td>
-                                        <td style="text-align:left;">55</td>
-                                        <td>
-                                            <div class="goodNum">
-                                                <div class="goodPrice">￥12.55</div>
-                                                <div class="goodState">退款中</div>
-                                            </div>
-                                        </td>
-                                    </tr>
                                 </tbody>
-                                <tfoot>
-                                    <tr>
-                                        <td colspan="9">
-                                            <div class="footFlex">
-                                                <div class="footText">商品总价: ¥84.90</div>
-                                                <div class="footText">优惠价扣减: -¥1.00</div>
-                                                <div class="footText">多商品活动扣减: -¥4.90</div>
-                                                <div class="footText fg">运费: +¥4.90</div>
-                                                <div class="sum">订单总价: ¥82.22</div>
-                                            </div>
-                                        </td>
-                                    </tr>
+                                <tfoot class="tfoot">
                                 </tfoot>
                             </table>
                         </div>
@@ -488,6 +440,13 @@
                     name: "古代言情",
                     sort: 200,
                     state: 22
+                }, {
+                    cat_id: 2.2,
+                    create_time: "2019-06-20 12:09:10",
+                    is_lastlayer: 1.22,
+                    name: "古代言情",
+                    sort: 2.202,
+                    state: 222
                 }]
             },
             {
@@ -538,12 +497,28 @@
                     $html += "</div></td></tr>";
                 }
             }
+            _html += "<tr><td colspan='6'>";
+            _html += "<div class='footFlex'>";
+            _html += "<div class='footText'>商品总价: ¥84.90</div>";
+            _html += "<div class='footText'>优惠价扣减: -¥1.00</div>";
+            _html += "<div class='footText'>多商品活动扣减: -¥4.90</div>";
+            _html += "<div class='footText fg'>运费: +¥4.90</div>";
+            _html += "<div class='sum'>订单总价: ¥82.22</div>";
+            _html += "</div></td></tr>";
         } else {
             $html += "<tr>" +
                 "<td colspan='10' style='text-align: center;''>暂无数据</td>" +
                 "</tr>"
         }
         $(".tbody").html($html);
+        $(".tfoot").html(_html);
+
+        //数据表格图标事件
+        $('.tableIcon').hover(function () {
+            $(this).closest('.table').find('.tableIcon-content').css('display', 'block');
+        }, function () {
+            $(this).closest('.table').find('.tableIcon-content').css('display', 'none');
+        });
 
         //申请商户补偿弹窗
         $('.apply-compensation').click(function () {
