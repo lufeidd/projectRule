@@ -16,27 +16,34 @@
 
 		menu#anchor {
 			position: fixed;
-			width: 100px;
-			text-align: center;
+			width: 130px;
+			text-align: right;
 			left: 0;
 			top: 0;
 			bottom: 0;
 			overflow: auto;
-			background-color: #fff;
-			z-index: 1002;
-			padding: 10px;
+			background-color: #355873;
+			color: #fff;
+			z-index: 999;
 			box-sizing: border-box;
 			font-size: 15px;
-			box-shadow: 0 0 5px rgba(0, 0, 0, .5);
+			margin: 0;
+			padding: 70px 10px 10px 10px;
 		}
 
 		#anchor a {
 			display: block;
-			padding: 12px 0;
+			padding: 8px 0;
+			color: rgba(255, 255, 255, 0.5);
+		}
+
+		#anchor a.active,
+		#anchor a:hover {
+			color: rgba(255, 255, 255, 1);
 		}
 
 		section {
-			margin-left: 120px;
+			margin-left: 140px;
 			padding-bottom: 80px;
 		}
 
@@ -61,21 +68,50 @@
 		header#header {
 			position: fixed;
 			text-align: center;
-			height: 50px;
-			line-height: 50px;
+			height: 60px;
+			line-height: 60px;
 			font-size: 16px;
 			top: 0;
-			padding-left: 100px;
+			padding-left: 120px;
 			width: 100%;
 			box-sizing: border-box;
-			background-color: #fff;
+			background-color: #355873;
+			color: #fff;
 			z-index: 1001;
-			box-shadow: 0 0 5px rgba(0, 0, 0, .5);
+		}
+
+		header#header .logo {
+			position: absolute;
+			left: 0;
+			top: 0;
+			font-size: 15px;
+			line-height: 20px;
+			background-color: #203e55;
+			width: 130px;
+			height: 60px;
+		}
+
+		header#header .logo .txt1 {
+			padding-top: 10px;
+		}
+		header#header .logo .txt2 {
+			font-size: 13px;
+		}
+		header#header .tab {
+			color: rgba(255, 255, 255, .5);
+		}
+		header#header .tab a {
+			color: rgba(255, 255, 255, .5);
+			padding: 0 20px;
+		}
+		header#header .tab a:hover,
+		header#header .tab a.active {
+			color: rgba(255, 255, 255, 1);
 		}
 	</style>
 </head>
 
-<body y>
+<body>
 
 	<menu id="anchor">
 		<a href="#frame">框架</a>
@@ -85,6 +121,7 @@
 		<a href="#color">颜色</a>
 		<a href="#tab">选项卡</a>
 		<a href="#select">下拉</a>
+		<a href="#cascader">多级联下拉框</a>
 		<a href="#checkbox">复选框</a>
 		<a href="#radiobox">单选框</a>
 		<a href="#rule">法规提示</a>
@@ -97,7 +134,17 @@
 		<a href="#badge">徽章</a>
 		<a href="#layedit">富文本编辑器</a>
 	</menu>
-	<header id="header">火把知识后台-基于layui框架-前端开发规范手册</header>
+	<header id="header">
+		<div class="logo">
+			<div class="txt1">火把知识</div>
+			<div class="txt2">前端开发规范手册</div>
+		</div>
+		<div class="tab">
+			<a href="#" class="active">后台</a>
+			<span>/</span>
+			<a href="/mobile.html">前台</a>
+		</div>
+	</header>
 	<section>
 		<article id="frame">
 			<p class="title">
@@ -360,6 +407,8 @@
 					</select>
 				</form>
 			</div>
+		</article>
+		<article id="cascader">
 			<p class="title">
 				<svg class="icon" aria-hidden="true">
 					<use xlink:href="#iconguanlian"></use>
@@ -425,6 +474,21 @@
 			<div class="pic-two">
 				<div class="noPicture">
 					<img src="" alt="">
+				</div>
+			</div>
+			<!-- /*
+			* 作者: ym
+			* 创建时间：2020/3/27
+			* 描述：图片比例组件
+			*/ -->
+			<div class="picPicture" style="margin: 10px 0;">
+				<div class="pic-three">
+					<div class="noPicture">
+						点击上传
+					</div>
+					<div class="cancel">
+						点击删除
+					</div>
 				</div>
 			</div>
 		</article>
@@ -602,7 +666,8 @@
 						<td>13975842188</td>
 					</tr>
 					<tr>
-						<td>文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文</td>
+						<td>文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文
+						</td>
 						<td>13975842188</td>
 					</tr>
 				</tbody>
@@ -618,9 +683,11 @@
 				<label class="layui-form-label lable-title">添加标签：</label>
 				<div class="layui-inline inputLables" style="width: 215px;padding-right: 45px;">
 					<input type="text" name="inputTags" id="inputTags" required lay-verify="required" placeholder="默认文本"
-						   autocomplete="off" class="layui-input" onkeypress="javascript:return gosearch();">
-					<div class="input-number"><span class="input-on-number" style="padding: 0;background-color:#fff;color:#999999;">0</span>/<span
-							class="input-max-number" style="padding: 0;background-color:#fff;color:#999999;">10</span></div>
+						autocomplete="off" class="layui-input" onkeypress="javascript:return gosearch();">
+					<div class="input-number"><span class="input-on-number"
+							style="padding: 0;background-color:#fff;color:#999999;">0</span>/<span
+							class="input-max-number" style="padding: 0;background-color:#fff;color:#999999;">10</span>
+					</div>
 				</div>
 				<button type="button" class="layui-btn lable-search lableSearch">搜索</button>
 			</div>
@@ -632,9 +699,8 @@
 			<!--已添加标签-->
 			<div class="lableAdd">
 				<label class="layui-form-label lable-title">已添加标签：</label>
-				<div class="layui-inline num" >
-					<span class="lable-on-number">0</span>/<span
-						class="lable-max-number">10</span>
+				<div class="layui-inline num">
+					<span class="lable-on-number">0</span>/<span class="lable-max-number">10</span>
 				</div>
 				<div class="lable-show">
 					<!--<button type="button" class="lable-add-btn">欧美认电视剧
@@ -1064,7 +1130,7 @@
 				<span id="popup1" class="popup">弹窗1</span>
 				<span id="popup2" class="popup">弹窗2</span>
 				<span id="popup3" class="popup">弹窗3</span>
-				<span id="popup4" class="popup">弹窗4</span>
+				<span id="popup4" class="popup">时间弹窗</span>
 				<span id="popup5" class="popup">弹窗5</span>
 				<span id="popup6" class="popup">弹窗6</span>
 				<span id="popup7" class="popup">弹窗7</span>
@@ -1216,16 +1282,86 @@
 				'strong' //加粗
 				, 'italic' //斜体
 				, 'underline' //下划线
+				, 'del' //删除线
+
+				, '|' //分割线
+
 				, 'left' //左对齐
 				, 'center' //居中对齐
 				, 'right' //右对齐
+				, 'link' //超链接
+				, 'unlink' //清除链接
+				, 'face' //表情
 				, 'image' //插入图片
+				, 'help' //帮助
 			]
 		});
 
-
-
-
+		//时间弹窗
+		$("#popup4").click(function () {
+			//页面层需要引入日期插件
+			layer.open({
+				type: 1,
+				title: '将当前节目的授权时间修改为', //title设置
+				skin: 'layui-layer-rim', //加上边框
+				area: ['520px', '218px'], //宽高
+				btn: ['修 改', '取 消', '修改全部'], //btn按钮
+				content: "<form class='layui-form' action=''>" +
+					"<div class='layui-inline'>" +
+					"<input type='text' class='layui-input test5' placeholder='开始时间'>" +
+					"</div>" +
+					"<div class='layui-inline'><span></span>" +
+					"<input type='text' class='layui-input test4' placeholder='结束时间'>" +
+					"</div>" +
+					"</form>", //内容
+				// shadeClose: true, //点击遮罩层隐藏弹窗
+				// move: false, //禁止拖拽
+				success: function (data) {
+					$(".layui-layer-rim").addClass('popup4');
+					laydateDate('.test4');
+					laydateDate('.test5');
+					//日期选择
+					function laydateDate(test) {
+						laydate.render({
+							elem: test, //指定元素
+							ready: function (date) {
+								// 得到初始的日期时间对象：{year: 2017, month: 8, date: 18, hours: 0, minutes: 0, seconds: 0}
+								// console.log(date);
+								$('.laydate-footer-btns .laydate-btns-clear').text(
+									'重置'); //改变按钮text
+							},
+							done: function (value, date, endDate) {
+								//当选择日期之后改变按钮颜色
+								$('.laydate-footer-btns .laydate-btns-clear').css(
+									'color',
+									"#333"); //重置按钮
+								$('.laydate-footer-btns .laydate-btns-now').css(
+									'color',
+									"#333"); //现在按钮
+								// console.log(value); //得到日期生成的值，如：2017-08-18
+								// //得到日期时间对象：{year: 2017, month: 8, date: 18, hours: 0, minutes: 0, seconds: 0}
+								// console.log(date);
+								// console.log(endDate); //得结束的日期时间对象，开启范围选择（range: true）才会返回。对象成员同上。
+							}
+						});
+					}
+				},
+				yes: function (index, layero) {
+					//按钮1回调
+					// layer.close(index); //如果设定了yes回调，需进行手工关闭
+				},
+				btn2: function (index, layero) {
+					//按钮2回调
+					// layer.close(index); //如果设定了yes回调，需进行手工关闭
+					//return false 开启该代码可禁止点击该按钮关闭
+				},
+				btn3: function (index, layero) {
+					//按钮3回调
+					// layer.close(index); //如果设定了yes回调，需进行手工关闭
+					//return false 开启该代码可禁止点击该按钮关闭
+				}
+			});
+		})
 
 	})
 
@@ -1237,6 +1373,7 @@
 
 	// 搜索
 	searchTemplate()
+
 	// 级联
 	$('cascader').each(function () {
 		var _id = '#' + $(this).attr('id');
@@ -1259,8 +1396,6 @@
 		dataId = id;
 	}
 
-
-
 	//设置iframe高度
 	function setIframeHeight(height, type, hight_sign) {
 		switch (type) {
@@ -1282,6 +1417,12 @@
 				break;
 		}
 	}
+
+	// 左侧导航锚点
+	$('#anchor a').on('click', function () {
+		$('#anchor a').removeClass('active');
+		$(this).addClass('active');
+	})
 
 	//数据表格图标事件
 	$('.tableIcon').hover(function () {
@@ -1375,44 +1516,6 @@
 		});
 	})
 
-	//弹窗4
-	$("#popup4").click(function () {
-		//页面层需要引入日期插件
-		layer.open({
-			type: 1,
-			title: '将当前节目的授权时间修改为', //title设置
-			skin: 'layui-layer-rim', //加上边框
-			area: ['520px', '218px'], //宽高
-			btn: ['修 改', '取 消', '修改全部'], //btn按钮
-			content: "<form class='layui-form' action=''>" +
-				"<div class='layui-inline'>" +
-				"<input type='text' class='layui-input test1' placeholder='开始时间'>" +
-				"</div>" +
-				"<div class='layui-inline'><span></span>" +
-				"<input type='text' class='layui-input test1' placeholder='结束时间'>" +
-				"</div>" +
-				"</form>", //内容
-			// shadeClose: true, //点击遮罩层隐藏弹窗
-			// move: false, //禁止拖拽
-			success: function (data) {
-				$(".layui-layer-rim").addClass('popup4');
-			},
-			yes: function (index, layero) {
-				//按钮1回调
-				// layer.close(index); //如果设定了yes回调，需进行手工关闭
-			},
-			btn2: function (index, layero) {
-				//按钮2回调
-				// layer.close(index); //如果设定了yes回调，需进行手工关闭
-				//return false 开启该代码可禁止点击该按钮关闭
-			},
-			btn3: function (index, layero) {
-				//按钮3回调
-				// layer.close(index); //如果设定了yes回调，需进行手工关闭
-				//return false 开启该代码可禁止点击该按钮关闭
-			}
-		});
-	})
 
 	//弹窗5
 	$("#popup5").click(function () {

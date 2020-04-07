@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>总览-火把知识</title>
+    <meta charset="utf-8">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <link rel="stylesheet" type="text/css" href="layui-2.0/css/layui.css">
+    <!-- 样式重定义 -->
+    <link rel="stylesheet" type="text/css" href="layui-2.0/css/public.css">
+    <!-- 字体图标 -->
+    <script src="layui-2.0/font/iconfont.js"></script>
+</head>
+
+<body class="large">
+    <script>
+        if (localStorage.getItem('slideState') == 'small') {
+            document.querySelector('body').setAttribute('class', 'small');
+        } else {
+            document.querySelector('body').setAttribute('class', 'large');
+        }
+    </script>
+    <div class="layui-layout layui-layout-admin">
+        <!-- 供应商logo -->
+        <div class="layui-logo">
+            <img src="layui-2.0/images/logo.png" width="26px" height="27px">
+            <span class="slogan">火把知识服务平台</span>
+            <div class="foldAction">
+                <i class="layui-icon layui-icon-shrink-right"></i>
+                <i class="layui-icon layui-icon-spread-left"></i>
+            </div>
+        </div>
+
+        <!-- 头部 栏目 -->
+        <div class="layui-header">
+            <!-- 头部导航栏右边部分 -->
+            <ul class="layui-nav layui-layout-right">
+                <li class="layui-nav-item">
+                    <a href="#">
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#iconmessage-line"></use>
+                        </svg>
+                        <span>私信</span>
+                        <span class="layui-badge-dot"></span>
+                    </a>
+                </li>
+                <li class="layui-nav-item">
+                    <a href="#">
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#iconnews-line"></use>
+                        </svg>
+                        <span>通知中心</span>
+                        <span class="layui-badge-dot"></span>
+                    </a>
+                </li>
+                <li class="layui-nav-item ">
+                    <a href="#">
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#iconhelp-line"></use>
+                        </svg>
+                        <span>帮助中心</span>
+                    </a>
+                </li>
+                <li class="layui-nav-item">
+                    <a href="#">
+                        <img src="http://t.cn/RCzsdCq" class="layui-nav-img">
+                        <span>用户名</span>
+                    </a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="#">账号主页</a></dd>
+                        <dd><a href="#">修改密码</a></dd>
+                        <dd><a class="logout" href="#">退出登录</a></dd>
+                    </dl>
+                </li>
+            </ul>
+        </div>
+
+        <!-- 侧边栏部分 -->
+        <!-- 展开 -->
+        <div class="layui-side layui-bg-black large">
+            <div class="layui-side-scroll">
+                <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
+                <ul class="layui-nav layui-nav-tree">
+                    <li class="layui-nav-item">
+                        <a href="#">
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#iconoverview-block"></use>
+                            </svg>
+                            <span>总览</span>
+                        </a>
+                    </li>
+                    <li class="layui-nav-item layui-nav-itemed">
+                        <a href="#">
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#iconsource-block"></use>
+                            </svg>
+                            <span>发布管理</span>
+                        </a>
+                        <dl class="layui-nav-child">
+                            <dd><a href="#">文章列表</a></dd>
+                            <dd class="layui-this"><a href="#">专辑列表</a></dd>
+                        </dl>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- 收起 -->
+        <div class="layui-side layui-bg-black small">
+            <ul class="layui-nav layui-layout-right">
+                <li class="layui-nav-item">
+                    <a href="#">
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#iconoverview-block"></use>
+                        </svg>
+                    </a>
+                </li>
+                <li class="layui-nav-item">
+                    <a href="#">
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#iconsource-block"></use>
+                        </svg>
+                    </a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="#">文章列表</a></dd>
+                        <dd><a href="#">专辑列表</a></dd>
+                    </dl>
+                </li>
+            </ul>
+        </div>
+
+        <!-- 面包屑 -->
+        <div class="breadcrumb-container">
+            <span class="layui-breadcrumb">
+                <a href="/">首页</a>
+                <a href="/frame.html">框架</a>
+                <a><cite>导航元素</cite></a>
+            </span>
+        </div>
+        <!-- 主体内容 -->
+        <div class="layui-body">
+            <div class="layui-tab layui-tab-brief contentBox" lay-filter="docDemoTabBrief">
+                <ul class="layui-tab-title">
+                    <li class="layui-this">授权商户设置</li>
+                </ul>
+                <div class="layui-tab-content">
+
+                    <!--授权商户设置  -->
+                    <div>
+                        <form class="layui-form" action="" id="layui-form">
+                            <p class="form-title"></p>
+                            <div class="layui-form-item input-layout-one">
+                                <label class="layui-form-label">商户名称：</label>
+                                <div class="layui-input-block">
+                                    <div class="text">文本</div>
+                                </div>
+                            </div>
+                            <div class="layui-form-item">
+                                <div class="layui-form-item input-layout-one">
+                                    <label class="layui-form-label">销售中商品量：</label>
+                                    <div class="layui-input-block">
+                                        <div class="text">文本</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="layui-form-item">
+                                <div class="layui-form-item input-layout-one">
+                                    <label class="layui-form-label">授权日期：</label>
+                                    <div class="layui-input-block">
+                                        <div class="text">文本</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="layui-form-item">
+                                <div class="layui-form-item input-layout-one">
+                                    <label class="layui-form-label"><span class="tip">*</span>代销成本折扣：</label>
+                                    <div class="layui-input-block">
+                                        <div class="input-one1-container">
+                                            <input type="text" name="title" placeholder="输入搜索关键字 input-one1-container"
+                                                autocomplete="off" class="layui-input">
+                                        </div>
+                                        <p class="desc">[代销成本价]=[系统平均成本]+[代销成本折扣]×[定价]</p>
+                                        <p class="desc">[系统平均成本]将根据订单产生时系统内的实时平均成本计算，可能存在小幅度偏差。</p>
+                                        <p class="desc">支持正整数，如20%请输入“20”</p>
+                                        <p class="msg">代销成本折扣不可为空</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="layui-form-item input-layout-one">
+                                <label class="layui-form-label"><span class="tip">*</span>建议零售折扣： </label>
+                                <div class="layui-input-block">
+                                    <div class="input-one1-container">
+                                        <input type="text" name="title" placeholder="输入搜索关键字 input-one1-container"
+                                            autocomplete="off" class="layui-input">
+                                    </div>
+                                    <p class="desc">用于商品代销时的默认销售价。支持正整数，如70%请输入“70”</p>
+                                    <p class="msg">成本折扣不可为空</p>
+                                </div>
+                            </div>
+                            <div class="layui-form-item input-layout-one">
+                                <label class="layui-form-label"><span class="tip">*</span>每单发货成本：</label>
+                                <div class="layui-input-block">
+                                    <div class="input-one1-container">
+                                        <input type="text" name="title" placeholder="输入搜索关键字 input-one1-container"
+                                            autocomplete="off" class="layui-input">
+                                    </div>
+                                    <p class="desc">商户订单销售时，每单扣减的发货成本。</p>
+                                    <p class="msg">发货成本不可为空</p>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="layui-form-item input-layout-one">
+                        <div class="layui-input-block">
+                            <button type="button" class="layui-btn commit-changes">提交修改</button><span
+                                class="main-color">取消授权</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+<script type="text/javascript" src="layui-2.0/layui.js"></script>
+<script type="text/javascript">
+    layui.use(['element', 'jquery', 'laydate', 'layer', 'form', 'upload'], function () {
+        // 变量声明
+        var $ = layui.jquery,
+            form = layui.form,
+            laydate = layui.laydate,
+            element = layui.element,
+            upload = layui.upload,
+            layer = layui.layer;
+        var merchantNum = /(^[0-9]*$)/, //验证必须为整数;
+            arr, //判断值
+            _this; //储存this
+
+        function GetQueryString(name) { //获取地址栏上的数据
+            var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+            var r = window.location.search.substr(1).match(reg);
+            if (r != null) return unescape(r[2]);
+            return null;
+        }
+
+
+        $.ajax({
+            url:"/dispatch/merchant/item",
+            type:"POST",
+            headers:"application/x-www-form-urlencoded",
+            data:{
+                
+            }
+        })
+
+
+
+
+
+
+
+        //方法定义
+        function verify(ele, canonical) { //input 验证
+            $(ele).blur(function () {
+                _this = $(this);
+                if (canonical.test(_this.val()) && _this.val() != '') {
+                    _this.parents().nextAll('.msg').css("opacity", '0');
+                } else {
+                    _this.parents().nextAll('.msg').css('opacity', '1');
+                }
+            })
+        }
+        verify('input', merchantNum);
+
+        //提交修改
+        $(".commit-changes").click(function () {
+            siginList = $('input').serializeArray(); //表单序列化为数组对象
+            arr = true;
+            // = siginList.every(function (itme) {
+            //     return itme.value != ''; //判断所有value不为空
+            // })
+            if (arr) {
+
+            }
+
+        })
+
+    });
+</script>
