@@ -94,16 +94,20 @@
 		header#header .logo .txt1 {
 			padding-top: 10px;
 		}
+
 		header#header .logo .txt2 {
 			font-size: 13px;
 		}
+
 		header#header .tab {
 			color: rgba(255, 255, 255, .5);
 		}
+
 		header#header .tab a {
 			color: rgba(255, 255, 255, .5);
 			padding: 0 20px;
 		}
+
 		header#header .tab a:hover,
 		header#header .tab a.active {
 			color: rgba(255, 255, 255, 1);
@@ -1134,6 +1138,131 @@
 				</table>
 			</div>
 
+			<!-- *	作者: ym
+			*	创建时间：2020/04/07
+			*	描述：数据表格组件 -->
+			<!-- 数据表格6 -->
+			<div class="table table6">
+				<table class="layui-table" style="table-layout:fixed;margin:0;">
+					<colgroup>
+						<col width="5%">
+						<col width="3%">
+						<col width="5%">
+						<col width="3%">
+						<col width="5%">
+						<col width="3%">
+						<col width="5%">
+						<col width="3%">
+						<col width="35%">
+					</colgroup>
+					<tbody>
+						<tr>
+							<td colspan="6" class="report-forms-time">
+								<span>2020年03月收支情况报表</span> <span class="serial-number">1077202003</span><span
+									class="time">2020年04月02日 03:15:15</span>
+							</td>
+						</tr>
+						<tr class="bgColorBlue report-forms-particulars ">
+							<td>iOS余额上期结余</td>
+							<td></td>
+							<td>iOS余额充值</td>
+							<td></td>
+							<td>iOS余额退款</td>
+							<td></td>
+							<td>iOS余额消费</td>
+							<td></td>
+							<td>iOS余额当期结余</td>
+						</tr>
+						<tr class="bgColorBlue report-forms-particulars">
+							<td class="last-month-balance">10000.00</td>
+							<td>+</td>
+							<td class="recharge-of-balance">203.00</td>
+							<td>+</td>
+							<td class="refund-of-balance">530.00</td>
+							<td>-</td>
+							<td class="surplus-consumption">120.00</td>
+							<td>=</td>
+							<td class="balance-this-month">1234.00</td>
+						</tr>
+						<tr>
+							<td class="padd-10"></td>
+						</tr>
+						<tr class="bgColorBlue report-forms-particulars marg-top20">
+							<td>Android余额上期结余</td>
+							<td></td>
+							<td>Android余额充值</td>
+							<td></td>
+							<td>Android余额退款</td>
+							<td></td>
+							<td>Android余额消费</td>
+							<td></td>
+							<td>Android余额当期结余</td>
+						</tr>
+						<tr class="bgColorBlue report-forms-particulars">
+							<td class="last-month-balance">10000.00</td>
+							<td>+</td>
+							<td class="recharge-of-balance">203.00</td>
+							<td>+</td>
+							<td class="refund-of-balance">530.00</td>
+							<td>-</td>
+							<td class="surplus-consumption">120.00</td>
+							<td>=</td>
+							<td class="balance-this-month">1234.00</td>
+						</tr>
+						<tr>
+							<td class="padd-10"></td>
+						</tr>
+						<tr class="bgColorBlue report-forms-particulars marg-top20">
+							<td></td>
+							<td></td>
+							<td>支付宝充值</td>
+							<td></td>
+							<td>支付宝退款</td>
+							<td></td>
+							<td>支付宝消费</td>
+							<td></td>
+							<td>支付宝当期变动</td>
+						</tr>
+						<tr class="bgColorBlue report-forms-particulars">
+							<td class="last-month-balance"></td>
+							<td></td>
+							<td class="recharge-of-balance">203.00</td>
+							<td>+</td>
+							<td class="refund-of-balance">530.00</td>
+							<td>-</td>
+							<td class="surplus-consumption">120.00</td>
+							<td>=</td>
+							<td class="balance-this-month">1234.00</td>
+						</tr>
+						<tr>
+							<td class="padd-10"></td>
+						</tr>
+						<tr class="bgColorBlue report-forms-particulars marg-top20">
+							<td></td>
+							<td></td>
+							<td>微信充值</td>
+							<td></td>
+							<td>微信退款</td>
+							<td></td>
+							<td>微信消费</td>
+							<td></td>
+							<td>微信当期变动</td>
+						</tr>
+						<tr class="bgColorBlue report-forms-particulars">
+							<td class="last-month-balance"></td>
+							<td></td>
+							<td class="recharge-of-balance">203.00</td>
+							<td>+</td>
+							<td class="refund-of-balance">530.00</td>
+							<td>-</td>
+							<td class="surplus-consumption">120.00</td>
+							<td>=</td>
+							<td class="balance-this-month">1234.00</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+
 		</article>
 		<article id="popup">
 			<p class="title">
@@ -1227,12 +1356,12 @@
 		upload.render({
 			elem: '#uploadOne',
 			accept: 'file' //普通文件
-			,
+				,
 			exts: 'jpeg|jpg|png',
 			size: 5 * 1024,
 			multiple: false,
 			url: '/upload?opt_type=album&file_type=Image&image_type=pic&brand_id=26',
-			before: function (obj) { },
+			before: function (obj) {},
 			done: function (res, index, upload) {
 				if (res.code === 1) {
 					layer.msg(res.msg);
@@ -1249,12 +1378,12 @@
 		upload.render({
 			elem: '#uploadBatch',
 			accept: 'file' //普通文件
-			,
+				,
 			exts: 'jpeg|jpg|png',
 			size: 5 * 1024,
 			multiple: true,
 			url: '/upload?opt_type=album&file_type=Image&image_type=pic&brand_id=26',
-			before: function (obj) { },
+			before: function (obj) {},
 			done: function (res, index, upload) {
 				if (res.code === 1) {
 					layer.msg(res.msg);

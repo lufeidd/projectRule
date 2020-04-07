@@ -176,31 +176,95 @@
     font-size: 16px;
     color: #F05654;
 }
+
 /*特殊布局*/
-.table .bgColorBlue{
+.table .bgColorBlue {
     background-color: #EEF7FD;
 }
-.table .marg-20{
+
+.table .marg-20 {
     margin-right: 20px;
 }
-.table .marg-28{
+
+.table .marg-28 {
     margin-right: 28px;
 }
-.table .click-color{
-    color: #54ACF0;
-    cursor:pointer; 
+.table .padd-10 {
+    padding: 10px 0px;
 }
-.table .blurs{
+.table .click-color {
+    color: #54ACF0;
+    cursor: pointer;
+}
+
+.table .blurs {
     color: #999999;
     font-size: 12px;
 }
-.table .goodNum{
+
+.table .goodNum {
     display: flex;
 }
-.table .goodNum .goodPrice{
+
+.table .goodNum .goodPrice {
     flex-grow: 1;
 }
-.table .goodNum .goodState{
+
+.table .goodNum .goodState {
     color: #54ACF0;
     flex-shrink: 0;
+}
+
+
+
+/*
+ *	作者: ym
+ *	创建时间：2020/04/07
+ *	描述：数据表格组件
+ */
+.table6 {
+    min-width: 1366px;
+    padding: 20px;
+    margin: 20px 0px;
+    background-color: #ffff;
+}
+
+.table6 .layui-table tr:hover {
+    background-color: #ffff;
+}
+
+.table6 .layui-table tr td {
+    border: none;
+
+}
+
+.table6 .report-forms-time {
+    padding-left: 0px;
+}
+
+.table6 .report-forms-time span {
+    font-size: 14px;
+}
+
+.table6 .serial-number {
+    padding: 0px 28px;
+}
+
+.table6 .report-forms-particulars:hover {
+    background-color: #EEF7FD !important;
+}
+
+.table6 .report-forms-particulars td {
+    padding: 5px 15px;
+}
+
+.table6 .report-forms-particulars .last-month-balance,
+.table6 .report-forms-particulars .surplus-consumption,
+.table6 .report-forms-particulars .refund-of-balance,
+.table6 .report-forms-particulars .recharge-of-balance {
+    color: #54ACF0;
+}
+
+.table6 .report-forms-particulars .balance-this-month {
+    color: #F05654;
 }
