@@ -1,7 +1,7 @@
 /*
- *	作者: zby
- *	创建时间：
- *	描述：数据表格组件
+ *  作者: zby
+ *  创建时间：
+ *  描述：数据表格组件
  */
 @charset "utf-8";
 
@@ -224,6 +224,24 @@
 .table .goodNum .goodState {
     color: #54ACF0;
     flex-shrink: 0;
+}
+/*自定义table底部*/
+.table .teari{
+    text-align: right;
+}
+.table .teari .mgt-5{
+    margin-top: 5px;
+}
+.table .teari .mgt-5 .w75{
+    width: 75px;
+    text-align: left;
+}
+.table .teari .mgt-5 .w80{
+    width: 80px;
+}
+.table .teari .col14{
+    font-size: 14px;
+    color: #F05654;
 }
 
 
