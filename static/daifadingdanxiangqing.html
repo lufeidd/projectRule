@@ -164,7 +164,15 @@
                     <!--订单详情  -->
                     <div>
                         <form class="layui-form padd-left" action="">
-                            <p class="form-title">订单信息</p>
+                            <p class="form-title">订单信息 <a href="javascript:;" id="popup12"
+                                    class="modify-order-price layui-word-aux">修改客服备注</a></p>
+                            <div class="layui-form-item input-layout-one">
+                                <div class="layui-input-inline context customer-service-notes" style="width: 620px; background: #F0F0F0; line-height: 38px; padding-left: 10px;
+                                 overflow: hidden;  text-overflow :ellipsis; white-space :nowrap;">
+                                    sxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+                                    text-overflow :ellipsis; /*让截断的文字显示为点点。还有一个值是clip意截断不显示点点*/
+                                </div>
+                            </div>
                             <div class="layui-form-item">
                                 <div class="layui-inline">
                                     <label class="layui-form-label">
@@ -220,20 +228,6 @@
                                     </div>
                                 </div>
                             </div>
-
-                            <div class="layui-form-item input-layout-one">
-                                <label class="layui-form-label">后台订单备注： </label>
-                                <div class="layui-input-inline context" style="width: 471px;">
-                                    <div class="input-second-container">
-                                        <input type="text" name="title" placeholder="仅用于后台记录说明" autocomplete="off"
-                                            class="layui-input" style="width: 471px;">
-                                    </div>
-                                </div>
-                                <div class="layui-form-mid layui-word-aux" style="padding:0px !important;"><button
-                                        type="button" class="layui-btn layui-btn-normal">保存备注</button></div>
-                            </div>
-
-
                         </form>
                     </div>
 
@@ -242,7 +236,8 @@
                     <div>
                         <form class="layui-form padd-left" action="">
                             <p class="form-title" style="padding-bottom:20px;">收货信息
-                                <a href="javascript:;" class="modify-receipt-information layui-word-aux">修改收货信息</a></p>
+                                <a href="javascript:;" id="popup13"
+                                    class="modify-receipt-information layui-word-aux">修改收货信息</a></p>
                             <div class="layui-form-item">
                                 <div class="layui-inline">
                                     <label class="layui-form-label">收货人姓名： </label>
@@ -286,6 +281,14 @@
                                     <label class="layui-form-label">收获地址： </label>
                                     <div class=" float-left padd-top">
                                         <span class="shipping-address">浙江省杭州市余杭区金家渡南路三号4幢3单元1022室收</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="layui-form-item">
+                                <div class="layui-inline">
+                                    <label class="layui-form-label">用户备注： </label>
+                                    <div class=" float-left padd-top">
+                                        <span class="user-remarks">浙江省杭州市余杭区金家渡南路三号4幢3单元1022室收</span>
                                     </div>
                                 </div>
                             </div>
@@ -336,7 +339,7 @@
                     <!-- 商品信息 -->
                     <div class="layui-tab-content padd-left">
                         <p class="form-title" style="padding-bottom:20px;">商品清单
-                            <a href="javascript:;" class="modify-order-price layui-word-aux">修改订单总价</a></p>
+                            <a href="javascript:;" id="popup11" class="modify-order-price layui-word-aux">修改运费</a></p>
                         <div class="table">
                             <table class="layui-table" style="table-layout:fixed;margin:0;">
                                 <colgroup>
@@ -384,41 +387,65 @@
     </div>
 </body>
 
-</html>
-<script type="text/javascript" src="../layui-2.0/layui.js"></script>
+<script type="text/javascript" src="http://shopadmin.huoba.dev.ym/style/layui-2.0/jquery3.4.1.js"></script>
+<script src="http://shopadmin.huoba.dev.ym/style/layui-2.0/layui.all.js"></script>
+<script src="http://shopadmin.huoba.dev.ym/style/layui-2.0/public.js"></script>
+
+<script>
+    // 基础路径
+    var _base = "http://shopadmin.huoba.dev.ym/style";
+</script>
 <script type="text/javascript">
-    layui.use(['element', 'jquery', 'form', 'layer'], function () {
-        // 变量声明
-        var $ = layui.jquery,
+    // 级联路径配置
+    var _cascaderUrl = _base + '/layui-2.0/template/ajaxCascader/';
+
+    function GetQueryString(name) { //获取地址栏上的数据
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+        var r = window.location.search.substr(1).match(reg);
+        if (r != null) return unescape(r[2]);
+        return null;
+    }
+
+    //判断地址栏是否有id
+    if (GetQueryString('dispatch_id') == '') {
+        location.href = '/dispatch/goods/lists';
+    }
+
+    // 配置文件
+    layui.config({
+        base: _cascaderUrl,
+        version: '1.6'
+    });
+
+    layui.use(['element', 'laydate', 'ajaxCascader', 'table', 'layedit', 'layer', 'form', 'upload'], function () {
+        var element = layui.element,
             form = layui.form,
-            element = layui.element,
-            layer = layui.layer;
+            cascader = layui.ajaxCascader,
+            table = layui.table,
+            layedit = layui.layedit,
+            laydate = layui.laydate,
+            upload = layui.upload,
+            $ = layui.$;
         var valPricing, //储存input 的value值
             $html,
+            categorynames,
+            systemClassify,
             _html;
-        //方法定义merchantNum = /(^[1-9]*$)/, //验证必须为整数
 
-        function GetQueryString(name) { //获取地址栏上的数据
-            var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
-            var r = window.location.search.substr(1).match(reg);
-            if (r != null) return unescape(r[2]);
-            return null;
-        }
-
-        // 展开收缩
-        $('.foldAction').on('click', function () {
-            var body = $(this).parents('body');
-            var slideState = '';
-            // 展开隐藏图标切换
-            if ($(body).hasClass('small')) {
-                $(body).removeClass('small').addClass('large');
-                slideState = 'large';
-            } else {
-                $(body).removeClass('large').addClass('small');
-                slideState = 'small';
+        //数据获取
+        $.ajax({
+            type: "",
+            url: "",
+            data: "",
+            dataType: "json",
+            success: function (res) {
+                if (res) {
+                    datarendering();
+                }
             }
-            localStorage.setItem('slideState', slideState);
         })
+
+
 
         var arr = [{
                 id: '包裹1',
@@ -462,108 +489,92 @@
             }
         ];
 
-
-
-
-
-        if (arr.length > '0') {
-            for (let j in arr) {
-                $html += "<tr>";
-                $html += "<td colspan='6' class='bgColorBlue'>";
-                $html += "<div class='layui-inline'>";
-                $html += "<div class='layui-inline marg-20'>" + arr[j].id + "</div>";
-                $html += "<div class='layui-inline marg-20'>已发货</div>";
-                $html += " <div class='layui-inline marg-28'>德邦物流:123654789</div>";
-                $html += "<div class='layui-inline click-color'>查看物流</div>";
-                $html += "</div></td>";
-                $html += "</tr>";
-
-                for (let i = 0; i < arr[j].list.length; i++) {
+        //数据渲染
+        function datarendering() {
+            if (arr.length > '0') {
+                for (let j in arr) {
                     $html += "<tr>";
-                    $html += "<td class='textOverflow' style='text-align:left;'>";
-                    $html += "1002545585/2348900078665<div class='blurs'>ZHR002</div></td>";
-                    $html += "<td class='tableTitle'><div class='pic-two'>";
-                    $html +=
-                        "<img src='https://mhuoba.oss-cn-hangzhou.aliyuncs.com/picture/audio/20190812/18/20190812183751909.jpg!w81h50' alt=''> </div>";
-                    $html += "<div class='layui-inline message'>";
-                    $html +=
-                        "<p class='textTwoOver' title=''>商品标题最多两行题最多两行行商品标题最多两行最多两行最多两行行最多两行最多两行</p></div></td>";
-                    $html += "<td style='text-align:left;'>￥" + arr[j].list[i].sort + "</td>";
-                    $html += "<td style='text-align:left;'>￥" + arr[j].list[i].state + "</td>";
-                    $html += "<td style='text-align:left;'>" + arr[j].list[i].cat_id + "</td>";
-                    $html += "<td><div class='goodNum'>";
-                    $html += "<div class='goodPrice'>￥12.55</div>";
-                    $html += "<div class='goodState'>退款中</div>";
-                    $html += "</div></td></tr>";
+                    $html += "<td colspan='6' class='bgColorBlue'>";
+                    $html += "<div class='layui-inline'>";
+                    $html += "<div class='layui-inline marg-20 logistics-package'>" + arr[j].id + "</div>";
+                    $html += "<div class='layui-inline marg-20'>已发货</div>";
+                    $html += " <div class='layui-inline marg-28'>德邦物流:123654789</div>";
+                    $html += "<div  class='layui-inline click-color view-logistics'>查看物流</div>";
+                    $html += "</div></td>";
+                    $html += "</tr>";
+
+                    for (let i = 0; i < arr[j].list.length; i++) {
+                        $html += "<tr>";
+                        $html += "<td class='textOverflow' style='text-align:left;'>";
+                        $html += "1002545585/2348900078665<div class='blurs'>ZHR002</div></td>";
+                        $html += "<td class='tableTitle'><div class='pic-two'>";
+                        $html +=
+                            "<img src='https://mhuoba.oss-cn-hangzhou.aliyuncs.com/picture/audio/20190812/18/20190812183751909.jpg!w81h50' alt=''> </div>";
+                        $html += "<div class='layui-inline message'>";
+                        $html +=
+                            "<p class='textTwoOver' title=''>商品标题最多两行题最多两行行商品标题最多两行最多两行最多两行行最多两行最多两行</p></div></td>";
+                        $html += "<td style='text-align:left;'>￥" + arr[j].list[i].sort + "</td>";
+                        $html += "<td style='text-align:left;'>￥" + arr[j].list[i].state + "</td>";
+                        $html += "<td style='text-align:left;'>" + arr[j].list[i].cat_id + "</td>";
+                        $html += "<td><div class='goodNum'>";
+                        $html += "<div class='goodPrice'>￥12.55</div>";
+                        $html += "<div class='goodState'>退款中</div>";
+                        $html += "</div></td></tr>";
+                    }
                 }
+                _html += "<tr><td colspan='6'>";
+                _html += "<div class='footFlex'>";
+                _html += "<div class='footText'>商品总价: ¥84.90</div>";
+                _html += "<div class='footText'>优惠价扣减: -¥1.00</div>";
+                _html += "<div class='footText'>多商品活动扣减: -¥4.90</div>";
+                _html += "<div class='footText fg'>运费: +¥4.90</div>";
+                _html += "<div class='sum'>订单总价: ¥82.22</div>";
+                _html += "</div></td></tr>";
+            } else {
+                $html += "<tr>" +
+                    "<td colspan='10' style='text-align: center;''>暂无数据</td>" +
+                    "</tr>"
             }
-            _html += "<tr><td colspan='6'>";
-            _html += "<div class='footFlex'>";
-            _html += "<div class='footText'>商品总价: ¥84.90</div>";
-            _html += "<div class='footText'>优惠价扣减: -¥1.00</div>";
-            _html += "<div class='footText'>多商品活动扣减: -¥4.90</div>";
-            _html += "<div class='footText fg'>运费: +¥4.90</div>";
-            _html += "<div class='sum'>订单总价: ¥82.22</div>";
-            _html += "</div></td></tr>";
-        } else {
-            $html += "<tr>" +
-                "<td colspan='10' style='text-align: center;''>暂无数据</td>" +
-                "</tr>"
+            $(".tbody").html($html);
+            $(".tfoot").html(_html);
         }
-        $(".tbody").html($html);
-        $(".tfoot").html(_html);
 
-        //数据表格图标事件
-        $('.tableIcon').hover(function () {
-            $(this).closest('.table').find('.tableIcon-content').css('display', 'block');
-        }, function () {
-            $(this).closest('.table').find('.tableIcon-content').css('display', 'none');
-        });
-
-        //申请商户补偿弹窗
-        $('.apply-compensation').click(function () {
+        //弹窗3
+        $("#popup11").click(function () {
             layer.open({
                 type: 1,
-                title: '申请商户补偿', //title设置
+                title: '修改运费', //title设置
                 skin: 'layui-layer-rim', //加上边框
-                area: ['600px', '328px'], //宽高
+                area: ['520px', '239px'], //宽高
                 btn: ['确 定', '取 消'], //btn按钮
                 content: "<form class='layui-form' action=''>" +
                     "<div class='layui-form-item input-layout-one'>" +
-                    "<label class='layui-form-label'>补偿金额： </label>" +
                     "<div class='layui-input-block input-second-container lable-input-container'>" +
                     "<div class='input-third-container input-one1-container'>" +
-                    "<input type='text' name='pricing' placeholder='最多23.00' autocomplete='off' class='layui-input'>" +
+                    "<input type='text' name='pricing' placeholder='请输入数字' autocomplete='off' class='layui-input amendment '>" +
                     "<div class='input-before'>￥</div>" +
-                    "</div>" +
-                    "<p class='msg'>图书定价不可为空</p>" +
-                    "</div>" +
-                    "</div>" +
-                    "<div class='layui-form-item input-layout-one'>" +
-                    "<label class='layui-form-label'>补偿原因： </label>" +
-                    "<div class='layui-input-block input-second-container lable-input-container'>" +
-                    "<div class='input-third-container input-one1-container'>" +
-                    "<input type='text' name='reason' placeholder='请输入补偿原因' autocomplete='off' class='layui-input'>" +
                     "</div>" +
                     "</div>" +
                     "</div>" +
                     "</form>", //内容
                 // shadeClose: true, //点击遮罩层隐藏弹窗
                 // move: false, //禁止拖拽
-                success: function (layero, index) { //弹出回调
-                    // $(".msg").hide();
+                success: function (data) {
+                    $(".layui-layer-page").addClass('popup11');
                 },
                 yes: function (index, layero) {
-                    valPricing = $(".layui-input[name=pricing]").val()
-                    //按钮1回调
-                    // layer.close(index); //如果设定了yes回调，需进行手工关闭&&
-                    if (valPricing <= 23 && valPricing >= 0) {
-                        //
-                        $(".msg").css('opacity', '0');
+                    $(".amendment").val();
+                    $.ajax({
+                        type: "",
+                        url: "",
+                        data: "",
+                        dataType: "json",
+                        success: function () {
 
-                    } else {
-                        $(".msg").css('opacity', '1');
-                    }
+                        }
+                    })
+                    //按钮1回调
+                    // layer.close(index); //如果设定了yes回调，需进行手工关闭
                 },
                 btn2: function (index, layero) {
                     //按钮2回调
@@ -572,5 +583,234 @@
                 }
             });
         })
+
+        //弹窗10
+        $(".view-logistics").click(function () {
+            var _this = $(this)
+            layer.open({
+                title: '物流',
+                content: "<div class='popup10-content'>" +
+                    "<div class='logistics'>" +
+                    "<p>物流公司：圆通快递</p>" +
+                    "<p class='waybill-no'>运单号：1234567899  </p>" +
+                    "</div>" +
+                    "<div class='location'> " +
+                    "</div>" +
+                    "</div>",
+                btn: ['关闭'],
+                area: ['520px', '668px'], //宽高
+                success: function (data) {
+                    $(".location").html("<ul class='layui-timeline'>" +
+                        "<li class='layui-timeline-item'>" +
+                        "<i class='layui-icon layui-timeline-axis'>&#xe63f;</i>" +
+                        "<div class='layui-timeline-content layui-text'>" +
+                        " <p>【杭州市】在官网“运单资s料&签收图”，可查看签收人信息查看签收人信息请勿相信任何人给您发来的可以退款的链接，以免钱款被骗</p>" +
+                        "  <p> 2019.03.12  17:33:50" +
+                        "</p>" +
+                        "</div>" +
+                        " </li>" +
+                        "<li class='layui-timeline-item'>" +
+                        "  <i class='layui-icon layui-timeline-axis'>&#xe63f;</i>" +
+                        "<div class='layui-timeline-content layui-text'>" +
+                        " <p>【杭州市】在官网“运单资料&签收图”，可查看签收人信息查看签收人信息请勿相信任何人给您发来的可以退款的链接，以免钱款被骗</p>" +
+                        "  <p> 2019.03.12  17:33:50" +
+                        " </div>" +
+                        "</li>" +
+                        "<li class='layui-timeline-item'>" +
+                        "<i class='layui-icon layui-timeline-axis'>&#xe63f;</i>" +
+                        "<div class='layui-timeline-content layui-text'>" +
+                        "<div class='layui-timeline-title'>过去</div>" +
+                        "</div>" +
+                        "</li>" +
+                        " </ul>");
+
+                    $(".layui-layer-dialog").addClass('popup10');
+                    $(".popup10 .layui-layer-title").show();
+                    $(".popup10 .layui-layer-title").html(_this.prevAll(
+                        '.logistics-package').text());
+                },
+                yes: function (index, layero) {
+                    //按钮1回调
+                    // layer.close(index); //如果设定了yes回调，需进行手工关闭
+                    layer.closeAll();
+                }
+            });
+        })
+
+        //弹窗12
+        $("#popup12").click(function () {
+            //页面层
+            layer.open({
+                type: 1,
+                title: '修改客服备注', //title设置
+                skin: 'layui-layer-rim', //加上边框
+                area: ['520px', '239px'], //宽高
+                btn: ['确 定', '取 消'], //btn按钮
+                content: "<form class='layui-form' action=''>" +
+                    "<div class='layui-form-item input-layout-one'>" +
+                    "<div class='layui-input-block input-second-container lable-input-container'>" +
+                    "<div class='input-second-container'>" +
+                    "<input type='text' name='title' placeholder='请输入后台客服备注' autocomplete='off' class='layui-input remarks'>" +
+                    "<div class='input-number'><span class='input-on-number'>0</span>/<span class='input-max-number'>50" +
+                    "</span></div></div>" +
+                    "<p>仅后台可见</p>" +
+                    "</form>", //内容
+                // shadeClose: true, //点击遮罩层隐藏弹窗
+                // move: false, //禁止拖拽
+                success: function (data) {
+                    $(".layui-layer-page").addClass('popup12');
+                },
+                yes: function (index, layero) {
+                    $(".customer-service-notes").text($(".remarks").val());
+                    $.ajax({
+                        type: "",
+                        url: "",
+                        data: "",
+                        dataType: "json",
+                        success: function () {
+
+                        }
+                    })
+                    //按钮1回调
+                    // layer.close(index); //如果设定了yes回调，需进行手工关闭
+                    layer.closeAll();
+                },
+                btn2: function (index, layero) {
+                    //按钮2回调
+                    // layer.close(index); //如果设定了yes回调，需进行手工关闭
+                    //return false 开启该代码可禁止点击该按钮关闭
+                }
+            });
+        })
+
+
+        // //联级下拉数据
+        // function callbackLoad(loaddata) {
+        //     codeData = loaddata;
+        //     cascader.load({
+        //         elem: '#demo3',
+        //         clear: true,
+        //         width: 981,
+        //         placeholder: categorynames,
+        //         value: 0,
+        //         prop: {
+        //             value: 'cat_id',
+        //             label: 'name',
+        //             children: 'list'
+        //         },
+        //         data: codeData,
+        //         clicklast: true,
+        //         // chooseData: ['3']
+        //     });
+        //     monitorCasader();
+        // }
+
+        // // 监听系统分类选中的事件
+        // function monitorCasader() {
+        //     // 监听系统分类选中的事件
+        //     cascader.on('click', '#demo3', function () {
+        //         // 获取当前已选中的数据,可单独使用
+        //         systemClassify = cascader.getChooseData("#demo3").slice(-1)[0]; //系统分类ID
+        //         $('#msg').css("opacity", '0');
+        //     });
+
+        //     $('.cascader-clear').click(function () {
+        //         $(".cascader-input").attr('placeholder', '请选择系统分类');
+        //         $('#msg').css("opacity", '1');
+        //         systemClassify = '';
+        //     })
+        // }
+        //弹窗13
+        $("#popup13").click(function () {
+            //页面层
+            layer.open({
+                type: 1,
+                title: '修改收货信息', //title设置
+                skin: 'layui-layer-rim', //加上边框
+                area: ['520px', '420px'], //宽高
+                btn: ['确 定', '取 消'], //btn按钮
+                content: "<form class='layui-form' action=''>" +
+                    "<div class='layui-form-item input-layout-one'>" +
+                    " <div class='cascader'><cascader id='demo3'></cascader></div>" +
+                    "<div class='layui-input-block input-second-container lable-input-container'>" +
+                    "<div class='input-second-container'>" +
+                    "<input type='text' name='title' placeholder='请输入详细地址' autocomplete='detailed-address' class='layui-input detailed-address'>" +
+                    "<div class='input-number'><span class='input-on-number'>0</span>/<span class='input-max-number'>50" +
+                    "</span></div></div>" +
+                    "<div class='input-second-container'>" +
+                    "<input type='text' name='title' placeholder='请输入收货人姓名' autocomplete='off' class='layui-input consignee-name'>" +
+                    "<div class='input-number'><span class='input-on-number'>0</span>/<span class='input-max-number'>50" +
+                    "</span></div></div>" +
+                    "<div class='input-second-container'>" +
+                    "<input type='text' name='title' placeholder='请输入手机号' autocomplete='off' class='layui-input cell-phone-number'>" +
+                    "<div class='input-number'><span class='input-on-number'>0</span>/<span class='input-max-number'>11" +
+                    "</span></div></div>" +
+                    "</form>", //内容
+                // shadeClose: true, //点击遮罩层隐藏弹窗
+                // move: false, //禁止拖拽
+                success: function (data) {
+                    $(".layui-layer-page").addClass('popup13');
+
+                    // 级联
+                    $('cascader').each(function () {
+                        var _id = '#' + $(this).attr('id');
+                        ajaxCascaderTemplate(_id,
+                            'https://open.gog.cn/appz/region/getRegion/', 'init'
+                        );
+                    })
+                    cascader.on('click', '#demo3', function () {
+                        // 获取当前已选中的数据,可单独使用
+                        systemClassify = cascader.getChooseData("#demo3").slice(-1)[
+                            0]; //系统分类ID
+                    });
+                },
+                yes: function (index, layero) {
+                    $(".detailed-address").val();
+                    $(".consignee-name").val();
+                    $(".cell-phone-number").val();
+                    console.log(systemClassify)
+                    $.ajax({
+                        type: "",
+                        url: "",
+                        data: "",
+                        dataType: "json",
+                        success: function () {
+
+                        }
+                    })
+                    //按钮1回调
+                    // layer.close(index); //如果设定了yes回调，需进行手工关闭
+                },
+                btn2: function (index, layero) {
+                    //按钮2回调
+                    // layer.close(index); //如果设定了yes回调，需进行手工关闭
+                    //return false 开启该代码可禁止点击该按钮关闭
+                }
+            });
+        })
+
+        // 展开收缩
+        $('.foldAction').on('click', function () {
+            var body = $(this).parents('body');
+            var slideState = '';
+            // 展开隐藏图标切换
+            if ($(body).hasClass('small')) {
+                $(body).removeClass('small').addClass('large');
+                slideState = 'large';
+            } else {
+                $(body).removeClass('large').addClass('small');
+                slideState = 'small';
+            }
+            localStorage.setItem('slideState', slideState);
+        })
+
+        //数据表格图标事件
+        $('.tableIcon').hover(function () {
+            $(this).closest('.table').find('.tableIcon-content').css('display', 'block');
+        }, function () {
+            $(this).closest('.table').find('.tableIcon-content').css('display', 'none');
+        });
     });
 </script>
+
+</html>
