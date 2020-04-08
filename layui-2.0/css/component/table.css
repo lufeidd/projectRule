@@ -216,7 +216,6 @@
     color: #54ACF0;
     flex-shrink: 0;
 }
-<<<<<<< HEAD
 /*自定义table底部*/
 .table .teari{
     text-align: right;
@@ -233,7 +232,8 @@
 }
 .table .teari .col14{
     font-size: 14px;
-=======
+    color: #F05654;
+}
 
 
 
@@ -286,6 +286,5 @@
 }
 
 .table6 .report-forms-particulars .balance-this-month {
->>>>>>> de9e24b2b1ce75cef05554fb5b855b1cbc2e6f43
     color: #F05654;
 }
