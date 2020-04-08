@@ -1346,7 +1346,7 @@
 										<p class='textTwoOver' title=''>商品标题商品标题商品标题商品标题 <span>￥15.88 x2</span></p>
 										<p class='quantity-of-commodities' title=''>
 											共 <span class='main-color'>4</span>个品种，
-											<span class='main-color'>23</span> 个商品 
+											<span class='main-color'>23</span> 个商品
 										</p>
 									</div>
 
@@ -1428,7 +1428,7 @@
 					<span></span>
 					<input type="text" class="layui-input test3" placeholder="结束时间">
 				</div>
-				</divc>
+			</div>
 		</article>
 		<article id="badge">
 			<p class="title">
@@ -1707,7 +1707,7 @@
 					"</table>" +
 					"</div>" +
 					"</div>",
-				btn: ['取消', '确定'],
+				btn: ['确定', '取消'],
 				area: ['520px', '464px'], //宽高
 				success: function (data) {
 					$(".layui-layer-dialog").addClass('popup9');
@@ -1752,12 +1752,12 @@
 				yes: function (index, layero) {
 					//按钮1回调
 					// layer.close(index); //如果设定了yes回调，需进行手工关闭
-					layer.closeAll();
+					
 				},
 				btn2: function (index, layero) {
 					//按钮2回调
 					// layer.close(index); //如果设定了yes回调，需进行手工关闭
-					return false //开启该代码可禁止点击该按钮关闭
+					layer.closeAll();
 				}
 			});
 		})
