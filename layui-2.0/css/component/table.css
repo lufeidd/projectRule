@@ -15,14 +15,17 @@
     color: #333333;
 }
 .table .status:before{
-    content:'';
-    position: absolute;
-    width:6px;
-    height:6px;
-    border-radius:50%;
-    left: 20px;
-    top: 50%;
-    margin-top: -2px;
+    content: '';
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 5px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    /* position: absolute; */
+    /* left: 20px; */
+    /* top: 50%; */
+    /* margin-top: -2px; */
 }
 .table .statusA:before{
     content:'';
@@ -81,13 +84,13 @@
     -moz-transform: rotate(180deg);
     -webkit-transform: rotate(180deg);
     -o-transform: rotate(180deg);
-    font-size: 5px;
+    font-size: 12px;
     color: #999;
     position: absolute;
     top: -18px;
 }
 .table .bottomArrow {
-    font-size: 5px;
+    font-size: 12px;
     color: #999;
     position: absolute;
     top: -10px;
