@@ -454,6 +454,30 @@
     color: #333333;
     padding-top: 36px;
 }
+.table7 .order-amount {
+    padding-bottom: 38px;
+}
+
+.table7 .amount-of-money {
+    color: #F05654;
+    padding-bottom: 50px;
+}
+
+.table7 .receiving-address {
+    padding-bottom: 34px;
+}
+
+.table7 .address {
+    padding-bottom: 35px;
+}
+
+.table7 .customer-service-status {
+    padding-bottom: 38px;
+}
+
+.table7 .state {
+    padding-bottom: 50px;
+}
 
 .table7 .operation {
     float: right;
