@@ -58,22 +58,28 @@
  *	创建时间：20203/27
  *	描述：图片比例组件
  */
+.picPicture {
+    width: 120px;
+    height: 120px;
+    position: relative;
+    border: 1px dashed #C0C0C0;
+}
 
 .pic-three {
     width: 120px;
     height: 120px;
     background: #EFEFEF;
-    border: 1px dashed #C0C0C0;
     color: #999999;
     font-size: 12px;
     display: flex;
     justify-content: center;
     align-items: center;
-    position: relative;
     cursor: pointer;
 }
 
-.pic-three .cancel {
+.picPicture .cancel {
+    top: 0;
+    right: 0;
     width: 120px;
     height: 120px;
     background: #000;
@@ -85,4 +91,10 @@
     align-items: center;
     position: absolute;
     cursor: pointer;
+    z-index: -1;
+}
+
+.pic-three img {
+    width: 64px;
+    height: 64px;
 }
