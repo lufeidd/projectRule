@@ -43,6 +43,9 @@
     margin-top: -7px;
     color: #999999;
 }
+.input-second-container .layui-input{
+    padding-right:70px;
+}
 
 /* 文本域3,6 */
 .input-third-container .layui-input,.input-six-container .layui-input {
